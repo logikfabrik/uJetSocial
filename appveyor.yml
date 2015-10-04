@@ -1,0 +1,11 @@
+version: 0.0.1.{build}
+skip_tags: true
+os: Visual Studio 2015
+platform: Any CPU
+configuration: Release
+before_build:
+- nuget restore src/Logikfabrik.Umbraco.Jet.Social.sln
+build:
+  project: src/Logikfabrik.Umbraco.Jet.Social.sln
+  publish_nuget: true
+  verbosity: minimal
