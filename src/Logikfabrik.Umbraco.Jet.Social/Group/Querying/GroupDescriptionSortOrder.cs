@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
         /// </summary>
         /// <param name="order">The order.</param>
         public GroupDescriptionSortOrder(Order order)
-            : base("uJetCommunityGroup.Description", order)
+            : base("uJetSocialGroup.Description", order)
         {
         }
     }

@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
         /// </summary>
         /// <param name="order">The order.</param>
         public ReportTextSortOrder(Order order)
-            : base("uJetCommunityReport.Text", order)
+            : base("uJetSocialReport.Text", order)
         {
         }
     }

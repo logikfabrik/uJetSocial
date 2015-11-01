@@ -45,7 +45,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityCommentGet"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialCommentGet"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", id);
 
@@ -77,7 +77,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityCommentAdd"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialCommentAdd"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
                     DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
@@ -108,7 +108,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityCommentUpdate"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialCommentUpdate"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
                     DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
@@ -135,7 +135,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityCommentRemove"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialCommentRemove"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
 

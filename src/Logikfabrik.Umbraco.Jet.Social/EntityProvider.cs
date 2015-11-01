@@ -87,7 +87,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityEntityCountByCreated"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialEntityCountByCreated"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
 
@@ -324,7 +324,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityEntityTypeAdd"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialEntityTypeAdd"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
 

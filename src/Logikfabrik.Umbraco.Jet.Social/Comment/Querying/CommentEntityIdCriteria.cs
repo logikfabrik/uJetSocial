@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
         /// Initializes a new instance of the <see cref="CommentEntityIdCriteria" /> class.
         /// </summary>
         public CommentEntityIdCriteria()
-            : base("uJetCommunityComment.EntityId")
+            : base("uJetSocialComment.EntityId")
         {
         }
     }

@@ -69,7 +69,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityMemberGet"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialMemberGet"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", id);
 
@@ -117,7 +117,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityMemberAdd"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialMemberAdd"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
                     DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
@@ -146,7 +146,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityEntityUpdate"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialEntityUpdate"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
                     DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
@@ -172,7 +172,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityMemberRemove"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialMemberRemove"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
 
@@ -204,7 +204,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityMemberGetByProviderUserKey"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialMemberGetByProviderUserKey"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.Int32, "providerUserKey", providerUserKey);
 

@@ -22,7 +22,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// <param name="columns">The columns.</param>
         /// <param name="table">The table.</param>
         protected EntityQueryBuilder(IEnumerable<string> columns, string table)
-            : base(GetColumns().Union(columns), "uJetCommunityEntity")
+            : base(GetColumns().Union(columns), "uJetSocialEntity")
         {
         }
 
@@ -34,17 +34,17 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// </returns>
         protected override IEnumerable<string> GetJoins()
         {
-            return new[] { string.Format("{0} ON {0}.Id = uJetCommunityEntity.Id", Table) };
+            return new[] { string.Format("{0} ON {0}.Id = uJetSocialEntity.Id", Table) };
         }
 
         private static IEnumerable<string> GetColumns()
         {
             return new[]
             {
-                "uJetCommunityEntity.Id",
-                "uJetCommunityEntity.Created",
-                "uJetCommunityEntity.Updated",
-                "uJetCommunityEntity.Status"
+                "uJetSocialEntity.Id",
+                "uJetSocialEntity.Created",
+                "uJetSocialEntity.Updated",
+                "uJetSocialEntity.Status"
             };
         }
     }

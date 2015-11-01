@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
         /// Initializes a new instance of the <see cref="CommentTextCriteria" /> class.
         /// </summary>
         public CommentTextCriteria()
-            : base("uJetCommunityComment.Text")
+            : base("uJetSocialComment.Text")
         {
         }
     }

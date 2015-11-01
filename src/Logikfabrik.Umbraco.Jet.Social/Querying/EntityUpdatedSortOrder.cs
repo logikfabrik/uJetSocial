@@ -14,7 +14,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// </summary>
         /// <param name="order">The order.</param>
         protected EntityUpdatedSortOrder(Order order)
-            : base("uJetCommunityEntity.Updated", order)
+            : base("uJetSocialEntity.Updated", order)
         {
         }
     }

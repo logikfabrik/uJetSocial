@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
         /// Initializes a new instance of the <see cref="ReportAuthorIdCriteria" /> class.
         /// </summary>
         public ReportAuthorIdCriteria()
-            : base("uJetCommunityReport.AuthorId")
+            : base("uJetSocialReport.AuthorId")
         {
         }
     }

@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
         /// Initializes a new instance of the <see cref="GuestIndividualLastNameCriteria" /> class.
         /// </summary>
         public GuestIndividualLastNameCriteria()
-            : base("uJetCommunityIndividualGuest.LastName")
+            : base("uJetSocialIndividualGuest.LastName")
         {
         }
     }

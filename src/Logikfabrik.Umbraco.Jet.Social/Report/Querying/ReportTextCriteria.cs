@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
         /// Initializes a new instance of the <see cref="ReportTextCriteria" /> class.
         /// </summary>
         public ReportTextCriteria()
-            : base("uJetCommunityReport.Text")
+            : base("uJetSocialReport.Text")
         {
         }
     }

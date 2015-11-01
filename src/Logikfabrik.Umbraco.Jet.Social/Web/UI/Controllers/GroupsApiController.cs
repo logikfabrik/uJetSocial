@@ -10,7 +10,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.UI.Controllers
     /// <summary>
     /// The <see cref="GroupsApiController" /> class.
     /// </summary>
-    [PluginController("uJetCommunity")]
+    [PluginController("uJetSocial")]
     public class GroupsApiController : UmbracoAuthorizedJsonController
     {
     }

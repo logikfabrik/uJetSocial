@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact.Querying
         /// Initializes a new instance of the <see cref="ContactFromIdCriteria" /> class.
         /// </summary>
         public ContactFromIdCriteria()
-            : base("uJetCommunityContact.FromId")
+            : base("uJetSocialContact.FromId")
         {
         }
     }

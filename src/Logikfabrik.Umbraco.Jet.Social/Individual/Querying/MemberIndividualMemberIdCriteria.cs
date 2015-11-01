@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
         /// Initializes a new instance of the <see cref="MemberIndividualMemberIdCriteria" /> class.
         /// </summary>
         public MemberIndividualMemberIdCriteria()
-            : base("uJetCommunityIndividualMember.MemberId")
+            : base("uJetSocialIndividualMember.MemberId")
         {
         }
     }

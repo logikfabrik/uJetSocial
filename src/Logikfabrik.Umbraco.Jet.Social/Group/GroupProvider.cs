@@ -43,7 +43,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityGroupCountByName"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialGroupCountByName"))
                 {
                     var countByName = new Dictionary<char, int>();
 
@@ -76,7 +76,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityGroupGet"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialGroupGet"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", id);
 
@@ -108,7 +108,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityGroupAdd"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialGroupAdd"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
                     DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
@@ -139,7 +139,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityGroupUpdate"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialGroupUpdate"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
                     DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
@@ -168,7 +168,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityGroupRemove"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialGroupRemove"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
 

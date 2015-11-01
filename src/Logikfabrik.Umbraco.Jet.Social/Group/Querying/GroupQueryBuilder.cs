@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
         /// Initializes a new instance of the <see cref="GroupQueryBuilder" /> class.
         /// </summary>
         public GroupQueryBuilder()
-            : base(GetColumns(), "uJetCommunityGroup")
+            : base(GetColumns(), "uJetSocialGroup")
         {
         }
 
@@ -24,10 +24,10 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
         {
             return new[]
             {
-                "uJetCommunityGroup.OwnerId",
-                "(SELECT CET.Type FROM uJetCommunityEntityType as CET JOIN uJetCommunityEntity AS CG ON CG.TypeId = CET.Id WHERE CG.Id = uJetCommunityGroup.OwnerId) AS OwnerType",
-                "uJetCommunityGroup.Name",
-                "uJetCommunityGroup.Description"
+                "uJetSocialGroup.OwnerId",
+                "(SELECT CET.Type FROM uJetSocialEntityType as CET JOIN uJetSocialEntity AS CG ON CG.TypeId = CET.Id WHERE CG.Id = uJetSocialGroup.OwnerId) AS OwnerType",
+                "uJetSocialGroup.Name",
+                "uJetSocialGroup.Description"
             };
         }
     }

@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
         /// Initializes a new instance of the <see cref="CommentQueryBuilder" /> class.
         /// </summary>
         public CommentQueryBuilder()
-            : base(GetColumns(), "uJetCommunityComment")
+            : base(GetColumns(), "uJetSocialComment")
         {
         }
 
@@ -24,11 +24,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
         {
             return new[]
             {
-                "uJetCommunityComment.EntityId",
-                "(SELECT CET.Type FROM uJetCommunityEntityType as CET JOIN uJetCommunityEntity AS CE ON CE.TypeId = CET.Id WHERE CE.Id = uJetCommunityComment.EntityId) AS EntityType",
-                "uJetCommunityComment.AuthorId",
-                "(SELECT CET.Type FROM uJetCommunityEntityType as CET JOIN uJetCommunityEntity AS CE ON CE.TypeId = CET.Id WHERE CE.Id = uJetCommunityComment.AuthorId) AS AuthorType",
-                "uJetCommunityComment.Text"
+                "uJetSocialComment.EntityId",
+                "(SELECT CET.Type FROM uJetSocialEntityType as CET JOIN uJetSocialEntity AS CE ON CE.TypeId = CET.Id WHERE CE.Id = uJetSocialComment.EntityId) AS EntityType",
+                "uJetSocialComment.AuthorId",
+                "(SELECT CET.Type FROM uJetSocialEntityType as CET JOIN uJetSocialEntity AS CE ON CE.TypeId = CET.Id WHERE CE.Id = uJetSocialComment.AuthorId) AS AuthorType",
+                "uJetSocialComment.Text"
             };
         }
     }

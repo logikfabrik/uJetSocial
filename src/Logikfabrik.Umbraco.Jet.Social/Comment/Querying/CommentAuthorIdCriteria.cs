@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
         /// Initializes a new instance of the <see cref="CommentAuthorIdCriteria" /> class.
         /// </summary>
         public CommentAuthorIdCriteria()
-            : base("uJetCommunityComment.AuthorId")
+            : base("uJetSocialComment.AuthorId")
         {
         }
     }

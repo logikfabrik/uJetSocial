@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
         /// Initializes a new instance of the <see cref="GroupOwnerIdCriteria" /> class.
         /// </summary>
         public GroupOwnerIdCriteria()
-            : base("uJetCommunityGroup.OwnerId")
+            : base("uJetSocialGroup.OwnerId")
         {
         }
     }

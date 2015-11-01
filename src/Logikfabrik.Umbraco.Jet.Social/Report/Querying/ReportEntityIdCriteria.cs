@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
         /// Initializes a new instance of the <see cref="ReportEntityIdCriteria" /> class.
         /// </summary>
         public ReportEntityIdCriteria()
-            : base("uJetCommunityReport.EntityId")
+            : base("uJetSocialReport.EntityId")
         {
         }
     }

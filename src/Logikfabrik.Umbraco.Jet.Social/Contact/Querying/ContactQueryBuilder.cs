@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact.Querying
         /// Initializes a new instance of the <see cref="ContactQueryBuilder" /> class.
         /// </summary>
         public ContactQueryBuilder()
-            : base(GetColumns(), "uJetCommunityContact")
+            : base(GetColumns(), "uJetSocialContact")
         {
         }
 
@@ -24,10 +24,10 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact.Querying
         {
             return new[]
             {
-                "uJetCommunityContact.FromId",
-                "(SELECT CET.Type FROM uJetCommunityEntityType as CET JOIN uJetCommunityEntity AS CE ON CE.TypeId = CET.Id WHERE CE.Id = uJetCommunityContact.FromId) AS FromType",
-                "uJetCommunityContact.ToId",
-                "(SELECT CET.Type FROM uJetCommunityEntityType as CET JOIN uJetCommunityEntity AS CE ON CE.TypeId = CET.Id WHERE CE.Id = uJetCommunityContact.ToId) AS ToType"
+                "uJetSocialContact.FromId",
+                "(SELECT CET.Type FROM uJetSocialEntityType as CET JOIN uJetSocialEntity AS CE ON CE.TypeId = CET.Id WHERE CE.Id = uJetSocialContact.FromId) AS FromType",
+                "uJetSocialContact.ToId",
+                "(SELECT CET.Type FROM uJetSocialEntityType as CET JOIN uJetSocialEntity AS CE ON CE.TypeId = CET.Id WHERE CE.Id = uJetSocialContact.ToId) AS ToType"
             };
         }
     }

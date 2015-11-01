@@ -13,7 +13,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// Initializes a new instance of the <see cref="EntityUpdatedCriteria" /> class.
         /// </summary>
         protected EntityUpdatedCriteria()
-            : base("uJetCommunityEntity.Updated")
+            : base("uJetSocialEntity.Updated")
         {
         }
     }

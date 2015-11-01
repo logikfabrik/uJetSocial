@@ -13,7 +13,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// Initializes a new instance of the <see cref="EntityCreatedCriteria" /> class.
         /// </summary>
         protected EntityCreatedCriteria()
-            : base("uJetCommunityEntity.Created")
+            : base("uJetSocialEntity.Created")
         {
         }
     }

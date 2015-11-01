@@ -15,8 +15,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.UI.Trees
     /// <summary>
     /// The <see cref="CommentsTreeController" /> class. Umbraco UI tree for <see cref="Comment.Comment" />.
     /// </summary>
-    [PluginController("uJetCommunity")]
-    [Tree("uJetCommunity", "comment", "Comments")]
+    [PluginController("uJetSocial")]
+    [Tree("uJetSocial", "comment", "Comments")]
     public class CommentsTreeController : CreatedTreeController<Comment.Comment>
     {
         /// <summary>

@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
         /// Initializes a new instance of the <see cref="ReportQueryBuilder" /> class.
         /// </summary>
         public ReportQueryBuilder()
-            : base(GetColumns(), "uJetCommunityReport")
+            : base(GetColumns(), "uJetSocialReport")
         {
         }
 
@@ -24,11 +24,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
         {
             return new[]
             {
-                "uJetCommunityReport.EntityId",
-                "(SELECT CET.Type FROM uJetCommunityEntityType as CET JOIN uJetCommunityEntity AS CE ON CE.TypeId = CET.Id WHERE CE.Id = uJetCommunityReport.EntityId) AS EntityType",
-                "uJetCommunityReport.AuthorId",
-                "(SELECT CET.Type FROM uJetCommunityEntityType as CET JOIN uJetCommunityEntity AS CE ON CE.TypeId = CET.Id WHERE CE.Id = uJetCommunityReport.AuthorId) AS AuthorType",
-                "uJetCommunityReport.Text"
+                "uJetSocialReport.EntityId",
+                "(SELECT CET.Type FROM uJetSocialEntityType as CET JOIN uJetSocialEntity AS CE ON CE.TypeId = CET.Id WHERE CE.Id = uJetSocialReport.EntityId) AS EntityType",
+                "uJetSocialReport.AuthorId",
+                "(SELECT CET.Type FROM uJetSocialEntityType as CET JOIN uJetSocialEntity AS CE ON CE.TypeId = CET.Id WHERE CE.Id = uJetSocialReport.AuthorId) AS AuthorType",
+                "uJetSocialReport.Text"
             };
         }
     }

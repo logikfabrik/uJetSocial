@@ -38,7 +38,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         {
             using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityGroupMembershipGet"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialGroupMembershipGet"))
                 {
                     DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", id);
 
@@ -91,7 +91,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         protected override GroupMembership AddEntityToDatabase(GroupMembership entity)
         {
             using (var connection = DatabaseProvider.GetConnection())
-            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityGroupMembershipAdd"))
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialGroupMembershipAdd"))
             {
                 DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
                 DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
@@ -119,7 +119,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         protected override GroupMembership UpdateEntityInDatabase(GroupMembership entity)
         {
             using (var connection = DatabaseProvider.GetConnection())
-            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityEntityUpdate"))
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialEntityUpdate"))
             {
                 DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
                 DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
@@ -143,7 +143,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         protected override void RemoveEntityFromDatabase(GroupMembership entity)
         {
             using (var connection = DatabaseProvider.GetConnection())
-            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityGroupMembershipRemove"))
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialGroupMembershipRemove"))
             {
                 DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
 

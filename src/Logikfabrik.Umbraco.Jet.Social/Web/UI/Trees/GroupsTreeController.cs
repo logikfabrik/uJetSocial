@@ -18,8 +18,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.UI.Trees
     /// <summary>
     /// The <see cref="GroupsTreeController" /> class. Umbraco UI tree for <see cref="Group" />.
     /// </summary>
-    [PluginController("uJetCommunity")]
-    [Tree("uJetCommunity", "group", "Groups")]
+    [PluginController("uJetSocial")]
+    [Tree("uJetSocial", "group", "Groups")]
     public class GroupsTreeController : LetterTreeController
     {
         private readonly IEntityProviderFactory _entityProviderFactory;

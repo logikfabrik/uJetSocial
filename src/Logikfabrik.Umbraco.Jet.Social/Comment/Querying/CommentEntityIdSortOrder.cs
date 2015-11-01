@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
         /// </summary>
         /// <param name="order">The order.</param>
         public CommentEntityIdSortOrder(Order order)
-            : base("uJetCommunityComment.EntityId", order)
+            : base("uJetSocialComment.EntityId", order)
         {
         }
     }

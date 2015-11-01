@@ -13,7 +13,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// Initializes a new instance of the <see cref="EntityIdCriteria" /> class.
         /// </summary>
         protected EntityIdCriteria()
-            : base("uJetCommunityEntity.Id")
+            : base("uJetSocialEntity.Id")
         {
         }
     }

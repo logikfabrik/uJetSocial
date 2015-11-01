@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
         /// </summary>
         /// <param name="order">The order.</param>
         public GuestIndividualLastNameSortOrder(Order order)
-            : base("uJetCommunityIndividualGuest.LastName", order)
+            : base("uJetSocialIndividualGuest.LastName", order)
         {
         }
     }

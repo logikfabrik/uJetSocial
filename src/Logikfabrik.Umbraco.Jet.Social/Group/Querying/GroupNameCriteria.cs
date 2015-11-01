@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
         /// Initializes a new instance of the <see cref="GroupNameCriteria" /> class.
         /// </summary>
         public GroupNameCriteria()
-            : base("uJetCommunityGroup.Name")
+            : base("uJetSocialGroup.Name")
         {
         }
     }

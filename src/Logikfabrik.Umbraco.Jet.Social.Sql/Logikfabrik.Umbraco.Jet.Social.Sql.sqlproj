@@ -23,6 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>True</GenerateCreateScript>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -46,6 +47,7 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatTSqlWarningsAsErrors>True</TreatTSqlWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
@@ -62,48 +64,48 @@
     <Folder Include="dbo\Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Stored Procedures\uJetCommunityCommentAdd.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityCommentGet.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityCommentRemove.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityCommentUpdate.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityContactAdd.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityContactGet.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityContactRemove.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityEntityCountByCreated.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityEntityTypeAdd.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityEntityUpdate.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityGroupAdd.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityGroupCountByName.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityGroupGet.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityGroupMembershipAdd.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityGroupMembershipGet.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityGroupMembershipRemove.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityGroupRemove.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityGroupUpdate.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualGuestAdd.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualGuestGet.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualGuestRemove.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualGuestUpdate.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualMemberAdd.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualMemberGet.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualMemberRemove.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityMemberAdd.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityMemberGet.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityMemberGetByProviderUserKey.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityMemberRemove.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityReportAdd.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityReportGet.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityReportRemove.sql" />
-    <Build Include="dbo\Stored Procedures\uJetCommunityReportUpdate.sql" />
-    <Build Include="dbo\Tables\uJetCommunityComment.sql" />
-    <Build Include="dbo\Tables\uJetCommunityContact.sql" />
-    <Build Include="dbo\Tables\uJetCommunityEntity.sql" />
-    <Build Include="dbo\Tables\uJetCommunityEntityType.sql" />
-    <Build Include="dbo\Tables\uJetCommunityGroup.sql" />
-    <Build Include="dbo\Tables\uJetCommunityGroupMembership.sql" />
-    <Build Include="dbo\Tables\uJetCommunityIndividualGuest.sql" />
-    <Build Include="dbo\Tables\uJetCommunityIndividualMember.sql" />
-    <Build Include="dbo\Tables\uJetCommunityMember.sql" />
-    <Build Include="dbo\Tables\uJetCommunityReport.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialCommentAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialCommentGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialCommentRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialCommentUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialContactAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialContactGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialContactRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialEntityCountByCreated.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialEntityTypeAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialEntityUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialGroupAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialGroupCountByName.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialGroupGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialGroupMembershipAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialGroupMembershipGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialGroupMembershipRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialGroupRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialGroupUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialIndividualGuestAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialIndividualGuestGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialIndividualGuestRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialIndividualGuestUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialIndividualMemberAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialIndividualMemberGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialIndividualMemberRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialMemberAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialMemberGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialMemberGetByProviderUserKey.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialMemberRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialReportAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialReportGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialReportRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetSocialReportUpdate.sql" />
+    <Build Include="dbo\Tables\uJetSocialComment.sql" />
+    <Build Include="dbo\Tables\uJetSocialContact.sql" />
+    <Build Include="dbo\Tables\uJetSocialEntity.sql" />
+    <Build Include="dbo\Tables\uJetSocialEntityType.sql" />
+    <Build Include="dbo\Tables\uJetSocialGroup.sql" />
+    <Build Include="dbo\Tables\uJetSocialGroupMembership.sql" />
+    <Build Include="dbo\Tables\uJetSocialIndividualGuest.sql" />
+    <Build Include="dbo\Tables\uJetSocialIndividualMember.sql" />
+    <Build Include="dbo\Tables\uJetSocialMember.sql" />
+    <Build Include="dbo\Tables\uJetSocialReport.sql" />
   </ItemGroup>
 </Project>

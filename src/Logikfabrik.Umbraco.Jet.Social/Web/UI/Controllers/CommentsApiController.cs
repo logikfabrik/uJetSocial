@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.UI.Controllers
     /// <summary>
     /// The <see cref="CommentsApiController" /> class.
     /// </summary>
-    [PluginController("uJetCommunity")]
+    [PluginController("uJetSocial")]
     public class CommentsApiController : UmbracoAuthorizedJsonController
     {
         private readonly QueryableEntityProvider<Comment.Comment, ICommentCriteria, ICommentSortOrder> _commentProvider;

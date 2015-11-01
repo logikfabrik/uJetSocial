@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
         /// Initializes a new instance of the <see cref="MemberIndividualQueryBuilder" /> class.
         /// </summary>
         public MemberIndividualQueryBuilder()
-            : base(GetColumns(), "uJetCommunityIndividualMember")
+            : base(GetColumns(), "uJetSocialIndividualMember")
         {
         }
 
@@ -24,7 +24,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
         {
             return new[]
             {
-                "uJetCommunityIndividualMember.MemberId"
+                "uJetSocialIndividualMember.MemberId"
             };
         }
     }

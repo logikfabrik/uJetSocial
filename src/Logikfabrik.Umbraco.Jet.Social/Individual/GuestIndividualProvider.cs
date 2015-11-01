@@ -44,7 +44,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         protected override GuestIndividual GetEntityFromDatabase(int id)
         {
             using (var connection = DatabaseProvider.GetConnection())
-            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityIndividualGuestGet"))
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialIndividualGuestGet"))
             {
                 DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", id);
 
@@ -74,7 +74,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         protected override GuestIndividual AddEntityToDatabase(GuestIndividual entity)
         {
             using (var connection = DatabaseProvider.GetConnection())
-            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityIndividualGuestAdd"))
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialIndividualGuestAdd"))
             {
                 DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
                 DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
@@ -103,7 +103,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         protected override GuestIndividual UpdateEntityInDatabase(GuestIndividual entity)
         {
             using (var connection = DatabaseProvider.GetConnection())
-            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityIndividualGuestUpdate"))
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialIndividualGuestUpdate"))
             {
                 DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
                 DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
@@ -130,7 +130,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         protected override void RemoveEntityFromDatabase(GuestIndividual entity)
         {
             using (var connection = DatabaseProvider.GetConnection())
-            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityIndividualGuestRemove"))
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetSocialIndividualGuestRemove"))
             {
                 DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
 

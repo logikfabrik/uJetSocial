@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact.Querying
         /// </summary>
         /// <param name="order">The order.</param>
         public ContactToIdSortOrder(Order order)
-            : base("uJetCommunityContact.ToId", order)
+            : base("uJetSocialContact.ToId", order)
         {
         }
     }

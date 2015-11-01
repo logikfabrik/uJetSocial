@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
         /// Initializes a new instance of the <see cref="GuestIndividualEmailCriteria" /> class.
         /// </summary>
         public GuestIndividualEmailCriteria()
-            : base("uJetCommunityIndividualGuest.Email")
+            : base("uJetSocialIndividualGuest.Email")
         {
         }
     }
