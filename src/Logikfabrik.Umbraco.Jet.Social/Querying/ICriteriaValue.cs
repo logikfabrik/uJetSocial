@@ -8,13 +8,16 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
     using System.Data;
 
     /// <summary>
-    /// Represents the criteria value interface.
+    /// The <see cref="ICriteriaValue" /> interface.
     /// </summary>
     public interface ICriteriaValue
     {
         /// <summary>
-        /// Gets the DB type.
+        /// Gets the database type.
         /// </summary>
+        /// <value>
+        /// The database type.
+        /// </value>
         DbType DbType { get; }
 
         /// <summary>
@@ -26,7 +29,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// <summary>
         /// Gets the command parameters.
         /// </summary>
-        /// <param name="criteria">A criteria.</param>
+        /// <param name="criteria">The criteria.</param>
         /// <returns>The command parameters.</returns>
         IDictionary<string, object> GetCommandParameters(ICriteria criteria);
     }

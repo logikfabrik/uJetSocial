@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents the comment sort order interface.
+    /// The <see cref="ICommentSortOrder" /> interface.
     /// </summary>
     public interface ICommentSortOrder : ISortOrder
     {

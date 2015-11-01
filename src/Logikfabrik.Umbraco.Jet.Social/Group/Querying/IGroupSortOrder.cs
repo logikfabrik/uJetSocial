@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents the group sort order.
+    /// The <see cref="IGroupSortOrder" /> interface.
     /// </summary>
     public interface IGroupSortOrder : ISortOrder
     {

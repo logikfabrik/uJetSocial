@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a guest individual e-mail criteria.
+    /// The <see cref="GuestIndividualEmailCriteria" /> class.
     /// </summary>
     public class GuestIndividualEmailCriteria : Criteria, IGuestIndividualCriteria
     {

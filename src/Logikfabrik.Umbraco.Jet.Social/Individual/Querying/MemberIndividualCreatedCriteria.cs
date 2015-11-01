@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a member individual created criteria.
+    /// The <see cref="MemberIndividualCreatedCriteria" /> class.
     /// </summary>
     public class MemberIndividualCreatedCriteria : EntityCreatedCriteria, IMemberIndividualCriteria
     {

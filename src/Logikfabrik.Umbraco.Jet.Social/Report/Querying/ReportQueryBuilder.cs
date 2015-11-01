@@ -8,7 +8,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a report query builder.
+    /// The <see cref="ReportQueryBuilder" /> class.
     /// </summary>
     public class ReportQueryBuilder : EntityQueryBuilder<IReportCriteria, IReportSortOrder>
     {

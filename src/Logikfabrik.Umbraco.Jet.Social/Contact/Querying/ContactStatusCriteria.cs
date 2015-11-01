@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a contact status criteria.
+    /// The <see cref="ContactStatusCriteria" /> class.
     /// </summary>
     public class ContactStatusCriteria : EntityStatusCriteria, IContactCriteria
     {

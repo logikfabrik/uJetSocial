@@ -5,7 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Querying
 {
     /// <summary>
-    /// Represents the sort order interface.
+    /// The <see cref="ISortOrder" /> interface.
     /// </summary>
     public interface ISortOrder
     {

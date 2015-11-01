@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE uJetCommunityGroupCountByName
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT LOWER(SUBSTRING(Name, 1, 1)) as Name, Count(*)
+	FROM uJetCommunityGroup
+	GROUP BY LOWER(SUBSTRING(Name, 1, 1))
+	ORDER BY Name
+END

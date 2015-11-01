@@ -5,7 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Member
 {
     /// <summary>
-    /// Represents a membership provider.
+    /// The <see cref="MembershipProvider" /> class.
     /// </summary>
     public class MembershipProvider
     {

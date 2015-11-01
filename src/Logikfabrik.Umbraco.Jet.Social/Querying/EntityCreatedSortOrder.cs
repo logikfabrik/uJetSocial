@@ -5,14 +5,14 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Querying
 {
     /// <summary>
-    /// Represents a entity created sort order.
+    /// The <see cref="EntityCreatedSortOrder" /> class.
     /// </summary>
     public abstract class EntityCreatedSortOrder : SortOrder
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EntityCreatedSortOrder" /> class.
         /// </summary>
-        /// <param name="order">The sort order.</param>
+        /// <param name="order">The order.</param>
         protected EntityCreatedSortOrder(Order order)
             : base("uJetCommunityEntity.Created", order)
         {

@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a group owner ID criteria.
+    /// The <see cref="GroupOwnerIdCriteria" /> class.
     /// </summary>
     public class GroupOwnerIdCriteria : Criteria, IGroupCriteria
     {

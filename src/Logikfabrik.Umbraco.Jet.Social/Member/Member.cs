@@ -8,19 +8,20 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
     using Caching;
 
     /// <summary>
-    /// Represents a member.
+    /// The <see cref="Member" /> class.
     /// </summary>
     public class Member : Entity
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Member" /> class.
         /// </summary>
-        /// <param name="providerUserKey">A provider user key.</param>
+        /// <param name="providerUserKey">The provider user key.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="providerUserKey" /> is <c>null</c>.</exception>
         public Member(object providerUserKey)
         {
             if (providerUserKey == null)
             {
-                throw new ArgumentException("providerUserKey");
+                throw new ArgumentNullException(nameof(providerUserKey));
             }
 
             ProviderUserKey = providerUserKey;
@@ -29,14 +30,17 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         /// <summary>
         /// Gets the provider user key.
         /// </summary>
+        /// <value>
+        /// The provider user key.
+        /// </value>
         public object ProviderUserKey { get; }
 
         /// <summary>
-        /// Gets cache keys for a member.
+        /// Gets the cache keys.
         /// </summary>
-        /// <param name="id">The member ID.</param>
+        /// <param name="id">The identifier.</param>
         /// <param name="providerUserKey">The provider user key.</param>
-        /// <returns>The member cache keys.</returns>
+        /// <returns>The cache keys.</returns>
         public static string[] GetCacheKeys(int id, object providerUserKey)
         {
             return new[]
@@ -47,20 +51,21 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         }
 
         /// <summary>
-        /// Gets the default cache key for a member.
+        /// Gets the default cache key.
         /// </summary>
-        /// <param name="id">The member ID.</param>
-        /// <returns>The default member cache key.</returns>
+        /// <param name="id">The identifier.</param>
+        /// <returns>The default cache key.</returns>
         public static string GetDefaultCacheKey(int id)
         {
             return GetDefaultCacheKey(typeof(Member), id);
         }
 
         /// <summary>
-        /// Gets the default cache key for a member.
+        /// Gets the default cache key.
         /// </summary>
-        /// <param name="providerUserKey">The member provider user key.</param>
-        /// <returns>The default member cache key.</returns>
+        /// <param name="providerUserKey">The provider user key.</param>
+        /// <returns>The default cache key.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="providerUserKey" /> is <c>null</c>.</exception>
         public static string GetDefaultCacheKey(object providerUserKey)
         {
             if (providerUserKey == null)
@@ -72,18 +77,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         }
 
         /// <summary>
-        /// Gets cache keys for the current member.
+        /// Gets the cache keys.
         /// </summary>
-        /// <returns>Cache keys.</returns>
+        /// <returns>
+        /// The cache keys.
+        /// </returns>
         public override string[] GetCacheKeys()
         {
             return GetCacheKeys(Id, ProviderUserKey);
         }
 
         /// <summary>
-        /// Gets a clone of the current entity.
+        /// Clones this instance.
         /// </summary>
-        /// <returns>A clone of the current entity.</returns>
+        /// <returns>
+        /// A writable clone of this instance.
+        /// </returns>
         protected override Entity Clone()
         {
             var clone = new Member(ProviderUserKey);

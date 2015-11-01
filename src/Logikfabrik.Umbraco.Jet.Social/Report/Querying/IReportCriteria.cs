@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents the report criteria interface.
+    /// The <see cref="IReportCriteria" /> interface.
     /// </summary>
     public interface IReportCriteria : ICriteria
     {

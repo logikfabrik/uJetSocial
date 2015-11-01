@@ -7,19 +7,21 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
     using System;
 
     /// <summary>
-    /// Represents a member individual.
+    /// The <see cref="MemberIndividual" /> class.
     /// </summary>
     public class MemberIndividual : Individual
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MemberIndividual" /> class.
         /// </summary>
-        /// <param name="member">A member.</param>
+        /// <param name="member">The member.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="member" /> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="member" /> has an invalid identifier, or is writable.</exception>
         public MemberIndividual(Member.Member member)
         {
             if (member == null)
             {
-                throw new ArgumentException("member");
+                throw new ArgumentNullException(nameof(member));
             }
 
             if (!member.IsReadOnly)
@@ -33,12 +35,17 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         /// <summary>
         /// Gets the member.
         /// </summary>
+        /// <value>
+        /// The member.
+        /// </value>
         public Member.Member Member { get; }
 
         /// <summary>
-        /// Gets a clone of the current entity.
+        /// Clones this instance.
         /// </summary>
-        /// <returns>A clone of the current entity.</returns>
+        /// <returns>
+        /// A writable clone of this instance.
+        /// </returns>
         protected override Entity Clone()
         {
             var clone = new MemberIndividual(Member);

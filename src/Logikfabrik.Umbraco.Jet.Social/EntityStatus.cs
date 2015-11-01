@@ -5,7 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social
 {
     /// <summary>
-    /// The entity status enumeration.
+    /// The <see cref="EntityStatus" /> enumeration.
     /// </summary>
     public enum EntityStatus
     {

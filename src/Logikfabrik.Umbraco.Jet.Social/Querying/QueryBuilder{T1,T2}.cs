@@ -1,4 +1,4 @@
-﻿// <copyright file="QueryBuilder.cs" company="Logikfabrik">
+﻿// <copyright file="QueryBuilder{T1,T2}.cs" company="Logikfabrik">
 //   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
@@ -10,7 +10,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
     using System.Text;
 
     /// <summary>
-    /// Represents a query builder.
+    /// The <see cref="QueryBuilder{T1, T2}" /> class.
     /// </summary>
     /// <typeparam name="T1">The criteria type.</typeparam>
     /// <typeparam name="T2">The sort order type.</typeparam>
@@ -19,8 +19,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         where T2 : class, ISortOrder
     {
         private readonly IEnumerable<string> _columns;
-        private readonly string _table;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryBuilder{T1, T2}" /> class.
+        /// </summary>
+        /// <param name="columns">The columns.</param>
+        /// <param name="table">The table.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="columns" /> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="table" /> is <c>null</c> or white space.</exception>
         protected QueryBuilder(IEnumerable<string> columns, string table)
         {
             if (columns == null)
@@ -34,9 +40,25 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
             }
 
             _columns = columns;
-            _table = table;
+            Table = table;
         }
 
+        /// <summary>
+        /// Gets the table.
+        /// </summary>
+        /// <value>
+        /// The table.
+        /// </value>
+        protected string Table { get; }
+
+        /// <summary>
+        /// Gets the select command text.
+        /// </summary>
+        /// <param name="query">The query.</param>
+        /// <returns>
+        /// The select command text.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="query" /> is <c>null</c>.</exception>
         public string GetSelectCommandText(Query<T1, T2> query)
         {
             if (query == null)
@@ -56,6 +78,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
             return builder.ToString();
         }
 
+        /// <summary>
+        /// Gets the count command text.
+        /// </summary>
+        /// <param name="query">The query.</param>
+        /// <returns>
+        /// The count command text.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="query" /> is <c>null</c>.</exception>
         public string GetCountCommandText(Query<T1, T2> query)
         {
             if (query == null)
@@ -73,6 +103,10 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
             return builder.ToString();
         }
 
+        /// <summary>
+        /// Gets the joins.
+        /// </summary>
+        /// <returns>The joins.</returns>
         protected abstract IEnumerable<string> GetJoins();
 
         private static string GetCountClause()
@@ -116,7 +150,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
 
         private string GetFromClause()
         {
-            return $"FROM {_table} ";
+            return $"FROM {Table} ";
         }
 
         private string GetJoinClause()

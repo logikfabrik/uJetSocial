@@ -8,7 +8,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
     using Caching;
 
     /// <summary>
-    /// Represents an entity.
+    /// The <see cref="Entity" /> class.
     /// </summary>
     public abstract class Entity
     {
@@ -27,13 +27,19 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Gets the entity ID.
+        /// Gets the identifier.
         /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int Id { get; internal set; }
 
         /// <summary>
-        /// Gets or sets the date the entity was created.
+        /// Gets or sets the date the <see cref="Entity" /> was created.
         /// </summary>
+        /// <value>
+        /// The date the <see cref="Entity" /> was created.
+        /// </value>
         public DateTime Created
         {
             get
@@ -49,8 +55,11 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Gets or sets the date the entity was last updated.
+        /// Gets or sets the date the <see cref="Entity" /> was last updated.
         /// </summary>
+        /// <value>
+        /// The date the <see cref="Entity" /> was last updated.
+        /// </value>
         public DateTime Updated
         {
             get
@@ -66,8 +75,11 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Gets or sets the entity status.
+        /// Gets or sets the status.
         /// </summary>
+        /// <value>
+        /// The status.
+        /// </value>
         public EntityStatus Status
         {
             get
@@ -83,16 +95,20 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Gets a value indicating whether or not the entity is writable.
+        /// Gets a value indicating whether this instance is read-only.
         /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is read-only; otherwise, <c>false</c>.
+        /// </value>
         public bool IsReadOnly { get; internal set; }
 
         /// <summary>
-        /// Gets the default cache key for an entity.
+        /// Gets the default cache key.
         /// </summary>
-        /// <param name="type">The entity type.</param>
-        /// <param name="id">The entity ID.</param>
-        /// <returns>The default entity cache key.</returns>
+        /// <param name="type">The <see cref="Entity" /> type.</param>
+        /// <param name="id">The identifier.</param>
+        /// <returns>The default cache key.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="type" /> is <c>null</c>.</exception>
         public static string GetDefaultCacheKey(Type type, int id)
         {
             if (type == null)
@@ -104,10 +120,10 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Gets a writable clone of the current entity.
+        /// Gets a writable clone.
         /// </summary>
-        /// <typeparam name="T">The entity type.</typeparam>
-        /// <returns>A writable clone of the current entity.</returns>
+        /// <typeparam name="T">The <see cref="Entity" /> type.</typeparam>
+        /// <returns>A writable clone.</returns>
         public T CreateWritableClone<T>()
             where T : Entity
         {
@@ -115,14 +131,15 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Gets cache keys for the current entity.
+        /// Gets the cache keys.
         /// </summary>
-        /// <returns>Cache keys.</returns>
+        /// <returns>The cache keys.</returns>
         public abstract string[] GetCacheKeys();
 
         /// <summary>
         /// Asserts that the entity is a writable clone.
         /// </summary>
+        /// <exception cref="InvalidOperationException">Thrown if this instance is read-only.</exception>
         protected void AssertIsWritableClone()
         {
             if (!IsReadOnly)
@@ -130,27 +147,22 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 return;
             }
 
-            throw new Exception($"Entity of type {GetType()} is read-only. Create a writable clone to update the entity.");
+            throw new InvalidOperationException($"Entity of type {GetType()} is read-only. Create a writable clone to update the entity.");
         }
 
         /// <summary>
-        /// Gets a clone of the current entity.
+        /// Clones this instance.
         /// </summary>
-        /// <returns>A clone of the current entity.</returns>
+        /// <returns>A writable clone of this instance.</returns>
         protected abstract Entity Clone();
 
         /// <summary>
-        /// Gets a writable clone of the current entity.
+        /// Creates a writable clone of this instance.
         /// </summary>
-        /// <returns>A writable clone of the current entity.</returns>
+        /// <returns>A writable clone of this instance.</returns>
         private Entity CreateWritableClone()
         {
             var clone = Clone();
-
-            if (clone == this)
-            {
-                throw new Exception("The clone cannot be the current entity instance.");
-            }
 
             clone.Id = Id;
             clone.IsReadOnly = false;

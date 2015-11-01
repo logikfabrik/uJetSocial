@@ -10,7 +10,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
     using Caching;
 
     /// <summary>
-    /// Represents a entity provider.
+    /// The <see cref="EntityProvider{T}" /> class.
     /// </summary>
     /// <typeparam name="T">The entity type.</typeparam>
     public abstract class EntityProvider<T> : IEntityProvider<T>
@@ -19,10 +19,20 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <summary>
         /// Initializes a new instance of the <see cref="EntityProvider{T}" /> class.
         /// </summary>
-        /// <param name="cacheManager">The cache manager to use.</param>
-        /// <param name="databaseProvider">The database provider to use.</param>
-        protected EntityProvider(ICacheManager cacheManager, IDatabaseProvider databaseProvider)
+        /// <param name="entityProviderFactory">The entity provider factory.</param>
+        /// <param name="cacheManager">The cache manager.</param>
+        /// <param name="databaseProvider">The database provider.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="entityProviderFactory" />, <paramref name="cacheManager" />, or <paramref name="databaseProvider" /> are <c>null</c>.</exception>
+        protected EntityProvider(
+            IEntityProviderFactory entityProviderFactory,
+            ICacheManager cacheManager,
+            IDatabaseProvider databaseProvider)
         {
+            if (entityProviderFactory == null)
+            {
+                throw new ArgumentNullException(nameof(entityProviderFactory));
+            }
+
             if (cacheManager == null)
             {
                 throw new ArgumentNullException(nameof(cacheManager));
@@ -33,6 +43,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 throw new ArgumentNullException(nameof(databaseProvider));
             }
 
+            EntityProviderFactory = entityProviderFactory;
             CacheManager = cacheManager;
             DatabaseProvider = databaseProvider;
 
@@ -40,24 +51,38 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Gets the entity type for the provider.
+        /// Gets the entity type this instance supports.
         /// </summary>
         public Type EntityType => typeof(T);
 
         /// <summary>
+        /// Gets the entity provider factory.
+        /// </summary>
+        /// <value>
+        /// The entity provider factory.
+        /// </value>
+        protected IEntityProviderFactory EntityProviderFactory { get; }
+
+        /// <summary>
         /// Gets the cache manager.
         /// </summary>
+        /// <value>
+        /// The cache manager.
+        /// </value>
         protected ICacheManager CacheManager { get; }
 
         /// <summary>
         /// Gets the database provider.
         /// </summary>
+        /// <value>
+        /// The database provider.
+        /// </value>
         protected IDatabaseProvider DatabaseProvider { get; }
 
         /// <summary>
-        /// Gets the total entity count.
+        /// Gets the entity count by created.
         /// </summary>
-        /// <returns>The total entity count.</returns>
+        /// <returns>The entity count by created.</returns>
         public IDictionary<int, IDictionary<int, int>> GetEntityCountByCreated()
         {
             using (var connection = DatabaseProvider.GetConnection())
@@ -97,10 +122,10 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Gets an entity.
+        /// Gets the entity with the specified identifier.
         /// </summary>
-        /// <param name="id">The entity ID.</param>
-        /// <returns>An entity.</returns>
+        /// <param name="id">The identifier.</param>
+        /// <returns>The entity.</returns>
         public T GetEntity(int id)
         {
             if (!EntityValidator.CanGetEntity(id))
@@ -114,9 +139,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Adds an entity.
+        /// Adds the specified entity.
         /// </summary>
-        /// <param name="entity">The entity to add.</param>
+        /// <param name="entity">The entity.</param>
         /// <returns>The added entity.</returns>
         public T AddEntity(T entity)
         {
@@ -130,7 +155,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 throw new ArgumentException("The entity cannot be added.", nameof(entity));
             }
 
-            var e = AddEntityToDatabase(DatabaseProvider, entity);
+            var e = AddEntityToDatabase(entity);
 
             CacheManager.AddEntity(e);
 
@@ -138,9 +163,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Updates an entity.
+        /// Updates the specified entity.
         /// </summary>
-        /// <param name="entity">The entity to update.</param>
+        /// <param name="entity">The entity.</param>
         /// <returns>The updated entity.</returns>
         public T UpdateEntity(T entity)
         {
@@ -154,7 +179,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 throw new ArgumentException("The entity cannot be updated.", nameof(entity));
             }
 
-            var e = UpdateEntityInDatabase(DatabaseProvider, entity);
+            var e = UpdateEntityInDatabase(entity);
 
             CacheManager.UpdateEntity(e);
 
@@ -162,9 +187,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Removes an entity.
+        /// Removes the specified entity.
         /// </summary>
-        /// <param name="entity">The entity to remove.</param>
+        /// <param name="entity">The entity.</param>
         public void RemoveEntity(T entity)
         {
             if (entity == null)
@@ -177,25 +202,25 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 throw new ArgumentException("The entity cannot be removed.", nameof(entity));
             }
 
-            RemoveEntityFromDatabase(DatabaseProvider, entity);
+            RemoveEntityFromDatabase(entity);
 
             CacheManager.RemoveEntity(entity);
         }
 
         /// <summary>
-        /// Gets an entity.
+        /// Gets the entity with the specified identifier.
         /// </summary>
-        /// <param name="id">The entity ID.</param>
-        /// <returns>An entity.</returns>
+        /// <param name="id">The identifier.</param>
+        /// <returns>The entity.</returns>
         Entity IEntityProvider.GetEntity(int id)
         {
             return GetEntity(id);
         }
 
         /// <summary>
-        /// Adds an entity.
+        /// Adds the specified entity.
         /// </summary>
-        /// <param name="entity">The entity to add.</param>
+        /// <param name="entity">The entity.</param>
         /// <returns>The added entity.</returns>
         Entity IEntityProvider.AddEntity(Entity entity)
         {
@@ -203,9 +228,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Updates an entity.
+        /// Updates the specified entity.
         /// </summary>
-        /// <param name="entity">The entity to update.</param>
+        /// <param name="entity">The entity.</param>
         /// <returns>The updated entity.</returns>
         Entity IEntityProvider.UpdateEntity(Entity entity)
         {
@@ -213,58 +238,54 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Removes an entity.
+        /// Removes the specified entity.
         /// </summary>
-        /// <param name="entity">The entity to remove.</param>
+        /// <param name="entity">The entity.</param>
         void IEntityProvider.RemoveEntity(Entity entity)
         {
             RemoveEntity(entity as T);
         }
 
         /// <summary>
-        /// Gets an entity from the database.
+        /// Gets the entity with the specified identifier from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="id">The entity ID.</param>
-        /// <returns>An entity.</returns>
-        protected abstract T GetEntityFromDatabase(IDatabaseProvider provider, int id);
+        /// <param name="id">The identifier.</param>
+        /// <returns>The entity.</returns>
+        protected abstract T GetEntityFromDatabase(int id);
 
         /// <summary>
-        /// Adds an entity to the database.
+        /// Adds the specified entity to the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to add.</param>
+        /// <param name="entity">The entity.</param>
         /// <returns>The added entity.</returns>
-        protected abstract T AddEntityToDatabase(IDatabaseProvider provider, T entity);
+        protected abstract T AddEntityToDatabase(T entity);
 
         /// <summary>
-        /// Updates an entity in the database.
+        /// Updates the specified entity in the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to update.</param>
+        /// <param name="entity">The entity.</param>
         /// <returns>The updated entity.</returns>
-        protected abstract T UpdateEntityInDatabase(IDatabaseProvider provider, T entity);
+        protected abstract T UpdateEntityInDatabase(T entity);
 
         /// <summary>
-        /// Removes an entity from the database.
+        /// Removes the specified entity from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to remove.</param>
-        protected abstract void RemoveEntityFromDatabase(IDatabaseProvider provider, T entity);
+        /// <param name="entity">The entity.</param>
+        protected abstract void RemoveEntityFromDatabase(T entity);
 
         /// <summary>
-        /// Gets the default cache key.
+        /// Gets the default cache key using the specified identifier.
         /// </summary>
-        /// <param name="id">A entity ID.</param>
+        /// <param name="id">The identifier.</param>
         /// <returns>The default cache key.</returns>
         protected abstract string GetDefaultCacheKey(int id);
 
         /// <summary>
-        /// Gets an entity.
+        /// Gets the entity with the specified identifier.
         /// </summary>
-        /// <param name="id">The entity ID.</param>
-        /// <param name="cacheKey">The entity cache key.</param>
-        /// <returns>An entity.</returns>
+        /// <param name="id">The identifier.</param>
+        /// <param name="cacheKey">The cache key.</param>
+        /// <returns>The entity.</returns>
         private T GetEntity(int id, string cacheKey)
         {
             if (!EntityValidator.CanGetEntity(id))
@@ -284,7 +305,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 return e;
             }
 
-            e = GetEntityFromDatabase(DatabaseProvider, id);
+            e = GetEntityFromDatabase(id);
 
             if (e == null)
             {

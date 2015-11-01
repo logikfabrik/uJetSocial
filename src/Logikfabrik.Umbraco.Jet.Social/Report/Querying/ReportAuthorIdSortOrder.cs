@@ -7,14 +7,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a report author ID sort order.
+    /// The <see cref="ReportAuthorIdSortOrder" /> class.
     /// </summary>
     public class ReportAuthorIdSortOrder : SortOrder, IReportSortOrder
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportAuthorIdSortOrder" /> class.
         /// </summary>
-        /// <param name="order">The sort order.</param>
+        /// <param name="order">The order.</param>
         public ReportAuthorIdSortOrder(Order order)
             : base("uJetCommunityReport.AuthorId", order)
         {

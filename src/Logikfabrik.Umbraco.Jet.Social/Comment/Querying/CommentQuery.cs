@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a comment query.
+    /// The <see cref="CommentQuery" /> class.
     /// </summary>
     public class CommentQuery : Query<ICommentCriteria, ICommentSortOrder>
     {

@@ -15,9 +15,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
     /// </summary>
     public class CacheManager : ICacheManager
     {
-        /// <summary>
-        /// The runtime cache provider.
-        /// </summary>
         private readonly IRuntimeCacheProvider _runtimeCacheProvider;
 
         /// <summary>
@@ -31,7 +28,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
         /// <summary>
         /// Initializes a new instance of the <see cref="CacheManager" /> class.
         /// </summary>
-        /// <param name="runtimeCacheProvider">The runtime cache provider to use.</param>
+        /// <param name="runtimeCacheProvider">A runtime cache provider.</param>
         public CacheManager(IRuntimeCacheProvider runtimeCacheProvider)
         {
             if (runtimeCacheProvider == null)
@@ -84,7 +81,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
         /// </summary>
         /// <typeparam name="T">The entity type.</typeparam>
         /// <param name="entity">The entity to add.</param>
-        /// <param name="cacheKeys">The entity cache key.</param>
+        /// <param name="cacheKeys">The entity cache keys.</param>
         public void AddEntity<T>(T entity, string[] cacheKeys)
             where T : Entity
         {
@@ -101,7 +98,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
         }
 
         /// <summary>
-        /// Removes a cached entity.
+        /// Removes an entity from cache.
         /// </summary>
         /// <typeparam name="T">The entity type.</typeparam>
         /// <param name="entity">The entity to remove.</param>
@@ -120,7 +117,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
         }
 
         /// <summary>
-        /// Updates a cached entity.
+        /// Updates an entity in cache.
         /// </summary>
         /// <typeparam name="T">The entity type.</typeparam>
         /// <param name="entity">The entity to update.</param>
@@ -140,7 +137,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
         /// </summary>
         /// <typeparam name="T">The entity type.</typeparam>
         /// <param name="cacheKey">The entity query cache key.</param>
-        /// <param name="total">The total.</param>
+        /// <param name="total">The total number of entities.</param>
         /// <returns>The entities.</returns>
         public IEnumerable<T> GetEntityQuery<T>(string cacheKey, out int total)
             where T : Entity
@@ -169,11 +166,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
         }
 
         /// <summary>
-        /// Adds a entity query to cache.
+        /// Adds an entity query to cache.
         /// </summary>
         /// <typeparam name="T">The entity type.</typeparam>
         /// <param name="entities">The entity query to add.</param>
-        /// <param name="total">The total.</param>
+        /// <param name="total">The total number of entities.</param>
         /// <param name="cacheKey">The entity query cache key.</param>
         public void AddEntityQuery<T>(IEnumerable<T> entities, int total, string cacheKey)
             where T : Entity
@@ -201,7 +198,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
         }
 
         /// <summary>
-        /// Removes a cached entity query.
+        /// Removes an entity query from cache.
         /// </summary>
         /// <param name="cacheKey">The entity query cache key.</param>
         public void RemoveEntityQuery(string cacheKey)

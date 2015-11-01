@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents the contact criteria interface.
+    /// The <see cref="IContactCriteria" /> interface.
     /// </summary>
     public interface IContactCriteria : ICriteria
     {

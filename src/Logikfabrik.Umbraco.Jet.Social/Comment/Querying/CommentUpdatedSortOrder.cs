@@ -7,14 +7,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a comment updated sort order.
+    /// The <see cref="CommentUpdatedSortOrder" /> class.
     /// </summary>
     public class CommentUpdatedSortOrder : EntityUpdatedSortOrder, ICommentSortOrder
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CommentUpdatedSortOrder" /> class.
         /// </summary>
-        /// <param name="order">The sort order.</param>
+        /// <param name="order">The order.</param>
         public CommentUpdatedSortOrder(Order order)
             : base(order)
         {

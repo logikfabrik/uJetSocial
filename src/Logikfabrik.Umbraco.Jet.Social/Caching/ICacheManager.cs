@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
     using System.Collections.Generic;
 
     /// <summary>
-    /// The <see cref="ICacheManager" /> class.
+    /// The <see cref="ICacheManager" /> interface.
     /// </summary>
     public interface ICacheManager
     {
@@ -33,12 +33,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
         /// </summary>
         /// <typeparam name="T">The entity type.</typeparam>
         /// <param name="entity">The entity to add.</param>
-        /// <param name="cacheKeys">The entity cache key.</param>
+        /// <param name="cacheKeys">The entity cache keys.</param>
         void AddEntity<T>(T entity, string[] cacheKeys)
             where T : Entity;
 
         /// <summary>
-        /// Removes a cached entity.
+        /// Removes an entity from cache.
         /// </summary>
         /// <typeparam name="T">The entity type.</typeparam>
         /// <param name="entity">The entity to remove.</param>
@@ -46,7 +46,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
             where T : Entity;
 
         /// <summary>
-        /// Updates a cached entity.
+        /// Updates an entity in cache.
         /// </summary>
         /// <typeparam name="T">The entity type.</typeparam>
         /// <param name="entity">The entity to update.</param>
@@ -58,23 +58,23 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
         /// </summary>
         /// <typeparam name="T">The entity type.</typeparam>
         /// <param name="cacheKey">The entity query cache key.</param>
-        /// <param name="total">The total.</param>
+        /// <param name="total">The total number of entities.</param>
         /// <returns>The entities.</returns>
         IEnumerable<T> GetEntityQuery<T>(string cacheKey, out int total)
             where T : Entity;
 
         /// <summary>
-        /// Adds a entity query to cache.
+        /// Adds an entity query to cache.
         /// </summary>
         /// <typeparam name="T">The entity type.</typeparam>
         /// <param name="entities">The entity query to add.</param>
-        /// <param name="total">The total.</param>
+        /// <param name="total">The total number of entities.</param>
         /// <param name="cacheKey">The entity query cache key.</param>
         void AddEntityQuery<T>(IEnumerable<T> entities, int total, string cacheKey)
             where T : Entity;
 
         /// <summary>
-        /// Removes a cached entity query.
+        /// Removes an entity query from cache.
         /// </summary>
         /// <param name="cacheKey">The entity query cache key.</param>
         void RemoveEntityQuery(string cacheKey);

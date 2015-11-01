@@ -5,24 +5,26 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Individual
 {
     /// <summary>
-    /// Represents a individual.
+    /// The <see cref="Individual" /> class.
     /// </summary>
     public abstract class Individual : Entity
     {
         /// <summary>
-        /// Gets the default cache key for an individual.
+        /// Gets the default cache key.
         /// </summary>
-        /// <param name="id">The individual ID.</param>
-        /// <returns>The default individual cache key.</returns>
+        /// <param name="id">The identifier.</param>
+        /// <returns>The default cache key.</returns>
         public static string GetDefaultCacheKey(int id)
         {
             return GetDefaultCacheKey(typeof(Individual), id);
         }
 
         /// <summary>
-        /// Gets cache keys for the current individual.
+        /// Gets the cache keys.
         /// </summary>
-        /// <returns>Cache keys.</returns>
+        /// <returns>
+        /// The cache keys.
+        /// </returns>
         public override string[] GetCacheKeys()
         {
             return new[] { GetDefaultCacheKey(Id) };

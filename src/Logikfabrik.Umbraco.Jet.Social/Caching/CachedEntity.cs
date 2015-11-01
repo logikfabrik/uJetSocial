@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
     using System;
 
     /// <summary>
-    /// The <see cref="CachedEntity" /> class. Represents a cached entity.
+    /// The <see cref="CachedEntity" /> class.
     /// </summary>
     public class CachedEntity
     {

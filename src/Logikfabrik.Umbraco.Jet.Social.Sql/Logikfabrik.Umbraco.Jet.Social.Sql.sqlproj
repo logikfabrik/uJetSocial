@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Logikfabrik.Umbraco.Jet.Social.Sql</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{0efe85e0-6b6b-4fa9-a9bc-c188fac87f9d}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Logikfabrik.Umbraco.Jet.Social.Sql</RootNamespace>
+    <AssemblyName>Logikfabrik.Umbraco.Jet.Social.Sql</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="dbo\Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Stored Procedures\uJetCommunityCommentAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityCommentGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityCommentRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityCommentUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityContactAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityContactGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityContactRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityEntityCountByCreated.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityEntityTypeAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityEntityUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityGroupAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityGroupCountByName.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityGroupGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityGroupMembershipAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityGroupMembershipGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityGroupMembershipRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityGroupRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityGroupUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualGuestAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualGuestGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualGuestRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualGuestUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualMemberAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualMemberGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityIndividualMemberRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityMemberAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityMemberGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityMemberGetByProviderUserKey.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityMemberRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityReportAdd.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityReportGet.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityReportRemove.sql" />
+    <Build Include="dbo\Stored Procedures\uJetCommunityReportUpdate.sql" />
+    <Build Include="dbo\Tables\uJetCommunityComment.sql" />
+    <Build Include="dbo\Tables\uJetCommunityContact.sql" />
+    <Build Include="dbo\Tables\uJetCommunityEntity.sql" />
+    <Build Include="dbo\Tables\uJetCommunityEntityType.sql" />
+    <Build Include="dbo\Tables\uJetCommunityGroup.sql" />
+    <Build Include="dbo\Tables\uJetCommunityGroupMembership.sql" />
+    <Build Include="dbo\Tables\uJetCommunityIndividualGuest.sql" />
+    <Build Include="dbo\Tables\uJetCommunityIndividualMember.sql" />
+    <Build Include="dbo\Tables\uJetCommunityMember.sql" />
+    <Build Include="dbo\Tables\uJetCommunityReport.sql" />
+  </ItemGroup>
+</Project>

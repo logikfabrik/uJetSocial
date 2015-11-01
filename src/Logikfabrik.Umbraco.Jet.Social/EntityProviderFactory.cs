@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
     using Report;
 
     /// <summary>
-    /// Represents a entity provider factory.
+    /// The <see cref="EntityProviderFactory" /> class.
     /// </summary>
     public sealed class EntityProviderFactory : IEntityProviderFactory
     {
@@ -39,10 +39,10 @@ namespace Logikfabrik.Umbraco.Jet.Social
         public static IEntityProviderFactory Instance { get; } = new EntityProviderFactory();
 
         /// <summary>
-        /// Gets an entity provider for the given entity type.
+        /// Gets the entity provider for the specified entity type.
         /// </summary>
-        /// <param name="entityType">An entity type.</param>
-        /// <returns>An entity provider.</returns>
+        /// <param name="entityType">The entity type.</param>
+        /// <returns>The entity provider.</returns>
         public IEntityProvider GetEntityProvider(Type entityType)
         {
             if (entityType == null)
@@ -66,9 +66,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Adds an entity provider.
+        /// Adds the specified entity provider.
         /// </summary>
-        /// <param name="entityProvider">The entity provider to add.</param>
+        /// <param name="entityProvider">The entity provider.</param>
         public void AddEntityProvider(IEntityProvider entityProvider)
         {
             if (entityProvider == null)
@@ -80,9 +80,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Removes an entity provider.
+        /// Removes the entity provider for the specified entity type.
         /// </summary>
-        /// <param name="entityType">The entity type for which the entity provider is to be removed.</param>
+        /// <param name="entityType">The entity type.</param>
         public void RemoveEntityProvider(Type entityType)
         {
             if (entityType == null)
@@ -110,9 +110,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 { typeof(Comment.Comment), new CommentProvider(this, cacheManager, databaseProvider) },
                 { typeof(Group.Group), new GroupProvider(this, cacheManager, databaseProvider) },
                 { typeof(GroupMembership), new GroupMembershipProvider(this, cacheManager, databaseProvider) },
-                { typeof(GuestIndividual), new GuestIndividualProvider(cacheManager, databaseProvider) },
+                { typeof(GuestIndividual), new GuestIndividualProvider(this, cacheManager, databaseProvider) },
                 { typeof(MemberIndividual), new MemberIndividualProvider(this, cacheManager, databaseProvider) },
-                { typeof(Member.Member), new MemberProvider(cacheManager, databaseProvider) },
+                { typeof(Member.Member), new MemberProvider(this, cacheManager, databaseProvider) },
                 { typeof(Report.Report), new ReportProvider(this, cacheManager, databaseProvider) },
                 { typeof(Contact.Contact), new ContactProvider(this, cacheManager, databaseProvider) }
             };

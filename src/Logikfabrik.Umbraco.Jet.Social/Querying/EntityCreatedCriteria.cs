@@ -5,7 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Querying
 {
     /// <summary>
-    /// Represents a entity created criteria.
+    /// The <see cref="EntityCreatedCriteria" /> class.
     /// </summary>
     public abstract class EntityCreatedCriteria : Criteria
     {

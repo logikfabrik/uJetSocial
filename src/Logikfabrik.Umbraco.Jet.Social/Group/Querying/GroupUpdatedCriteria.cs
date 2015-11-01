@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a group updated criteria.
+    /// The <see cref="GroupUpdatedCriteria" /> class.
     /// </summary>
     public class GroupUpdatedCriteria : EntityUpdatedCriteria, IGroupCriteria
     {

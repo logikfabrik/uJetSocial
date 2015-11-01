@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
     using System;
 
     /// <summary>
-    /// The <see cref="Comment" /> class. Represents a comment.
+    /// The <see cref="Comment" /> class.
     /// </summary>
     public class Comment : Entity
     {
@@ -16,18 +16,20 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <summary>
         /// Initializes a new instance of the <see cref="Comment" /> class.
         /// </summary>
-        /// <param name="entity">An entity.</param>
-        /// <param name="author">An author.</param>
+        /// <param name="entity">The entity.</param>
+        /// <param name="author">The author.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="entity" /> or <paramref name="author" /> are <c>null</c>.</exception>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="entity" /> or <paramref name="author" /> have invalid identifiers, or are writable.</exception>
         public Comment(Entity entity, Individual.Individual author)
         {
             if (entity == null)
             {
-                throw new ArgumentException("entity");
+                throw new ArgumentNullException(nameof(entity));
             }
 
             if (!EntityValidator.EntityHasId(entity))
             {
-                throw new ArgumentException("Entity must have a valid ID.", nameof(entity));
+                throw new ArgumentException("Entity must have a valid identifier.", nameof(entity));
             }
 
             if (!entity.IsReadOnly)
@@ -37,12 +39,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
 
             if (author == null)
             {
-                throw new ArgumentException("author");
+                throw new ArgumentNullException(nameof(author));
             }
 
             if (!EntityValidator.EntityHasId(author))
             {
-                throw new ArgumentException("Author must have a valid ID.", nameof(author));
+                throw new ArgumentException("Author must have a valid identifier.", nameof(author));
             }
 
             if (!author.IsReadOnly)
@@ -57,16 +59,25 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <summary>
         /// Gets the entity.
         /// </summary>
+        /// <value>
+        /// The entity.
+        /// </value>
         public Entity Entity { get; }
 
         /// <summary>
         /// Gets the author.
         /// </summary>
+        /// <value>
+        /// The author.
+        /// </value>
         public Individual.Individual Author { get; }
 
         /// <summary>
         /// Gets or sets the text.
         /// </summary>
+        /// <value>
+        /// The text.
+        /// </value>
         public string Text
         {
             get
@@ -82,28 +93,32 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         }
 
         /// <summary>
-        /// Gets the default cache key for a comment.
+        /// Gets the default cache key.
         /// </summary>
-        /// <param name="id">The comment ID.</param>
-        /// <returns>The default comment cache key.</returns>
+        /// <param name="id">The identifier.</param>
+        /// <returns>The default cache key.</returns>
         public static string GetDefaultCacheKey(int id)
         {
             return GetDefaultCacheKey(typeof(Comment), id);
         }
 
         /// <summary>
-        /// Gets cache keys for the current comment.
+        /// Gets the cache keys.
         /// </summary>
-        /// <returns>Cache keys.</returns>
+        /// <returns>
+        /// The cache keys.
+        /// </returns>
         public override string[] GetCacheKeys()
         {
             return new[] { GetDefaultCacheKey(Id) };
         }
 
         /// <summary>
-        /// Gets a clone of the current comment.
+        /// Clones this instance.
         /// </summary>
-        /// <returns>A clone of the current comment.</returns>
+        /// <returns>
+        /// A writable clone of this instance.
+        /// </returns>
         protected override Entity Clone()
         {
             var clone = new Comment(Entity, Author)

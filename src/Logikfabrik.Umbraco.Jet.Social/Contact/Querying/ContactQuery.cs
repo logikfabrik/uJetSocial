@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a contact query.
+    /// The <see cref="ContactQuery" /> class.
     /// </summary>
     public class ContactQuery : Query<IContactCriteria, IContactSortOrder>
     {

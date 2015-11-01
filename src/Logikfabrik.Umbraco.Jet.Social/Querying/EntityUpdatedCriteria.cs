@@ -5,7 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Querying
 {
     /// <summary>
-    /// Represents a entity updated criteria.
+    /// The <see cref="EntityUpdatedCriteria" /> class.
     /// </summary>
     public abstract class EntityUpdatedCriteria : Criteria
     {

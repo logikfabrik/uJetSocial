@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a report status criteria.
+    /// The <see cref="ReportStatusCriteria" /> class.
     /// </summary>
     public class ReportStatusCriteria : EntityStatusCriteria, IReportCriteria
     {

@@ -8,7 +8,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a group query builder.
+    /// The <see cref="GroupQueryBuilder" /> class.
     /// </summary>
     public class GroupQueryBuilder : EntityQueryBuilder<IGroupCriteria, IGroupSortOrder>
     {

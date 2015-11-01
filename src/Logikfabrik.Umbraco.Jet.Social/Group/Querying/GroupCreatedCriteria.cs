@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a group created criteria.
+    /// The <see cref="GroupCreatedCriteria" /> class.
     /// </summary>
     public class GroupCreatedCriteria : EntityCreatedCriteria, IGroupCriteria
     {

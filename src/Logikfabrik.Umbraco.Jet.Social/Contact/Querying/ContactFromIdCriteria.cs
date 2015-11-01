@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a contact from ID criteria.
+    /// The <see cref="ContactFromIdCriteria" /> class.
     /// </summary>
     public class ContactFromIdCriteria : Criteria, IContactCriteria
     {

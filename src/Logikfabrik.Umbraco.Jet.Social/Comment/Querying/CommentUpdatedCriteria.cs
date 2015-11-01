@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a comment updated criteria.
+    /// The <see cref="CommentUpdatedCriteria" /> class.
     /// </summary>
     public class CommentUpdatedCriteria : EntityUpdatedCriteria, ICommentCriteria
     {

@@ -8,7 +8,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a guest individual query builder.
+    /// The <see cref="GuestIndividualQueryBuilder" /> class.
     /// </summary>
     public class GuestIndividualQueryBuilder : EntityQueryBuilder<IGuestIndividualCriteria, IGuestIndividualSortOrder>
     {

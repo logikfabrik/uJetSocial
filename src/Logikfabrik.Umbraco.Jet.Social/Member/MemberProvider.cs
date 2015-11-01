@@ -9,20 +9,29 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
     using Caching;
 
     /// <summary>
-    /// Represents a member provider.
+    /// The <see cref="MemberProvider" /> class. Provider for <see cref="Member" /> entities.
     /// </summary>
     public class MemberProvider : EntityProvider<Member>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MemberProvider" /> class.
         /// </summary>
-        /// <param name="cacheManager">The cache manager to use.</param>
-        /// <param name="databaseProvider">The database provider to use.</param>
-        public MemberProvider(ICacheManager cacheManager, IDatabaseProvider databaseProvider)
-            : base(cacheManager, databaseProvider)
+        /// <param name="entityProviderFactory">The entity provider factory.</param>
+        /// <param name="cacheManager">The cache manager.</param>
+        /// <param name="databaseProvider">The database provider.</param>
+        public MemberProvider(
+            IEntityProviderFactory entityProviderFactory,
+            ICacheManager cacheManager,
+            IDatabaseProvider databaseProvider)
+            : base(entityProviderFactory, cacheManager, databaseProvider)
         {
         }
 
+        /// <summary>
+        /// Gets the member with the specified provider user key.
+        /// </summary>
+        /// <param name="providerUserKey">The provider user key.</param>
+        /// <returns>The member.</returns>
         public Member GetEntity(object providerUserKey)
         {
             if (providerUserKey == null)
@@ -37,7 +46,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
                 return e;
             }
 
-            e = GetEntityFromDatabase(DatabaseProvider, providerUserKey);
+            e = GetEntityFromDatabase(providerUserKey);
 
             if (e == null)
             {
@@ -50,18 +59,19 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         }
 
         /// <summary>
-        /// Gets an entity from the database.
+        /// Gets the entity with the specified identifier from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="id">The entity ID.</param>
-        /// <returns>An entity.</returns>
-        protected override Member GetEntityFromDatabase(IDatabaseProvider provider, int id)
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// The entity.
+        /// </returns>
+        protected override Member GetEntityFromDatabase(int id)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityMemberGet"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityMemberGet"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", id);
 
                     connection.Open();
 
@@ -97,22 +107,23 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         }
 
         /// <summary>
-        /// Adds an entity to the database.
+        /// Adds the specified entity to the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to add.</param>
-        /// <returns>The added entity.</returns>
-        protected override Member AddEntityToDatabase(IDatabaseProvider provider, Member entity)
+        /// <param name="entity">The entity.</param>
+        /// <returns>
+        /// The added entity.
+        /// </returns>
+        protected override Member AddEntityToDatabase(Member entity)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityMemberAdd"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityMemberAdd"))
                 {
-                    provider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
-                    provider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
-                    provider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
-                    provider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
-                    provider.AddCommandParameter(command, DbType.Int32, "providerUserKey", (int)entity.ProviderUserKey);
+                    DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "providerUserKey", (int)entity.ProviderUserKey);
 
                     connection.Open();
 
@@ -125,21 +136,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         }
 
         /// <summary>
-        /// Updates an entity in the database.
+        /// Updates the specified entity in the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to update.</param>
-        /// <returns>The updated entity.</returns>
-        protected override Member UpdateEntityInDatabase(IDatabaseProvider provider, Member entity)
+        /// <param name="entity">The entity.</param>
+        /// <returns>
+        /// The updated entity.
+        /// </returns>
+        protected override Member UpdateEntityInDatabase(Member entity)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityEntityUpdate"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityEntityUpdate"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
-                    provider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
-                    provider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
-                    provider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
 
                     connection.Open();
 
@@ -153,17 +165,16 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         }
 
         /// <summary>
-        /// Removes an entity from the database.
+        /// Removes the specified entity from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to remove.</param>
-        protected override void RemoveEntityFromDatabase(IDatabaseProvider provider, Member entity)
+        /// <param name="entity">The entity.</param>
+        protected override void RemoveEntityFromDatabase(Member entity)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityMemberRemove"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityMemberRemove"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
 
                     connection.Open();
 
@@ -172,24 +183,30 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
             }
         }
 
+        /// <summary>
+        /// Gets the default cache key using the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// The default cache key.
+        /// </returns>
         protected override string GetDefaultCacheKey(int id)
         {
             return Member.GetDefaultCacheKey(id);
         }
 
         /// <summary>
-        /// Gets a member from the database.
+        /// Gets the member with the specified provider user key from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
         /// <param name="providerUserKey">The provider user key.</param>
-        /// <returns>A member.</returns>
-        private static Member GetEntityFromDatabase(IDatabaseProvider provider, object providerUserKey)
+        /// <returns>The member.</returns>
+        private Member GetEntityFromDatabase(object providerUserKey)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityMemberGetByProviderUserKey"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityMemberGetByProviderUserKey"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "providerUserKey", providerUserKey);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "providerUserKey", providerUserKey);
 
                     connection.Open();
 

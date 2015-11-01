@@ -9,7 +9,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
     using Caching;
 
     /// <summary>
-    /// Represents a criteria.
+    /// The <see cref="Criteria" /> class.
     /// </summary>
     public abstract class Criteria : ICriteria
     {
@@ -17,6 +17,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// Initializes a new instance of the <see cref="Criteria" /> class.
         /// </summary>
         /// <param name="columnName">The column name.</param>
+        /// <exception cref="System.ArgumentException">Thrown if <paramref name="columnName" /> is <c>null</c> or white space.</exception>
         protected Criteria(string columnName)
         {
             if (string.IsNullOrWhiteSpace(columnName))
@@ -28,13 +29,19 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         }
 
         /// <summary>
-        /// Gets the column name.
+        /// Gets the name of the column.
         /// </summary>
+        /// <value>
+        /// The name of the column.
+        /// </value>
         public string ColumnName { get; }
 
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
+        /// <value>
+        /// The value.
+        /// </value>
         public ICriteriaValue Value
         {
             get;
@@ -44,7 +51,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// <summary>
         /// Gets the command text.
         /// </summary>
-        /// <returns>The command text.</returns>
+        /// <returns>
+        /// The command text.
+        /// </returns>
         public string GetCommandText()
         {
             if (Value == null)
@@ -60,7 +69,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// <summary>
         /// Gets the cache key.
         /// </summary>
-        /// <returns>The cache key.</returns>
+        /// <returns>
+        /// The cache key.
+        /// </returns>
         public string GetCacheKey()
         {
             object obj;

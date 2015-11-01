@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a group name criteria.
+    /// The <see cref="GroupNameCriteria" /> class.
     /// </summary>
     public class GroupNameCriteria : Criteria, IGroupCriteria
     {

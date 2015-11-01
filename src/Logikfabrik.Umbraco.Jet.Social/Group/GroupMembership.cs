@@ -7,20 +7,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
     using System;
 
     /// <summary>
-    /// Represents a group membership.
+    /// The <see cref="GroupMembership" /> class.
     /// </summary>
     public class GroupMembership : Entity
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GroupMembership" /> class.
+        /// Initializes a new instance of the <see cref="GroupMembership"/> class.
         /// </summary>
-        /// <param name="group">A group.</param>
-        /// <param name="member">A member.</param>
+        /// <param name="group">The group.</param>
+        /// <param name="member">The member.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="group" /> or <paramref name="member" /> are <c>null</c>.</exception>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="group" /> or <paramref name="member" /> have invalid identifiers, or are writable.</exception>
         public GroupMembership(Group group, Member.Member member)
         {
             if (group == null)
             {
-                throw new ArgumentException("group");
+                throw new ArgumentNullException(nameof(@group));
             }
 
             if (!EntityValidator.EntityHasId(group))
@@ -35,7 +37,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
 
             if (member == null)
             {
-                throw new ArgumentException("member");
+                throw new ArgumentNullException(nameof(member));
             }
 
             if (!EntityValidator.EntityHasId(member))
@@ -55,36 +57,46 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         /// <summary>
         /// Gets the group.
         /// </summary>
+        /// <value>
+        /// The group.
+        /// </value>
         public Group Group { get; }
 
         /// <summary>
         /// Gets the member.
         /// </summary>
+        /// <value>
+        /// The member.
+        /// </value>
         public Member.Member Member { get; }
 
         /// <summary>
-        /// Gets the default cache key for a group membership.
+        /// Gets the default cache key.
         /// </summary>
-        /// <param name="id">The group membership ID.</param>
-        /// <returns>The default group membership cache key.</returns>
+        /// <param name="id">The identifier.</param>
+        /// <returns>The default cache key.</returns>
         public static string GetDefaultCacheKey(int id)
         {
             return GetDefaultCacheKey(typeof(GroupMembership), id);
         }
 
         /// <summary>
-        /// Gets cache keys for the current group membership.
+        /// Gets the cache keys.
         /// </summary>
-        /// <returns>Cache keys.</returns>
+        /// <returns>
+        /// The cache keys.
+        /// </returns>
         public override string[] GetCacheKeys()
         {
             return new[] { GetDefaultCacheKey(Id) };
         }
 
         /// <summary>
-        /// Gets a clone of the current entity.
+        /// Clones this instance.
         /// </summary>
-        /// <returns>A clone of the current entity.</returns>
+        /// <returns>
+        /// A writable clone of this instance.
+        /// </returns>
         protected override Entity Clone()
         {
             var clone = new GroupMembership(Group, Member);

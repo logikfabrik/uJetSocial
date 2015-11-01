@@ -7,20 +7,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
     using System;
 
     /// <summary>
-    /// Represents a contact.
+    /// The <see cref="Contact" /> class.
     /// </summary>
     public class Contact : Entity
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Contact" /> class.
         /// </summary>
-        /// <param name="from">Member from.</param>
-        /// <param name="to">Member to.</param>
+        /// <param name="from">The member this instance is from.</param>
+        /// <param name="to">The member this instance is to.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="from" /> or <paramref name="to" /> are <c>null</c>.</exception>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="from" /> or <paramref name="to" /> have invalid identifiers, or are writable.</exception>
         public Contact(Member.Member from, Member.Member to)
         {
             if (from == null)
             {
-                throw new ArgumentException("from");
+                throw new ArgumentNullException(nameof(from));
             }
 
             if (!EntityValidator.EntityHasId(from))
@@ -35,7 +37,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
 
             if (to == null)
             {
-                throw new ArgumentException("to");
+                throw new ArgumentNullException(nameof(to));
             }
 
             if (!EntityValidator.EntityHasId(to))
@@ -53,38 +55,48 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
         }
 
         /// <summary>
-        /// Gets contact from member.
+        /// Gets the member this instance is from.
         /// </summary>
+        /// <value>
+        /// The member this instance is from.
+        /// </value>
         public Member.Member From { get; }
 
         /// <summary>
-        /// Gets contact to member.
+        /// Gets the member this instance is to.
         /// </summary>
+        /// <value>
+        /// The member this instance is to.
+        /// </value>
         public Member.Member To { get; }
 
         /// <summary>
-        /// Gets the default cache key for a contact.
+        /// Gets the default cache key.
         /// </summary>
-        /// <param name="id">The contact ID.</param>
-        /// <returns>The default contact cache key.</returns>
+        /// <param name="id">The identifier.</param>
+        /// <returns>The default cache key.</returns>
         public static string GetDefaultCacheKey(int id)
         {
             return GetDefaultCacheKey(typeof(Contact), id);
         }
 
         /// <summary>
-        /// Gets cache keys for the current contact.
+        /// Gets the cache keys.
         /// </summary>
-        /// <returns>Cache keys.</returns>
+        /// <returns>
+        /// The cache keys.
+        /// </returns>
         public override string[] GetCacheKeys()
         {
             return new[] { GetDefaultCacheKey(Id) };
         }
 
         /// <summary>
-        /// Gets a clone of the current contact.
+        /// Clones this instance.
         /// </summary>
-        /// <returns>A clone of the current contact.</returns>
+        /// <returns>
+        /// A writable clone of this instance.
+        /// </returns>
         protected override Entity Clone()
         {
             var clone = new Contact(From, To);

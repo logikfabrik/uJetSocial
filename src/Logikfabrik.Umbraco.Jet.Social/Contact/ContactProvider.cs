@@ -11,27 +11,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
     using Social.Querying;
 
     /// <summary>
-    /// Represents a contact provider.
+    /// The <see cref="ContactProvider" /> class. Provider for <see cref="Contact" /> entities.
     /// </summary>
     public class ContactProvider : QueryableEntityProvider<Contact, IContactCriteria, IContactSortOrder>
     {
-        private readonly IEntityProviderFactory _entityProviderFactory;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactProvider" /> class.
         /// </summary>
-        /// <param name="entityProviderFactory">The entity provider factory to use.</param>
-        /// <param name="cacheManager">The cache manager to use.</param>
-        /// <param name="databaseProvider">The database provider to use.</param>
-        public ContactProvider(IEntityProviderFactory entityProviderFactory, ICacheManager cacheManager, IDatabaseProvider databaseProvider)
-            : base(cacheManager, databaseProvider)
+        /// <param name="entityProviderFactory">The entity provider factory.</param>
+        /// <param name="cacheManager">The cache manager.</param>
+        /// <param name="databaseProvider">The database provider.</param>
+        public ContactProvider(
+            IEntityProviderFactory entityProviderFactory,
+            ICacheManager cacheManager,
+            IDatabaseProvider databaseProvider)
+            : base(entityProviderFactory, cacheManager, databaseProvider)
         {
-            if (entityProviderFactory == null)
-            {
-                throw new ArgumentNullException(nameof(entityProviderFactory));
-            }
-
-            _entityProviderFactory = entityProviderFactory;
         }
 
         /// <summary>
@@ -40,18 +35,19 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
         protected override IQueryBuilder<IContactCriteria, IContactSortOrder> QueryBuilder => new ContactQueryBuilder();
 
         /// <summary>
-        /// Gets a contact from the database.
+        /// Gets the entity with the specified identifier from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="id">The contact ID.</param>
-        /// <returns>A contact.</returns>
-        protected override Contact GetEntityFromDatabase(IDatabaseProvider provider, int id)
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// The entity.
+        /// </returns>
+        protected override Contact GetEntityFromDatabase(int id)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityContactGet"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityContactGet"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", id);
 
                     Contact entity = null;
 
@@ -71,23 +67,24 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
         }
 
         /// <summary>
-        /// Adds a contact to the database.
+        /// Adds the specified entity to the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The contact to add.</param>
-        /// <returns>The added contact.</returns>
-        protected override Contact AddEntityToDatabase(IDatabaseProvider provider, Contact entity)
+        /// <param name="entity">The entity.</param>
+        /// <returns>
+        /// The added entity.
+        /// </returns>
+        protected override Contact AddEntityToDatabase(Contact entity)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityContactAdd"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityContactAdd"))
                 {
-                    provider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
-                    provider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
-                    provider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
-                    provider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
-                    provider.AddCommandParameter(command, DbType.Int32, "fromId", entity.From.Id);
-                    provider.AddCommandParameter(command, DbType.Int32, "toId", entity.To.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "fromId", entity.From.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "toId", entity.To.Id);
 
                     connection.Open();
 
@@ -100,21 +97,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
         }
 
         /// <summary>
-        /// Updates a contact in the database.
+        /// Updates the specified entity in the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The contact to update.</param>
-        /// <returns>The updated contact.</returns>
-        protected override Contact UpdateEntityInDatabase(IDatabaseProvider provider, Contact entity)
+        /// <param name="entity">The entity.</param>
+        /// <returns>
+        /// The updated entity.
+        /// </returns>
+        protected override Contact UpdateEntityInDatabase(Contact entity)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityEntityUpdate"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityEntityUpdate"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
-                    provider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
-                    provider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
-                    provider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
 
                     connection.Open();
 
@@ -128,17 +126,16 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
         }
 
         /// <summary>
-        /// Removes a contact from the database.
+        /// Removes the specified entity from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The contact to remove.</param>
-        protected override void RemoveEntityFromDatabase(IDatabaseProvider provider, Contact entity)
+        /// <param name="entity">The entity.</param>
+        protected override void RemoveEntityFromDatabase(Contact entity)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityContactRemove"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityContactRemove"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
 
                     connection.Open();
 
@@ -148,20 +145,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
         }
 
         /// <summary>
-        /// Gets the default cache key for a contact.
+        /// Gets the default cache key using the specified identifier.
         /// </summary>
-        /// <param name="id">The contact ID.</param>
-        /// <returns>The default contact cache key.</returns>
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// The default cache key.
+        /// </returns>
         protected override string GetDefaultCacheKey(int id)
         {
             return Contact.GetDefaultCacheKey(id);
         }
 
         /// <summary>
-        /// Gets a contact.
+        /// Gets the entity.
         /// </summary>
-        /// <param name="reader">The data reader to read a contact from.</param>
-        /// <returns>A contact.</returns>
+        /// <param name="reader">The reader.</param>
+        /// <returns>The entity.</returns>
         protected override Contact GetEntity(IDataReader reader)
         {
             var entityId = reader.GetInt32(0);
@@ -174,10 +173,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
             var contactToId = reader.GetInt32(6);
             var contactToType = reader.GetString(7);
 
-            var contactFrom =
-                _entityProviderFactory.GetEntityProvider(Type.GetType(contactFromType)).GetEntity(contactFromId);
-            var contactTo =
-                _entityProviderFactory.GetEntityProvider(Type.GetType(contactToType)).GetEntity(contactToId);
+            var contactFrom = EntityProviderFactory.GetEntityProvider(Type.GetType(contactFromType)).GetEntity(contactFromId);
+            var contactTo = EntityProviderFactory.GetEntityProvider(Type.GetType(contactToType)).GetEntity(contactToId);
 
             var entity = new Contact((Member.Member)contactFrom, (Member.Member)contactTo)
             {

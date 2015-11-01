@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a comment created criteria.
+    /// The <see cref="CommentCreatedCriteria" /> class.
     /// </summary>
     public class CommentCreatedCriteria : EntityCreatedCriteria, ICommentCriteria
     {

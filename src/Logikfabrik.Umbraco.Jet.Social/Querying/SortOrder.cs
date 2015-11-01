@@ -7,10 +7,16 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
     using System;
 
     /// <summary>
-    /// Represents a sort order.
+    /// The <see cref="SortOrder" /> class.
     /// </summary>
     public abstract class SortOrder : ISortOrder
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SortOrder" /> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="order">The order.</param>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="name" /> is <c>null</c> or white space.</exception>
         protected SortOrder(string name, Order order)
         {
             if (string.IsNullOrWhiteSpace(name))
@@ -25,17 +31,25 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// <summary>
         /// Gets the name.
         /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name { get; }
 
         /// <summary>
         /// Gets the order.
         /// </summary>
+        /// <value>
+        /// The order.
+        /// </value>
         public Order Order { get; }
 
         /// <summary>
         /// Builds the sort order.
         /// </summary>
-        /// <returns>The sort order.</returns>
+        /// <returns>
+        /// The sort order.
+        /// </returns>
         public string Build()
         {
             return $"{Name} {GetOrder()}";
@@ -45,6 +59,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// Gets the order.
         /// </summary>
         /// <returns>The order.</returns>
+        /// <exception cref="NotSupportedException">Thrown if the order is not supported.</exception>
         private string GetOrder()
         {
             switch (Order)

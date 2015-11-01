@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a comment entity ID criteria.
+    /// The <see cref="CommentEntityIdCriteria" /> class.
     /// </summary>
     public class CommentEntityIdCriteria : Criteria, ICommentCriteria
     {

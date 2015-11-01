@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a member individual member ID criteria.
+    /// The <see cref="MemberIndividualMemberIdCriteria" /> class.
     /// </summary>
     public class MemberIndividualMemberIdCriteria : Criteria, IMemberIndividualCriteria
     {

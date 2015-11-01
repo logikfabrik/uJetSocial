@@ -7,14 +7,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a member individual updated sort order.
+    /// The <see cref="MemberIndividualUpdatedSortOrder" /> class.
     /// </summary>
     public class MemberIndividualUpdatedSortOrder : EntityUpdatedSortOrder, IMemberIndividualSortOrder
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MemberIndividualUpdatedSortOrder" /> class.
         /// </summary>
-        /// <param name="order">The sort order.</param>
+        /// <param name="order">The order.</param>
         public MemberIndividualUpdatedSortOrder(Order order)
             : base(order)
         {

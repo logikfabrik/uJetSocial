@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents the member individual criteria interface.
+    /// The <see cref="IMemberIndividualCriteria" /> interface.
     /// </summary>
     public interface IMemberIndividualCriteria : ICriteria
     {

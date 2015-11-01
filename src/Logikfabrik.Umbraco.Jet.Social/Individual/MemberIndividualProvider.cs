@@ -11,27 +11,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
     using Social.Querying;
 
     /// <summary>
-    /// Represents a member individual provider.
+    /// The <see cref="MemberIndividualProvider" /> class. Provider for <see cref="MemberIndividual" /> entities.
     /// </summary>
     public class MemberIndividualProvider : QueryableEntityProvider<MemberIndividual, IMemberIndividualCriteria, IMemberIndividualSortOrder>
     {
-        private readonly IEntityProviderFactory _entityProviderFactory;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="MemberIndividualProvider" /> class.
         /// </summary>
-        /// <param name="entityProviderFactory">The entity provider factory to use.</param>
-        /// <param name="cacheManager">The cache manager to use.</param>
-        /// <param name="databaseProvider">The database provider to use.</param>
-        public MemberIndividualProvider(IEntityProviderFactory entityProviderFactory, ICacheManager cacheManager, IDatabaseProvider databaseProvider)
-            : base(cacheManager, databaseProvider)
+        /// <param name="entityProviderFactory">The entity provider factory.</param>
+        /// <param name="cacheManager">The cache manager.</param>
+        /// <param name="databaseProvider">The database provider.</param>
+        public MemberIndividualProvider(
+            IEntityProviderFactory entityProviderFactory,
+            ICacheManager cacheManager,
+            IDatabaseProvider databaseProvider)
+            : base(entityProviderFactory, cacheManager, databaseProvider)
         {
-            if (entityProviderFactory == null)
-            {
-                throw new ArgumentNullException(nameof(entityProviderFactory));
-            }
-
-            _entityProviderFactory = entityProviderFactory;
         }
 
         /// <summary>
@@ -40,18 +35,19 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         protected override IQueryBuilder<IMemberIndividualCriteria, IMemberIndividualSortOrder> QueryBuilder => new MemberIndividualQueryBuilder();
 
         /// <summary>
-        /// Gets an entity from the database.
+        /// Gets the entity with the specified identifier from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="id">The entity ID.</param>
-        /// <returns>An entity.</returns>
-        protected override MemberIndividual GetEntityFromDatabase(IDatabaseProvider provider, int id)
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// The entity.
+        /// </returns>
+        protected override MemberIndividual GetEntityFromDatabase(int id)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityIndividualMemberGet"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityIndividualMemberGet"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", id);
 
                     MemberIndividual entity = null;
 
@@ -71,22 +67,23 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         }
 
         /// <summary>
-        /// Adds an entity to the database.
+        /// Adds the specified entity to the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to add.</param>
-        /// <returns>The added entity.</returns>
-        protected override MemberIndividual AddEntityToDatabase(IDatabaseProvider provider, MemberIndividual entity)
+        /// <param name="entity">The entity.</param>
+        /// <returns>
+        /// The added entity.
+        /// </returns>
+        protected override MemberIndividual AddEntityToDatabase(MemberIndividual entity)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityIndividualMemberAdd"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityIndividualMemberAdd"))
                 {
-                    provider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
-                    provider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
-                    provider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
-                    provider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
-                    provider.AddCommandParameter(command, DbType.Int32, "memberId", entity.Member.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "memberId", entity.Member.Id);
 
                     connection.Open();
 
@@ -99,21 +96,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         }
 
         /// <summary>
-        /// Updates an entity in the database.
+        /// Updates the specified entity in the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to update.</param>
-        /// <returns>The updated entity.</returns>
-        protected override MemberIndividual UpdateEntityInDatabase(IDatabaseProvider provider, MemberIndividual entity)
+        /// <param name="entity">The entity.</param>
+        /// <returns>
+        /// The updated entity.
+        /// </returns>
+        protected override MemberIndividual UpdateEntityInDatabase(MemberIndividual entity)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityEntityUpdate"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityEntityUpdate"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
-                    provider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
-                    provider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
-                    provider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
 
                     connection.Open();
 
@@ -127,17 +125,16 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         }
 
         /// <summary>
-        /// Removes an entity from the database.
+        /// Removes the specified entity from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to remove.</param>
-        protected override void RemoveEntityFromDatabase(IDatabaseProvider provider, MemberIndividual entity)
+        /// <param name="entity">The entity.</param>
+        protected override void RemoveEntityFromDatabase(MemberIndividual entity)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityIndividualMemberRemove"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityIndividualMemberRemove"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
 
                     connection.Open();
 
@@ -146,11 +143,23 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
             }
         }
 
+        /// <summary>
+        /// Gets the default cache key using the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// The default cache key.
+        /// </returns>
         protected override string GetDefaultCacheKey(int id)
         {
             return Individual.GetDefaultCacheKey(id);
         }
 
+        /// <summary>
+        /// Gets the entity.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
+        /// <returns>The entity.</returns>
         protected override MemberIndividual GetEntity(IDataReader reader)
         {
             var entityId = reader.GetInt32(0);
@@ -160,8 +169,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
 
             var individualMemberMemberId = reader.GetInt32(4);
 
-            var individualMemberMember =
-                _entityProviderFactory.GetEntityProvider(typeof(Member.Member)).GetEntity(individualMemberMemberId);
+            var individualMemberMember = EntityProviderFactory.GetEntityProvider(typeof(Member.Member)).GetEntity(individualMemberMemberId);
 
             var entity = new MemberIndividual((Member.Member)individualMemberMember)
             {

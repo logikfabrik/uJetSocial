@@ -7,14 +7,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a guest individual first name sort order.
+    /// The <see cref="GuestIndividualFirstNameSortOrder" /> class.
     /// </summary>
     public class GuestIndividualFirstNameSortOrder : SortOrder, IGuestIndividualSortOrder
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GuestIndividualFirstNameSortOrder" /> class.
         /// </summary>
-        /// <param name="order">The sort order.</param>
+        /// <param name="order">The order.</param>
         public GuestIndividualFirstNameSortOrder(Order order)
             : base("uJetCommunityIndividualGuest.FirstName", order)
         {

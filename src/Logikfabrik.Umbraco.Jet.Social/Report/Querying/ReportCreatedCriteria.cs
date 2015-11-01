@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a report created criteria.
+    /// The <see cref="ReportCreatedCriteria" /> class.
     /// </summary>
     public class ReportCreatedCriteria : EntityCreatedCriteria, IReportCriteria
     {

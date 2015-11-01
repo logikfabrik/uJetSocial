@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a comment status criteria.
+    /// The <see cref="CommentStatusCriteria" /> class.
     /// </summary>
     public class CommentStatusCriteria : EntityStatusCriteria, ICommentCriteria
     {

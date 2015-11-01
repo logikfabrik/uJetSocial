@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents the member individual sort order interface.
+    /// The <see cref="IMemberIndividualSortOrder" /> interface.
     /// </summary>
     public interface IMemberIndividualSortOrder : ISortOrder
     {

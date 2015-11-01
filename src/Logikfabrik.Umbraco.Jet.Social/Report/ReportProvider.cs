@@ -11,7 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
     using Social.Querying;
 
     /// <summary>
-    /// Represents a report provider.
+    /// The <see cref="ReportProvider" /> class. Provider for <see cref="Report" /> entities.
     /// </summary>
     public class ReportProvider : QueryableEntityProvider<Report, IReportCriteria, IReportSortOrder>
     {
@@ -23,8 +23,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
         /// <param name="entityProviderFactory">The entity provider factory to use.</param>
         /// <param name="cacheManager">The cache manager to use.</param>
         /// <param name="databaseProvider">The database provider to use.</param>
-        public ReportProvider(IEntityProviderFactory entityProviderFactory, ICacheManager cacheManager, IDatabaseProvider databaseProvider)
-            : base(cacheManager, databaseProvider)
+        public ReportProvider(
+            IEntityProviderFactory entityProviderFactory,
+            ICacheManager cacheManager,
+            IDatabaseProvider databaseProvider)
+            : base(entityProviderFactory, cacheManager, databaseProvider)
         {
             if (entityProviderFactory == null)
             {
@@ -40,18 +43,17 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
         protected override IQueryBuilder<IReportCriteria, IReportSortOrder> QueryBuilder => new ReportQueryBuilder();
 
         /// <summary>
-        /// Gets an entity from the database.
+        /// Gets the entity with the specified identifier from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="id">The entity ID.</param>
-        /// <returns>An entity.</returns>
-        protected override Report GetEntityFromDatabase(IDatabaseProvider provider, int id)
+        /// <param name="id">The identifier.</param>
+        /// <returns>The entity.</returns>
+        protected override Report GetEntityFromDatabase(int id)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityReportGet"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityReportGet"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", id);
 
                     Report entity = null;
 
@@ -71,24 +73,23 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
         }
 
         /// <summary>
-        /// Adds an entity to the database.
+        /// Adds the specified entity to the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to add.</param>
+        /// <param name="entity">The entity.</param>
         /// <returns>The added entity.</returns>
-        protected override Report AddEntityToDatabase(IDatabaseProvider provider, Report entity)
+        protected override Report AddEntityToDatabase(Report entity)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityReportAdd"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityReportAdd"))
                 {
-                    provider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
-                    provider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
-                    provider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
-                    provider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
-                    provider.AddCommandParameter(command, DbType.Int32, "entityId", entity.Entity.Id);
-                    provider.AddCommandParameter(command, DbType.Int32, "authorId", entity.Author.Id);
-                    provider.AddCommandParameter(command, DbType.String, "text", entity.Text);
+                    DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "entityId", entity.Entity.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "authorId", entity.Author.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.String, "text", entity.Text);
 
                     connection.Open();
 
@@ -101,22 +102,21 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
         }
 
         /// <summary>
-        /// Updates an entity in the database.
+        /// Updates the specified entity in the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to update.</param>
+        /// <param name="entity">The entity.</param>
         /// <returns>The updated entity.</returns>
-        protected override Report UpdateEntityInDatabase(IDatabaseProvider provider, Report entity)
+        protected override Report UpdateEntityInDatabase(Report entity)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityReportUpdate"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityReportUpdate"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
-                    provider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
-                    provider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
-                    provider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
-                    provider.AddCommandParameter(command, DbType.String, "text", entity.Text);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
+                    DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
+                    DatabaseProvider.AddCommandParameter(command, DbType.String, "text", entity.Text);
 
                     connection.Open();
 
@@ -130,17 +130,16 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
         }
 
         /// <summary>
-        /// Removes an entity from the database.
+        /// Removes the specified entity from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to remove.</param>
-        protected override void RemoveEntityFromDatabase(IDatabaseProvider provider, Report entity)
+        /// <param name="entity">The entity.</param>
+        protected override void RemoveEntityFromDatabase(Report entity)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityReportRemove"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityReportRemove"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
 
                     connection.Open();
 
@@ -149,8 +148,18 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
             }
         }
 
+        /// <summary>
+        /// Gets the default cache key using the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>The default cache key.</returns>
         protected override string GetDefaultCacheKey(int id) => Report.GetDefaultCacheKey(id);
 
+        /// <summary>
+        /// Gets the entity.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
+        /// <returns>The entity.</returns>
         protected override Report GetEntity(IDataReader reader)
         {
             var entityId = reader.GetInt32(0);
@@ -164,10 +173,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
             var reportAuthorType = reader.GetString(7);
             var reportText = reader.GetString(8);
 
-            var reportEntity =
-                _entityProviderFactory.GetEntityProvider(Type.GetType(reportEntityType)).GetEntity(reportEntityId);
-            var reportAuthor =
-                _entityProviderFactory.GetEntityProvider(Type.GetType(reportAuthorType)).GetEntity(reportAuthorId);
+            var reportEntity = _entityProviderFactory.GetEntityProvider(Type.GetType(reportEntityType)).GetEntity(reportEntityId);
+            var reportAuthor = _entityProviderFactory.GetEntityProvider(Type.GetType(reportAuthorType)).GetEntity(reportAuthorId);
 
             var entity = new Report(reportEntity, (Individual.Individual)reportAuthor)
             {

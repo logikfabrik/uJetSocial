@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a group status criteria.
+    /// The <see cref="GroupStatusCriteria" /> class.
     /// </summary>
     public class GroupStatusCriteria : EntityStatusCriteria, IGroupCriteria
     {

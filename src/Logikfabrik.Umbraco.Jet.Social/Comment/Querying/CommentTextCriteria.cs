@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a comment text criteria.
+    /// The <see cref="CommentTextCriteria" /> class.
     /// </summary>
     public class CommentTextCriteria : Criteria, ICommentCriteria
     {

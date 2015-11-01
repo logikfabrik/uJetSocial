@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a guest individual last name criteria.
+    /// The <see cref="GuestIndividualLastNameCriteria" /> class.
     /// </summary>
     public class GuestIndividualLastNameCriteria : Criteria, IGuestIndividualCriteria
     {

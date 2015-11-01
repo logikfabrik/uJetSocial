@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a report ID criteria.
+    /// The <see cref="ReportIdCriteria" /> class.
     /// </summary>
     public class ReportIdCriteria : EntityIdCriteria, IReportCriteria
     {

@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a guest individual updated criteria.
+    /// The <see cref="GuestIndividualUpdatedCriteria" /> class.
     /// </summary>
     public class GuestIndividualUpdatedCriteria : EntityUpdatedCriteria, IGuestIndividualCriteria
     {

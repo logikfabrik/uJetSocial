@@ -9,33 +9,42 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
     using System.Data;
 
     /// <summary>
-    /// Represents a criteria value.
+    /// The <see cref="CriteriaValue" /> class.
     /// </summary>
     public abstract class CriteriaValue : ICriteriaValue
     {
         /// <summary>
-        /// Gets the DB type.
+        /// Gets the database type.
         /// </summary>
+        /// <value>
+        /// The database type.
+        /// </value>
         public abstract DbType DbType { get; }
 
         /// <summary>
         /// Gets the command format.
         /// </summary>
-        /// <returns>The command format.</returns>
+        /// <returns>
+        /// The command format.
+        /// </returns>
         public abstract string GetCommandFormat();
 
         /// <summary>
         /// Gets the command parameters.
         /// </summary>
-        /// <param name="criteria">A criteria.</param>
-        /// <returns>The command parameters.</returns>
+        /// <param name="criteria">The criteria.</param>
+        /// <returns>
+        /// The command parameters.
+        /// </returns>
         public abstract IDictionary<string, object> GetCommandParameters(ICriteria criteria);
 
         /// <summary>
-        /// Gets a DB type for the given value type.
+        /// Gets the database type for the specified value type.
         /// </summary>
-        /// <param name="valueType">The value type to get a DB type for.</param>
-        /// <returns>A DB type.</returns>
+        /// <param name="valueType">The value type.</param>
+        /// <returns>The database type.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="valueType" /> is <c>null</c>.</exception>
+        /// <exception cref="NotSupportedException">Thrown if <paramref name="valueType" /> is not supported.</exception>
         protected DbType GetDbType(Type valueType)
         {
             if (valueType == null)

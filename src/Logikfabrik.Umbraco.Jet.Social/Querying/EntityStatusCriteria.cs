@@ -5,7 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Querying
 {
     /// <summary>
-    /// Represents a entity status criteria.
+    /// The <see cref="EntityStatusCriteria" /> class.
     /// </summary>
     public abstract class EntityStatusCriteria : Criteria
     {

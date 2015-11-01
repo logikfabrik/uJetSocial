@@ -5,18 +5,24 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Querying
 {
     /// <summary>
-    /// Represents the criteria interface.
+    /// The <see cref="ICriteria" /> interface.
     /// </summary>
     public interface ICriteria
     {
         /// <summary>
-        /// Gets the column name.
+        /// Gets the name of the column.
         /// </summary>
+        /// <value>
+        /// The name of the column.
+        /// </value>
         string ColumnName { get; }
 
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
+        /// <value>
+        /// The value.
+        /// </value>
         ICriteriaValue Value { get; set; }
 
         /// <summary>

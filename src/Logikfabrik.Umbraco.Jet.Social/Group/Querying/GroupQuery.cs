@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a group query.
+    /// The <see cref="GroupQuery" /> class.
     /// </summary>
     public class GroupQuery : Query<IGroupCriteria, IGroupSortOrder>
     {

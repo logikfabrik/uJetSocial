@@ -5,7 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Querying
 {
     /// <summary>
-    /// Represents a entity ID criteria.
+    /// The <see cref="EntityIdCriteria" /> class.
     /// </summary>
     public abstract class EntityIdCriteria : Criteria
     {

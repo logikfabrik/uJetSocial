@@ -5,7 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Individual
 {
     /// <summary>
-    /// Represents a guest individual.
+    /// The <see cref="GuestIndividual" /> class.
     /// </summary>
     public class GuestIndividual : Individual
     {
@@ -57,7 +57,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         /// Gets or sets the e-mail.
         /// </summary>
         /// <value>
-        /// The email.
+        /// The e-mail.
         /// </value>
         public string Email
         {
@@ -74,9 +74,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         }
 
         /// <summary>
-        /// Gets a clone of the current entity.
+        /// Clones this instance.
         /// </summary>
-        /// <returns>A clone of the current entity.</returns>
+        /// <returns>
+        /// A writable clone of this instance.
+        /// </returns>
         protected override Entity Clone()
         {
             var clone = new GuestIndividual

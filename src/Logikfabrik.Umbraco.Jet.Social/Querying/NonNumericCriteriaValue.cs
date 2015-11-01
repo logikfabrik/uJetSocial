@@ -10,22 +10,28 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
     using System.Linq;
 
     /// <summary>
-    /// Represents a non numeric criteria value.
+    /// The <see cref="NonNumericCriteriaValue" /> class.
     /// </summary>
     public class NonNumericCriteriaValue : CriteriaValue
     {
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
+        /// <value>
+        /// The value.
+        /// </value>
         public string Value { get; set; }
 
         /// <summary>
         /// Gets or sets the operator.
         /// </summary>
+        /// <value>
+        /// The operator.
+        /// </value>
         public NonNumericCriteriaValueOperator Operator { get; set; }
 
         /// <summary>
-        /// Gets the DB type.
+        /// Gets the database type.
         /// </summary>
         public override DbType DbType => GetDbType(typeof(string));
 
@@ -55,7 +61,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// <summary>
         /// Gets the command parameters.
         /// </summary>
-        /// <param name="criteria">A criteria.</param>
+        /// <param name="criteria">The criteria.</param>
         /// <returns>The command parameters.</returns>
         public override IDictionary<string, object> GetCommandParameters(ICriteria criteria)
         {
@@ -63,7 +69,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
 
             return new Dictionary<string, object>
             {
-                {$"{columnName}{Operator}Value", Value }
+                { $"{columnName}{Operator}Value", Value }
             };
         }
     }

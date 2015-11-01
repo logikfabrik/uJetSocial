@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a contact updated criteria.
+    /// The <see cref="ContactUpdatedCriteria" /> class.
     /// </summary>
     public class ContactUpdatedCriteria : EntityUpdatedCriteria, IContactCriteria
     {

@@ -8,46 +8,49 @@ namespace Logikfabrik.Umbraco.Jet.Social
     using System.Collections.Generic;
 
     /// <summary>
-    /// Represents the entity provider interface.
+    /// The <see cref="IEntityProvider" /> interface.
     /// </summary>
     public interface IEntityProvider
     {
         /// <summary>
-        /// Gets the entity type for the provider.
+        /// Gets the entity type this instance supports.
         /// </summary>
+        /// <value>
+        /// The entity type this instance supports.
+        /// </value>
         Type EntityType { get; }
 
         /// <summary>
-        /// Gets an entity.
+        /// Gets the entity with the specified identifier.
         /// </summary>
-        /// <param name="id">The entity ID.</param>
-        /// <returns>An entity.</returns>
+        /// <param name="id">The identifier.</param>
+        /// <returns>The entity.</returns>
         Entity GetEntity(int id);
 
         /// <summary>
-        /// Adds an entity.
+        /// Adds the specified entity.
         /// </summary>
-        /// <param name="entity">The entity to add.</param>
+        /// <param name="entity">The entity.</param>
         /// <returns>The added entity.</returns>
         Entity AddEntity(Entity entity);
 
         /// <summary>
-        /// Updates an entity.
+        /// Updates the specified entity.
         /// </summary>
-        /// <param name="entity">The entity to update.</param>
+        /// <param name="entity">The entity.</param>
         /// <returns>The updated entity.</returns>
         Entity UpdateEntity(Entity entity);
 
         /// <summary>
-        /// Removes an entity.
+        /// Removes the specified entity.
         /// </summary>
-        /// <param name="entity">The entity to remove.</param>
+        /// <param name="entity">The entity.</param>
         void RemoveEntity(Entity entity);
 
         /// <summary>
-        /// Gets the total entity count.
+        /// Gets the entity count by created.
         /// </summary>
-        /// <returns>The total entity count.</returns>
+        /// <returns>The entity count by created.</returns>
         IDictionary<int, IDictionary<int, int>> GetEntityCountByCreated();
     }
 }

@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents the group criteria interface.
+    /// The <see cref="IGroupCriteria" /> interface.
     /// </summary>
     public interface IGroupCriteria : ICriteria
     {

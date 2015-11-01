@@ -1,4 +1,4 @@
-﻿// <copyright file="QueryableEntityProvider.cs" company="Logikfabrik">
+﻿// <copyright file="QueryableEntityProvider{T1,T2,T3}.cs" company="Logikfabrik">
 //   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
@@ -11,7 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
     using Caching;
 
     /// <summary>
-    /// Represents a queryable entity provider.
+    /// The <see cref="QueryableEntityProvider{T1, T2, T3}" /> class.
     /// </summary>
     /// <typeparam name="T1">The entity type.</typeparam>
     /// <typeparam name="T2">The criteria type.</typeparam>
@@ -24,10 +24,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryableEntityProvider{T1,T2,T3}" /> class.
         /// </summary>
-        /// <param name="cacheManager">The cache manager to use.</param>
-        /// <param name="databaseProvider">The database provider to use.</param>
-        protected QueryableEntityProvider(ICacheManager cacheManager, IDatabaseProvider databaseProvider)
-            : base(cacheManager, databaseProvider)
+        /// <param name="entityProviderFactory">The entity provider factory.</param>
+        /// <param name="cacheManager">The cache manager.</param>
+        /// <param name="databaseProvider">The database provider.</param>
+        protected QueryableEntityProvider(
+            IEntityProviderFactory entityProviderFactory,
+            ICacheManager cacheManager,
+            IDatabaseProvider databaseProvider)
+            : base(entityProviderFactory, cacheManager, databaseProvider)
         {
         }
 
@@ -36,6 +40,15 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
         /// </summary>
         protected abstract IQueryBuilder<T2, T3> QueryBuilder { get; }
 
+        /// <summary>
+        /// Queries the provider for entities.
+        /// </summary>
+        /// <param name="query">The query.</param>
+        /// <param name="total">The total number of entities.</param>
+        /// <returns>
+        /// The entities.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="query" /> is <c>null</c>.</exception>
         public IEnumerable<T1> Query(Query<T2, T3> query, out int total)
         {
             if (query == null)
@@ -64,6 +77,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Querying
             return entities;
         }
 
+        /// <summary>
+        /// Gets the entity.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
+        /// <returns>The entity.</returns>
         protected abstract T1 GetEntity(IDataReader reader);
 
         private IEnumerable<T1> QueryDatabase(Query<T2, T3> query, out int total)

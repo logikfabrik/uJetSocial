@@ -5,7 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Querying
 {
     /// <summary>
-    /// The order enumeration.
+    /// The <see cref="Order" /> enumeration.
     /// </summary>
     public enum Order
     {

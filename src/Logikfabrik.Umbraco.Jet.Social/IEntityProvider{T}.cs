@@ -5,37 +5,37 @@
 namespace Logikfabrik.Umbraco.Jet.Social
 {
     /// <summary>
-    /// Represents the entity provider interface.
+    /// The <see cref="IEntityProvider{T}" /> interface.
     /// </summary>
     /// <typeparam name="T">The entity type.</typeparam>
     public interface IEntityProvider<T> : IEntityProvider
         where T : Entity
     {
         /// <summary>
-        /// Gets an entity.
+        /// Gets the entity with the specified identifier.
         /// </summary>
-        /// <param name="id">The entity ID.</param>
-        /// <returns>An entity.</returns>
+        /// <param name="id">The identifier.</param>
+        /// <returns>The entity.</returns>
         new T GetEntity(int id);
 
         /// <summary>
-        /// Adds an entity.
+        /// Adds the specified entity.
         /// </summary>
-        /// <param name="entity">The entity to add.</param>
+        /// <param name="entity">The entity.</param>
         /// <returns>The added entity.</returns>
         T AddEntity(T entity);
 
         /// <summary>
-        /// Updates an entity.
+        /// Updates the specified entity.
         /// </summary>
-        /// <param name="entity">The entity to update.</param>
+        /// <param name="entity">The entity.</param>
         /// <returns>The updated entity.</returns>
         T UpdateEntity(T entity);
 
         /// <summary>
-        /// Removes an entity.
+        /// Removes the specified entity.
         /// </summary>
-        /// <param name="entity">The entity to remove.</param>
+        /// <param name="entity">The entity.</param>
         void RemoveEntity(T entity);
     }
 }

@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents the contact sort order interface.
+    /// The <see cref="IContactSortOrder" /> interface.
     /// </summary>
     public interface IContactSortOrder : ISortOrder
     {

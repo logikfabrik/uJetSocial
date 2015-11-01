@@ -7,14 +7,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a group status sort order.
+    /// The <see cref="GroupStatusSortOrder" /> class.
     /// </summary>
     public class GroupStatusSortOrder : EntityStatusSortOrder, IGroupSortOrder
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupStatusSortOrder" /> class.
         /// </summary>
-        /// <param name="order">The sort order.</param>
+        /// <param name="order">The order.</param>
         public GroupStatusSortOrder(Order order)
             : base(order)
         {

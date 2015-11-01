@@ -5,7 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Querying
 {
     /// <summary>
-    /// The non numeric criteria value operator enumeration.
+    /// The <see cref="NonNumericCriteriaValueOperator" /> enumeration.
     /// </summary>
     public enum NonNumericCriteriaValueOperator
     {

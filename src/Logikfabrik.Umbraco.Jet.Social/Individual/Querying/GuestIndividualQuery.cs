@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a guest individual query.
+    /// The <see cref="GuestIndividualQuery" /> class.
     /// </summary>
     public class GuestIndividualQuery : Query<IGuestIndividualCriteria, IGuestIndividualSortOrder>
     {

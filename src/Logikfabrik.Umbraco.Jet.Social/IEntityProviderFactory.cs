@@ -7,27 +7,27 @@ namespace Logikfabrik.Umbraco.Jet.Social
     using System;
 
     /// <summary>
-    /// Represents the entity provider factory interface.
+    /// The <see cref="IEntityProviderFactory" /> interface.
     /// </summary>
     public interface IEntityProviderFactory
     {
         /// <summary>
-        /// Gets an entity provider for the given entity type.
+        /// Gets the entity provider for the specified entity type.
         /// </summary>
-        /// <param name="entityType">An entity type.</param>
-        /// <returns>An entity provider.</returns>
+        /// <param name="entityType">The entity type.</param>
+        /// <returns>The entity provider.</returns>
         IEntityProvider GetEntityProvider(Type entityType);
 
         /// <summary>
-        /// Adds an entity provider.
+        /// Adds the specified entity provider.
         /// </summary>
-        /// <param name="entityProvider">The entity provider to add.</param>
+        /// <param name="entityProvider">The entity provider.</param>
         void AddEntityProvider(IEntityProvider entityProvider);
 
         /// <summary>
-        /// Removes an entity provider.
+        /// Removes the entity provider for the specified entity type.
         /// </summary>
-        /// <param name="entityType">The entity type for which the entity provider is to be removed.</param>
+        /// <param name="entityType">The entity type.</param>
         void RemoveEntityProvider(Type entityType);
     }
 }

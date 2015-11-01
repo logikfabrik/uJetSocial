@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a report query.
+    /// The <see cref="ReportQuery" /> class.
     /// </summary>
     public class ReportQuery : Query<IReportCriteria, IReportSortOrder>
     {

@@ -11,17 +11,21 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
     using Social.Querying;
 
     /// <summary>
-    /// Represents a guest individual provider.
+    /// The <see cref="GuestIndividualProvider" /> class. Provider for <see cref="GuestIndividual" /> entities.
     /// </summary>
     public class GuestIndividualProvider : QueryableEntityProvider<GuestIndividual, IGuestIndividualCriteria, IGuestIndividualSortOrder>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GuestIndividualProvider" /> class.
         /// </summary>
-        /// <param name="cacheManager">The cache manager to use.</param>
-        /// <param name="databaseProvider">The database provider to use.</param>
-        public GuestIndividualProvider(ICacheManager cacheManager, IDatabaseProvider databaseProvider)
-            : base(cacheManager, databaseProvider)
+        /// <param name="entityProviderFactory">The entity provider factory.</param>
+        /// <param name="cacheManager">The cache manager.</param>
+        /// <param name="databaseProvider">The database provider.</param>
+        public GuestIndividualProvider(
+            IEntityProviderFactory entityProviderFactory,
+            ICacheManager cacheManager,
+            IDatabaseProvider databaseProvider)
+            : base(entityProviderFactory, cacheManager, databaseProvider)
         {
         }
 
@@ -31,17 +35,18 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         protected override IQueryBuilder<IGuestIndividualCriteria, IGuestIndividualSortOrder> QueryBuilder => new GuestIndividualQueryBuilder();
 
         /// <summary>
-        /// Gets an entity from the database.
+        /// Gets the entity with the specified identifier from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="id">The entity ID.</param>
-        /// <returns>An entity.</returns>
-        protected override GuestIndividual GetEntityFromDatabase(IDatabaseProvider provider, int id)
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// The entity.
+        /// </returns>
+        protected override GuestIndividual GetEntityFromDatabase(int id)
         {
-            using (var connection = provider.GetConnection())
-            using (var command = provider.GetProcedureCommand(connection, "uJetCommunityIndividualGuestGet"))
+            using (var connection = DatabaseProvider.GetConnection())
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityIndividualGuestGet"))
             {
-                provider.AddCommandParameter(command, DbType.Int32, "id", id);
+                DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", id);
 
                 GuestIndividual entity = null;
 
@@ -60,23 +65,24 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         }
 
         /// <summary>
-        /// Adds an entity to the database.
+        /// Adds the specified entity to the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to add.</param>
-        /// <returns>The added entity.</returns>
-        protected override GuestIndividual AddEntityToDatabase(IDatabaseProvider provider, GuestIndividual entity)
+        /// <param name="entity">The entity.</param>
+        /// <returns>
+        /// The added entity.
+        /// </returns>
+        protected override GuestIndividual AddEntityToDatabase(GuestIndividual entity)
         {
-            using (var connection = provider.GetConnection())
-            using (var command = provider.GetProcedureCommand(connection, "uJetCommunityIndividualGuestAdd"))
+            using (var connection = DatabaseProvider.GetConnection())
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityIndividualGuestAdd"))
             {
-                provider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
-                provider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
-                provider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
-                provider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
-                provider.AddCommandParameter(command, DbType.String, "firstName", entity.FirstName);
-                provider.AddCommandParameter(command, DbType.String, "lastName", entity.LastName);
-                provider.AddCommandParameter(command, DbType.String, "email", entity.Email);
+                DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
+                DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
+                DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
+                DatabaseProvider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
+                DatabaseProvider.AddCommandParameter(command, DbType.String, "firstName", entity.FirstName);
+                DatabaseProvider.AddCommandParameter(command, DbType.String, "lastName", entity.LastName);
+                DatabaseProvider.AddCommandParameter(command, DbType.String, "email", entity.Email);
 
                 connection.Open();
 
@@ -88,23 +94,24 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         }
 
         /// <summary>
-        /// Updates an entity in the database.
+        /// Updates the specified entity in the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to update.</param>
-        /// <returns>The updated entity.</returns>
-        protected override GuestIndividual UpdateEntityInDatabase(IDatabaseProvider provider, GuestIndividual entity)
+        /// <param name="entity">The entity.</param>
+        /// <returns>
+        /// The updated entity.
+        /// </returns>
+        protected override GuestIndividual UpdateEntityInDatabase(GuestIndividual entity)
         {
-            using (var connection = provider.GetConnection())
-            using (var command = provider.GetProcedureCommand(connection, "uJetCommunityIndividualGuestUpdate"))
+            using (var connection = DatabaseProvider.GetConnection())
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityIndividualGuestUpdate"))
             {
-                provider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
-                provider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
-                provider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
-                provider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
-                provider.AddCommandParameter(command, DbType.String, "firstName", entity.FirstName);
-                provider.AddCommandParameter(command, DbType.String, "lastName", entity.LastName);
-                provider.AddCommandParameter(command, DbType.String, "email", entity.Email);
+                DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
+                DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
+                DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
+                DatabaseProvider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
+                DatabaseProvider.AddCommandParameter(command, DbType.String, "firstName", entity.FirstName);
+                DatabaseProvider.AddCommandParameter(command, DbType.String, "lastName", entity.LastName);
+                DatabaseProvider.AddCommandParameter(command, DbType.String, "email", entity.Email);
 
                 connection.Open();
 
@@ -117,16 +124,15 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         }
 
         /// <summary>
-        /// Removes an entity from the database.
+        /// Removes the specified entity from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to remove.</param>
-        protected override void RemoveEntityFromDatabase(IDatabaseProvider provider, GuestIndividual entity)
+        /// <param name="entity">The entity.</param>
+        protected override void RemoveEntityFromDatabase(GuestIndividual entity)
         {
-            using (var connection = provider.GetConnection())
-            using (var command = provider.GetProcedureCommand(connection, "uJetCommunityIndividualGuestRemove"))
+            using (var connection = DatabaseProvider.GetConnection())
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityIndividualGuestRemove"))
             {
-                provider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
+                DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
 
                 connection.Open();
 
@@ -134,11 +140,23 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
             }
         }
 
+        /// <summary>
+        /// Gets the default cache key using the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// The default cache key.
+        /// </returns>
         protected override string GetDefaultCacheKey(int id)
         {
             return Individual.GetDefaultCacheKey(id);
         }
 
+        /// <summary>
+        /// Gets the entity.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
+        /// <returns>The entity.</returns>
         protected override GuestIndividual GetEntity(IDataReader reader)
         {
             var entityId = reader.GetInt32(0);

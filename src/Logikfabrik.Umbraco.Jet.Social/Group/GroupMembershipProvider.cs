@@ -9,42 +9,38 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
     using Caching;
 
     /// <summary>
-    /// Represents a group membership provider.
+    /// The <see cref="GroupMembershipProvider" /> class. Provider for <see cref="GroupMembership" /> entities.
     /// </summary>
     public class GroupMembershipProvider : EntityProvider<GroupMembership>
     {
-        private readonly IEntityProviderFactory _entityProviderFactory;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupMembershipProvider" /> class.
         /// </summary>
-        /// <param name="entityProviderFactory">The entity provider factory to use.</param>
-        /// <param name="cacheManager">The cache manager to use.</param>
-        /// <param name="databaseProvider">The database provider to use.</param>
-        public GroupMembershipProvider(IEntityProviderFactory entityProviderFactory, ICacheManager cacheManager, IDatabaseProvider databaseProvider)
-            : base(cacheManager, databaseProvider)
+        /// <param name="entityProviderFactory">The entity provider factory.</param>
+        /// <param name="cacheManager">The cache manager.</param>
+        /// <param name="databaseProvider">The database provider.</param>
+        public GroupMembershipProvider(
+            IEntityProviderFactory entityProviderFactory,
+            ICacheManager cacheManager,
+            IDatabaseProvider databaseProvider)
+            : base(entityProviderFactory, cacheManager, databaseProvider)
         {
-            if (entityProviderFactory == null)
-            {
-                throw new ArgumentNullException(nameof(entityProviderFactory));
-            }
-
-            _entityProviderFactory = entityProviderFactory;
         }
 
         /// <summary>
-        /// Gets an entity from the database.
+        /// Gets the entity with the specified identifier from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="id">The entity ID.</param>
-        /// <returns>An entity.</returns>
-        protected override GroupMembership GetEntityFromDatabase(IDatabaseProvider provider, int id)
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// The entity.
+        /// </returns>
+        protected override GroupMembership GetEntityFromDatabase(int id)
         {
-            using (var connection = provider.GetConnection())
+            using (var connection = DatabaseProvider.GetConnection())
             {
-                using (var command = provider.GetProcedureCommand(connection, "uJetCommunityGroupMembershipGet"))
+                using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityGroupMembershipGet"))
                 {
-                    provider.AddCommandParameter(command, DbType.Int32, "id", id);
+                    DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", id);
 
                     connection.Open();
 
@@ -65,10 +61,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
                         var groupMembershipMemberId = reader.GetInt32(6);
                         var groupMembershipMemberType = reader.GetString(7);
 
-                        var groupMembershipGroup =
-                            _entityProviderFactory.GetEntityProvider(Type.GetType(groupMembershipGroupType)).GetEntity(groupMembershipGroupId);
-                        var groupMembershipMember =
-                            _entityProviderFactory.GetEntityProvider(Type.GetType(groupMembershipMemberType)).GetEntity(groupMembershipMemberId);
+                        var groupMembershipGroup = EntityProviderFactory.GetEntityProvider(Type.GetType(groupMembershipGroupType)).GetEntity(groupMembershipGroupId);
+                        var groupMembershipMember = EntityProviderFactory.GetEntityProvider(Type.GetType(groupMembershipMemberType)).GetEntity(groupMembershipMemberId);
 
                         var entity = new GroupMembership((Group)groupMembershipGroup, (Member.Member)groupMembershipMember)
                         {
@@ -88,22 +82,23 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         }
 
         /// <summary>
-        /// Adds an entity to the database.
+        /// Adds the specified entity to the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to add.</param>
-        /// <returns>The added entity.</returns>
-        protected override GroupMembership AddEntityToDatabase(IDatabaseProvider provider, GroupMembership entity)
+        /// <param name="entity">The entity.</param>
+        /// <returns>
+        /// The added entity.
+        /// </returns>
+        protected override GroupMembership AddEntityToDatabase(GroupMembership entity)
         {
-            using (var connection = provider.GetConnection())
-            using (var command = provider.GetProcedureCommand(connection, "uJetCommunityGroupMembershipAdd"))
+            using (var connection = DatabaseProvider.GetConnection())
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityGroupMembershipAdd"))
             {
-                provider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
-                provider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
-                provider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
-                provider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
-                provider.AddCommandParameter(command, DbType.Int32, "groupId", entity.Group.Id);
-                provider.AddCommandParameter(command, DbType.Int32, "memberId", entity.Member.Id);
+                DatabaseProvider.AddCommandParameter(command, DbType.String, "type", EntityType.FullName);
+                DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
+                DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
+                DatabaseProvider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
+                DatabaseProvider.AddCommandParameter(command, DbType.Int32, "groupId", entity.Group.Id);
+                DatabaseProvider.AddCommandParameter(command, DbType.Int32, "memberId", entity.Member.Id);
 
                 connection.Open();
 
@@ -115,20 +110,21 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         }
 
         /// <summary>
-        /// Updates an entity in the database.
+        /// Updates the specified entity in the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to update.</param>
-        /// <returns>The updated entity.</returns>
-        protected override GroupMembership UpdateEntityInDatabase(IDatabaseProvider provider, GroupMembership entity)
+        /// <param name="entity">The entity.</param>
+        /// <returns>
+        /// The updated entity.
+        /// </returns>
+        protected override GroupMembership UpdateEntityInDatabase(GroupMembership entity)
         {
-            using (var connection = provider.GetConnection())
-            using (var command = provider.GetProcedureCommand(connection, "uJetCommunityEntityUpdate"))
+            using (var connection = DatabaseProvider.GetConnection())
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityEntityUpdate"))
             {
-                provider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
-                provider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
-                provider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
-                provider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
+                DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
+                DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "created", entity.Created);
+                DatabaseProvider.AddCommandParameter(command, DbType.DateTime, "updated", entity.Updated);
+                DatabaseProvider.AddCommandParameter(command, DbType.Int32, "status", entity.Status);
 
                 connection.Open();
 
@@ -141,16 +137,15 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         }
 
         /// <summary>
-        /// Removes an entity from the database.
+        /// Removes the specified entity from the database.
         /// </summary>
-        /// <param name="provider">A database provider.</param>
-        /// <param name="entity">The entity to remove.</param>
-        protected override void RemoveEntityFromDatabase(IDatabaseProvider provider, GroupMembership entity)
+        /// <param name="entity">The entity.</param>
+        protected override void RemoveEntityFromDatabase(GroupMembership entity)
         {
-            using (var connection = provider.GetConnection())
-            using (var command = provider.GetProcedureCommand(connection, "uJetCommunityGroupMembershipRemove"))
+            using (var connection = DatabaseProvider.GetConnection())
+            using (var command = DatabaseProvider.GetProcedureCommand(connection, "uJetCommunityGroupMembershipRemove"))
             {
-                provider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
+                DatabaseProvider.AddCommandParameter(command, DbType.Int32, "id", entity.Id);
 
                 connection.Open();
 
@@ -158,6 +153,13 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
             }
         }
 
+        /// <summary>
+        /// Gets the default cache key using the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// The default cache key.
+        /// </returns>
         protected override string GetDefaultCacheKey(int id)
         {
             return GroupMembership.GetDefaultCacheKey(id);

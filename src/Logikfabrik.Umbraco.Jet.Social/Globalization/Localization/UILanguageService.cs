@@ -19,7 +19,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Globalization.Localization
         /// <returns>
         /// The translated text.
         /// </returns>
-        /// <exception cref="ArgumentException"> Thrown if <paramref name="area" /> or <paramref name="key" /> are <c>null</c> or white space.</exception>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="area" /> or <paramref name="key" /> are <c>null</c> or white space.</exception>
         public string GetText(string area, string key)
         {
             if (string.IsNullOrWhiteSpace(area))

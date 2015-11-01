@@ -7,14 +7,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a contact ID sort order.
+    /// The <see cref="ContactIdSortOrder" /> class.
     /// </summary>
     public class ContactIdSortOrder : EntityIdSortOrder, IContactSortOrder
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactIdSortOrder" /> class.
         /// </summary>
-        /// <param name="order">The sort order.</param>
+        /// <param name="order">The order.</param>
         public ContactIdSortOrder(Order order)
             : base(order)
         {

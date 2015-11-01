@@ -7,14 +7,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group.Querying
     using Social.Querying;
 
     /// <summary>
-    /// Represents a group created sort order.
+    /// The <see cref="GroupCreatedSortOrder" /> class.
     /// </summary>
     public class GroupCreatedSortOrder : EntityCreatedSortOrder, IGroupSortOrder
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupCreatedSortOrder" /> class.
         /// </summary>
-        /// <param name="order">The sort order.</param>
+        /// <param name="order">The order.</param>
         public GroupCreatedSortOrder(Order order)
             : base(order)
         {
