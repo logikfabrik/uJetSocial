@@ -416,6 +416,7 @@
     <None Include="tools\uninstall.ps1" />
     <None Include="tools\ups\lang-nuget.ps1" />
     <None Include="tools\ups\lang-xml.ps1" />
+    <None Include="uJetSocial.nuspec" />
     <None Include="Web\UI\App_Plugins\uJetSocial\package.manifest" />
   </ItemGroup>
   <ItemGroup>

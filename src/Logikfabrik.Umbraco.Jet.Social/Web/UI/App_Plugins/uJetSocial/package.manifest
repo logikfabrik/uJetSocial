@@ -1,0 +1,47 @@
+﻿{
+    javascript: [
+        // Dependencies
+        '~/App_Plugins/uJetSocial/assets/js/vendor/lodash-2.4.1/lodash.js',
+        
+        // Factories
+        '~/App_Plugins/uJetSocial/assets/js/app/factories/lodashFactory.js',
+
+        // Services
+        '~/App_Plugins/uJetSocial/assets/js/app/services/queryService.js',
+        
+        // Directives
+
+        // Dropdown directive
+        '~/App_Plugins/uJetSocial/assets/js/app/directives/editors/editor/editorDirective.js',
+        '~/App_Plugins/uJetSocial/assets/js/app/directives/editors/date/dateDirective.js',
+        '~/App_Plugins/uJetSocial/assets/js/app/directives/editors/number/numberDirective.js',
+        '~/App_Plugins/uJetSocial/assets/js/app/directives/editors/select/selectDirective.js',
+        '~/App_Plugins/uJetSocial/assets/js/app/directives/editors/text/textDirective.js',
+
+        '~/App_Plugins/uJetSocial/assets/js/app/directives/presenters/list/listDirective.js',
+        '~/App_Plugins/uJetSocial/assets/js/app/directives/presenters/listPaging/listPagingDirective.js',
+
+        // Status directive
+        '~/App_Plugins/uJetSocial/assets/js/app/directives/status/statusDirective.js',
+        
+        // Components
+
+        // Comment component
+        '~/App_Plugins/uJetSocial/assets/js/app/components/comment/commentFactory.js',
+        '~/App_Plugins/uJetSocial/assets/js/app/components/comment/commentEditController.js',
+
+        // Dashboard component
+        '~/App_Plugins/uJetSocial/assets/js/app/components/dashboard/dashboardController.js',
+
+        // Group component 
+        '~/App_Plugins/uJetSocial/assets/js/app/components/group/groupFactory.js',
+        '~/App_Plugins/uJetSocial/assets/js/app/components/group/groupEditController.js',
+
+        // Report component
+        '~/App_Plugins/uJetSocial/assets/js/app/components/report/reportFactory.js',
+        '~/App_Plugins/uJetSocial/assets/js/app/components/report/reportEditController.js'
+    ],
+    css: [
+        '~/App_Plugins/uJetSocial/assets/css/app/uJetSocial.css',
+    ]
+}
