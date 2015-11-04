@@ -1,5 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <language>
-  <area alias="uJet">
+  <area alias="sections">
+    <key alias="uJetSocial">Social</key>
+  </area>
+  <area alias="sections_uJetSocial">
+    <key alias="comments">Comments</key>
+    <key alias="groups">Groups</key>
+    <key alias="reports">Reports</key>
+    <key alias="general_id">ID</key>
+    <key alias="general_created">Created</key>
+    <key alias="general_updated">Updated</key>
+    <key alias="general_status">Status</key>
+    <key alias="general_status_pending">Pending</key>
+    <key alias="general_status_approved">Approved</key>
+    <key alias="general_status_rejected">Rejected</key>
+    <key alias="general_previous">Previous</key>
+    <key alias="general_next">Next</key>
+    <key alias="search_page_index">Page index</key>
+    <key alias="search_page_size">Page size</key>
+    <key alias="search_from">From</key>
+    <key alias="search_to">To</key>
+    <key alias="search_order_by">Order by</key>
   </area>
 </language>

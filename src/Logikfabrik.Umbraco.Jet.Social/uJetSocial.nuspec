@@ -9,7 +9,7 @@
     <licenseUrl>https://github.com/logikfabrik/uJetSocial/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/logikfabrik/uJetSocial</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Umbraco Jet Social (uJetSocail) is developer tool for building social applications in Umbraco 7.</description>
+    <description>Umbraco Jet Social (uJetSocial) is developer tool for building social applications in Umbraco 7.</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright (c) 2015</copyright>
     <tags>Umbraco, Jet, Social, Community, uJet, uJetSocial</tags>
@@ -18,4 +18,8 @@
       <dependency id="uJet" version="[3.2,4.0]" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="tools\**\*.*" target="tools\" />
+    <file src="Web\UI\App_Plugins\**\*.*" target="Content\App_Plugins\" />
+  </files>
 </package>

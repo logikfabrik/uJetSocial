@@ -1,0 +1,1 @@
+nuget pack Logikfabrik.Umbraco.Jet.Social\Logikfabrik.Umbraco.Jet.Social.csproj -Build -MSBuildVersion 14 -Prop Configuration=Release
