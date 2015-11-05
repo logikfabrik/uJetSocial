@@ -8,7 +8,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
     using System.Collections.Generic;
 
     /// <summary>
-    /// The <see cref="CachedEntityQuery" /> class.
+    /// The <see cref="CachedEntityQuery" /> class. For caching entity queries.
     /// </summary>
     public class CachedEntityQuery
     {
@@ -29,12 +29,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Caching
         }
 
         /// <summary>
-        /// Gets the entity cache keys.
+        /// Gets the entity cache keys, the cache keys for the entities returned by the query.
         /// </summary>
         public IEnumerable<string> CacheKeys { get; }
 
         /// <summary>
-        /// Gets the total number of entities.
+        /// Gets the total number of entities returned by the query.
         /// </summary>
         public int Total { get; }
     }
