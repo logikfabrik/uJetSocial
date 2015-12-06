@@ -5,7 +5,6 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Comment
 {
     using System;
-    using Data;
 
     /// <summary>
     /// The <see cref="CommentExtensions" /> class.
@@ -50,7 +49,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// </summary>
         /// <param name="comment">The comment.</param>
         /// <returns>The author.</returns>
-        public static Individual GetAuthor(this Comment comment)
+        public static Individual.Individual GetAuthor(this Comment comment)
         {
             // TODO: Get author.
             throw new NotImplementedException();
@@ -63,7 +62,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <param name="value">The author.</param>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="value" /> is <c>null</c>.</exception>
         /// <exception cref="InvalidOperationException">Thrown if <paramref name="value" /> is not read-only.</exception>
-        public static void SetAuthor(this Comment comment, Individual value)
+        public static void SetAuthor(this Comment comment, Individual.Individual value)
         {
             if (value == null)
             {

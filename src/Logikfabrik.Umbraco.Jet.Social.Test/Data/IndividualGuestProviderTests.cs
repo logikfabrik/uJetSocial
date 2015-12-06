@@ -4,8 +4,8 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
 {
+    using Individual;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Social.Data;
 
     [TestClass]
     public class IndividualGuestProviderTests

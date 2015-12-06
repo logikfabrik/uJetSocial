@@ -236,6 +236,7 @@
     <Compile Include="Contact\ContactProvider.cs" />
     <Compile Include="DataTransferObjectProviderFactory.cs" />
     <Compile Include="DataTransferObjectStatuses.cs" />
+    <Compile Include="Group\GroupProvider.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="DataTransferObjectProvider{T}.cs" />
     <Compile Include="EntityType.cs" />
@@ -243,7 +244,6 @@
     <Compile Include="Group\Group.cs" />
     <Compile Include="Group\GroupMembership.cs" />
     <Compile Include="Group\GroupMembershipProvider.cs" />
-    <Compile Include="Group\GroupProvider.cs" />
     <Compile Include="IDataTransferObjectProvider.cs" />
     <Compile Include="IDataTransferObjectProvider{T}.cs" />
     <Compile Include="Individual\Individual.cs" />

@@ -2,11 +2,12 @@
 //  Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
+using Logikfabrik.Umbraco.Jet.Social.Individual;
+
 namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Social.Data;
 
     [TestClass]
     public class IndividualGuestTests

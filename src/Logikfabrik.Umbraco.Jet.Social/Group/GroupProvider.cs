@@ -2,12 +2,12 @@
 //  Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
-namespace Logikfabrik.Umbraco.Jet.Social.Data
+namespace Logikfabrik.Umbraco.Jet.Social.Group
 {
     using global::Umbraco.Core.Persistence;
 
     /// <summary>
-    /// The <see cref="IndividualGuestProvider" /> class.
+    /// The <see cref="GroupProvider" /> class.
     /// </summary>
     public sealed class GroupProvider : DataTransferObjectProvider<Group>
     {

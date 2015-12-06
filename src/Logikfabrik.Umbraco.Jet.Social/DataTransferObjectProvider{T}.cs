@@ -2,7 +2,7 @@
 //  Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
-namespace Logikfabrik.Umbraco.Jet.Social.Data
+namespace Logikfabrik.Umbraco.Jet.Social
 {
     using System;
     using System.Collections.Generic;
@@ -104,9 +104,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Data
         /// </summary>
         /// <param name="query">The query.</param>
         /// <returns>Matching <see cref="DataTransferObject" /> instances of type <typeparamref name="T" />.</returns>
-        /// <exception cref="System.NotImplementedException"></exception>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="query" /> is <c>null</c>.</exception>
         public IEnumerable<T> Query(Query<T> query)
         {
+            if (query == null)
+            {
+                throw new ArgumentNullException(nameof(query));
+            }
+
             var sql = new Sql().Select("*")
                 .From<T>();
 

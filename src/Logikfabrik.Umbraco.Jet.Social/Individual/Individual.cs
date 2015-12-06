@@ -2,7 +2,7 @@
 //  Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
-namespace Logikfabrik.Umbraco.Jet.Social.Data
+namespace Logikfabrik.Umbraco.Jet.Social.Individual
 {
     /// <summary>
     /// The <see cref="Individual" /> class.

@@ -4,7 +4,6 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Comment
 {
-    using Data;
     using global::Umbraco.Core.Persistence;
 
     /// <summary>

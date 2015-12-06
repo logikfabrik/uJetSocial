@@ -2,7 +2,7 @@
 //  Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
-namespace Logikfabrik.Umbraco.Jet.Social.Data
+namespace Logikfabrik.Umbraco.Jet.Social
 {
     using System;
     using global::Umbraco.Core.Persistence;
