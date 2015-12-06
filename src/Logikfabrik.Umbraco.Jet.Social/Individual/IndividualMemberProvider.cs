@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logikfabrik.Umbraco.Jet.Social.Data
 {
-    class Report
+    class IndividualMemberProvider
     {
     }
 }

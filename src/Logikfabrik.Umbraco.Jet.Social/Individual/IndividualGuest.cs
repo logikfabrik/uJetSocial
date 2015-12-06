@@ -1,83 +1,81 @@
-﻿// <copyright file="Group.cs" company="Logikfabrik">
+﻿// <copyright file="IndividualGuest.cs" company="Logikfabrik">
 //  Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
 namespace Logikfabrik.Umbraco.Jet.Social.Data
 {
     using global::Umbraco.Core.Persistence;
-    using global::Umbraco.Core.Persistence.DatabaseAnnotations;
 
     /// <summary>
-    /// The <see cref="Group" /> class.
+    /// The <see cref="IndividualGuest" /> class.
     /// </summary>
-    [TableName("uJetSocialGroup")]
-    public sealed class Group : DataTransferObject
+    [TableName("uJetSocialIndividualGuest")]
+    public sealed class IndividualGuest : Individual
     {
-        private string _name;
-        private string _description;
-        private int _ownerId;
+        private string _firstName;
+        private string _lastName;
+        private string _email;
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gets or sets the first name.
         /// </summary>
         /// <value>
-        /// The name.
+        /// The first name.
         /// </value>
-        [Column("Name")]
-        public string Name
+        [Column("FirstName")]
+        public string FirstName
         {
             get
             {
-                return _name;
+                return _firstName;
             }
 
             set
             {
                 AssertIsWritableClone();
-                _name = value;
+                _firstName = value;
             }
         }
 
         /// <summary>
-        /// Gets or sets the description.
+        /// Gets or sets the last name.
         /// </summary>
         /// <value>
-        /// The description.
+        /// The last name.
         /// </value>
-        [Column("Description")]
-        public string Description
+        [Column("LastName")]
+        public string LastName
         {
             get
             {
-                return _description;
+                return _lastName;
             }
 
             set
             {
                 AssertIsWritableClone();
-                _description = value;
+                _lastName = value;
             }
         }
 
         /// <summary>
-        /// Gets or sets the identifier of the owner.
+        /// Gets or sets the e-mail.
         /// </summary>
         /// <value>
-        /// The identifier of the owner.
+        /// The e-mail.
         /// </value>
-        [ForeignKey(typeof(Entity))]
-        [Column("OwnerId")]
-        public int OwnerId
+        [Column("Email")]
+        public string Email
         {
             get
             {
-                return _ownerId;
+                return _email;
             }
 
             set
             {
                 AssertIsWritableClone();
-                _ownerId = value;
+                _email = value;
             }
         }
 
@@ -85,9 +83,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Data
         /// Gets a writable clone.
         /// </summary>
         /// <returns>A writable clone.</returns>
-        public Group CreateWritableClone()
+        public IndividualGuest CreateWritableClone()
         {
-            return CreateWritableClone<Group>();
+            return CreateWritableClone<IndividualGuest>();
         }
 
         /// <summary>
@@ -96,11 +94,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Data
         /// <returns>A writable clone of this instance.</returns>
         protected override DataTransferObject Clone()
         {
-            var clone = new Group
+            var clone = new IndividualGuest
             {
-                Name = _name,
-                Description = _description,
-                OwnerId = _ownerId
+                FirstName = _firstName,
+                LastName = _lastName,
+                Email = _email
             };
 
             return clone;

@@ -1,83 +1,74 @@
 ﻿// <copyright file="Comment.cs" company="Logikfabrik">
-//   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
+//  Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
 namespace Logikfabrik.Umbraco.Jet.Social.Comment
 {
-    using System;
+    using Data;
+    using global::Umbraco.Core.Persistence;
+    using global::Umbraco.Core.Persistence.DatabaseAnnotations;
 
     /// <summary>
     /// The <see cref="Comment" /> class.
     /// </summary>
-    public class Comment : Entity
+    [TableName("uJetSocialComment")]
+    public sealed class Comment : DataTransferObject
     {
+        private int _entityId;
+        private int _authorId;
         private string _text;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Comment" /> class.
+        /// Gets or sets the identifier of the commented entity.
         /// </summary>
-        /// <param name="entity">The entity.</param>
-        /// <param name="author">The author.</param>
-        /// <exception cref="ArgumentNullException">Thrown if <paramref name="entity" /> or <paramref name="author" /> are <c>null</c>.</exception>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="entity" /> or <paramref name="author" /> have invalid identifiers, or are writable.</exception>
-        public Comment(Entity entity, Individual.Individual author)
+        /// <value>
+        /// The identifier of the commented entity.
+        /// </value>
+        [ForeignKey(typeof(Entity))]
+        [Column("EntityId")]
+        public int EntityId
         {
-            if (entity == null)
+            get
             {
-                throw new ArgumentNullException(nameof(entity));
+                return _entityId;
             }
 
-            if (!EntityValidator.EntityHasId(entity))
+            set
             {
-                throw new ArgumentException("Entity must have a valid identifier.", nameof(entity));
+                AssertIsWritableClone();
+                _entityId = value;
             }
-
-            if (!entity.IsReadOnly)
-            {
-                throw new ArgumentException("Entity must be read-only.", nameof(entity));
-            }
-
-            if (author == null)
-            {
-                throw new ArgumentNullException(nameof(author));
-            }
-
-            if (!EntityValidator.EntityHasId(author))
-            {
-                throw new ArgumentException("Author must have a valid identifier.", nameof(author));
-            }
-
-            if (!author.IsReadOnly)
-            {
-                throw new ArgumentException("Author must be read-only.", nameof(author));
-            }
-
-            Author = author;
-            Entity = entity;
         }
 
         /// <summary>
-        /// Gets the entity.
+        /// Gets or sets the identifier of the author.
         /// </summary>
         /// <value>
-        /// The entity.
+        /// The identifier of the author.
         /// </value>
-        public Entity Entity { get; }
+        [ForeignKey(typeof(Entity))]
+        [Column("AuthorId")]
+        public int AuthorId
+        {
+            get
+            {
+                return _authorId;
+            }
+
+            set
+            {
+                AssertIsWritableClone();
+                _authorId = value;
+            }
+        }
 
         /// <summary>
-        /// Gets the author.
+        /// Gets or sets the comment.
         /// </summary>
         /// <value>
-        /// The author.
+        /// The comment.
         /// </value>
-        public Individual.Individual Author { get; }
-
-        /// <summary>
-        /// Gets or sets the text.
-        /// </summary>
-        /// <value>
-        /// The text.
-        /// </value>
+        [Column("Text")]
         public string Text
         {
             get
@@ -93,36 +84,24 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         }
 
         /// <summary>
-        /// Gets the default cache key.
+        /// Gets a writable clone.
         /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns>The default cache key.</returns>
-        public static string GetDefaultCacheKey(int id)
+        /// <returns>A writable clone.</returns>
+        public Comment CreateWritableClone()
         {
-            return GetDefaultCacheKey(typeof(Comment), id);
-        }
-
-        /// <summary>
-        /// Gets the cache keys.
-        /// </summary>
-        /// <returns>
-        /// The cache keys.
-        /// </returns>
-        public override string[] GetCacheKeys()
-        {
-            return new[] { GetDefaultCacheKey(Id) };
+            return CreateWritableClone<Comment>();
         }
 
         /// <summary>
         /// Clones this instance.
         /// </summary>
-        /// <returns>
-        /// A writable clone of this instance.
-        /// </returns>
-        protected override Entity Clone()
+        /// <returns>A writable clone of this instance.</returns>
+        protected override DataTransferObject Clone()
         {
-            var clone = new Comment(Entity, Author)
+            var clone = new Comment
             {
+                EntityId = _entityId,
+                AuthorId = _authorId,
                 Text = _text
             };
 

@@ -18,8 +18,4 @@
       <dependency id="uJet" version="[3.2,4.0]" />
     </dependencies>
   </metadata>
-  <files>
-    <file src="tools\**\*.*" target="tools\" />
-    <file src="Web\UI\App_Plugins\**\*.*" target="Content\App_Plugins\" />
-  </files>
 </package>
