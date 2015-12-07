@@ -1,5 +1,5 @@
 ﻿// <copyright file="IndividualGuest.cs" company="Logikfabrik">
-//  Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
+//   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
 namespace Logikfabrik.Umbraco.Jet.Social.Individual
@@ -10,7 +10,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
     /// The <see cref="IndividualGuest" /> class.
     /// </summary>
     [TableName("uJetSocialIndividualGuest")]
-    public sealed class IndividualGuest : Individual
+    public class IndividualGuest : Individual
     {
         private string _firstName;
         private string _lastName;

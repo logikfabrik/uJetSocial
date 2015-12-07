@@ -1,5 +1,5 @@
 ﻿// <copyright file="Query{T}.cs" company="Logikfabrik">
-//  Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
+//   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
 namespace Logikfabrik.Umbraco.Jet.Social
@@ -15,6 +15,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
     public class Query<T>
         where T : DataTransferObject
     {
+        private int _pageIndex;
+        private int _pageSize;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Query{T}" /> class.
         /// </summary>
@@ -33,7 +36,24 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <value>
         /// The page index.
         /// </value>
-        public int PageIndex { get; set; }
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value" /> is less than <c>0</c>.</exception>
+        public int PageIndex
+        {
+            get
+            {
+                return _pageIndex;
+            }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value), value, "Value cannot be less than 0.");
+                }
+
+                _pageIndex = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the page size.
@@ -41,7 +61,24 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <value>
         /// The page size.
         /// </value>
-        public int PageSize { get; set; }
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is less than <c>1</c>.</exception>
+        public int PageSize
+        {
+            get
+            {
+                return _pageSize;
+            }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value), value, "Value cannot be less than 1.");
+                }
+
+                _pageSize = value;
+            }
+        }
 
         /// <summary>
         /// Gets the criterias.

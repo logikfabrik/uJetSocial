@@ -1,5 +1,5 @@
 ﻿// <copyright file="DataTransferObjectProvider{T}.cs" company="Logikfabrik">
-//  Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
+//   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
 namespace Logikfabrik.Umbraco.Jet.Social
@@ -7,7 +7,6 @@ namespace Logikfabrik.Umbraco.Jet.Social
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Reflection;
     using global::Umbraco.Core.Persistence;
 
     /// <summary>
@@ -17,16 +16,22 @@ namespace Logikfabrik.Umbraco.Jet.Social
     public abstract class DataTransferObjectProvider<T> : IDataTransferObjectProvider<T>
         where T : DataTransferObject
     {
-        private readonly Database _database;
+        private readonly IDatabaseWrapper _databaseWrapper;
         private readonly Lazy<int> _typeId;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DataTransferObjectProvider{T}" /> class.
         /// </summary>
-        /// <param name="database">The database.</param>
-        protected DataTransferObjectProvider(Database database)
+        /// <param name="databaseWrapper">The database wrapper.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="databaseWrapper" /> is <c>null</c>.</exception>
+        protected DataTransferObjectProvider(IDatabaseWrapper databaseWrapper)
         {
-            _database = database;
+            if (databaseWrapper == null)
+            {
+                throw new ArgumentNullException(nameof(databaseWrapper));
+            }
+
+            _databaseWrapper = databaseWrapper;
             _typeId = new Lazy<int>(GetTypeId);
 
             CreateTables();
@@ -48,11 +53,12 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T" />.</returns>
         public T Get(int id)
         {
-            var sql = new Sql().Select("*")
-                .From<T>()
-                .Where<T>(obj => obj.Id == id);
+            var dto = _databaseWrapper.Get<T>(id);
 
-            var dto = _database.SingleOrDefault<T>(sql);
+            if (dto == null)
+            {
+                return null;
+            }
 
             dto.IsReadOnly = true;
 
@@ -80,18 +86,18 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
             int id;
 
-            using (var transaction = _database.GetTransaction())
+            using (var transaction = _databaseWrapper.GetTransaction())
             {
                 var entity = new Entity
                 {
                     TypeId = _typeId.Value
                 };
 
-                id = decimal.ToInt32((decimal)_database.Insert(entity));
+                id = decimal.ToInt32((decimal)_databaseWrapper.Add(entity));
 
                 dto.Id = id;
 
-                _database.Insert(dto);
+                _databaseWrapper.Add(dto);
 
                 transaction.Complete();
             }
@@ -112,8 +118,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 throw new ArgumentNullException(nameof(query));
             }
 
-            var sql = new Sql().Select("*")
-                .From<T>();
+            var sql = new Sql();
 
             if (query.Criterias.Any())
             {
@@ -125,7 +130,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 // TODO: Order by.
             }
 
-            return _database.Page<T>(query.PageIndex, query.PageSize, sql).Items;
+            return _databaseWrapper.Page<T>(query.PageIndex, query.PageSize, sql).Items;
         }
 
         /// <summary>
@@ -146,7 +151,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 throw new InvalidOperationException("The specified data transfer object is read-only. A read-only object can not be updated.");
             }
 
-            _database.Save(dto);
+            _databaseWrapper.Update(dto);
         }
 
         /// <summary>
@@ -175,30 +180,13 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <param name="id">The <see cref="DataTransferObject" /> identifier.</param>
         public void Remove(int id)
         {
-            using (var transaction = _database.GetTransaction())
+            using (var transaction = _databaseWrapper.GetTransaction())
             {
-                _database.Delete<T>(id);
-                _database.Delete<Entity>(id);
+                _databaseWrapper.Delete<T>(id);
+                _databaseWrapper.Delete<Entity>(id);
 
                 transaction.Complete();
             }
-        }
-
-        /// <summary>
-        /// Gets the table name for the specified type.
-        /// </summary>
-        /// <param name="type">The type.</param>
-        /// <returns>The table name for the specified type.</returns>
-        private static string GetTableName(Type type)
-        {
-            if (type == null)
-            {
-                throw new ArgumentNullException(nameof(type));
-            }
-
-            var attribute = type.GetCustomAttribute<TableNameAttribute>();
-
-            return attribute?.Value;
         }
 
         /// <summary>
@@ -206,22 +194,22 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// </summary>
         private void CreateTables()
         {
-            if (!_database.TableExist(GetTableName(typeof(EntityType))))
+            if (!_databaseWrapper.TableExists(typeof(EntityType)))
             {
-                _database.CreateTable(true, typeof(EntityType));
+                _databaseWrapper.CreateTable(typeof(EntityType));
             }
 
-            if (!_database.TableExist(GetTableName(typeof(Entity))))
+            if (!_databaseWrapper.TableExists(typeof(Entity)))
             {
-                _database.CreateTable(true, typeof(Entity));
+                _databaseWrapper.CreateTable(typeof(Entity));
             }
 
-            if (_database.TableExist(GetTableName(typeof(T))))
+            if (_databaseWrapper.TableExists(typeof(T)))
             {
                 return;
             }
 
-            _database.CreateTable(true, typeof(T));
+            _databaseWrapper.CreateTable(typeof(T));
         }
 
         /// <summary>
@@ -232,9 +220,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
         {
             var typeName = typeof(T).AssemblyQualifiedName;
 
-            var sql = new Sql().Select("*").From<EntityType>().Where<EntityType>(obj => obj.Type == typeName);
+            var sql = new Sql().Where<EntityType>(obj => obj.Type == typeName);
 
-            var entityType = _database.SingleOrDefault<EntityType>(sql);
+            var entityType = _databaseWrapper.Get<EntityType>(sql);
 
             if (entityType != null)
             {
@@ -243,7 +231,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
             entityType = new EntityType { Type = typeName };
 
-            return decimal.ToInt32((decimal)_database.Insert(entityType));
+            return decimal.ToInt32((decimal)_databaseWrapper.Add(entityType));
         }
     }
 }

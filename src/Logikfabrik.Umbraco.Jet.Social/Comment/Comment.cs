@@ -1,5 +1,5 @@
 ﻿// <copyright file="Comment.cs" company="Logikfabrik">
-//  Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
+//   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
 namespace Logikfabrik.Umbraco.Jet.Social.Comment
@@ -11,7 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
     /// The <see cref="Comment" /> class.
     /// </summary>
     [TableName("uJetSocialComment")]
-    public sealed class Comment : DataTransferObject
+    public class Comment : DataTransferObject
     {
         private int _entityId;
         private int _authorId;

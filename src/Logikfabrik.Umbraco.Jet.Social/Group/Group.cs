@@ -1,5 +1,5 @@
 ﻿// <copyright file="Group.cs" company="Logikfabrik">
-//  Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
+//   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
 namespace Logikfabrik.Umbraco.Jet.Social.Group
@@ -11,7 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
     /// The <see cref="Group" /> class.
     /// </summary>
     [TableName("uJetSocialGroup")]
-    public sealed class Group : DataTransferObject
+    public class Group : DataTransferObject
     {
         private string _name;
         private string _description;
