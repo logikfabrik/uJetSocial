@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Logikfabrik.Umbraco.Jet.Social.Comment;
-using Logikfabrik.Umbraco.Jet.Social.Individual;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using Umbraco.Core.Logging;
-using Umbraco.Core.Persistence.SqlSyntax;
+﻿// <copyright file="CommentProviderTests.cs" company="Logikfabrik">
+//   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
+// </copyright>
 
 namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
 {
+    using Comment;
+    using global::Umbraco.Core.Logging;
+    using global::Umbraco.Core.Persistence.SqlSyntax;
+    using Individual;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Moq;
+
     [TestClass]
     public class CommentProviderTests
     {
@@ -26,7 +25,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
         {
             var provider = new CommentProvider(GetDatabaseWrapper());
 
-            var dto = new Comment.Comment
+            var dto = new Comment
             {
                 EntityId = GetIndividualGuest().Id,
                 AuthorId = GetIndividualGuest().Id,
@@ -40,7 +39,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
             var d = 0;
         }
 
-        private Individual.Individual GetIndividualGuest()
+        private Individual GetIndividualGuest()
         {
             var provider = new IndividualGuestProvider(GetDatabaseWrapper());
 
