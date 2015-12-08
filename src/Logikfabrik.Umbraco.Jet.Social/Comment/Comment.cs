@@ -4,6 +4,7 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Comment
 {
+    using System;
     using global::Umbraco.Core.Persistence;
     using global::Umbraco.Core.Persistence.DatabaseAnnotations;
 
@@ -23,7 +24,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <value>
         /// The identifier of the commented entity.
         /// </value>
-        [ForeignKey(typeof(Entity))]
+        [ForeignKey(typeof(Entity), Name = "EntityId")]
         [Column("EntityId")]
         public int EntityId
         {
@@ -45,7 +46,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <value>
         /// The identifier of the author.
         /// </value>
-        [ForeignKey(typeof(Entity))]
+        [ForeignKey(typeof(Entity), Name = "AuthorId")]
         [Column("AuthorId")]
         public int AuthorId
         {
@@ -81,6 +82,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
                 _text = value;
             }
         }
+
+        /// <summary>
+        /// Gets or sets the entity type.
+        /// </summary>
+        /// <value>
+        /// The entity type.
+        /// </value>
+        internal Type EntityType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the author type.
+        /// </summary>
+        /// <value>
+        /// The author type.
+        /// </value>
+        internal Type AuthorType { get; set; }
 
         /// <summary>
         /// Gets a writable clone.

@@ -12,10 +12,30 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <summary>
         /// Initializes a new instance of the <see cref="CommentProvider" /> class.
         /// </summary>
-        /// <param name="databaseWrapper">The database wrapper.</param>
-        public CommentProvider(IDatabaseWrapper databaseWrapper)
-            : base(databaseWrapper)
+        /// <param name="database">The database.</param>
+        public CommentProvider(IDatabaseWrapper database)
+            : base(database)
         {
+        }
+
+        /// <summary>
+        /// Gets the <see cref="Comment" /> with the specified identifier.
+        /// </summary>
+        /// <param name="id">The <see cref="Comment" /> identifier.</param>
+        /// <returns>The <see cref="Comment" />.</returns>
+        public override Comment Get(int id)
+        {
+            var dto = base.Get(id);
+
+            if (dto == null)
+            {
+                return null;
+            }
+
+            dto.EntityType = GetType(dto.EntityId);
+            dto.AuthorType = GetType(dto.AuthorId);
+
+            return dto;
         }
     }
 }

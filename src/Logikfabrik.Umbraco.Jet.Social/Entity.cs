@@ -33,5 +33,14 @@ namespace Logikfabrik.Umbraco.Jet.Social
         [ForeignKey(typeof(EntityType))]
         [Column("TypeId")]
         public int TypeId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type.
+        /// </summary>
+        /// <value>
+        /// The type.
+        /// </value>
+        [ResultColumn]
+        public string Type { get; set; }
     }
 }

@@ -16,26 +16,33 @@ namespace Logikfabrik.Umbraco.Jet.Social
     public abstract class DataTransferObjectProvider<T> : IDataTransferObjectProvider<T>
         where T : DataTransferObject
     {
-        private readonly IDatabaseWrapper _databaseWrapper;
         private readonly Lazy<int> _typeId;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DataTransferObjectProvider{T}" /> class.
         /// </summary>
-        /// <param name="databaseWrapper">The database wrapper.</param>
-        /// <exception cref="ArgumentNullException">Thrown if <paramref name="databaseWrapper" /> is <c>null</c>.</exception>
-        protected DataTransferObjectProvider(IDatabaseWrapper databaseWrapper)
+        /// <param name="database">The database.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="database" /> is <c>null</c>.</exception>
+        protected DataTransferObjectProvider(IDatabaseWrapper database)
         {
-            if (databaseWrapper == null)
+            if (database == null)
             {
-                throw new ArgumentNullException(nameof(databaseWrapper));
+                throw new ArgumentNullException(nameof(database));
             }
 
-            _databaseWrapper = databaseWrapper;
+            Database = database;
             _typeId = new Lazy<int>(GetTypeId);
 
             CreateTables();
         }
+
+        /// <summary>
+        /// Gets the database.
+        /// </summary>
+        /// <value>
+        /// The database.
+        /// </value>
+        protected IDatabaseWrapper Database { get; }
 
         /// <summary>
         /// Updates the specified <see cref="DataTransferObject" />.
@@ -51,9 +58,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// </summary>
         /// <param name="id">The <see cref="DataTransferObject" /> of type <typeparamref name="T" /> identifier.</param>
         /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T" />.</returns>
-        public T Get(int id)
+        public virtual T Get(int id)
         {
-            var dto = _databaseWrapper.Get<T>(id);
+            var dto = Database.Get<T>(id);
 
             if (dto == null)
             {
@@ -71,7 +78,6 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <param name="dto">The <see cref="DataTransferObject" /> of type <typeparamref name="T" />.</param>
         /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T" /> identifier.</returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="dto" /> is <c>null</c>.</exception>
-        /// <exception cref="InvalidOperationException">Thrown if <paramref name="dto" /> is read-only.</exception>
         public int Add(T dto)
         {
             if (dto == null)
@@ -79,25 +85,22 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 throw new ArgumentNullException(nameof(dto));
             }
 
-            if (dto.IsReadOnly)
-            {
-                throw new InvalidOperationException("The specified data transfer object is read-only. A read-only object can not be added.");
-            }
+            DataTransferObjectValidator.ThrowIfReadOnly(dto);
 
             int id;
 
-            using (var transaction = _databaseWrapper.GetTransaction())
+            using (var transaction = Database.GetTransaction())
             {
                 var entity = new Entity
                 {
                     TypeId = _typeId.Value
                 };
 
-                id = decimal.ToInt32((decimal)_databaseWrapper.Add(entity));
+                id = decimal.ToInt32((decimal)Database.Add(entity));
 
                 dto.Id = id;
 
-                _databaseWrapper.Add(dto);
+                Database.Add(dto);
 
                 transaction.Complete();
             }
@@ -130,7 +133,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 // TODO: Order by.
             }
 
-            return _databaseWrapper.Page<T>(query.PageIndex, query.PageSize, sql).Items;
+            return Database.Page<T>(query.PageIndex, query.PageSize, sql).Items;
         }
 
         /// <summary>
@@ -138,7 +141,6 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// </summary>
         /// <param name="dto">The <see cref="DataTransferObject" /> of type <typeparamref name="T" />.</param>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="dto" /> is <c>null</c>.</exception>
-        /// <exception cref="InvalidOperationException">Thrown if <paramref name="dto" /> is read-only.</exception>
         public void Update(T dto)
         {
             if (dto == null)
@@ -146,12 +148,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 throw new ArgumentNullException(nameof(dto));
             }
 
-            if (dto.IsReadOnly)
-            {
-                throw new InvalidOperationException("The specified data transfer object is read-only. A read-only object can not be updated.");
-            }
+            DataTransferObjectValidator.ThrowIfReadOnly(dto);
 
-            _databaseWrapper.Update(dto);
+            Database.Update(dto);
         }
 
         /// <summary>
@@ -180,13 +179,27 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <param name="id">The <see cref="DataTransferObject" /> identifier.</param>
         public void Remove(int id)
         {
-            using (var transaction = _databaseWrapper.GetTransaction())
+            using (var transaction = Database.GetTransaction())
             {
-                _databaseWrapper.Delete<T>(id);
-                _databaseWrapper.Delete<Entity>(id);
+                Database.Delete<T>(id);
+                Database.Delete<Entity>(id);
 
                 transaction.Complete();
             }
+        }
+
+        protected Type GetType(int entityId)
+        {
+            var sql = new Sql()
+                .Select("*")
+                .From<Entity>()
+                .LeftJoin<EntityType>()
+                .On<Entity, EntityType>(e => e.TypeId, et => et.Id)
+                .Where<Entity>(obj => obj.Id == entityId);
+
+            var entity = Database.Get<Entity>(sql);
+
+            return entity == null ? null : Type.GetType(entity.Type, false);
         }
 
         /// <summary>
@@ -194,22 +207,22 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// </summary>
         private void CreateTables()
         {
-            if (!_databaseWrapper.TableExists(typeof(EntityType)))
+            if (!Database.TableExists(typeof(EntityType)))
             {
-                _databaseWrapper.CreateTable(typeof(EntityType));
+                Database.CreateTable(typeof(EntityType));
             }
 
-            if (!_databaseWrapper.TableExists(typeof(Entity)))
+            if (!Database.TableExists(typeof(Entity)))
             {
-                _databaseWrapper.CreateTable(typeof(Entity));
+                Database.CreateTable(typeof(Entity));
             }
 
-            if (_databaseWrapper.TableExists(typeof(T)))
+            if (Database.TableExists(typeof(T)))
             {
                 return;
             }
 
-            _databaseWrapper.CreateTable(typeof(T));
+            Database.CreateTable(typeof(T));
         }
 
         /// <summary>
@@ -222,7 +235,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
             var sql = new Sql().Where<EntityType>(obj => obj.Type == typeName);
 
-            var entityType = _databaseWrapper.Get<EntityType>(sql);
+            var entityType = Database.Get<EntityType>(sql);
 
             if (entityType != null)
             {
@@ -231,7 +244,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
             entityType = new EntityType { Type = typeName };
 
-            return decimal.ToInt32((decimal)_databaseWrapper.Add(entityType));
+            return decimal.ToInt32((decimal)Database.Add(entityType));
         }
     }
 }

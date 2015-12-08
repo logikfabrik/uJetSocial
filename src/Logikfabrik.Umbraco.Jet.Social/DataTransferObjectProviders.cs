@@ -5,7 +5,6 @@
 namespace Logikfabrik.Umbraco.Jet.Social
 {
     using System;
-    using Comment;
 
     /// <summary>
     /// The <see cref="DataTransferObjectProviders" /> class.
@@ -23,7 +22,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>The provider for the specified type.</returns>
-        internal static IDataTransferObjectProvider GetProvider(Type type)
+        public static IDataTransferObjectProvider GetProvider(Type type)
         {
             if (type == null)
             {
@@ -41,10 +40,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <returns>The default providers.</returns>
         private static DataTransferObjectProviderDictionary GetDefaultProviders()
         {
-            return new DataTransferObjectProviderDictionary
-                {
-                    //{ typeof(Comment.Comment), new[] { new CommentProvider() } }
-                };
+            return new DataTransferObjectProviderDictionary();
         }
     }
 }

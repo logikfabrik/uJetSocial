@@ -12,9 +12,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupProvider" /> class.
         /// </summary>
-        /// <param name="databaseWrapper">The database wrapper.</param>
-        public GroupProvider(IDatabaseWrapper databaseWrapper)
-            : base(databaseWrapper)
+        /// <param name="database">The database.</param>
+        public GroupProvider(IDatabaseWrapper database)
+            : base(database)
         {
         }
     }

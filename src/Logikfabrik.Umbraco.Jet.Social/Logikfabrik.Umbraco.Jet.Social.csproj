@@ -290,6 +290,7 @@
     <Compile Include="DataTransferObjectProviderDictionary.cs" />
     <Compile Include="DataTransferObjectProviders.cs" />
     <Compile Include="DataTransferObjectStatuses.cs" />
+    <Compile Include="DataTransferObjectValidator.cs" />
     <Compile Include="Group\GroupProvider.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="DataTransferObjectProvider{T}.cs" />

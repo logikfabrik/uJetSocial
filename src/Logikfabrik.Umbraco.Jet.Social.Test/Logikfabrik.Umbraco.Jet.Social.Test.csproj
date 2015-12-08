@@ -296,6 +296,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Data\CommentExtensionsTests.cs" />
+    <Compile Include="Data\CommentProviderTests.cs" />
     <Compile Include="Data\CommentTests.cs" />
     <Compile Include="Data\IndividualGuestProviderTests.cs" />
     <Compile Include="Data\IndividualGuestTests.cs" />

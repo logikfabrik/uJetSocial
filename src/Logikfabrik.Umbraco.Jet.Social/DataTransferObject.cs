@@ -125,15 +125,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <summary>
         /// Asserts that this instance is a writable clone.
         /// </summary>
-        /// <exception cref="InvalidOperationException">Thrown if this instance is read-only.</exception>
         protected void AssertIsWritableClone()
         {
-            if (!IsReadOnly)
-            {
-                return;
-            }
-
-            throw new InvalidOperationException($"Data transfer object of type {GetType()} is read-only. Create a writable clone to update the data transfer object.");
+            DataTransferObjectValidator.ThrowIfReadOnly(IsReadOnly);
         }
 
         /// <summary>

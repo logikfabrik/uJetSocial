@@ -12,9 +12,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         /// <summary>
         /// Initializes a new instance of the <see cref="IndividualGuestProvider" /> class.
         /// </summary>
-        /// <param name="databaseWrapper">The database wrapper.</param>
-        public IndividualGuestProvider(IDatabaseWrapper databaseWrapper)
-            : base(databaseWrapper)
+        /// <param name="database">The database.</param>
+        public IndividualGuestProvider(IDatabaseWrapper database)
+            : base(database)
         {
         }
     }
