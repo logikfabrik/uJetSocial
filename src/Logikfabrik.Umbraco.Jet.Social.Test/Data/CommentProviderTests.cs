@@ -4,44 +4,35 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
 {
+    using System;
     using Comment;
-    using global::Umbraco.Core.Logging;
-    using global::Umbraco.Core.Persistence.SqlSyntax;
     using Individual;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Moq;
 
     [TestClass]
-    public class CommentProviderTests
+    public class CommentProviderTests : TestBase
     {
         [TestInitialize]
-        public void TestInitialize()
+        public override void TestInitialize()
         {
-            SqlSyntaxContext.SqlSyntaxProvider = new SqlServerSyntaxProvider();
-        }
+            base.TestInitialize();
 
-        [TestMethod]
-        public void CanGetComment()
-        {
-            var provider = new CommentProvider(GetDatabaseWrapper());
+            var database = GetDatabase();
 
-            var dto = new Comment
+            if (DataTransferObjectProviders.GetProvider(typeof(Comment)) == null)
             {
-                EntityId = GetIndividualGuest().Id,
-                AuthorId = GetIndividualGuest().Id,
-                Text = "HEJ"
-            };
+                DataTransferObjectProviders.Providers.Add(typeof(Comment), new CommentProvider(database));
+            }
 
-            var id = provider.Add(dto);
-
-            var comment = provider.Get(id);
-            
-            var d = 0;
+            if (DataTransferObjectProviders.GetProvider(typeof(IndividualGuest)) == null)
+            {
+                DataTransferObjectProviders.Providers.Add(typeof(IndividualGuest), new IndividualGuestProvider(database));
+            }
         }
 
-        private Individual GetIndividualGuest()
+        private static Individual GetIndividualGuest()
         {
-            var provider = new IndividualGuestProvider(GetDatabaseWrapper());
+            var provider = (IDataTransferObjectProvider<IndividualGuest>)DataTransferObjectProviders.GetProvider(typeof(IndividualGuest));
 
             var dto = new IndividualGuest
             {
@@ -50,16 +41,116 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
                 Email = "firstname.lastname@isp.com"
             };
 
-            var id = provider.Add(dto);
-
-            return provider.Get(id);
+            return provider.Add(dto);
         }
 
-        private static IDatabaseWrapper GetDatabaseWrapper()
+        [TestMethod]
+        public void CanGetComment()
         {
-            var db = new global::Umbraco.Core.Persistence.Database("Test");
+            var dto = new Comment
+            {
+                EntityId = GetIndividualGuest().Id,
+                EntityType = typeof(IndividualGuest),
+                AuthorId = GetIndividualGuest().Id,
+                AuthorType = typeof(IndividualGuest),
+                Text = "Text"
+            };
 
-            return new DatabaseWrapper(db, new Mock<ILogger>().Object, SqlSyntaxContext.SqlSyntaxProvider);
+            var provider = (IDataTransferObjectProvider<Comment>)DataTransferObjectProviders.GetProvider(typeof(Comment));
+
+            var id = provider.Add(dto).Id;
+
+            Assert.IsNotNull(provider.Get(id));
+        }
+
+        [TestMethod]
+        public void CanAddComment()
+        {
+            var dto = new Comment
+            {
+                EntityId = GetIndividualGuest().Id,
+                EntityType = typeof(IndividualGuest),
+                AuthorId = GetIndividualGuest().Id,
+                AuthorType = typeof(IndividualGuest),
+                Text = "Text"
+            };
+
+            var provider = (IDataTransferObjectProvider<Comment>)DataTransferObjectProviders.GetProvider(typeof(Comment));
+
+            Assert.IsNotNull(provider.Add(dto));
+        }
+
+        [TestMethod]
+        public void CanRemoveComment()
+        {
+            var dto = new Comment
+            {
+                EntityId = GetIndividualGuest().Id,
+                EntityType = typeof(IndividualGuest),
+                AuthorId = GetIndividualGuest().Id,
+                AuthorType = typeof(IndividualGuest),
+                Text = "Text"
+            };
+
+            var provider = (IDataTransferObjectProvider<Comment>)DataTransferObjectProviders.GetProvider(typeof(Comment));
+
+            var id = provider.Add(dto).Id;
+
+            provider.Remove(id);
+
+            Assert.IsNull(provider.Get(id));
+        }
+
+        [TestMethod]
+        public void CanUpdateCommentEntityId()
+        {
+            var dto1 = new Comment
+            {
+                EntityId = GetIndividualGuest().Id,
+                EntityType = typeof(IndividualGuest),
+                AuthorId = GetIndividualGuest().Id,
+                AuthorType = typeof(IndividualGuest),
+                Text = "Text"
+            };
+
+            var provider = (IDataTransferObjectProvider<Comment>)DataTransferObjectProviders.GetProvider(typeof(Comment));
+
+            var dto2 = provider.Add(dto1).CreateWritableClone();
+
+            dto2.SetEntity(GetIndividualGuest());
+
+            var dto3 = provider.Update(dto2);
+
+            Assert.AreNotEqual(dto1.EntityId, dto3.EntityId);
+        }
+
+        [TestMethod]
+        public void CanUpdateCommentAuthorId()
+        {
+            var dto1 = new Comment
+            {
+                EntityId = GetIndividualGuest().Id,
+                EntityType = typeof(IndividualGuest),
+                AuthorId = GetIndividualGuest().Id,
+                AuthorType = typeof(IndividualGuest),
+                Text = "Text"
+            };
+
+            var provider = (IDataTransferObjectProvider<Comment>)DataTransferObjectProviders.GetProvider(typeof(Comment));
+
+            var dto2 = provider.Add(dto1).CreateWritableClone();
+
+            dto2.SetAuthor(GetIndividualGuest());
+
+            var dto3 = provider.Update(dto2);
+
+            Assert.AreNotEqual(dto1.AuthorId, dto3.AuthorId);
+        }
+
+        [TestMethod]
+        public void CanUpdateCommentText()
+        {
+            throw new NotImplementedException();
         }
     }
 }

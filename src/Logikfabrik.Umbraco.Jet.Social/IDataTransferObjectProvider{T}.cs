@@ -17,7 +17,8 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Updates the specified <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.
         /// </summary>
         /// <param name="dto">The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</param>
-        void Update(T dto);
+        /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</returns>
+        T Update(T dto);
 
         /// <summary>
         /// Gets the <see cref="DataTransferObject" /> of type <typeparamref name="T"/> with the specified identifier.
@@ -30,8 +31,8 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Adds the specified <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.
         /// </summary>
         /// <param name="dto">The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</param>
-        /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T"/> identifier.</returns>
-        int Add(T dto);
+        /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</returns>
+        T Add(T dto);
 
         /// <summary>
         /// Queries the provider.

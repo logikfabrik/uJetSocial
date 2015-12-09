@@ -41,9 +41,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
                 Email = "firstname.lastname@isp.com"
             };
 
-            var id = provider.Add(dto);
-
-            return provider.Get(id);
+            return provider.Add(dto);
         }
 
         private static Comment GetComment()
@@ -53,13 +51,13 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
             var dto = new Comment
             {
                 EntityId = GetIndividualGuest().Id,
+                EntityType = typeof(IndividualGuest),
                 AuthorId = GetIndividualGuest().Id,
+                AuthorType = typeof(IndividualGuest),
                 Text = "Text"
             };
 
-            var id = provider.Add(dto);
-
-            return provider.Get(id);
+            return provider.Add(dto);
         }
 
         [TestMethod]

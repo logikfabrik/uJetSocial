@@ -56,7 +56,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <returns>The commented entity.</returns>
         public static DataTransferObject GetEntity(this Comment comment)
         {
-            return GetEntity(comment, DataTransferObjectProviders.GetProvider(comment.EntityType));
+            return comment.EntityType == null
+                ? null
+                : GetEntity(comment, DataTransferObjectProviders.GetProvider(comment.EntityType));
         }
 
         /// <summary>
@@ -83,7 +85,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <returns>The author.</returns>
         public static Individual.Individual GetAuthor(this Comment comment)
         {
-            return GetAuthor(comment, DataTransferObjectProviders.GetProvider(comment.AuthorType));
+            return comment.AuthorType == null
+                ? null
+                : GetAuthor(comment, DataTransferObjectProviders.GetProvider(comment.AuthorType));
         }
 
         /// <summary>

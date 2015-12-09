@@ -25,17 +25,21 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <returns>The <see cref="Comment" />.</returns>
         public override Comment Get(int id)
         {
-            var dto = base.Get(id);
+            var comment = base.Get(id);
 
-            if (dto == null)
+            if (comment == null)
             {
                 return null;
             }
 
-            dto.EntityType = GetType(dto.EntityId);
-            dto.AuthorType = GetType(dto.AuthorId);
+            comment.IsReadOnly = false;
 
-            return dto;
+            comment.EntityType = GetType(comment.EntityId);
+            comment.AuthorType = GetType(comment.AuthorId);
+
+            comment.IsReadOnly = true;
+
+            return comment;
         }
     }
 }

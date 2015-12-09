@@ -48,9 +48,10 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Updates the specified <see cref="DataTransferObject" />.
         /// </summary>
         /// <param name="dto">The <see cref="DataTransferObject" />.</param>
-        void IDataTransferObjectProvider.Update(DataTransferObject dto)
+        /// <returns>The <see cref="DataTransferObject" />.</returns>
+        DataTransferObject IDataTransferObjectProvider.Update(DataTransferObject dto)
         {
-            Update((T)dto);
+            return Update((T)dto);
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <param name="dto">The <see cref="DataTransferObject" /> of type <typeparamref name="T" />.</param>
         /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T" /> identifier.</returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="dto" /> is <c>null</c>.</exception>
-        public int Add(T dto)
+        public T Add(T dto)
         {
             if (dto == null)
             {
@@ -105,7 +106,10 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 transaction.Complete();
             }
 
-            return id;
+            dto.Id = id;
+            dto.IsReadOnly = true;
+
+            return dto;
         }
 
         /// <summary>
@@ -137,11 +141,12 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Updates the specified <see cref="DataTransferObject" /> of type <typeparamref name="T" />.
+        /// Updates the specified <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.
         /// </summary>
-        /// <param name="dto">The <see cref="DataTransferObject" /> of type <typeparamref name="T" />.</param>
+        /// <param name="dto">The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</param>
+        /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="dto" /> is <c>null</c>.</exception>
-        public void Update(T dto)
+        public T Update(T dto)
         {
             if (dto == null)
             {
@@ -151,6 +156,10 @@ namespace Logikfabrik.Umbraco.Jet.Social
             DataTransferObjectValidator.ThrowIfReadOnly(dto);
 
             Database.Update(dto);
+
+            dto.IsReadOnly = true;
+
+            return dto;
         }
 
         /// <summary>
@@ -167,8 +176,8 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Adds the specified <see cref="DataTransferObject" />.
         /// </summary>
         /// <param name="dto">The <see cref="DataTransferObject" />.</param>
-        /// <returns>The <see cref="DataTransferObject" /> identifier.</returns>
-        int IDataTransferObjectProvider.Add(DataTransferObject dto)
+        /// <returns>The <see cref="DataTransferObject" />.</returns>
+        DataTransferObject IDataTransferObjectProvider.Add(DataTransferObject dto)
         {
             return Add((T)dto);
         }

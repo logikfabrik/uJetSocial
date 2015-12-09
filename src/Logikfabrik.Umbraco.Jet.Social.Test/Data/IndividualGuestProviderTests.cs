@@ -6,26 +6,27 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
 {
     using System;
     using System.Linq;
-    using global::Umbraco.Core.Logging;
-    using global::Umbraco.Core.Persistence.SqlSyntax;
     using Individual;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Moq;
 
     [TestClass]
-    public class IndividualGuestProviderTests
+    public class IndividualGuestProviderTests : TestBase
     {
-        [TestInitialize]
-        public void TestInitialize()
+        public override void TestInitialize()
         {
-            SqlSyntaxContext.SqlSyntaxProvider = new SqlServerSyntaxProvider();
+            base.TestInitialize();
+
+            var database = GetDatabase();
+
+            if (DataTransferObjectProviders.GetProvider(typeof(IndividualGuest)) == null)
+            {
+                DataTransferObjectProviders.Providers.Add(typeof(IndividualGuest), new IndividualGuestProvider(database));
+            }
         }
 
         [TestMethod]
         public void CanGetIndividualGuest()
         {
-            var provider = new IndividualGuestProvider(GetDatabaseWrapper());
-
             var dto = new IndividualGuest
             {
                 FirstName = "FirstName",
@@ -33,7 +34,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
                 Email = "firstname.lastname@isp.com"
             };
 
-            var id = provider.Add(dto);
+            var provider = (IDataTransferObjectProvider<IndividualGuest>)DataTransferObjectProviders.GetProvider(typeof(IndividualGuest));
+
+            var id = provider.Add(dto).Id;
 
             Assert.IsNotNull(provider.Get(id));
         }
@@ -41,8 +44,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
         [TestMethod]
         public void CanAddIndividualGuest()
         {
-            var provider = new IndividualGuestProvider(GetDatabaseWrapper());
-
             var dto = new IndividualGuest
             {
                 FirstName = "FirstName",
@@ -50,19 +51,19 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
                 Email = "firstname.lastname@isp.com"
             };
 
-            var id = provider.Add(dto);
+            var provider = (IDataTransferObjectProvider<IndividualGuest>)DataTransferObjectProviders.GetProvider(typeof(IndividualGuest));
 
-            Assert.IsNotNull(provider.Get(id));
+            Assert.IsNotNull(provider.Add(dto));
         }
 
         [TestMethod]
         public void CanQueryIndividualGuest()
         {
-            var provider = new IndividualGuestProvider(GetDatabaseWrapper());
-
             var query = new Query<IndividualGuest>(0, 10);
 
             query.Criterias.Add(c => c.FirstName == "FirstName");
+
+            var provider = (IDataTransferObjectProvider<IndividualGuest>)DataTransferObjectProviders.GetProvider(typeof(IndividualGuest));
 
             Assert.IsTrue(provider.Query(query).Any());
         }
@@ -70,8 +71,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
         [TestMethod]
         public void CanRemoveIndividualGuest()
         {
-            var provider = new IndividualGuestProvider(GetDatabaseWrapper());
-
             var dto = new IndividualGuest
             {
                 FirstName = "FirstName",
@@ -79,7 +78,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
                 Email = "firstname.lastname@isp.com"
             };
 
-            var id = provider.Add(dto);
+            var provider = (IDataTransferObjectProvider<IndividualGuest>)DataTransferObjectProviders.GetProvider(typeof(IndividualGuest));
+
+            var id = provider.Add(dto).Id;
 
             provider.Remove(id);
 
@@ -87,16 +88,21 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
         }
 
         [TestMethod]
-        public void CanUpdateIndividualGuest()
+        public void CanUpdateIndividualGuestFirstName()
         {
             throw new NotImplementedException();
         }
 
-        private static IDatabaseWrapper GetDatabaseWrapper()
+        [TestMethod]
+        public void CanUpdateIndividualGuestLastName()
         {
-            var db = new global::Umbraco.Core.Persistence.Database("Test");
+            throw new NotImplementedException();
+        }
 
-            return new DatabaseWrapper(db, new Mock<ILogger>().Object, SqlSyntaxContext.SqlSyntaxProvider);
+        [TestMethod]
+        public void CanUpdateIndividualGuestEmail()
+        {
+            throw new NotImplementedException();
         }
     }
 }

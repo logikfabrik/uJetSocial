@@ -13,7 +13,8 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Updates the specified <see cref="DataTransferObject" />.
         /// </summary>
         /// <param name="dto">The <see cref="DataTransferObject" />.</param>
-        void Update(DataTransferObject dto);
+        /// <returns>The <see cref="DataTransferObject" />.</returns>
+        DataTransferObject Update(DataTransferObject dto);
 
         /// <summary>
         /// Gets the <see cref="DataTransferObject" /> with the specified identifier.
@@ -26,8 +27,8 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Adds the specified <see cref="DataTransferObject" />.
         /// </summary>
         /// <param name="dto">The <see cref="DataTransferObject" />.</param>
-        /// <returns>The <see cref="DataTransferObject" /> identifier.</returns>
-        int Add(DataTransferObject dto);
+        /// <returns>The <see cref="DataTransferObject" />.</returns>
+        DataTransferObject Add(DataTransferObject dto);
 
         /// <summary>
         /// Removes the <see cref="DataTransferObject" /> with the specified identifier.

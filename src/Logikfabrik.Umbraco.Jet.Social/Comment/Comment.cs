@@ -15,7 +15,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
     public class Comment : DataTransferObject
     {
         private int _entityId;
+        private Type _entityType;
         private int _authorId;
+        private Type _authorType;
         private string _text;
 
         /// <summary>
@@ -89,7 +91,20 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <value>
         /// The entity type.
         /// </value>
-        internal Type EntityType { get; set; }
+        [Ignore]
+        public Type EntityType
+        {
+            get
+            {
+                return _entityType;
+            }
+
+            set
+            {
+                AssertIsWritableClone();
+                _entityType = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the author type.
@@ -97,7 +112,20 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <value>
         /// The author type.
         /// </value>
-        internal Type AuthorType { get; set; }
+        [Ignore]
+        public Type AuthorType
+        {
+            get
+            {
+                return _authorType;
+            }
+
+            set
+            {
+                AssertIsWritableClone();
+                _authorType = value;
+            }
+        }
 
         /// <summary>
         /// Gets a writable clone.
