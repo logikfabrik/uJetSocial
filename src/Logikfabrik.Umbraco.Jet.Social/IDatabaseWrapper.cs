@@ -5,12 +5,21 @@
 namespace Logikfabrik.Umbraco.Jet.Social
 {
     using global::Umbraco.Core.Persistence;
+    using global::Umbraco.Core.Persistence.SqlSyntax;
 
     /// <summary>
     /// The <see cref="IDatabaseWrapper" /> interface.
     /// </summary>
     public interface IDatabaseWrapper : Data.IDatabaseWrapper
     {
+        /// <summary>
+        /// Gets the syntax provider.
+        /// </summary>
+        /// <value>
+        /// The syntax provider.
+        /// </value>
+        ISqlSyntaxProvider SyntaxProvider { get; }
+
         /// <summary>
         /// Gets a transaction.
         /// </summary>

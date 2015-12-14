@@ -34,8 +34,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
 
             comment.IsReadOnly = false;
 
-            comment.EntityType = GetType(comment.EntityId);
-            comment.AuthorType = GetType(comment.AuthorId);
+            comment.EntityType = GetEntityType(comment.EntityId);
+            comment.AuthorType = GetEntityType(comment.AuthorId);
 
             comment.IsReadOnly = true;
 

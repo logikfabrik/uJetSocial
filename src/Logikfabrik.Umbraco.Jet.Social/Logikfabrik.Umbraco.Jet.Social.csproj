@@ -286,11 +286,13 @@
     <Compile Include="Comment\CommentProvider.cs" />
     <Compile Include="Contact\Contact.cs" />
     <Compile Include="Contact\ContactProvider.cs" />
+    <Compile Include="ForeignKeyAttribute.cs" />
     <Compile Include="DatabaseWrapper.cs" />
     <Compile Include="DataTransferObjectProviderDictionary.cs" />
     <Compile Include="DataTransferObjectProviders.cs" />
     <Compile Include="DataTransferObjectStatuses.cs" />
     <Compile Include="DataTransferObjectValidator.cs" />
+    <Compile Include="Node\Node.cs" />
     <Compile Include="Group\GroupProvider.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="DataTransferObjectProvider{T}.cs" />
@@ -309,6 +311,7 @@
     <Compile Include="Individual\IndividualMemberProvider.cs" />
     <Compile Include="Member\Member.cs" />
     <Compile Include="Member\MemberProvider.cs" />
+    <Compile Include="Node\NodeProvider.cs" />
     <Compile Include="Query{T}.cs" />
     <Compile Include="Report\Report.cs" />
     <Compile Include="Report\ReportProvider.cs" />
@@ -320,10 +323,7 @@
     <None Include="packages.config" />
     <None Include="uJetSocial.nuspec" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Document\" />
-    <Folder Include="Media\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />

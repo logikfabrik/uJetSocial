@@ -31,7 +31,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
             }
 
             Database = database;
-            _typeId = new Lazy<int>(GetTypeId);
+            _typeId = new Lazy<int>(GetEntityTypeId);
 
             CreateTables();
         }
@@ -45,20 +45,24 @@ namespace Logikfabrik.Umbraco.Jet.Social
         protected IDatabaseWrapper Database { get; }
 
         /// <summary>
-        /// Updates the specified <see cref="DataTransferObject" />.
+        /// Updates the specified data transfer object.
         /// </summary>
-        /// <param name="dto">The <see cref="DataTransferObject" />.</param>
-        /// <returns>The <see cref="DataTransferObject" />.</returns>
+        /// <param name="dto">The data transfer object to update.</param>
+        /// <returns>
+        /// The updated data transfer object object.
+        /// </returns>
         DataTransferObject IDataTransferObjectProvider.Update(DataTransferObject dto)
         {
             return Update((T)dto);
         }
 
         /// <summary>
-        /// Gets the <see cref="DataTransferObject" /> of type <typeparamref name="T" /> with the specified identifier.
+        /// Gets the data transfer object of type <typeparamref name="T" /> with the specified identifier.
         /// </summary>
-        /// <param name="id">The <see cref="DataTransferObject" /> of type <typeparamref name="T" /> identifier.</param>
-        /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T" />.</returns>
+        /// <param name="id">The data transfer object identifier.</param>
+        /// <returns>
+        /// The data transfer object of type <typeparamref name="T" /> with the specified identifier.
+        /// </returns>
         public virtual T Get(int id)
         {
             var dto = Database.Get<T>(id);
@@ -74,10 +78,12 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Adds the specified <see cref="DataTransferObject" /> of type <typeparamref name="T" />.
+        /// Adds the specified data transfer object of type <typeparamref name="T" />.
         /// </summary>
-        /// <param name="dto">The <see cref="DataTransferObject" /> of type <typeparamref name="T" />.</param>
-        /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T" /> identifier.</returns>
+        /// <param name="dto">The data transfer object of type <typeparamref name="T" /> to add.</param>
+        /// <returns>
+        /// The added data transfer object of type <typeparamref name="T" />.
+        /// </returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="dto" /> is <c>null</c>.</exception>
         public T Add(T dto)
         {
@@ -116,7 +122,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Queries the provider.
         /// </summary>
         /// <param name="query">The query.</param>
-        /// <returns>Matching <see cref="DataTransferObject" /> instances of type <typeparamref name="T" />.</returns>
+        /// <returns>
+        /// Matching data transfer object instances of type <typeparamref name="T" />.
+        /// </returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="query" /> is <c>null</c>.</exception>
         public IEnumerable<T> Query(Query<T> query)
         {
@@ -141,10 +149,12 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Updates the specified <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.
+        /// Updates the specified data transfer object of type <typeparamref name="T" />.
         /// </summary>
-        /// <param name="dto">The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</param>
-        /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</returns>
+        /// <param name="dto">The data transfer object of type <typeparamref name="T" /> to update.</param>
+        /// <returns>
+        /// The updated data transfer object of type <typeparamref name="T" />.
+        /// </returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="dto" /> is <c>null</c>.</exception>
         public T Update(T dto)
         {
@@ -163,29 +173,33 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Gets the <see cref="DataTransferObject" /> with the specified identifier.
+        /// Gets the data transfer object with the specified identifier.
         /// </summary>
-        /// <param name="id">The <see cref="DataTransferObject" /> identifier.</param>
-        /// <returns>The <see cref="DataTransferObject" />.</returns>
+        /// <param name="id">The data transfer object identifier.</param>
+        /// <returns>
+        /// The data transfer object with the specified identifier.
+        /// </returns>
         DataTransferObject IDataTransferObjectProvider.Get(int id)
         {
             return Get(id);
         }
 
         /// <summary>
-        /// Adds the specified <see cref="DataTransferObject" />.
+        /// Adds the specified data transfer object.
         /// </summary>
-        /// <param name="dto">The <see cref="DataTransferObject" />.</param>
-        /// <returns>The <see cref="DataTransferObject" />.</returns>
+        /// <param name="dto">The data transfer object to add.</param>
+        /// <returns>
+        /// The added data transfer object.
+        /// </returns>
         DataTransferObject IDataTransferObjectProvider.Add(DataTransferObject dto)
         {
             return Add((T)dto);
         }
 
         /// <summary>
-        /// Removes the <see cref="DataTransferObject" /> with the specified identifier.
+        /// Removes the data transfer object with the specified identifier.
         /// </summary>
-        /// <param name="id">The <see cref="DataTransferObject" /> identifier.</param>
+        /// <param name="id">The data transfer object identifier.</param>
         public void Remove(int id)
         {
             using (var transaction = Database.GetTransaction())
@@ -197,14 +211,19 @@ namespace Logikfabrik.Umbraco.Jet.Social
             }
         }
 
-        protected Type GetType(int entityId)
+        /// <summary>
+        /// Gets the entity type with the specified identifier.
+        /// </summary>
+        /// <param name="id">The entity type identifier.</param>
+        /// <returns>The entity type with the specified identifier.</returns>
+        protected Type GetEntityType(int id)
         {
             var sql = new Sql()
                 .Select("*")
-                .From<Entity>()
-                .LeftJoin<EntityType>()
-                .On<Entity, EntityType>(e => e.TypeId, et => et.Id)
-                .Where<Entity>(obj => obj.Id == entityId);
+                .From<Entity>(Database.SyntaxProvider)
+                .LeftJoin<EntityType>(Database.SyntaxProvider)
+                .On<Entity, EntityType>(Database.SyntaxProvider, e => e.TypeId, et => et.Id)
+                .Where<Entity>(e => e.Id == id);
 
             var entity = Database.Get<Entity>(sql);
 
@@ -235,14 +254,14 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
-        /// Gets the type identifier.
+        /// Gets the entity type identifier.
         /// </summary>
-        /// <returns>The type identifier.</returns>
-        private int GetTypeId()
+        /// <returns>The entity type identifier</returns>
+        private int GetEntityTypeId()
         {
             var typeName = typeof(T).AssemblyQualifiedName;
 
-            var sql = new Sql().Where<EntityType>(obj => obj.Type == typeName);
+            var sql = new Sql().Where<EntityType>(et => et.Type == typeName);
 
             var entityType = Database.Get<EntityType>(sql);
 

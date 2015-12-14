@@ -9,36 +9,36 @@ namespace Logikfabrik.Umbraco.Jet.Social
     /// <summary>
     /// The <see cref="IDataTransferObjectProvider{T}" /> interface.
     /// </summary>
-    /// <typeparam name="T">The <see cref="DataTransferObject" /> type.</typeparam>
+    /// <typeparam name="T">The data transfer object type.</typeparam>
     public interface IDataTransferObjectProvider<T> : IDataTransferObjectProvider
         where T : DataTransferObject
     {
         /// <summary>
-        /// Updates the specified <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.
+        /// Updates the specified data transfer object of type <typeparamref name="T" />.
         /// </summary>
-        /// <param name="dto">The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</param>
-        /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</returns>
+        /// <param name="dto">The data transfer object of type <typeparamref name="T" /> to update.</param>
+        /// <returns>The updated data transfer object of type <typeparamref name="T" />.</returns>
         T Update(T dto);
 
         /// <summary>
-        /// Gets the <see cref="DataTransferObject" /> of type <typeparamref name="T"/> with the specified identifier.
+        /// Gets the data transfer object of type <typeparamref name="T" /> with the specified identifier.
         /// </summary>
-        /// <param name="id">The <see cref="DataTransferObject" /> of type <typeparamref name="T"/> identifier.</param>
-        /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</returns>
+        /// <param name="id">The data transfer object identifier.</param>
+        /// <returns>The data transfer object of type <typeparamref name="T" /> with the specified identifier.</returns>
         new T Get(int id);
 
         /// <summary>
-        /// Adds the specified <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.
+        /// Adds the specified data transfer object of type <typeparamref name="T" />.
         /// </summary>
-        /// <param name="dto">The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</param>
-        /// <returns>The <see cref="DataTransferObject" /> of type <typeparamref name="T"/>.</returns>
+        /// <param name="dto">The data transfer object of type <typeparamref name="T" /> to add.</param>
+        /// <returns>The added data transfer object of type <typeparamref name="T" />.</returns>
         T Add(T dto);
 
         /// <summary>
         /// Queries the provider.
         /// </summary>
         /// <param name="query">The query.</param>
-        /// <returns>Matching <see cref="DataTransferObject" /> instances of type <typeparamref name="T"/>.</returns>
+        /// <returns>Matching data transfer object instances of type <typeparamref name="T" />.</returns>
         IEnumerable<T> Query(Query<T> query);
     }
 }

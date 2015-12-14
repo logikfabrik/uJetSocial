@@ -10,30 +10,30 @@ namespace Logikfabrik.Umbraco.Jet.Social
     public interface IDataTransferObjectProvider
     {
         /// <summary>
-        /// Updates the specified <see cref="DataTransferObject" />.
+        /// Updates the specified data transfer object.
         /// </summary>
-        /// <param name="dto">The <see cref="DataTransferObject" />.</param>
-        /// <returns>The <see cref="DataTransferObject" />.</returns>
+        /// <param name="dto">The data transfer object to update.</param>
+        /// <returns>The updated data transfer object object.</returns>
         DataTransferObject Update(DataTransferObject dto);
 
         /// <summary>
-        /// Gets the <see cref="DataTransferObject" /> with the specified identifier.
+        /// Gets the data transfer object with the specified identifier.
         /// </summary>
-        /// <param name="id">The <see cref="DataTransferObject" /> identifier.</param>
-        /// <returns>The <see cref="DataTransferObject" />.</returns>
+        /// <param name="id">The data transfer object identifier.</param>
+        /// <returns>The data transfer object with the specified identifier.</returns>
         DataTransferObject Get(int id);
 
         /// <summary>
-        /// Adds the specified <see cref="DataTransferObject" />.
+        /// Adds the specified data transfer object.
         /// </summary>
-        /// <param name="dto">The <see cref="DataTransferObject" />.</param>
-        /// <returns>The <see cref="DataTransferObject" />.</returns>
+        /// <param name="dto">The data transfer object to add.</param>
+        /// <returns>The added data transfer object.</returns>
         DataTransferObject Add(DataTransferObject dto);
 
         /// <summary>
-        /// Removes the <see cref="DataTransferObject" /> with the specified identifier.
+        /// Removes the data transfer object with the specified identifier.
         /// </summary>
-        /// <param name="id">The <see cref="DataTransferObject" /> identifier.</param>
+        /// <param name="id">The data transfer object identifier.</param>
         void Remove(int id);
     }
 }

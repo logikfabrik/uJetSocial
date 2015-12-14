@@ -300,6 +300,7 @@
     <Compile Include="Data\CommentTests.cs" />
     <Compile Include="Data\IndividualGuestProviderTests.cs" />
     <Compile Include="Data\IndividualGuestTests.cs" />
+    <Compile Include="Data\MemberProviderTests.cs" />
     <Compile Include="Data\TestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

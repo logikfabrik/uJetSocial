@@ -26,7 +26,16 @@ namespace Logikfabrik.Umbraco.Jet.Social
             : base(database, logger, syntaxProvider)
         {
             _database = database;
+            SyntaxProvider = syntaxProvider;
         }
+
+        /// <summary>
+        /// Gets the syntax provider.
+        /// </summary>
+        /// <value>
+        /// The syntax provider.
+        /// </value>
+        public ISqlSyntaxProvider SyntaxProvider { get; }
 
         /// <summary>
         /// Gets a transaction.

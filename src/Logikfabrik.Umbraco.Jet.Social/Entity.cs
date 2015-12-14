@@ -30,7 +30,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <value>
         /// The type identifier.
         /// </value>
-        [ForeignKey(typeof(EntityType))]
+        [global::Umbraco.Core.Persistence.DatabaseAnnotations.ForeignKey(typeof(EntityType))]
         [Column("TypeId")]
         public int TypeId { get; set; }
 

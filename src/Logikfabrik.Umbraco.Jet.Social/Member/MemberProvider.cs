@@ -7,7 +7,15 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
     /// <summary>
     /// The <see cref="MemberProvider" /> class.
     /// </summary>
-    public class MemberProvider
+    public class MemberProvider : DataTransferObjectProvider<Member>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MemberProvider" /> class.
+        /// </summary>
+        /// <param name="database">The database.</param>
+        public MemberProvider(IDatabaseWrapper database)
+            : base(database)
+        {
+        }
     }
 }
