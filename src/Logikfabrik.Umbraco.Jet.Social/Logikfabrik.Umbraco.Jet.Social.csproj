@@ -286,13 +286,14 @@
     <Compile Include="Comment\CommentProvider.cs" />
     <Compile Include="Contact\Contact.cs" />
     <Compile Include="Contact\ContactProvider.cs" />
+    <Compile Include="Document\Document.cs" />
+    <Compile Include="Document\DocumentProvider.cs" />
     <Compile Include="ForeignKeyAttribute.cs" />
     <Compile Include="DatabaseWrapper.cs" />
     <Compile Include="DataTransferObjectProviderDictionary.cs" />
     <Compile Include="DataTransferObjectProviders.cs" />
     <Compile Include="DataTransferObjectStatuses.cs" />
     <Compile Include="DataTransferObjectValidator.cs" />
-    <Compile Include="Node\Node.cs" />
     <Compile Include="Group\GroupProvider.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="DataTransferObjectProvider{T}.cs" />
@@ -311,7 +312,6 @@
     <Compile Include="Individual\IndividualMemberProvider.cs" />
     <Compile Include="Member\Member.cs" />
     <Compile Include="Member\MemberProvider.cs" />
-    <Compile Include="Node\NodeProvider.cs" />
     <Compile Include="Query{T}.cs" />
     <Compile Include="Report\Report.cs" />
     <Compile Include="Report\ReportProvider.cs" />

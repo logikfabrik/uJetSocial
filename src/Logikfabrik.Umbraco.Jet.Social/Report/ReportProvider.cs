@@ -7,7 +7,15 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
     /// <summary>
     /// The <see cref="ReportProvider" /> class.
     /// </summary>
-    public class ReportProvider
+    public class ReportProvider : DataTransferObjectProvider<Report>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReportProvider" /> class.
+        /// </summary>
+        /// <param name="database">The database.</param>
+        public ReportProvider(IDatabaseWrapper database)
+            : base(database)
+        {
+        }
     }
 }
