@@ -35,7 +35,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// The identifier.
         /// </value>
         [PrimaryKeyColumn(AutoIncrement = false)]
-        [global::Umbraco.Core.Persistence.DatabaseAnnotations.ForeignKey(typeof(Entity))]
+        [ForeignKey(typeof(Entity))]
         [Column("Id")]
         public int Id { get; internal set; }
 

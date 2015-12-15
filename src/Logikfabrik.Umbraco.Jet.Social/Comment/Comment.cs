@@ -6,7 +6,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
 {
     using System;
     using global::Umbraco.Core.Persistence;
-    using global::Umbraco.Core.Persistence.DatabaseAnnotations;
 
     /// <summary>
     /// The <see cref="Comment" /> class.
@@ -26,7 +25,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <value>
         /// The identifier of the commented entity.
         /// </value>
-        [ForeignKey(typeof(Entity), Name = "EntityId")]
+        [ForeignKey(typeof(Entity), Name = "FK_uJetSocialComment_EntityId")]
         [Column("EntityId")]
         public int EntityId
         {
@@ -48,7 +47,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <value>
         /// The identifier of the author.
         /// </value>
-        [ForeignKey(typeof(Entity), Name = "AuthorId")]
+        [ForeignKey(typeof(Entity), Name = "FK_uJetSocialComment_AuthorId")]
         [Column("AuthorId")]
         public int AuthorId
         {
