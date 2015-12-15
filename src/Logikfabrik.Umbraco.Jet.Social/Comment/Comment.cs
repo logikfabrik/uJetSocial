@@ -25,7 +25,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <value>
         /// The identifier of the commented entity.
         /// </value>
-        [ForeignKey(typeof(Entity), Name = "FK_uJetSocialComment_EntityId")]
+        [ForeignKey(typeof(Entity), Name = "FK_uJetSocialComment_uJetSocialEntity_Id_As_EntityId")]
         [Column("EntityId")]
         public int EntityId
         {
@@ -47,7 +47,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <value>
         /// The identifier of the author.
         /// </value>
-        [ForeignKey(typeof(Entity), Name = "FK_uJetSocialComment_AuthorId")]
+        [ForeignKey(typeof(Entity), Name = "FK_uJetSocialComment_uJetSocialEntity_Id_As_AuthorId")]
         [Column("AuthorId")]
         public int AuthorId
         {

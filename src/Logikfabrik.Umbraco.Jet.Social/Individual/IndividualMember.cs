@@ -21,7 +21,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         /// <value>
         /// The member identifier.
         /// </value>
-        [ForeignKey(typeof(Member), Name = "FK_uJetSocialIndividualMember_MemberId")]
+        [ForeignKey(typeof(Member), Name = "FK_uJetSocialIndividualMember_uJetSocialMember_Id_As_MemberId")]
         [Column("MemberId")]
         public int MemberId
         {

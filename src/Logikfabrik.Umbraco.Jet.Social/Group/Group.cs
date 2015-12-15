@@ -65,7 +65,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         /// <value>
         /// The identifier of the owner.
         /// </value>
-        [Social.ForeignKey(typeof(Entity), Name = "FK_uJetSocialGroup_OwnerId")]
+        [Social.ForeignKey(typeof(Entity), Name = "FK_uJetSocialGroup_uJetSocialEntity_Id_As_OwnerId")]
         [Column("OwnerId")]
         public int OwnerId
         {

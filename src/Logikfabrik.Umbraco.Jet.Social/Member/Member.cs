@@ -20,7 +20,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         /// <value>
         /// The member identifier.
         /// </value>
-        [ForeignKey("Umbraco.Core.Models.Rdbms.MemberDto,Umbraco.Core", Name = "FK_uJetSocialMember_MemberId")]
+        [ForeignKey("Umbraco.Core.Models.Rdbms.MemberDto,Umbraco.Core", Name = "FK_uJetSocialMember_cmsMember_nodeId_As_MemberId")]
         [Column("MemberId")]
         public int MemberId
         {

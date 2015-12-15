@@ -25,7 +25,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
         /// <value>
         /// The identifier of the reported entity.
         /// </value>
-        [ForeignKey(typeof(Entity), Name = "FK_uJetSocialReport_EntityId")]
+        [ForeignKey(typeof(Entity), Name = "FK_uJetSocialReport_uJetSocialEntity_Id_As_EntityId")]
         [Column("EntityId")]
         public int EntityId
         {
@@ -47,7 +47,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
         /// <value>
         /// The identifier of the author.
         /// </value>
-        [ForeignKey(typeof(Entity), Name = "FK_uJetSocialReport_AuthorId")]
+        [ForeignKey(typeof(Entity), Name = "FK_uJetSocialReport_uJetSocialEntity_Id_As_AuthorId")]
         [Column("AuthorId")]
         public int AuthorId
         {
