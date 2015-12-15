@@ -321,6 +321,12 @@
     <Compile Include="Report\Report.cs" />
     <Compile Include="Report\ReportProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Trees\CommentTreeController.cs" />
+    <Compile Include="Web\Trees\DateTreeController.cs" />
+    <Compile Include="Web\Trees\GroupTreeController.cs" />
+    <Compile Include="Web\Trees\LetterTreeController.cs" />
+    <Compile Include="Web\Trees\ReportTreeController.cs" />
+    <Compile Include="Web\Trees\TreeController.cs" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="stylecop.json" />
@@ -328,7 +334,9 @@
     <None Include="packages.config" />
     <None Include="uJetSocial.nuspec" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Media\" />
+  </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
