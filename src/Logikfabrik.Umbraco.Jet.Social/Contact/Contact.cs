@@ -4,10 +4,86 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Contact
 {
+    using global::Umbraco.Core.Persistence;
+    using Member;
+
     /// <summary>
     /// The <see cref="Contact" /> class.
     /// </summary>
-    public class Contact
+    [TableName("uJetSocialContact")]
+    public class Contact : DataTransferObject
     {
+        private int _fromMemberId;
+        private int _toMemberId;
+
+        /// <summary>
+        /// Gets or sets the from member identifier.
+        /// </summary>
+        /// <value>
+        /// The from member identifier.
+        /// </value>
+        [ForeignKey(typeof(Member), Name = "FK_uJetSocialContact_uJetSocialMember_Id_As_FromMemberId")]
+        [Column("FromMemberId")]
+        public int FromMemberId
+        {
+            get
+            {
+                return _fromMemberId;
+            }
+
+            set
+            {
+                AssertIsWritableClone();
+                _fromMemberId = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the to member identifier.
+        /// </summary>
+        /// <value>
+        /// The to member identifier.
+        /// </value>
+        [ForeignKey(typeof(Member), Name = "FK_uJetSocialContact_uJetSocialMember_Id_As_ToMemberId")]
+        [Column("ToMemberId")]
+        public int ToMemberId
+        {
+            get
+            {
+                return _toMemberId;
+            }
+
+            set
+            {
+                AssertIsWritableClone();
+                _toMemberId = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets a writable clone.
+        /// </summary>
+        /// <returns>A writable clone.</returns>
+        public Contact CreateWritableClone()
+        {
+            return CreateWritableClone<Contact>();
+        }
+
+        /// <summary>
+        /// Clones this instance.
+        /// </summary>
+        /// <returns>
+        /// A writable clone of this instance.
+        /// </returns>
+        protected override DataTransferObject Clone()
+        {
+            var clone = new Contact
+            {
+                FromMemberId = _fromMemberId,
+                ToMemberId = _toMemberId
+            };
+
+            return clone;
+        }
     }
 }

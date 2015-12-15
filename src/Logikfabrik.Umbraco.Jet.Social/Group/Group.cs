@@ -4,17 +4,19 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Group
 {
+    using System;
     using global::Umbraco.Core.Persistence;
 
     /// <summary>
     /// The <see cref="Group" /> class.
     /// </summary>
     [TableName("uJetSocialGroup")]
-    public class Group : DataTransferObject
+    public class Group : DataTransferObject, IOwnable
     {
         private string _name;
         private string _description;
         private int _ownerId;
+        private Type _ownerType;
 
         /// <summary>
         /// Gets or sets the name.
@@ -77,6 +79,27 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
             {
                 AssertIsWritableClone();
                 _ownerId = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the owner type.
+        /// </summary>
+        /// <value>
+        /// The owner type.
+        /// </value>
+        [Ignore]
+        public Type OwnerType
+        {
+            get
+            {
+                return _ownerType;
+            }
+
+            set
+            {
+                AssertIsWritableClone();
+                _ownerType = value;
             }
         }
 

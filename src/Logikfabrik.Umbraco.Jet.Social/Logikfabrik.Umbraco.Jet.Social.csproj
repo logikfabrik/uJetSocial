@@ -281,6 +281,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorableExtensions.cs" />
     <Compile Include="Comment\Comment.cs" />
     <Compile Include="Comment\CommentExtensions.cs" />
     <Compile Include="Comment\CommentProvider.cs" />
@@ -302,6 +303,7 @@
     <Compile Include="Group\Group.cs" />
     <Compile Include="Group\GroupMembership.cs" />
     <Compile Include="Group\GroupMembershipProvider.cs" />
+    <Compile Include="IAuthorable.cs" />
     <Compile Include="IDatabaseWrapper.cs" />
     <Compile Include="IDataTransferObjectProvider.cs" />
     <Compile Include="IDataTransferObjectProvider{T}.cs" />
@@ -310,8 +312,11 @@
     <Compile Include="Individual\IndividualGuestProvider.cs" />
     <Compile Include="Individual\IndividualMember.cs" />
     <Compile Include="Individual\IndividualMemberProvider.cs" />
+    <Compile Include="Individual\IndividualProvider{T}.cs" />
+    <Compile Include="IOwnable.cs" />
     <Compile Include="Member\Member.cs" />
     <Compile Include="Member\MemberProvider.cs" />
+    <Compile Include="OwnableExtensions.cs" />
     <Compile Include="Query{T}.cs" />
     <Compile Include="Report\Report.cs" />
     <Compile Include="Report\ReportProvider.cs" />

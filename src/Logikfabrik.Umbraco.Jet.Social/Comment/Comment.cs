@@ -11,7 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
     /// The <see cref="Comment" /> class.
     /// </summary>
     [TableName("uJetSocialComment")]
-    public class Comment : DataTransferObject
+    public class Comment : DataTransferObject, IAuthorable
     {
         private int _entityId;
         private Type _entityType;

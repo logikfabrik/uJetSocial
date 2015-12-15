@@ -17,5 +17,28 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
             : base(database)
         {
         }
+
+        /// <summary>
+        /// Gets the group with the specified identifier.
+        /// </summary>
+        /// <param name="id">The group identifier.</param>
+        /// <returns>The group with the specified identifier.</returns>
+        public override Group Get(int id)
+        {
+            var group = base.Get(id);
+
+            if (group == null)
+            {
+                return null;
+            }
+
+            group.IsReadOnly = false;
+
+            group.OwnerType = GetEntityType(group.OwnerId);
+
+            group.IsReadOnly = true;
+
+            return group;
+        }
     }
 }

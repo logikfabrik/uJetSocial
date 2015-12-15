@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
     /// <summary>
     /// The <see cref="IndividualMemberProvider" /> class.
     /// </summary>
-    public class IndividualMemberProvider : DataTransferObjectProvider<IndividualMember>
+    public class IndividualMemberProvider : IndividualProvider<IndividualMember>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="IndividualMemberProvider" /> class.

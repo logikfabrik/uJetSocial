@@ -11,7 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
     /// The <see cref="IndividualMember" /> class.
     /// </summary>
     [TableName("uJetSocialIndividualMember")]
-    public class IndividualMember : DataTransferObject
+    public class IndividualMember : Individual
     {
         private int _memberId;
 

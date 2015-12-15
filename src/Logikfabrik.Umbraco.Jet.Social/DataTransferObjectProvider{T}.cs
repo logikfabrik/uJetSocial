@@ -12,7 +12,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
     /// <summary>
     /// The <see cref="DataTransferObjectProvider{T}" /> class.
     /// </summary>
-    /// <typeparam name="T">The <see cref="DataTransferObject" /> type.</typeparam>
+    /// <typeparam name="T">The data transfer object type.</typeparam>
     public abstract class DataTransferObjectProvider<T> : IDataTransferObjectProvider<T>
         where T : DataTransferObject
     {
