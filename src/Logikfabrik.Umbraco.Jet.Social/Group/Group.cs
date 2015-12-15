@@ -5,7 +5,6 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Group
 {
     using global::Umbraco.Core.Persistence;
-    using global::Umbraco.Core.Persistence.DatabaseAnnotations;
 
     /// <summary>
     /// The <see cref="Group" /> class.
@@ -65,7 +64,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         /// <value>
         /// The identifier of the owner.
         /// </value>
-        [Social.ForeignKey(typeof(Entity), Name = "FK_uJetSocialGroup_uJetSocialEntity_Id_As_OwnerId")]
+        [ForeignKey(typeof(Entity), Name = "FK_uJetSocialGroup_uJetSocialEntity_Id_As_OwnerId")]
         [Column("OwnerId")]
         public int OwnerId
         {

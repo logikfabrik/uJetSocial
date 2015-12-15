@@ -19,10 +19,10 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         }
 
         /// <summary>
-        /// Gets the <see cref="Comment" /> with the specified identifier.
+        /// Gets the comment with the specified identifier.
         /// </summary>
-        /// <param name="id">The <see cref="Comment" /> identifier.</param>
-        /// <returns>The <see cref="Comment" />.</returns>
+        /// <param name="id">The comment identifier.</param>
+        /// <returns>The comment with the specified identifier.</returns>
         public override Comment Get(int id)
         {
             var comment = base.Get(id);
