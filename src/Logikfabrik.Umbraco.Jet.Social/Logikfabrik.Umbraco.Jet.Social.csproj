@@ -324,6 +324,7 @@
     <Compile Include="Web\JetSocialApplication.cs" />
     <Compile Include="Web\Trees\CommentTreeController.cs" />
     <Compile Include="Web\Trees\GroupTreeController.cs" />
+    <Compile Include="Web\Trees\GuestTreeController.cs" />
     <Compile Include="Web\Trees\LetterTreeController.cs" />
     <Compile Include="Web\Trees\ReportTreeController.cs" />
     <Compile Include="Web\Trees\TreeController.cs" />

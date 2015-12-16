@@ -1,4 +1,4 @@
-﻿// <copyright file="GroupTreeController.cs" company="Logikfabrik">
+﻿// <copyright file="GuestTreeController.cs" company="Logikfabrik">
 //   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
@@ -16,22 +16,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
     /// The <see cref="GroupTreeController" /> class.
     /// </summary>
     [PluginController("uJetSocial")]
-    [Tree("uJetSocial", "group", "Groups")]
-    public class GroupTreeController : LetterTreeController
+    [Tree("uJetSocial", "guest", "Guests")]
+    public class GuestTreeController : LetterTreeController
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GroupTreeController" /> class.
+        /// Initializes a new instance of the <see cref="GuestTreeController" /> class.
         /// </summary>
         /// <param name="localizedTextService">The localized text service.</param>
-        public GroupTreeController(ILocalizedTextService localizedTextService)
+        public GuestTreeController(ILocalizedTextService localizedTextService)
             : base(localizedTextService)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GroupTreeController" /> class.
+        /// Initializes a new instance of the <see cref="GuestTreeController" /> class.
         /// </summary>
-        public GroupTreeController()
+        public GuestTreeController()
             : this(ApplicationContext.Current.Services.TextService)
         {
         }
@@ -42,7 +42,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         /// <value>
         /// The child icon.
         /// </value>
-        protected override string ChildIcon => "icon-users";
+        protected override string ChildIcon => "icon-male-and-female";
 
         /// <summary>
         /// Gets the menu for the node with the specified identifier.

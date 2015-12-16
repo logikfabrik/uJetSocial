@@ -5,8 +5,6 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 {
     using System;
-    using System.Collections.Generic;
-    using System.Globalization;
     using System.Linq;
     using System.Net.Http.Formatting;
     using global::Umbraco.Core.Services;
@@ -17,8 +15,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
     /// </summary>
     public abstract class LetterTreeController : TreeController
     {
-        private readonly Lazy<IDictionary<char, int>> _letters;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="LetterTreeController" /> class.
         /// </summary>
@@ -26,14 +22,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         protected LetterTreeController(ILocalizedTextService localizedTextService)
             : base(localizedTextService)
         {
-            _letters = new Lazy<IDictionary<char, int>>(GetLetters);
         }
-
-        /// <summary>
-        /// Gets the letters.
-        /// </summary>
-        /// <returns>The letters.</returns>
-        protected abstract IDictionary<char, int> GetLetters();
 
         /// <summary>
         /// Gets the tree nodes.
@@ -49,30 +38,13 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
                 throw new ArgumentException("ID cannot be null or white space.", nameof(id));
             }
 
+            var letters = Enumerable.Range('a', 'z' - 'a' + 1).Select(i => ((char)i).ToString()).ToList();
+
+            letters.Add("...");
+
             var nodes = new TreeNodeCollection();
-            var letters = Enumerable.Range('a', 'z' - 'a' + 1).Select(i => (char)i).ToArray();
-            int total;
 
-            foreach (var letter in letters)
-            {
-                if (!_letters.Value.ContainsKey(letter))
-                {
-                    nodes.Add(CreateTreeNode(letter.ToString(CultureInfo.InvariantCulture), id, new FormDataCollection((string)null), $"{letter} ({0})", string.Empty, false));
-                }
-                else
-                {
-                    total = _letters.Value[letter];
-
-                    nodes.Add(CreateTreeNode(letter.ToString(CultureInfo.InvariantCulture), id, new FormDataCollection((string)null), $"{letter} ({total})", string.Empty, false));
-                }
-            }
-
-            total = _letters.Value.Where(count => !letters.Contains(count.Key)).Sum(count => count.Value);
-
-            if (total > 0)
-            {
-                nodes.Add(CreateTreeNode("Others", id, new FormDataCollection((string)null), $"{"Others"} ({total})", string.Empty, false));
-            }
+            nodes.AddRange(letters.Select(letter => CreateTreeNode(letter, id, new FormDataCollection((string)null), letter, ChildIcon, false)));
 
             return nodes;
         }

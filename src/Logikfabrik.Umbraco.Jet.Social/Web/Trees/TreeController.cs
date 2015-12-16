@@ -46,6 +46,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         protected virtual bool HasChildren => true;
 
         /// <summary>
+        /// Gets the child icon.
+        /// </summary>
+        /// <value>
+        /// The child icon.
+        /// </value>
+        protected virtual string ChildIcon => string.Empty;
+
+        /// <summary>
         /// Gets the localized text service.
         /// </summary>
         /// <value>
