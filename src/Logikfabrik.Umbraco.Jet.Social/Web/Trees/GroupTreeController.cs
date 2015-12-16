@@ -4,7 +4,6 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 {
-    using System;
     using System.Collections.Generic;
     using System.Net.Http.Formatting;
     using global::Umbraco.Core;
@@ -70,7 +69,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         protected override IDictionary<char, int> GetLetters()
         {
             // TODO: Get letters.
-            throw new NotImplementedException();
+            return new Dictionary<char, int>();
         }
     }
 }

@@ -4,6 +4,8 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Document
 {
+    using System;
+
     /// <summary>
     /// The <see cref="DocumentProvider" /> class.
     /// </summary>
@@ -13,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Document
         /// Initializes a new instance of the <see cref="DocumentProvider" /> class.
         /// </summary>
         /// <param name="database">The database.</param>
-        public DocumentProvider(IDatabaseWrapper database)
+        public DocumentProvider(Func<IDatabaseWrapper> database)
             : base(database)
         {
         }

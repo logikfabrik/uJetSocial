@@ -4,6 +4,8 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Group
 {
+    using System;
+
     /// <summary>
     /// The <see cref="GroupMembershipProvider" /> class.
     /// </summary>
@@ -13,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         /// Initializes a new instance of the <see cref="GroupMembershipProvider" /> class.
         /// </summary>
         /// <param name="database">The database.</param>
-        public GroupMembershipProvider(IDatabaseWrapper database)
+        public GroupMembershipProvider(Func<IDatabaseWrapper> database)
             : base(database)
         {
         }

@@ -321,9 +321,8 @@
     <Compile Include="Report\Report.cs" />
     <Compile Include="Report\ReportProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Web\Application.cs" />
+    <Compile Include="Web\JetSocialApplication.cs" />
     <Compile Include="Web\Trees\CommentTreeController.cs" />
-    <Compile Include="Web\Trees\DateTreeController.cs" />
     <Compile Include="Web\Trees\GroupTreeController.cs" />
     <Compile Include="Web\Trees\LetterTreeController.cs" />
     <Compile Include="Web\Trees\ReportTreeController.cs" />

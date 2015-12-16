@@ -4,6 +4,8 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Contact
 {
+    using System;
+
     /// <summary>
     /// The <see cref="ContactProvider" /> class.
     /// </summary>
@@ -13,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
         /// Initializes a new instance of the <see cref="ContactProvider" /> class.
         /// </summary>
         /// <param name="database">The database.</param>
-        public ContactProvider(IDatabaseWrapper database)
+        public ContactProvider(Func<IDatabaseWrapper> database)
             : base(database)
         {
         }

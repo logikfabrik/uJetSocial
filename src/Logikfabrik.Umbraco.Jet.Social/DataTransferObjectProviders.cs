@@ -5,6 +5,10 @@
 namespace Logikfabrik.Umbraco.Jet.Social
 {
     using System;
+    using Comment;
+    using global::Umbraco.Core;
+    using global::Umbraco.Core.Logging;
+    using global::Umbraco.Core.ObjectResolution;
 
     /// <summary>
     /// The <see cref="DataTransferObjectProviders" /> class.
@@ -40,7 +44,14 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <returns>The default providers.</returns>
         private static DataTransferObjectProviderDictionary GetDefaultProviders()
         {
-            return new DataTransferObjectProviderDictionary();
+            Func<IDatabaseWrapper> database = () =>
+            {
+                var context = ApplicationContext.Current.DatabaseContext;
+
+                return new DatabaseWrapper(context.Database, ResolverBase<LoggerResolver>.Current.Logger, context.SqlSyntax);
+            };
+
+            return new DataTransferObjectProviderDictionary { { typeof(Comment.Comment), new CommentProvider(database) } };
         }
     }
 }

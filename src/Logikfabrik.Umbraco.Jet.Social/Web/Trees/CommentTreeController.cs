@@ -4,8 +4,6 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 {
-    using System;
-    using System.Collections.Generic;
     using System.Net.Http.Formatting;
     using global::Umbraco.Core;
     using global::Umbraco.Core.Services;
@@ -19,7 +17,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
     /// </summary>
     [PluginController("uJetSocial")]
     [Tree("uJetSocial", "comment", "Comments")]
-    public class CommentTreeController : DateTreeController
+    public class CommentTreeController : TreeController
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CommentTreeController" /> class.
@@ -37,6 +35,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
             : this(ApplicationContext.Current.Services.TextService)
         {
         }
+
+        /// <summary>
+        /// Gets a value indicating whether this instance has children.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance has children; otherwise, <c>false</c>.
+        /// </value>
+        protected override bool HasChildren => false;
 
         /// <summary>
         /// Gets the menu for the node with the specified identifier.
@@ -59,18 +65,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
             menu.Items.Add<ActionRefresh>(LocalizedTextService.Localize("RefreshNode"), true);
 
             return menu;
-        }
-
-        /// <summary>
-        /// Gets the dates.
-        /// </summary>
-        /// <returns>
-        /// The dates.
-        /// </returns>
-        protected override IDictionary<int, IDictionary<int, int>> GetDates()
-        {
-            // TODO: Get dates.
-            throw new NotImplementedException();
         }
     }
 }

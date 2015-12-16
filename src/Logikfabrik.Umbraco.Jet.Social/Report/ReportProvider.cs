@@ -4,6 +4,8 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Report
 {
+    using System;
+
     /// <summary>
     /// The <see cref="ReportProvider" /> class.
     /// </summary>
@@ -13,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
         /// Initializes a new instance of the <see cref="ReportProvider" /> class.
         /// </summary>
         /// <param name="database">The database.</param>
-        public ReportProvider(IDatabaseWrapper database)
+        public ReportProvider(Func<IDatabaseWrapper> database)
             : base(database)
         {
         }

@@ -4,6 +4,8 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Member
 {
+    using System;
+
     /// <summary>
     /// The <see cref="MemberProvider" /> class.
     /// </summary>
@@ -13,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         /// Initializes a new instance of the <see cref="MemberProvider" /> class.
         /// </summary>
         /// <param name="database">The database.</param>
-        public MemberProvider(IDatabaseWrapper database)
+        public MemberProvider(Func<IDatabaseWrapper> database)
             : base(database)
         {
         }

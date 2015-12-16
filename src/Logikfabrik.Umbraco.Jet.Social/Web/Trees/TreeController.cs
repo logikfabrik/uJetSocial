@@ -8,6 +8,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
     using System.Net.Http.Formatting;
     using global::Umbraco.Core.Services;
     using global::Umbraco.Web.Models.Trees;
+    using global::Umbraco.Web.Trees;
 
     /// <summary>
     /// The <see cref="TreeController" /> class.
@@ -27,12 +28,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
             }
 
             LocalizedTextService = localizedTextService;
+
+            RootNodeRendering += OnRootNodeRendering;
         }
 
         /// <summary>
         /// Gets the root node display name.
         /// </summary>
         public override string RootNodeDisplayName => LocalizedTextService.Localize(TreeAlias);
+
+        /// <summary>
+        /// Gets a value indicating whether this instance has children.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance has children; otherwise, <c>false</c>.
+        /// </value>
+        protected virtual bool HasChildren => true;
 
         /// <summary>
         /// Gets the localized text service.
@@ -74,6 +85,32 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         protected override MenuItemCollection GetMenuForNode(string id, FormDataCollection queryStrings)
         {
             return new MenuItemCollection();
+        }
+
+        /// <summary>
+        /// Gets the tree nodes.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="queryStrings">The query strings.</param>
+        /// <returns>The tree nodes.</returns>
+        protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection queryStrings)
+        {
+            return new TreeNodeCollection();
+        }
+
+        private void OnRootNodeRendering(TreeControllerBase sender, TreeNodeRenderingEventArgs e)
+        {
+            if (sender != this)
+            {
+                return;
+            }
+
+            if (HasChildren)
+            {
+                return;
+            }
+
+            e.Node.HasChildren = false;
         }
     }
 }

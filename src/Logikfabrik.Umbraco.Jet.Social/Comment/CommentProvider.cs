@@ -4,6 +4,8 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Comment
 {
+    using System;
+
     /// <summary>
     /// The <see cref="CommentProvider" /> class.
     /// </summary>
@@ -13,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// Initializes a new instance of the <see cref="CommentProvider" /> class.
         /// </summary>
         /// <param name="database">The database.</param>
-        public CommentProvider(IDatabaseWrapper database)
+        public CommentProvider(Func<IDatabaseWrapper> database)
             : base(database)
         {
         }

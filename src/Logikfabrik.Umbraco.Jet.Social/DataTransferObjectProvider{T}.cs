@@ -16,6 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
     public abstract class DataTransferObjectProvider<T> : IDataTransferObjectProvider<T>
         where T : DataTransferObject
     {
+        private readonly Lazy<IDatabaseWrapper> _database;
         private readonly Lazy<int> _typeId;
 
         /// <summary>
@@ -23,26 +24,24 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// </summary>
         /// <param name="database">The database.</param>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="database" /> is <c>null</c>.</exception>
-        protected DataTransferObjectProvider(IDatabaseWrapper database)
+        protected DataTransferObjectProvider(Func<IDatabaseWrapper> database)
         {
             if (database == null)
             {
                 throw new ArgumentNullException(nameof(database));
             }
 
-            Database = database;
+            _database = new Lazy<IDatabaseWrapper>(() =>
+            {
+                var db = database();
+
+                CreateTables(db);
+
+                return db;
+            });
+
             _typeId = new Lazy<int>(GetEntityTypeId);
-
-            CreateTables();
         }
-
-        /// <summary>
-        /// Gets the database.
-        /// </summary>
-        /// <value>
-        /// The database.
-        /// </value>
-        protected IDatabaseWrapper Database { get; }
 
         /// <summary>
         /// Updates the specified data transfer object.
@@ -65,7 +64,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// </returns>
         public virtual T Get(int id)
         {
-            var dto = Database.Get<T>(id);
+            var dto = _database.Value.Get<T>(id);
 
             if (dto == null)
             {
@@ -96,18 +95,18 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
             int id;
 
-            using (var transaction = Database.GetTransaction())
+            using (var transaction = _database.Value.GetTransaction())
             {
                 var entity = new Entity
                 {
                     TypeId = _typeId.Value
                 };
 
-                id = decimal.ToInt32((decimal)Database.Add(entity));
+                id = decimal.ToInt32((decimal)_database.Value.Add(entity));
 
                 dto.Id = id;
 
-                Database.Add(dto);
+                _database.Value.Add(dto);
 
                 transaction.Complete();
             }
@@ -145,7 +144,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 // TODO: Order by.
             }
 
-            return Database.Page<T>(query.PageIndex, query.PageSize, sql).Items;
+            return _database.Value.Page<T>(query.PageIndex, query.PageSize, sql).Items;
         }
 
         /// <summary>
@@ -165,7 +164,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
             DataTransferObjectValidator.ThrowIfReadOnly(dto);
 
-            Database.Update(dto);
+            _database.Value.Update(dto);
 
             dto.IsReadOnly = true;
 
@@ -202,10 +201,10 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <param name="id">The data transfer object identifier.</param>
         public void Remove(int id)
         {
-            using (var transaction = Database.GetTransaction())
+            using (var transaction = _database.Value.GetTransaction())
             {
-                Database.Delete<T>(id);
-                Database.Delete<Entity>(id);
+                _database.Value.Delete<T>(id);
+                _database.Value.Delete<Entity>(id);
 
                 transaction.Complete();
             }
@@ -220,12 +219,12 @@ namespace Logikfabrik.Umbraco.Jet.Social
         {
             var sql = new Sql()
                 .Select("*")
-                .From<Entity>(Database.SyntaxProvider)
-                .LeftJoin<EntityType>(Database.SyntaxProvider)
-                .On<Entity, EntityType>(Database.SyntaxProvider, e => e.TypeId, et => et.Id)
+                .From<Entity>(_database.Value.SyntaxProvider)
+                .LeftJoin<EntityType>(_database.Value.SyntaxProvider)
+                .On<Entity, EntityType>(_database.Value.SyntaxProvider, e => e.TypeId, et => et.Id)
                 .Where<Entity>(e => e.Id == id);
 
-            var entity = Database.Get<Entity>(sql);
+            var entity = _database.Value.Get<Entity>(sql);
 
             return entity == null ? null : Type.GetType(entity.Type, false);
         }
@@ -233,24 +232,31 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <summary>
         /// Creates the tables.
         /// </summary>
-        private void CreateTables()
+        /// <param name="database">The database.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="database" /> is <c>null</c>.</exception>
+        private void CreateTables(IDatabaseWrapper database)
         {
-            if (!Database.TableExists(typeof(EntityType)))
+            if (database == null)
             {
-                Database.CreateTable(typeof(EntityType));
+                throw new ArgumentNullException(nameof(database));
             }
 
-            if (!Database.TableExists(typeof(Entity)))
+            if (!database.TableExists(typeof(EntityType)))
             {
-                Database.CreateTable(typeof(Entity));
+                database.CreateTable(typeof(EntityType));
             }
 
-            if (Database.TableExists(typeof(T)))
+            if (!database.TableExists(typeof(Entity)))
+            {
+                database.CreateTable(typeof(Entity));
+            }
+
+            if (database.TableExists(typeof(T)))
             {
                 return;
             }
 
-            Database.CreateTable(typeof(T));
+            database.CreateTable(typeof(T));
         }
 
         /// <summary>
@@ -263,7 +269,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
             var sql = new Sql().Where<EntityType>(et => et.Type == typeName);
 
-            var entityType = Database.Get<EntityType>(sql);
+            var entityType = _database.Value.Get<EntityType>(sql);
 
             if (entityType != null)
             {
@@ -272,7 +278,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
             entityType = new EntityType { Type = typeName };
 
-            return decimal.ToInt32((decimal)Database.Add(entityType));
+            return decimal.ToInt32((decimal)_database.Value.Add(entityType));
         }
     }
 }
