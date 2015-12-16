@@ -1,0 +1,31 @@
+﻿<table class="table table-striped">
+    <thead>
+        <tr>
+            <td ng-repeat="column in ngModel.columns">
+                <a href="#" ng-click="sort(column)" prevent-default>
+                    {{column}}
+                    <i class="icon-sort"></i>
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody ng-show="_.size(ngModel.rows) === 0">
+        <tr>
+            <td colspan="{{_.size(ngModel.columns)}}">
+                <p>TEST</p>
+            </td>
+        </tr>
+    </tbody>
+    <tbody ng-show="_.size(ngModel.rows) > 0">
+        <tr ng-repeat="row in ngModel.rows">
+            <td ng-repeat="column in ngModel.columns">
+                {{_.property(column)(row)}}
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="{{_.size(ngModel.columns)}}" ng-transclude></td>
+        </tr>
+    </tfoot>
+</table>
