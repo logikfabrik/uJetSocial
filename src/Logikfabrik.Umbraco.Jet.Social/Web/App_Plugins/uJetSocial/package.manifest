@@ -38,6 +38,10 @@
         '~/App_Plugins/uJetSocial/js/app/components/group/groupFactory.js',
         '~/App_Plugins/uJetSocial/js/app/components/group/groupEditController.js',
 
+		// Guest component
+		'~/App_Plugins/uJetSocial/js/app/components/guest/guestFactory.js',
+        '~/App_Plugins/uJetSocial/js/app/components/guest/guestEditController.js',
+
         // Report component
         '~/App_Plugins/uJetSocial/js/app/components/report/reportFactory.js',
         '~/App_Plugins/uJetSocial/js/app/components/report/reportEditController.js'

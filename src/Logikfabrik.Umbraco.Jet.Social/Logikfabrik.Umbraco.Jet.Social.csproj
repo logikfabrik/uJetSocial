@@ -349,6 +349,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\dashboard.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\css\app\uJetSocial.css" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentEditController.js" />
@@ -356,6 +357,8 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\dashboard\dashboardController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\group\groupEditController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\group\groupFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestEditController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportEditController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\editors\date\dateDirective.js" />
