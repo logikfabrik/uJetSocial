@@ -6,6 +6,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 {
     using System;
     using System.Net.Http.Formatting;
+    using System.Reflection;
     using global::Umbraco.Core.Services;
     using global::Umbraco.Web.Models.Trees;
     using global::Umbraco.Web.Trees;
@@ -52,6 +53,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         /// The child icon.
         /// </value>
         protected virtual string ChildIcon => string.Empty;
+
+        /// <summary>
+        /// Gets the root icon.
+        /// </summary>
+        /// <value>
+        /// The root icon.
+        /// </value>
+        protected virtual string RootIcon => string.Empty;
 
         /// <summary>
         /// Gets the localized text service.
@@ -106,12 +115,26 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
             return new TreeNodeCollection();
         }
 
+        private string GetRoutePath()
+        {
+            var attr = GetType().GetCustomAttribute<TreeAttribute>();
+
+            return attr == null ? null : $"/{attr.ApplicationAlias}/{attr.Alias}/dashboard/-1";
+        }
+
         private void OnRootNodeRendering(TreeControllerBase sender, TreeNodeRenderingEventArgs e)
         {
             if (sender != this)
             {
                 return;
             }
+
+            if (!string.IsNullOrEmpty(RootIcon))
+            {
+                e.Node.Icon = RootIcon;
+            }
+
+            e.Node.RoutePath = GetRoutePath();
 
             if (HasChildren)
             {

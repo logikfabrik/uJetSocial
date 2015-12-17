@@ -1,47 +1,48 @@
 ﻿{
     javascript: [
         // Dependencies
-        '~/App_Plugins/uJetCommunity/assets/js/vendor/lodash-2.4.1/lodash.js',
+        '~/App_Plugins/uJetSocial/js/vendor/lodash-2.4.1/lodash.js',
         
         // Factories
-        '~/App_Plugins/uJetCommunity/assets/js/app/factories/lodashFactory.js',
+        '~/App_Plugins/uJetSocial/js/app/factories/lodashFactory.js',
 
         // Services
-        '~/App_Plugins/uJetCommunity/assets/js/app/services/queryService.js',
+        '~/App_Plugins/uJetSocial/js/app/services/queryService.js',
         
         // Directives
 
-        // Dropdown directive
-        '~/App_Plugins/uJetCommunity/assets/js/app/directives/editors/editor/editorDirective.js',
-        '~/App_Plugins/uJetCommunity/assets/js/app/directives/editors/date/dateDirective.js',
-        '~/App_Plugins/uJetCommunity/assets/js/app/directives/editors/number/numberDirective.js',
-        '~/App_Plugins/uJetCommunity/assets/js/app/directives/editors/select/selectDirective.js',
-        '~/App_Plugins/uJetCommunity/assets/js/app/directives/editors/text/textDirective.js',
+        // Editor directives
+        '~/App_Plugins/uJetSocial/js/app/directives/editors/editor/editorDirective.js',
+        '~/App_Plugins/uJetSocial/js/app/directives/editors/date/dateDirective.js',
+        '~/App_Plugins/uJetSocial/js/app/directives/editors/number/numberDirective.js',
+        '~/App_Plugins/uJetSocial/js/app/directives/editors/select/selectDirective.js',
+        '~/App_Plugins/uJetSocial/js/app/directives/editors/text/textDirective.js',
 
-        '~/App_Plugins/uJetCommunity/assets/js/app/directives/presenters/list/listDirective.js',
-        '~/App_Plugins/uJetCommunity/assets/js/app/directives/presenters/listPaging/listPagingDirective.js',
+		// Presenter directives
+        '~/App_Plugins/uJetSocial/js/app/directives/presenters/list/listDirective.js',
+        '~/App_Plugins/uJetSocial/js/app/directives/presenters/listPaging/listPagingDirective.js',
 
         // Status directive
-        '~/App_Plugins/uJetCommunity/assets/js/app/directives/status/statusDirective.js',
+        '~/App_Plugins/uJetSocial/js/app/directives/status/statusDirective.js',
         
         // Components
 
-        // Comment component
-        '~/App_Plugins/uJetCommunity/assets/js/app/components/comment/commentFactory.js',
-        '~/App_Plugins/uJetCommunity/assets/js/app/components/comment/commentEditController.js',
-
         // Dashboard component
-        '~/App_Plugins/uJetCommunity/assets/js/app/components/dashboard/dashboardController.js',
-
+        '~/App_Plugins/uJetSocial/js/app/components/dashboard/dashboardController.js',
+		
+		// Comment component
+        '~/App_Plugins/uJetSocial/js/app/components/comment/commentFactory.js',
+        '~/App_Plugins/uJetSocial/js/app/components/comment/commentEditController.js',
+		
         // Group component 
-        '~/App_Plugins/uJetCommunity/assets/js/app/components/group/groupFactory.js',
-        '~/App_Plugins/uJetCommunity/assets/js/app/components/group/groupEditController.js',
+        '~/App_Plugins/uJetSocial/js/app/components/group/groupFactory.js',
+        '~/App_Plugins/uJetSocial/js/app/components/group/groupEditController.js',
 
         // Report component
-        '~/App_Plugins/uJetCommunity/assets/js/app/components/report/reportFactory.js',
-        '~/App_Plugins/uJetCommunity/assets/js/app/components/report/reportEditController.js'
+        '~/App_Plugins/uJetSocial/js/app/components/report/reportFactory.js',
+        '~/App_Plugins/uJetSocial/js/app/components/report/reportEditController.js'
     ],
     css: [
-        '~/App_Plugins/uJetCommunity/assets/css/app/uJetCommunity.css',
+        '~/App_Plugins/uJetSocial/css/app/uJetSocial.css',
     ]
 }

@@ -42,7 +42,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         /// <value>
         /// The child icon.
         /// </value>
-        protected override string ChildIcon => "icon-male-and-female";
+        protected override string ChildIcon => "icon-users";
 
         /// <summary>
         /// Gets the menu for the node with the specified identifier.
