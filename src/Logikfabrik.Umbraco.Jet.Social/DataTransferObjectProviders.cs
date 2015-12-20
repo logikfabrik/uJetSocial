@@ -6,9 +6,14 @@ namespace Logikfabrik.Umbraco.Jet.Social
 {
     using System;
     using Comment;
+    using Contact;
+    using Document;
     using global::Umbraco.Core;
     using global::Umbraco.Core.Logging;
     using global::Umbraco.Core.ObjectResolution;
+    using Group;
+    using Individual;
+    using Report;
 
     /// <summary>
     /// The <see cref="DataTransferObjectProviders" /> class.
@@ -51,7 +56,16 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 return new DatabaseWrapper(context.Database, ResolverBase<LoggerResolver>.Current.Logger, context.SqlSyntax);
             };
 
-            return new DataTransferObjectProviderDictionary { { typeof(Comment.Comment), new CommentProvider(database) } };
+            return new DataTransferObjectProviderDictionary
+            {
+                { typeof(Comment.Comment), new CommentProvider(database) },
+                { typeof(Contact.Contact), new ContactProvider(database) },
+                { typeof(Document.Document), new DocumentProvider(database) },
+                { typeof(Group.Group), new GroupProvider(database) },
+                { typeof(IndividualGuest), new IndividualGuestProvider(database) },
+                { typeof(IndividualMember), new IndividualMemberProvider(database) },
+                { typeof(Report.Report), new ReportProvider(database) }
+            };
         }
     }
 }

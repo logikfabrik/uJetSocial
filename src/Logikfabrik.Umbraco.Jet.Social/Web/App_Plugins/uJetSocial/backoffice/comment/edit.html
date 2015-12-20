@@ -1,33 +1,16 @@
-﻿<form ng-controller="uJetCommunity.CommentEditController">
-    <umb-panel>
-        <umb-header>
-            <div class="umb-headline-editor-wrapper span12">
-                <h1><localize key="sections_uJetCommunity_comments">Comments</localize></h1>
-            </div>
-        </umb-header>
-        <umb-tab-view>
-            <umb-tab id="tabComments" rel="Comments">
-                <umb-pane>
-                    <div class="ujet-control-panel">
-                        <ujet-date id="from" label="sections_uJetCommunity_search_from" ng-model="searchQuery.from"></ujet-date>
-                        <ujet-date id="to" label="sections_uJetCommunity_search_to" ng-model="searchQuery.to"></ujet-date>
-                        <ujet-number id="pageIndex" label="sections_uJetCommunity_search_page_index" ng-model="searchQuery.pageIndex"></ujet-number>
-                        <ujet-number id="pageSize" label="sections_uJetCommunity_search_page_size" ng-model="searchQuery.pageSize"></ujet-number>
-                        <ujet-select id="orderBy" label="sections_uJetCommunity_search_order_by" ng-model="searchQuery.orderBy"></ujet-select>
-                    </div>
-                    
-                    <button ng-click="search()">Search</button>
-                    <div class="umb-editor umb-listview">
-                        <ujet-list ng-model="testmodel">
-                            <ujet-list-paging ng-model="pagingModel"></ujet-list-paging>
-                        </ujet-list>
-
-                    </div>
-
-
-
-                </umb-pane>
-            </umb-tab>
-        </umb-tab-view>
-    </umb-panel>
-</form>
+﻿<umb-panel ng-controller="uJetSocial.commentEditController">
+    <umb-header>
+        <div class="umb-headline-editor-wrapper span12">
+            <h1>
+                <localize key="uJetSocial_comments">Comments</localize>
+            </h1>
+        </div>
+    </umb-header>
+    <umb-tab-view>
+        <umb-tab id="tabComments" rel="Comments" style="display: block;">
+            <umb-pane>
+                Comments Edit
+            </umb-pane>
+        </umb-tab>
+    </umb-tab-view>
+</umb-panel>

@@ -321,6 +321,9 @@
     <Compile Include="Report\Report.cs" />
     <Compile Include="Report\ReportProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Controllers\GuestAPIController.cs" />
+    <Compile Include="Web\Controllers\SearchQuery.cs" />
+    <Compile Include="Web\Controllers\SearchQueryResult{T}.cs" />
     <Compile Include="Web\JetSocialApplication.cs" />
     <Compile Include="Web\Trees\CommentTreeController.cs" />
     <Compile Include="Web\Trees\GroupTreeController.cs" />
@@ -338,7 +341,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Media\" />
-    <Folder Include="Web\Controllers\" />
+    <Folder Include="Web\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
@@ -378,7 +381,6 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\status\statusDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\status\statusView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\lodashFactory.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\services\queryService.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\vendor\lodash-2.4.1\lodash.js" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\dashboard.html" />

@@ -5,10 +5,7 @@
         
         // Factories
         '~/App_Plugins/uJetSocial/js/app/factories/lodashFactory.js',
-
-        // Services
-        '~/App_Plugins/uJetSocial/js/app/services/queryService.js',
-        
+		        
         // Directives
 
         // Editor directives

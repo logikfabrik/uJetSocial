@@ -143,6 +143,10 @@ namespace Logikfabrik.Umbraco.Jet.Social
             {
                 // TODO: Order by.
             }
+            else
+            {
+                sql = sql.OrderBy<T>(obj => obj.Created, _database.Value.SyntaxProvider);
+            }
 
             return _database.Value.Page<T>(query.PageIndex, query.PageSize, sql).Items;
         }
