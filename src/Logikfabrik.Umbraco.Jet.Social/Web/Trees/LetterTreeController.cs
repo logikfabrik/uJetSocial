@@ -44,7 +44,15 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 
             var nodes = new TreeNodeCollection();
 
-            nodes.AddRange(letters.Select(letter => CreateTreeNode(letter, id, new FormDataCollection((string)null), letter, ChildIcon, false)));
+            nodes.AddRange(letters.Select(letter =>
+            {
+                var node = CreateTreeNode(letter, id, new FormDataCollection((string)null), letter, ChildIcon, false);
+
+                // Clearing the menu URL forces Umbraco not to render a context menu for the node.
+                node.MenuUrl = null;
+
+                return node;
+            }));
 
             return nodes;
         }
