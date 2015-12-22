@@ -41,6 +41,7 @@
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestFactory.js',
         '~/App_Plugins/uJetSocial/js/app/components/guest/guestEditController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestDashboardController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/guest/guestCreateController.js',
 
         // Report component
         '~/App_Plugins/uJetSocial/js/app/components/report/reportFactory.js',
