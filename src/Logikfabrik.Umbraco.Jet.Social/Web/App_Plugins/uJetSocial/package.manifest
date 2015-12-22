@@ -28,25 +28,27 @@
         '~/App_Plugins/uJetSocial/js/app/components/dashboard/dashboardController.js',
 		
 		// Comment component
-        '~/App_Plugins/uJetSocial/js/app/components/comment/commentFactory.js',
-        '~/App_Plugins/uJetSocial/js/app/components/comment/commentEditController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/comment/commentDashboardController.js',
+        '~/App_Plugins/uJetSocial/js/app/components/comment/commentDashboardController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/comment/commentEditController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/comment/commentFactory.js',
 		
-        // Group component 
-        '~/App_Plugins/uJetSocial/js/app/components/group/groupFactory.js',
-        '~/App_Plugins/uJetSocial/js/app/components/group/groupEditController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/group/groupDashboardController.js',
+        // Group component
+        '~/App_Plugins/uJetSocial/js/app/components/group/groupDashboardController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/group/groupEditController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/group/groupFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/components/group/groupListController.js',
 
 		// Guest component
-		'~/App_Plugins/uJetSocial/js/app/components/guest/guestFactory.js',
-        '~/App_Plugins/uJetSocial/js/app/components/guest/guestEditController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/guest/guestDashboardController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestCreateController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/guest/guestDashboardController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/guest/guestEditController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/guest/guestFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/components/guest/guestListController.js',
 
         // Report component
-        '~/App_Plugins/uJetSocial/js/app/components/report/reportFactory.js',
-        '~/App_Plugins/uJetSocial/js/app/components/report/reportEditController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/report/reportDashboardController.js'
+		'~/App_Plugins/uJetSocial/js/app/components/report/reportDashboardController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/report/reportEditController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/report/reportFactory.js'
     ],
     css: [
         '~/App_Plugins/uJetSocial/css/app/uJetSocial.css',

@@ -3,8 +3,12 @@
         "$http", function ($http) {
             var dataFactory = {};
 
-            dataFactory.search = function (searchQuery) {
-                return $http.post("backoffice/uJetSocial/GuestAPI/Search", searchQuery);
+            dataFactory.add = function(dto) {
+                return $http.post("backoffice/uJetSocial/IndividualGuestAPI/Add", dto);
+            }
+
+            dataFactory.query = function (query) {
+                return $http.post("backoffice/uJetSocial/IndividualGuestAPI/Query", query);
             };
 
             return dataFactory;

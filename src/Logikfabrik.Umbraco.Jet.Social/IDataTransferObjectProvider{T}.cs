@@ -4,8 +4,6 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social
 {
-    using System.Collections.Generic;
-
     /// <summary>
     /// The <see cref="IDataTransferObjectProvider{T}" /> interface.
     /// </summary>
@@ -39,6 +37,6 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// </summary>
         /// <param name="query">The query.</param>
         /// <returns>Matching data transfer object instances of type <typeparamref name="T" />.</returns>
-        IEnumerable<T> Query(Query<T> query);
+        QueryResult<T> Query(Query<T> query);
     }
 }

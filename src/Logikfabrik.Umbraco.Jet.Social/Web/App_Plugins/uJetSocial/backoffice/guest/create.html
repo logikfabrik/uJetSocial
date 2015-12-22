@@ -6,21 +6,21 @@
             <div class="umb-el-wrap">
                 <label class="control-label" for="">First name</label>
                 <div class="controls controls-row">
-                    <input type="text" data-ng-model="ngModel.firstName" class="bigInput input-large-type input-block-level"/>
+                    <input type="text" data-ng-model="ngModel.FirstName" class="bigInput input-large-type input-block-level"/>
                 </div>
             </div>
 
             <div class="umb-el-wrap">
                 <label class="control-label" for="">Last name</label>
                 <div class="controls controls-row">
-                    <input type="text" data-ng-model="ngModel.lastName" class="bigInput input-large-type input-block-level"/>
+                    <input type="text" data-ng-model="ngModel.LastName" class="bigInput input-large-type input-block-level"/>
                 </div>
             </div>
 
             <div class="umb-el-wrap">
                 <label class="control-label" for="">E-mail</label>
                 <div class="controls controls-row">
-                    <input type="text" data-ng-model="ngModel.email" class="bigInput input-large-type input-block-level"/>
+                    <input type="text" data-ng-model="ngModel.Email" class="bigInput input-large-type input-block-level"/>
                 </div>
             </div>
 
@@ -30,7 +30,7 @@
     <div class="umb-pane btn-toolbar umb-btn-toolbar">
         <div class="control-group umb-control-group">
             <a href="#" class="btn btn-link">Cancel</a>
-            <input type="submit" value="Create" class="btn btn-primary">
+            <input type="submit" value="Create" class="btn btn-primary" data-ng-click="create()"/>
         </div>
     </div>
 

@@ -7,8 +7,10 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
     using System;
     using System.Linq;
     using System.Net.Http.Formatting;
+    using System.Reflection;
     using global::Umbraco.Core.Services;
     using global::Umbraco.Web.Models.Trees;
+    using global::Umbraco.Web.Trees;
 
     /// <summary>
     /// The <see cref="LetterTreeController" /> class.
@@ -46,7 +48,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 
             nodes.AddRange(letters.Select(letter =>
             {
-                var node = CreateTreeNode(letter, id, new FormDataCollection((string)null), letter, ChildIcon, false);
+                var node = CreateTreeNode(letter, id, new FormDataCollection((string)null), letter, ChildIcon, false, GetRoutePath(letter));
 
                 // Clearing the menu URL forces Umbraco not to render a context menu for the node.
                 node.MenuUrl = null;
@@ -55,6 +57,13 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
             }));
 
             return nodes;
+        }
+
+        private string GetRoutePath(string letter)
+        {
+            var attr = GetType().GetCustomAttribute<TreeAttribute>();
+
+            return attr == null ? null : $"/{attr.ApplicationAlias}/{attr.Alias}/list/{letter}";
         }
     }
 }

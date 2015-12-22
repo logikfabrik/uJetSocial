@@ -317,13 +317,15 @@
     <Compile Include="Member\Member.cs" />
     <Compile Include="Member\MemberProvider.cs" />
     <Compile Include="OwnableExtensions.cs" />
+    <Compile Include="QueryResult{T}.cs" />
     <Compile Include="Query{T}.cs" />
     <Compile Include="Report\Report.cs" />
     <Compile Include="Report\ReportProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Web\Controllers\GuestAPIController.cs" />
-    <Compile Include="Web\Controllers\SearchQuery.cs" />
-    <Compile Include="Web\Controllers\SearchQueryResult{T}.cs" />
+    <Compile Include="Web\Controllers\DataTransferObjectAPIController{T}.cs" />
+    <Compile Include="Web\Controllers\IndividualGuestAPIController.cs" />
+    <Compile Include="Web\Models\Query.cs" />
+    <Compile Include="Web\Models\QueryResult{T}.cs" />
     <Compile Include="Web\JetSocialApplication.cs" />
     <Compile Include="Web\Trees\CommentTreeController.cs" />
     <Compile Include="Web\Trees\GroupTreeController.cs" />
@@ -341,7 +343,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Media\" />
-    <Folder Include="Web\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
@@ -351,8 +352,10 @@
   <ItemGroup>
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\dashboard.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\list.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\create.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\list.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\css\app\uJetSocial.css" />
@@ -361,10 +364,12 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\dashboard\dashboardController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\group\groupDashboardController.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\group\groupListController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\group\groupEditController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\group\groupFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestDashboardController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestCreateController.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestListController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestEditController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportDashboardController.js" />

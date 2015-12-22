@@ -1,0 +1,8 @@
+﻿angular.module("umbraco")
+    .controller("uJetSocial.guestListController", [
+        "$scope", "$routeParams", "navigationService", "_", "guestFactory",
+        function ($scope, $routeParams, navigationService, _, guestFactory) {
+
+            navigationService.syncTree({ tree: "guest", path: ["-1", $routeParams.id], forceReload: false });
+        }
+    ]);

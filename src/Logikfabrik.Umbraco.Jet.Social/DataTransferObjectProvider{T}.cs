@@ -5,7 +5,6 @@
 namespace Logikfabrik.Umbraco.Jet.Social
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using global::Umbraco.Core.Persistence;
 
@@ -125,7 +124,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Matching data transfer object instances of type <typeparamref name="T" />.
         /// </returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="query" /> is <c>null</c>.</exception>
-        public IEnumerable<T> Query(Query<T> query)
+        public QueryResult<T> Query(Query<T> query)
         {
             if (query == null)
             {
@@ -148,7 +147,13 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 sql = sql.OrderBy<T>(obj => obj.Created, _database.Value.SyntaxProvider);
             }
 
-            return _database.Value.Page<T>(query.PageIndex, query.PageSize, sql).Items;
+            var page = _database.Value.Page<T>(query.PageIndex, query.PageSize, sql);
+
+            return new QueryResult<T>
+            {
+                Total = page.TotalItems,
+                Objects = page.Items
+            };
         }
 
         /// <summary>
