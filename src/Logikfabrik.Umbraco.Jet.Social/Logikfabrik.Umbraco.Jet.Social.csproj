@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\Logikfabrik.Umbraco.Jet.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\Debug\Logikfabrik.Umbraco.Jet.Social.XML</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -323,7 +324,10 @@
     <Compile Include="Report\ReportProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\Controllers\DataTransferObjectAPIController{T}.cs" />
+    <Compile Include="Web\Controllers\GroupAPIController.cs" />
     <Compile Include="Web\Controllers\IndividualGuestAPIController.cs" />
+    <Compile Include="Web\Models\GroupQuery.cs" />
+    <Compile Include="Web\Models\IndividualGuestQuery.cs" />
     <Compile Include="Web\Models\Query.cs" />
     <Compile Include="Web\Models\QueryResult{T}.cs" />
     <Compile Include="Web\JetSocialApplication.cs" />

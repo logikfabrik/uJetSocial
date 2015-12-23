@@ -9,7 +9,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models
     /// <summary>
     /// The <see cref="Query" /> class.
     /// </summary>
-    public class Query
+    public abstract class Query
     {
         /// <summary>
         /// Gets or sets the lower limit for created date.

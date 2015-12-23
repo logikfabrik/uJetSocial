@@ -2,8 +2,6 @@
     .controller("uJetSocial.guestCreateController", [
         "$scope", "$location", "guestFactory",
         function ($scope, $location, guestFactory) {
-            var editPath = "/uJetSocial/guest/edit/";
-
             $scope.ngModel = {
                 FirstName: "Förnamn",
                 LastName: "Efternamn",
@@ -12,7 +10,7 @@
 
             $scope.create = function () {
                 guestFactory.add($scope.ngModel).success(function (id) {
-                    $location.path(editPath + id);
+                    $location.path("/uJetSocial/guest/edit/" + id);
                 });
             };
         }

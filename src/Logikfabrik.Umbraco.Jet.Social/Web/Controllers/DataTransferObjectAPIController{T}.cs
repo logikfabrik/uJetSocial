@@ -4,6 +4,7 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
+    using System;
     using System.Web.Http;
     using global::Umbraco.Web.Editors;
     using Models;
@@ -55,13 +56,18 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         }
 
         /// <summary>
-        /// Queries the provider.
+        /// Gets a query for querying the provider.
         /// </summary>
         /// <param name="query">The query.</param>
-        /// <returns>Matching data transfer object instances of type <typeparamref name="T" />.</returns>
-        [HttpPost]
-        public QueryResult<T> Query(Query query)
+        /// <returns>A query.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="query" /> is <c>null</c>.</exception>
+        protected Query<T> GetQuery(Query query)
         {
+            if (query == null)
+            {
+                throw new ArgumentNullException(nameof(query));
+            }
+
             var q = new Query<T>(query.PageIndex, query.PageSize);
 
             if (query.CreatedFrom.HasValue)
@@ -89,13 +95,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
                 q.Criterias.Add(obj => obj.Status == (int)query.Status.Value);
             }
 
-            var result = Provider.Query(q);
-
-            return new QueryResult<T>
-            {
-                Total = result.Total,
-                Objects = result.Objects
-            };
+            return q;
         }
     }
 }
