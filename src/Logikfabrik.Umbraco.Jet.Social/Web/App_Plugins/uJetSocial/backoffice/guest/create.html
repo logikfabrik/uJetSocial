@@ -1,37 +1,41 @@
 ﻿<div class="umbracoDialog umb-dialog" ng-controller="uJetSocial.guestCreateController">
 
-    <div class="umb-pane">
-        <div class="control-group umb-control-group">
+    <form name="form">
 
-            <div class="umb-el-wrap">
-                <label class="control-label" for="">First name</label>
-                <div class="controls controls-row">
-                    <input type="text" data-ng-model="ngModel.FirstName" class="bigInput input-large-type input-block-level"/>
+        <div class="umb-pane">
+            <div class="control-group umb-control-group">
+
+                <div class="umb-el-wrap">
+                    <label class="control-label" for="">First name</label>
+                    <div class="controls controls-row">
+                        <input type="text" required ng-model="model.FirstName" class="bigInput input-large-type input-block-level"/>
+                    </div>
                 </div>
-            </div>
 
-            <div class="umb-el-wrap">
-                <label class="control-label" for="">Last name</label>
-                <div class="controls controls-row">
-                    <input type="text" data-ng-model="ngModel.LastName" class="bigInput input-large-type input-block-level"/>
+                <div class="umb-el-wrap">
+                    <label class="control-label" for="">Last name</label>
+                    <div class="controls controls-row">
+                        <input type="text" required ng-model="model.LastName" class="bigInput input-large-type input-block-level"/>
+                    </div>
                 </div>
-            </div>
 
-            <div class="umb-el-wrap">
-                <label class="control-label" for="">E-mail</label>
-                <div class="controls controls-row">
-                    <input type="text" data-ng-model="ngModel.Email" class="bigInput input-large-type input-block-level"/>
+                <div class="umb-el-wrap">
+                    <label class="control-label" for="">E-mail</label>
+                    <div class="controls controls-row">
+                        <input type="email" required ng-model="model.Email" class="bigInput input-large-type input-block-level"/>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
 
-    <div class="umb-pane btn-toolbar umb-btn-toolbar">
-        <div class="control-group umb-control-group">
-            <a href="#" class="btn btn-link">Cancel</a>
-            <input type="submit" value="Create" class="btn btn-primary" data-ng-click="create()"/>
+        <div class="umb-pane btn-toolbar umb-btn-toolbar">
+            <div class="control-group umb-control-group">
+                <a class="btn btn-link" ng-click="cancel()">Cancel</a>
+                <input type="submit" value="Create" class="btn btn-primary" ng-click="create()"/>
+            </div>
         </div>
-    </div>
+
+    </form>
 
 </div>
