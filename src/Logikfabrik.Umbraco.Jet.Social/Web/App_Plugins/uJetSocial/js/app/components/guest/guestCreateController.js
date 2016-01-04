@@ -2,8 +2,8 @@
     .controller("uJetSocial.guestCreateController", [
         "$scope", "$location", "notificationsService", "guestFactory",
         function ($scope, $location, notificationsService, guestFactory) {
-            $scope.create = function () {
-                if (!form.checkValidity()) {
+            $scope.create = function (form) {
+                if (!form.$valid) {
                     return;
                 }
 
