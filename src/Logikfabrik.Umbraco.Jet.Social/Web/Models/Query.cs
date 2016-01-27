@@ -66,5 +66,13 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models
         /// The page size.
         /// </value>
         public int PageSize { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the property to order by.
+        /// </summary>
+        /// <value>
+        /// The name of the property to order by.
+        /// </value>
+        public string OrderBy { get; set; }
     }
 }

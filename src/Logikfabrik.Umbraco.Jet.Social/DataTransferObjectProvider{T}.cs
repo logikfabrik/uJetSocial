@@ -138,14 +138,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 sql = query.Criterias.Aggregate(sql, (current, criteria) => current.Where(criteria));
             }
 
-            if (query.OrderBy != null)
-            {
-                // TODO: Order by.
-            }
-            else
-            {
-                sql = sql.OrderBy<T>(obj => obj.Created, _database.Value.SyntaxProvider);
-            }
+            sql = query.OrderBy != null
+                ? sql.OrderBy<T>(query.OrderBy, _database.Value.SyntaxProvider)
+                : sql.OrderBy<T>(obj => obj.Created, _database.Value.SyntaxProvider);
 
             var page = _database.Value.Page<T>(query.PageIndex, query.PageSize, sql);
 

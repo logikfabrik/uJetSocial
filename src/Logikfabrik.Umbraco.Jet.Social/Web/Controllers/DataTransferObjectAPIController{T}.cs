@@ -5,6 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
     using System;
+    using System.Linq.Expressions;
     using System.Web.Http;
     using global::Umbraco.Web.Editors;
     using Models;
@@ -109,7 +110,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
                 q.Criterias.Add(obj => obj.Status == (int)query.Status.Value);
             }
 
+            if (query.OrderBy != null)
+            {
+                q.OrderBy = GetOrderBy(query.OrderBy);
+            }
+
             return q;
+        }
+
+        private static Expression<Func<T, object>> GetOrderBy(string propertyName)
+        {
+            var parameter = Expression.Parameter(typeof(T), "obj");
+            var property = typeof(T).GetProperty(propertyName);
+
+            var expression = Expression.Convert(Expression.MakeMemberAccess(parameter, property), typeof(object));
+
+            return Expression.Lambda<Func<T, object>>(expression, parameter);
         }
     }
 }

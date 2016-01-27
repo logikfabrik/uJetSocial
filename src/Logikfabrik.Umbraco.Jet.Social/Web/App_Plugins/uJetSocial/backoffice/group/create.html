@@ -1,0 +1,41 @@
+﻿<div class="umbracoDialog umb-dialog" ng-controller="uJetSocial.groupCreateController">
+
+    <form name="form">
+
+        <div class="umb-pane">
+            <div class="control-group umb-control-group">
+
+                <div class="umb-el-wrap">
+                    <label class="control-label" for="">Name</label>
+                    <div class="controls controls-row">
+                        <input type="text" required ng-model="model.Name" class="bigInput input-large-type input-block-level"/>
+                    </div>
+                </div>
+
+                <div class="umb-el-wrap">
+                    <label class="control-label" for="">Description</label>
+                    <div class="controls controls-row">
+                        <input type="text" required ng-model="model.Description" class="bigInput input-large-type input-block-level"/>
+                    </div>
+                </div>
+
+                <div class="umb-el-wrap">
+                    <label class="control-label" for="">Owner</label>
+                    <div class="controls controls-row">
+                        <input type="number" required ng-model="model.OwnerId" class="bigInput input-large-type input-block-level"/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="umb-pane btn-toolbar umb-btn-toolbar">
+            <div class="control-group umb-control-group">
+                <a class="btn btn-link" ng-click="cancel()">Cancel</a>
+                <input type="submit" value="Create" class="btn btn-primary" ng-click="create(form)"/>
+            </div>
+        </div>
+
+    </form>
+
+</div>

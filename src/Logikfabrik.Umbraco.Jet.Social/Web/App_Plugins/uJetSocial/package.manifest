@@ -33,7 +33,8 @@
 		'~/App_Plugins/uJetSocial/js/app/components/comment/commentFactory.js',
 		
         // Group component
-        '~/App_Plugins/uJetSocial/js/app/components/group/groupDashboardController.js',
+        '~/App_Plugins/uJetSocial/js/app/components/group/groupCreateController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/group/groupDashboardController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/group/groupEditController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/group/groupFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/components/group/groupListController.js',

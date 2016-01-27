@@ -5,7 +5,8 @@
             $scope.query = {
                 FirstName: $routeParams.id,
                 PageIndex: 0,
-                PageSize: 15
+                PageSize: 15,
+                OrderBy: 'Id'
             };
 
             guestFactory.query($scope.query).success(function (data) {
