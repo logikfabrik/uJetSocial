@@ -3,7 +3,7 @@
         "_", function (_) {
             return {
                 restrict: "E",
-                templateUrl: "/App_Plugins/uJetSocial/assets/js/app/directives/presenters/list/listView.html",
+                templateUrl: "/App_Plugins/uJetSocial/js/app/directives/presenters/list/listView.html",
                 scope: {
                     ngModel: "="
                 },
@@ -18,10 +18,10 @@
                         sortDescending = (sortColumn === column) ? !sortDescending : true;
                         sortColumn = column;
 
-                        scope.ngModel.rows = _.sortBy(scope.ngModel.rows, [column]);
+                        scope.ngModel.Rows = _.sortBy(scope.ngModel.Rows, [column]);
 
                         if (!sortDescending) {
-                            scope.ngModel.rows.reverse();
+                            scope.ngModel.Rows.reverse();
                         }
                     };
                 }

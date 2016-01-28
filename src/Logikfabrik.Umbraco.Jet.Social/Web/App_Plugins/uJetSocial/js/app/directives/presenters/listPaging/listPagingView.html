@@ -1,16 +1,7 @@
-﻿<ul>
-    <li ng-class="{disabled: pageIndex <= 1}">
-        <a href="#" ng-click="goToPreviousPage()" prevent-default>
-            <localize key="general_previous">Previous</localize>
-        </a>
-        {{pageIndex}}
-    </li>
-    <li ng-repeat="pageIndex in pageIndices" ng-class="{active:$index == pageIndex}">
-        <a href="#" ng-click="goToPage($index + 1)" prevent-default>{{$index + 1}}</a>
-    </li>
-    <li ng-class="{disabled: pageIndex >= pageIndices.length}">
-        <a href="#" ng-click="goToNextPage()" prevent-default>
-            <localize key="general_next">Next</localize>
-        </a>
-    </li>
-</ul>
+﻿<a href="#" ng-click="goToFirstPage()" prevent-default>First</a>
+<a href="#" ng-click="goToPreviousPage()" prevent-default>Previous</a>
+
+<input type="number" min="1" max="{{ngModel.PageCount}}" ng-model="ngModel.PageIndex" ng-change="goToPage()" /> / {{ngModel.PageCount}}
+
+<a href="#" ng-click="goToNextPage()" prevent-default>Next</a>
+<a href="#" ng-click="goToLastPage()" prevent-default>Last</a>

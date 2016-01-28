@@ -55,14 +55,27 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <param name="sql">The query.</param>
         /// <returns>A table page.</returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="sql" /> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="pageIndex" /> is less than <c>0</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="pageSize" /> is less than <c>1</c>.</exception>
         public Page<T> Page<T>(int pageIndex, int pageSize, Sql sql)
             where T : class
         {
+            if (pageIndex < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(pageIndex), pageIndex, "Page index cannot be less than 0.");
+            }
+
+            if (pageSize < 1)
+            {
+                throw new ArgumentOutOfRangeException(nameof(pageSize), pageSize, "Page size cannot be less than 1.");
+            }
+
             if (sql == null)
             {
                 throw new ArgumentNullException(nameof(sql));
             }
 
+            // Min page index is 1.
             pageIndex++;
 
             return _database.Page<T>(pageIndex, pageSize, sql);

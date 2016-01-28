@@ -61,7 +61,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <value>
         /// The page size.
         /// </value>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is less than <c>1</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value" /> is less than <c>1</c>.</exception>
         public int PageSize
         {
             get
@@ -71,7 +71,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
             set
             {
-                if (value < 0)
+                if (value < 1)
                 {
                     throw new ArgumentOutOfRangeException(nameof(value), value, "Value cannot be less than 1.");
                 }
@@ -88,6 +88,12 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// </value>
         public IList<Expression<Func<T, bool>>> Criterias { get; }
 
+        /// <summary>
+        /// Gets or sets the property to order by.
+        /// </summary>
+        /// <value>
+        /// The property to order by.
+        /// </value>
         public Expression<Func<T, object>> OrderBy { get; set; }
     }
 }
