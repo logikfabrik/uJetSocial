@@ -10,21 +10,11 @@
 		'~/App_Plugins/uJetSocial/js/app/services/queryService.js',
 
         // Directives
-
-        // Editor directives
-        //'~/App_Plugins/uJetSocial/js/app/directives/editors/editor/editorDirective.js',
-        //'~/App_Plugins/uJetSocial/js/app/directives/editors/date/dateDirective.js',
-        //'~/App_Plugins/uJetSocial/js/app/directives/editors/number/numberDirective.js',
-        //'~/App_Plugins/uJetSocial/js/app/directives/editors/select/selectDirective.js',
-        //'~/App_Plugins/uJetSocial/js/app/directives/editors/text/textDirective.js',
-
+		        
 		// Presenter directives
         '~/App_Plugins/uJetSocial/js/app/directives/presenters/list/listDirective.js',
         '~/App_Plugins/uJetSocial/js/app/directives/presenters/listPaging/listPagingDirective.js',
 
-        // Status directive
-        //'~/App_Plugins/uJetSocial/js/app/directives/status/statusDirective.js',
-        
         // Components
 
         // Dashboard component

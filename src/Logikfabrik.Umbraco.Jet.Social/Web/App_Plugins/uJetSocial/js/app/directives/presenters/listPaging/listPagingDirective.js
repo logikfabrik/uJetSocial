@@ -9,7 +9,7 @@
                 },
                 link: function(scope, element, attrs) {
                     scope.goToFirstPage = function() {
-                        scope.goToPage(0);
+                        scope.goToPage(1);
                     };
 
                     scope.goToPreviousPage = function() {
@@ -29,7 +29,7 @@
                             pageIndex = scope.ngModel.PageIndex;
                         }
 
-                        if (pageIndex < 1 || pageIndex > scope.ngModel.PageCount || pageIndex === scope.ngModel.PageCount) {
+                        if (pageIndex < 1 || pageIndex > scope.ngModel.PageCount) {
                             return;
                         }
 
