@@ -1,11 +1,11 @@
 ﻿<div class="ujet-list-paging">
-    
-    <a href="#" ng-hide="ngModel.PageIndex === 1" ng-click="goToFirstPage()" prevent-default>First</a>
-    <a href="#" ng-hide="ngModel.PageIndex === 1" ng-click="goToPreviousPage()" prevent-default>Previous</a>
+
+    <a href="#" ng-hide="ngModel.PageIndex === 1" ng-click="goToFirstPage()" prevent-default><i class="icon icon-navigation-first"></i></a>
+    <a href="#" ng-hide="ngModel.PageIndex === 1" ng-click="goToPreviousPage()" prevent-default><i class="icon icon-navigation-left"></i></a>
     <div>
-        <input type="number" min="1" max="{{ngModel.PageCount}}" ng-model="ngModel.PageIndex" ng-change="goToPage()"/> / {{ngModel.PageCount}}
+        <input type="number" min="1" max="{{ngModel.PageCount}}" ng-model="ngModel.PageIndex" ng-change="goToPage(ngModel.PageIndex)"/> / {{ngModel.PageCount}}
     </div>
-    <a href="#" ng-show="ngModel.PageIndex < ngModel.PageCount" ng-click="goToNextPage()" prevent-default>Next</a>
-    <a href="#" ng-hide="ngModel.PageIndex === ngModel.PageCount" ng-click="goToLastPage()" prevent-default>Last</a>
+    <a href="#" ng-show="ngModel.PageIndex < ngModel.PageCount" ng-click="goToNextPage()" prevent-default><i class="icon icon-navigation-right"></i></a>
+    <a href="#" ng-hide="ngModel.PageIndex === ngModel.PageCount" ng-click="goToLastPage()" prevent-default><i class="icon icon-navigation-last"></i></a>
 
 </div>

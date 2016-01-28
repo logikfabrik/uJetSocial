@@ -2,7 +2,7 @@
     <thead>
         <tr>
             <td ng-repeat="column in ngModel.Columns">
-                <a href="#" ng-click="sort(column)" prevent-default>{{column}}</a>
+                <a href="#" ng-click="sort(column)" prevent-default>{{column}} <i ng-show="column === SortColumn" class="icon" ng-class="SortAscending ? 'icon-navigation-up' : 'icon-navigation-down'"></i></a>
             </td>
         </tr>
     </thead>
@@ -14,7 +14,7 @@
         </tr>
     </tbody>
     <tbody ng-show="_.size(ngModel.Rows) > 0">
-        <tr ng-repeat="row in ngModel.Rows">
+        <tr ng-repeat="row in ngModel.Rows" ng-click="select(row)">
             <td ng-repeat="column in ngModel.Columns">
                 {{_.property(column)(row)}}
             </td>

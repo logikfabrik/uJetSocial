@@ -24,11 +24,7 @@
                         scope.goToPage(scope.ngModel.PageCount);
                     };
 
-                    scope.goToPage = function(pageIndex) {
-                        if (isNaN(pageIndex)) {
-                            pageIndex = scope.ngModel.PageIndex;
-                        }
-
+                    scope.goToPage = function (pageIndex) {
                         if (pageIndex < 1 || pageIndex > scope.ngModel.PageCount) {
                             return;
                         }

@@ -11,18 +11,21 @@
                 link: function (scope, element, attrs) {
                     scope._ = _;
 
-                    var sortDescending = true;
-                    var sortColumn;
+                    scope.SortAscending = true;
 
                     scope.sort = function (column) {
-                        sortDescending = (sortColumn === column) ? !sortDescending : true;
-                        sortColumn = column;
+                        scope.SortAscending = (scope.SortColumn === column) ? !scope.SortAscending : true;
+                        scope.SortColumn = column;
 
                         scope.ngModel.Rows = _.sortBy(scope.ngModel.Rows, [column]);
 
-                        if (!sortDescending) {
+                        if (!scope.SortAscending) {
                             scope.ngModel.Rows.reverse();
                         }
+                    };
+
+                    scope.select = function(row) {
+                        scope.$emit("selectedRowChanged", row);
                     };
                 }
             };

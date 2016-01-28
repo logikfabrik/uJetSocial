@@ -1,7 +1,7 @@
 ﻿angular.module("umbraco")
     .controller("uJetSocial.groupListController", [
-        "$scope", "$routeParams", "navigationService", "groupFactory", "queryService",
-        function($scope, $routeParams, navigationService, groupFactory, queryService) {
+        "$scope", "$location", "$routeParams", "navigationService", "groupFactory", "queryService",
+        function($scope, $location, $routeParams, navigationService, groupFactory, queryService) {
 
             var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "Name", "Description", "OwnerId"]);
 
@@ -24,6 +24,10 @@
                 query.PageIndex.Value = pageIndex;
 
                 runQuery();
+            });
+
+            $scope.$on('selectedRowChanged', function (e, row) {
+                $location.path("/uJetSocial/group/edit/" + row.Id);
             });
 
             runQuery();
