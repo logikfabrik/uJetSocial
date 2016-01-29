@@ -1,7 +1,7 @@
 ﻿{
     javascript: [
         // Dependencies
-        '~/App_Plugins/uJetSocial/js/vendor/lodash-4.0.1/lodash.js',
+        '~/App_Plugins/uJetSocial/js/vendor/lodash-3.10.1/lodash.js',
         
         // Factories
         '~/App_Plugins/uJetSocial/js/app/factories/lodashFactory.js',
@@ -30,21 +30,22 @@
         // Group component
         '~/App_Plugins/uJetSocial/js/app/components/group/groupCreateController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/group/groupDashboardController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/group/groupEditController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/group/groupFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/components/group/groupListController.js',
 
 		// Guest component
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestCreateController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestDashboardController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/guest/guestEditController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestListController.js',
 
         // Report component
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportDashboardController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportEditController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/report/reportFactory.js'
+		'~/App_Plugins/uJetSocial/js/app/components/report/reportFactory.js',
+
+		// General components
+		'~/App_Plugins/uJetSocial/js/app/components/objectEditController.js'
     ],
     css: [
         '~/App_Plugins/uJetSocial/css/app/uJetSocial.css',

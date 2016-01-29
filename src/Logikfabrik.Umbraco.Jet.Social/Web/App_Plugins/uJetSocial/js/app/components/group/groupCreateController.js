@@ -11,7 +11,7 @@
                     .success(function (id) {
                         notificationsService.success("Group created");
 
-                        $location.path("/uJetSocial/group/edit/" + id);
+                        $location.path("/uJetSocial/group/dashboard/-1");
 
                         close();
                     })

@@ -11,7 +11,7 @@
                     .success(function (id) {
                         notificationsService.success("Guest created");
 
-                        $location.path("/uJetSocial/guest/edit/" + id);
+                        $location.path("/uJetSocial/guest/dashboard/-1");
 
                         close();
                     })

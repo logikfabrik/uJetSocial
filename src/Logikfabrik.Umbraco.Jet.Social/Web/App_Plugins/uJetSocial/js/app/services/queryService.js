@@ -29,7 +29,7 @@
                         OrderBy: query.OrderBy.Value
                     };
 
-                    if (!_.isNil(params)) {
+                    if (!_.isNull(params) && !_.isUndefined(params)) {
                         _.forOwn(params, function(value, key) {
                             _.set(q, key, value);
                         });

@@ -11,15 +11,15 @@
                 link: function (scope, element, attrs) {
                     scope._ = _;
 
-                    scope.SortAscending = true;
+                    scope.sortAscending = true;
 
                     scope.sort = function (column) {
-                        scope.SortAscending = (scope.SortColumn === column) ? !scope.SortAscending : true;
-                        scope.SortColumn = column;
+                        scope.sortAscending = (scope.sortColumn === column) ? !scope.sortAscending : true;
+                        scope.sortColumn = column;
 
                         scope.ngModel.Rows = _.sortBy(scope.ngModel.Rows, [column]);
 
-                        if (!scope.SortAscending) {
+                        if (!scope.sortAscending) {
                             scope.ngModel.Rows.reverse();
                         }
                     };

@@ -1,4 +1,4 @@
-﻿<div class="ujet-list-paging" ng-hide="_.isNil(ngModel) || ngModel.PageCount === 1">
+﻿<div class="ujet-list-paging" ng-hide="(_.isNull(ngModel) || _.isUndefined(ngModel) || ngModel.PageCount <= 1)">
     
     <a href="#" ng-hide="ngModel.PageIndex === 1" ng-click="goToFirstPage()" prevent-default><i class="icon icon-navigation-first"></i></a>
     <a href="#" ng-hide="ngModel.PageIndex === 1" ng-click="goToPreviousPage()" prevent-default><i class="icon icon-navigation-left"></i></a>

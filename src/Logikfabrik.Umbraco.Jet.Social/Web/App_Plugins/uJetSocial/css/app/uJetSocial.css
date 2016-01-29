@@ -26,6 +26,7 @@
 
         table.ujet-list thead a {
             text-decoration: none;
+            text-transform: uppercase;
             display: block;
             padding: 8px;
         }
@@ -33,6 +34,14 @@
             table.ujet-list thead a:hover {
                 background: #f8f8f8;
             }
+
+    table.ujet-list tbody tr {
+        cursor: pointer;
+    }
+
+        table.ujet-list tbody tr:nth-child(even) {
+            background: #f8f8f8;
+        }
 
 div.ujet-list-paging {
     padding: 8px;
@@ -47,10 +56,6 @@ div.ujet-list-paging {
             width: 50px;
         }
 
-    div.ujet-list-paging i {
-        font-size: 12px;
-    }
-
     div.ujet-list-paging a {
         text-decoration: none;
         display: inline-block;
@@ -62,4 +67,8 @@ div.ujet-list-paging {
 
         div.ujet-list-paging a:hover {
             background: #e4e4e4;
+        }
+
+        div.ujet-list-paging a i {
+            font-size: 12px;
         }

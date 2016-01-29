@@ -3,7 +3,7 @@
         "$scope", "$routeParams", "navigationService",
         function ($scope, $routeParams, navigationService) {
 
-            $scope.Params = {
+            $scope.params = {
                 "FirstName": $routeParams.id
             };
 
