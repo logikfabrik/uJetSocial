@@ -12,6 +12,8 @@
         // Directives
 		        
 		// Presenter directives
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/groupList/groupListDirective.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/guestList/guestListDirective.js',
         '~/App_Plugins/uJetSocial/js/app/directives/presenters/list/listDirective.js',
         '~/App_Plugins/uJetSocial/js/app/directives/presenters/listPaging/listPagingDirective.js',
 

@@ -1,26 +1,29 @@
 ﻿angular.module("umbraco.directives")
     .directive("ujetListPaging", [
-        function() {
+        "_",
+        function (_) {
             return {
                 restrict: "E",
                 templateUrl: "/App_Plugins/uJetSocial/js/app/directives/presenters/listPaging/listPagingView.html",
                 scope: {
                     ngModel: "="
                 },
-                link: function(scope, element, attrs) {
-                    scope.goToFirstPage = function() {
+                link: function (scope, element, attrs) {
+                    scope._ = _;
+
+                    scope.goToFirstPage = function () {
                         scope.goToPage(1);
                     };
 
-                    scope.goToPreviousPage = function() {
+                    scope.goToPreviousPage = function () {
                         scope.goToPage(scope.ngModel.PageIndex - 1);
                     };
 
-                    scope.goToNextPage = function() {
+                    scope.goToNextPage = function () {
                         scope.goToPage(scope.ngModel.PageIndex + 1);
                     };
 
-                    scope.goToLastPage = function() {
+                    scope.goToLastPage = function () {
                         scope.goToPage(scope.ngModel.PageCount);
                     };
 

@@ -385,6 +385,10 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportDashboardController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportEditController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\groupList\groupListDirective.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\groupList\groupListView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\guestList\guestListView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\guestList\guestListDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\listPaging\listPagingDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\listPaging\listPagingView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listDirective.js" />

@@ -1,13 +1,13 @@
 ﻿angular.module("umbraco.directives")
     .directive("ujetList", [
-        "_", function (_) {
+        "_",
+        function (_) {
             return {
                 restrict: "E",
                 templateUrl: "/App_Plugins/uJetSocial/js/app/directives/presenters/list/listView.html",
                 scope: {
                     ngModel: "="
                 },
-                transclude: true,
                 link: function (scope, element, attrs) {
                     scope._ = _;
 
@@ -24,7 +24,7 @@
                         }
                     };
 
-                    scope.select = function(row) {
+                    scope.select = function (row) {
                         scope.$emit("selectedRowChanged", row);
                     };
                 }
