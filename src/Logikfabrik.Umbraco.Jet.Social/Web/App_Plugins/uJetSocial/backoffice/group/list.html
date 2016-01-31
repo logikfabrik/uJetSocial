@@ -1,13 +1,9 @@
 ﻿<umb-panel ng-controller="uJetSocial.groupListController">
     <umb-header>
-        <div class="umb-headline-editor-wrapper span12">
-            <h1>
-                <localize key="uJetSocial_groups">Groups</localize>
-            </h1>
-        </div>
+        <h1><localize key="uJetSocial_groups">Groups</localize></h1>
     </umb-header>
     <umb-tab-view>
-        <umb-tab id="tabGroups" style="display: block;">
+        <umb-tab style="display: block;">
             <umb-pane>
 
                 <ujet-group-list ng-model="params"></ujet-group-list>

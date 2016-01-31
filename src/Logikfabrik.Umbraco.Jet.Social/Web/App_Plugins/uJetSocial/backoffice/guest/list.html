@@ -1,13 +1,9 @@
 ﻿<umb-panel ng-controller="uJetSocial.guestListController">
     <umb-header>
-        <div class="umb-headline-editor-wrapper span12">
-            <h1>
-                <localize key="uJetSocial_guests">Guests</localize>
-            </h1>
-        </div>
+        <h1><localize key="uJetSocial_guests">Guests</localize></h1>
     </umb-header>
     <umb-tab-view>
-        <umb-tab id="tabGuests" style="display: block;">
+        <umb-tab style="display: block;">
             <umb-pane>
                 
                 <ujet-guest-list ng-model="params"></ujet-guest-list>

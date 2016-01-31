@@ -1,4 +1,16 @@
-﻿table.ujet-list {
+﻿/* uJet Dialog */
+
+.ujet-dialog h1 {
+    font-size: 16px;
+    margin: 10px 20px 0;
+    border: #f8f8f8 solid;
+    border-width: 0 0 1px;
+    padding: 0 0 50px;
+}
+
+/* uJet List */
+
+table.ujet-list {
     width: 100%;
 }
 
@@ -42,6 +54,8 @@
         table.ujet-list tbody tr:nth-child(even) {
             background: #f8f8f8;
         }
+
+/* uJet List Paging */
 
 div.ujet-list-paging {
     padding: 8px;

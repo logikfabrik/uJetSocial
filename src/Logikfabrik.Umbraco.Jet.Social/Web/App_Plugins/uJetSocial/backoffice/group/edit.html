@@ -1,53 +1,51 @@
-﻿<umb-panel ng-controller="uJetSocial.objectEditController">
-    <umb-header>
-        <div class="umb-headline-editor-wrapper span12">
-            <h1>
-                <localize key="uJetSocial_groups">Groups</localize>
-            </h1>
-        </div>
-    </umb-header>
-    <umb-tab-view>
-        <umb-tab id="tabGroups" rel="Groups" style="display: block;">
-            <umb-pane>
+﻿<div class="ujet-dialog" ng-controller="uJetSocial.objectEditController">
 
-                <form name="form">
+    <h1>Edit</h1>
 
-                    <div class="umb-pane">
-                        <div class="control-group umb-control-group">
+    <umb-pane>
 
-                            <div class="umb-el-wrap">
-                                <label class="control-label" for="">Name</label>
-                                <div class="controls controls-row">
-                                    <input type="text" required ng-model="model.Name" class="bigInput input-large-type input-block-level" />
-                                </div>
-                            </div>
+        <form name="form">
 
-                            <div class="umb-el-wrap">
-                                <label class="control-label" for="">Description</label>
-                                <div class="controls controls-row">
-                                    <input type="text" required ng-model="model.Description" class="bigInput input-large-type input-block-level" />
-                                </div>
-                            </div>
+            <div class="umb-control-group">
 
-                            <div class="umb-el-wrap">
-                                <label class="control-label" for="">Owner</label>
-                                <div class="controls controls-row">
-                                    <input type="number" required ng-model="model.OwnerId" class="bigInput input-large-type input-block-level" />
-                                </div>
-                            </div>
+                <label class="control-label" for="">Name</label>
+                <div class="controls-row">
+                    <input type="text" required ng-model="model.Name" class="input-block-level" />
+                </div>
 
-                        </div>
-                    </div>
+                <label class="control-label" for="">Description</label>
+                <div class="controls-row">
+                    <input type="text" required ng-model="model.Description" class="input-block-level" />
+                </div>
 
-                    <div class="umb-pane btn-toolbar umb-btn-toolbar">
-                        <div class="control-group umb-control-group">
-                            <input type="submit" value="Save" class="btn btn-primary" ng-click="save(form)" />
-                        </div>
-                    </div>
+                <label class="control-label" for="">Owner</label>
+                <div class="controls-row">
+                    <input type="number" required ng-model="model.OwnerId" class="input-block-level"/>
+                </div>
 
-                </form>
+                <label class="control-label" for="">Created</label>
+                <div class="controls-row">
+                    {{model.Created}}
+                </div>
 
-            </umb-pane>
-        </umb-tab>
-    </umb-tab-view>
-</umb-panel>
+                <label class="control-label" for="">Updated</label>
+                <div class="controls-row">
+                    {{model.Updated}}
+                </div>
+
+                <label class="control-label" for="">Status</label>
+                <div class="controls-row">
+                    <input type="number" required ng-model="model.Status" class="input-block-level" />
+                </div>
+
+            </div>
+
+            <div class="btn-toolbar umb-btn-toolbar">
+                <input type="submit" value="Save" class="btn btn-primary" ng-click="save(form)" />
+            </div>
+
+        </form>
+
+    </umb-pane>
+
+</div>
