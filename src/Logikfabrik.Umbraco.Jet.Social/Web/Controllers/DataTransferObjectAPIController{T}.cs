@@ -85,6 +85,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 
             var q = new Query<T>(query.PageIndex, query.PageSize);
 
+            if (query.Id.HasValue)
+            {
+                q.Criterias.Add(obj => obj.Id == query.Id.Value);
+            }
+
             if (query.CreatedFrom.HasValue)
             {
                 q.Criterias.Add(obj => obj.Created >= query.CreatedFrom.Value);

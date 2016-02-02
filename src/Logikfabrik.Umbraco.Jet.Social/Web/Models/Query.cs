@@ -11,6 +11,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models
     /// </summary>
     public abstract class Query
     {
+        public int? Id { get; set; }
+
         /// <summary>
         /// Gets or sets the lower limit for created date.
         /// </summary>
