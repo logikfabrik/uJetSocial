@@ -1,17 +1,16 @@
 ﻿<div class="ujet-object-status-select">
-    <!-- TODO: Replace with ng-repeat. -->
     <ul class="ujet-object-status-select__list">
         <li class="ujet-object-status-select__list-item">
             <a href="#" ng-click="ngModel = 0"
-               ng-class="ngModel === 0 ? 'ujet-object-status-select__button_selected' : 'ujet-object-status-select__button'" prevent-default><i class="icon icon-time"></i> Pending</a>
+               ng-class="ngModel === 0 ? 'ujet-button_disabled' : 'ujet-button'" prevent-default><i class="icon icon-time"></i> Pending</a>
         </li>
         <li class="ujet-object-status-select__list-item">
             <a href="#" ng-click="ngModel = 1"
-               ng-class="ngModel === 1 ? 'ujet-object-status-select__button_selected' : 'ujet-object-status-select__button'" prevent-default><i class="icon icon-check"></i> Approved</a>
+               ng-class="ngModel === 1 ? 'ujet-button_disabled' : 'ujet-button'" prevent-default><i class="icon icon-check"></i> Approved</a>
         </li>
         <li class="ujet-object-status-select__list-item">
             <a href="#" ng-click="ngModel = 2"
-               ng-class="ngModel === 2 ? 'ujet-object-status-select__button_selected' : 'ujet-object-status-select__button'" prevent-default><i class="icon icon-block"></i> Rejected</a>
+               ng-class="ngModel === 2 ? 'ujet-button_disabled' : 'ujet-button'" prevent-default><i class="icon icon-block"></i> Rejected</a>
         </li>
     </ul>
 </div>

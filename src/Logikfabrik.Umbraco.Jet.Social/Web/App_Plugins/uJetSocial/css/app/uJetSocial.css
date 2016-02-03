@@ -2,21 +2,18 @@
    ========================================================================== */
 
 .ujet-object-status-select__list {
+    margin: 0;
     list-style-type: none;
 }
 
 .ujet-object-status-select__list-item {
     float: left;
+    margin: 0 4px 0 0;
 }
 
-.ujet-object-status-select__button,
-.ujet-object-status-select__button_selected {
-    
-}
-
-.ujet-object-status-select__button_selected {
-    background: red;
-}
+    .ujet-object-status-select__list-item:last-child {
+        margin: 0;
+    }
 
 /* Individual
    ========================================================================== */
@@ -25,7 +22,6 @@
 .ujet-individual_selected {
     display: block;
     padding: 8px;
-    text-decoration: none;
 }
 
     .ujet-individual h5,
@@ -33,8 +29,16 @@
         margin: 0;
     }
 
+    .ujet-individual,
+    .ujet-individual:link,
+    .ujet-individual:visited,
     .ujet-individual:hover,
-    .ujet-individual_selected:hover {
+    .ujet-individual:active,
+    .ujet-individual_selected,
+    .ujet-individual_selected:link,
+    .ujet-individual_selected:visited,
+    .ujet-individual_selected:hover,
+    .ujet-individual_selected:active {
         text-decoration: none;
     }
 
@@ -66,7 +70,10 @@
 }
 
     .ujet-individual_selected__button,
-    .ujet-individual_selected__button:hover {
+    .ujet-individual_selected__button:link,
+    .ujet-individual_selected__button:visited,
+    .ujet-individual_selected__button:hover,
+    .ujet-individual_selected__button:active {
         color: #fff;
         text-decoration: none;
     }
@@ -115,25 +122,52 @@
 /* Button
    ========================================================================== */
 
-.ujet-button {
+.ujet-button,
+.ujet-button_disabled {
     display: inline-block;
     border: #ccc solid 1px;
     border-radius: 2px;
     padding: 4px 12px;
-    background: #f2f2f2;
-    text-decoration: none;
 }
 
-    .ujet-button:hover {
-        background: #e4e4e4;
+    .ujet-button,
+    .ujet-button:link,
+    .ujet-button:visited,
+    .ujet-button:hover,
+    .ujet-button:active,
+    .ujet-button_disabled,
+    .ujet-button_disabled:link,
+    .ujet-button_disabled:visited,
+    .ujet-button_disabled:hover,
+    .ujet-button_disabled:active {
         text-decoration: none;
     }
 
-    .ujet-button i {
-        font-size: 12px;
-    }
+        .ujet-button i,
+        .ujet-button_disabled i {
+            font-size: 12px;
+        }
 
+        .ujet-button,
+        .ujet-button:link,
+        .ujet-button:visited,
+        .ujet-button:active {
+            background: #f2f2f2;
+        }
 
+            .ujet-button:hover {
+                background: #e4e4e4;
+            }
+
+        .ujet-button_disabled,
+        .ujet-button_disabled:link,
+        .ujet-button_disabled:visited,
+        .ujet-button_disabled:hover,
+        .ujet-button_disabled:active {
+            /*background: #f1f1f1;*/
+            color: #ccc;
+            cursor: default;
+        }
 
 
 
