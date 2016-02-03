@@ -11,6 +11,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models
     /// </summary>
     public abstract class Query
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int? Id { get; set; }
 
         /// <summary>

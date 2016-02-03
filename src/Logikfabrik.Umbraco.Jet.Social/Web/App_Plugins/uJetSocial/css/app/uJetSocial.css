@@ -1,4 +1,79 @@
-﻿/* uJet Dialog */
+﻿/* Individual
+   ========================================================================== */
+
+.ujet-individual,
+.ujet-individual_selected {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+}
+
+    .ujet-individual h5,
+    .ujet-individual_selected h5 {
+        margin: 0;
+    }
+
+    .ujet-individual:hover,
+    .ujet-individual_selected:hover {
+        text-decoration: none;
+    }
+
+.ujet-individual {
+    border: #ccc solid 1px;
+    border-radius: 2px;
+    color: #343434;
+}
+
+    .ujet-individual:hover {
+        background: #f8f8f8;
+    }
+
+    .ujet-individual h5 {
+        color: #343434;
+    }
+
+.ujet-individual_selected {
+    background: #2e8aea;
+    color: #fff;
+}
+
+    .ujet-individual_selected h5 {
+        color: #fff;
+    }
+
+/* Individual Select
+   ========================================================================== */
+
+.ujet-individual-select {
+}
+
+.ujet-individual-select__individual {
+    margin: 0 0 20px;
+}
+
+.ujet-individual-select__query {
+    box-sizing: border-box;
+    min-height: 30px;
+    width: 100%;
+}
+
+.ujet-individual-select__list {
+    border: #ccc solid 1px;
+    border-radius: 2px;
+    margin: 0;
+    padding: 8px;
+    list-style-type: none;
+}
+
+.ujet-individual-select__list-item {
+    margin: 0 0 4px;
+}
+
+    .ujet-individual-select__list-item:last-child {
+        margin: 0;
+    }
+
+/* uJet Dialog */
 
 .ujet-dialog h1 {
     font-size: 16px;
@@ -7,61 +82,6 @@
     border-width: 0 0 1px;
     padding: 0 0 50px;
 }
-
-/* ujet Item */
-
-div.ujet-individual-select {
-}
-
-    div.ujet-individual-select h5 {
-        margin: 0;
-    }
-
-    div.ujet-individual-select input {
-        margin: 0;
-    }
-
-    div.ujet-individual-select div {
-        padding: 8px;
-        color: #fff;
-        background: #2e8aea;
-        margin: 0 0 20px;
-    }
-
-        div.ujet-individual-select div h5 {
-            color: #fff;
-        }
-
-    div.ujet-individual-select ul {
-        list-style-type: none;
-        margin: 0;
-        border: #ccc solid;
-        border-width: 0 1px 1px;
-        border-radius: 2px;
-        padding: 8px;
-    }
-
-    div.ujet-individual-select li {
-        margin: 0 0 4px;
-    }
-
-        div.ujet-individual-select li:last-of-type {
-            margin: 0;
-        }
-
-        div.ujet-individual-select li a {
-            border: #ccc solid 1px;
-            border-radius: 2px;
-            padding: 8px;
-            text-decoration: none;
-            display: block;
-        }
-
-            div.ujet-individual-select li a:hover {
-                background: #f8f8f8;
-            }
-
-
 
 /* uJet List */
 

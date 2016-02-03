@@ -65,7 +65,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Test.Data
 
             var provider = (IDataTransferObjectProvider<IndividualGuest>)DataTransferObjectProviders.GetProvider(typeof(IndividualGuest));
 
-            Assert.IsTrue(provider.Query(query).Any());
+            Assert.IsTrue(provider.Query(query).Objects.Any());
         }
 
         [TestMethod]

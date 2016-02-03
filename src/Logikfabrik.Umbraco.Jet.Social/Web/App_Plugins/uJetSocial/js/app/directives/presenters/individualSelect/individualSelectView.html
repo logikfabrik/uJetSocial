@@ -1,12 +1,12 @@
 ﻿<div class="ujet-individual-select">
-    <div ng-hide="_.isNull(selectedObj)">
+    <div class="ujet-individual-select__individual ujet-individual_selected" ng-hide="_.isNull(selectedObj)">
         <h5>{{selectedObj.FirstName}} {{selectedObj.LastName}}</h5>
         {{selectedObj.Email}}
     </div>
-    <input type="text" placeholder="Type to search..." ng-model="query" ng-change="search()" class="input-block-level" />
-    <ul ng-show="_.size(objects) > 0">
-        <li ng-repeat="object in objects">
-            <a href="#" ng-click="selectObj(object)" prevent-default>
+    <input class="ujet-individual-select__query" type="text" placeholder="Type to search..." ng-model="query" ng-change="search()" />
+    <ul class="ujet-individual-select__list" ng-show="_.size(objects) > 0">
+        <li class="ujet-individual-select__list-item" ng-repeat="object in objects">
+            <a class="ujet-individual" href="#" ng-click="selectObj(object)" prevent-default>
                 <h5>{{object.FirstName}} {{object.LastName}}</h5>
                 {{object.Email}}
             </a>
