@@ -25,17 +25,17 @@
 
                 <label class="control-label" for="">Created</label>
                 <div class="controls-row">
-                    {{model.Created}}
+                    <ujet-value value="{{model.Created}}"></ujet-value>
                 </div>
 
                 <label class="control-label" for="">Updated</label>
                 <div class="controls-row">
-                    {{model.Updated}}
+                    <ujet-value value="{{model.Updated}}"></ujet-value>
                 </div>
 
                 <label class="control-label" for="">Status</label>
                 <div class="controls-row">
-                    <input type="number" required ng-model="model.Status" class="input-block-level" />
+                    <ujet-object-status-select ng-model="model.Status"></ujet-object-status-select>
                 </div>
 
             </div>

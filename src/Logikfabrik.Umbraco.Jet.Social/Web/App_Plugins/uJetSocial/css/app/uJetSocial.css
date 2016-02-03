@@ -1,4 +1,24 @@
-﻿/* Individual
+﻿/* Status Select
+   ========================================================================== */
+
+.ujet-object-status-select__list {
+    list-style-type: none;
+}
+
+.ujet-object-status-select__list-item {
+    float: left;
+}
+
+.ujet-object-status-select__button,
+.ujet-object-status-select__button_selected {
+    
+}
+
+.ujet-object-status-select__button_selected {
+    background: red;
+}
+
+/* Individual
    ========================================================================== */
 
 .ujet-individual,
@@ -41,12 +61,18 @@
         color: #fff;
     }
 
+.ujet-individual_selected__button {
+    float: right;
+}
+
+    .ujet-individual_selected__button,
+    .ujet-individual_selected__button:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
 /* Individual Select
    ========================================================================== */
-
-.ujet-individual-select__individual {
-    margin: 0 0 20px;
-}
 
 .ujet-individual-select__query {
     box-sizing: border-box;

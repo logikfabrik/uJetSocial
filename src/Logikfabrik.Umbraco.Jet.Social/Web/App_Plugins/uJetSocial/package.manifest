@@ -19,6 +19,7 @@
         '~/App_Plugins/uJetSocial/js/app/directives/presenters/individualSelect/individualSelectDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/list/listDirective.js',
         '~/App_Plugins/uJetSocial/js/app/directives/presenters/listPaging/listPagingDirective.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/objectStatusSelect/objectStatusSelectDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/value/valueDirective.js',
 
         // Components

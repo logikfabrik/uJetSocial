@@ -394,6 +394,8 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\listPaging\listPagingView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\objectStatusSelect\objectStatusSelectDirective.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\objectStatusSelect\objectStatusSelectView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\value\valueView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\value\valueDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\momentFactory.js" />

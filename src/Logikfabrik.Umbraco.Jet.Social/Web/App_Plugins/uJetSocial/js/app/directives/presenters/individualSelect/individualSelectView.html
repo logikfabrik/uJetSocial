@@ -1,9 +1,10 @@
 ﻿<div class="ujet-individual-select">
     <div class="ujet-individual-select__individual ujet-individual_selected" ng-hide="_.isNull(selectedObj)">
+        <a class="ujet-individual_selected__button" href="#" ng-click="deselectObj()" prevent-default><i class="icon icon-delete"></i></a>
         <h5>{{selectedObj.FirstName}} {{selectedObj.LastName}}</h5>
         {{selectedObj.Email}}
     </div>
-    <input class="ujet-individual-select__query" type="text" placeholder="Type to search..." ng-model="query" ng-change="search()" />
+    <input class="ujet-individual-select__query" ng-show="_.isNull(selectedObj)" type="text" placeholder="Type to search..." ng-model="query" ng-change="search()" />
     <ul class="ujet-individual-select__list" ng-show="_.size(objects) > 0">
         <li class="ujet-individual-select__list-item" ng-repeat="object in objects">
             <a class="ujet-individual" href="#" ng-click="selectObj(object)" prevent-default>

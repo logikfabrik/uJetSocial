@@ -1,7 +1,7 @@
 ﻿angular.module("umbraco.directives")
     .directive("ujetIndividualSelect", [
-        "_", "dialogService", "notificationsService", "guestFactory", "queryService",
-        function (_, dialogService, notificationsService, guestFactory, queryService) {
+        "_", "guestFactory", "queryService",
+        function (_, guestFactory, queryService) {
             return {
                 restrict: "E",
                 templateUrl: "/App_Plugins/uJetSocial/js/app/directives/presenters/individualSelect/individualSelectView.html",
