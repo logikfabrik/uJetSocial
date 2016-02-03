@@ -44,9 +44,6 @@
 /* Individual Select
    ========================================================================== */
 
-.ujet-individual-select {
-}
-
 .ujet-individual-select__individual {
     margin: 0 0 20px;
 }
@@ -72,6 +69,60 @@
     .ujet-individual-select__list-item:last-child {
         margin: 0;
     }
+
+/* List Paging
+   ========================================================================== */
+
+.ujet-list-paging {
+    padding: 8px;
+}
+
+.ujet-list-paging__numbering {
+    display: inline-block;
+}
+
+    .ujet-list-paging__numbering input {
+        vertical-align: baseline;
+        width: 50px;
+    }
+
+/* Button
+   ========================================================================== */
+
+.ujet-button {
+    display: inline-block;
+    border: #ccc solid 1px;
+    border-radius: 2px;
+    padding: 4px 12px;
+    background: #f2f2f2;
+    text-decoration: none;
+}
+
+    .ujet-button:hover {
+        background: #e4e4e4;
+        text-decoration: none;
+    }
+
+    .ujet-button i {
+        font-size: 12px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* uJet Dialog */
 
@@ -128,36 +179,4 @@ table.ujet-list {
 
         table.ujet-list tbody tr:nth-child(even) {
             background: #f8f8f8;
-        }
-
-/* uJet List Paging */
-
-div.ujet-list-paging {
-    padding: 8px;
-}
-
-    div.ujet-list-paging div {
-        display: inline-block;
-    }
-
-        div.ujet-list-paging div input {
-            vertical-align: baseline;
-            width: 50px;
-        }
-
-    div.ujet-list-paging a {
-        text-decoration: none;
-        display: inline-block;
-        background: #f2f2f2;
-        border: #cccccc solid 1px;
-        border-radius: 2px;
-        padding: 4px 12px;
-    }
-
-        div.ujet-list-paging a:hover {
-            background: #e4e4e4;
-        }
-
-        div.ujet-list-paging a i {
-            font-size: 12px;
         }
