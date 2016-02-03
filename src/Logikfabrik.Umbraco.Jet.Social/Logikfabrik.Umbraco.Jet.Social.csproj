@@ -394,6 +394,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\listPaging\listPagingView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\value\valueView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\value\valueDirective.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\momentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\lodashFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\services\queryService.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\vendor\lodash-3.10.1\lodash.js" />
@@ -401,6 +404,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\edit.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\vendor\moment-2.11.1\moment.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

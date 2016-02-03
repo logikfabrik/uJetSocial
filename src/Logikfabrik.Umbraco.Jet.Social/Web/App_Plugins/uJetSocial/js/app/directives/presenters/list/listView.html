@@ -16,7 +16,7 @@
     <tbody ng-show="_.size(ngModel.Rows) > 0">
         <tr ng-repeat="row in ngModel.Rows" ng-click="select(row)">
             <td ng-repeat="column in ngModel.Columns">
-                {{_.property(column)(row)}}
+                <ujet-value value="{{_.property(column)(row)}}"></ujet-value>
             </td>
         </tr>
     </tbody>

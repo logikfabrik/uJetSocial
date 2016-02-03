@@ -17,11 +17,7 @@
                         scope.sortAscending = (scope.sortColumn === column) ? !scope.sortAscending : true;
                         scope.sortColumn = column;
 
-                        scope.ngModel.Rows = _.sortBy(scope.ngModel.Rows, [column]);
-
-                        if (!scope.sortAscending) {
-                            scope.ngModel.Rows.reverse();
-                        }
+                        scope.ngModel.Rows = _.sortBy(scope.ngModel.Rows, [column]).reverse();
                     };
 
                     scope.select = function (row) {
