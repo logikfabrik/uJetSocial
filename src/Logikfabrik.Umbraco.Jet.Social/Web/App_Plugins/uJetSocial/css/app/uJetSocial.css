@@ -18,64 +18,67 @@
 /* Individual
    ========================================================================== */
 
-.ujet-individual,
-.ujet-individual_selected {
+.ujet-individual {
     display: block;
     padding: 8px;
-}
-
-    .ujet-individual h5,
-    .ujet-individual_selected h5 {
-        margin: 0;
-    }
-
-    .ujet-individual,
-    .ujet-individual:link,
-    .ujet-individual:visited,
-    .ujet-individual:hover,
-    .ujet-individual:active,
-    .ujet-individual_selected,
-    .ujet-individual_selected:link,
-    .ujet-individual_selected:visited,
-    .ujet-individual_selected:hover,
-    .ujet-individual_selected:active {
-        text-decoration: none;
-    }
-
-.ujet-individual {
     border: #ccc solid 1px;
     border-radius: 2px;
     color: #343434;
 }
 
-    .ujet-individual:hover {
-        background: #f8f8f8;
+    .ujet-individual,
+    .ujet-individual:link,
+    .ujet-individual:visited,
+    .ujet-individual:hover,
+    .ujet-individual:active {
+        text-decoration: none;
     }
 
-    .ujet-individual h5 {
-        color: #343434;
+        .ujet-individual:hover {
+            background: #f8f8f8;
+        }
+
+.ujet-individual__name {
+    margin: 0;
+}
+
+.ujet-individual__button {
+    float: right;
+}
+
+    .ujet-individual__button,
+    .ujet-individual__button:link,
+    .ujet-individual__button:visited,
+    .ujet-individual__button:hover,
+    .ujet-individual__button:active {
+        text-decoration: none;
     }
 
-.ujet-individual_selected {
+.ujet-individual__icon {
+    font-size: 12px;
+}
+
+.ujet-individual--selected {
+    border: none;
+    border-radius: 0;
     background: #2e8aea;
     color: #fff;
 }
 
-    .ujet-individual_selected h5 {
+    .ujet-individual--selected:hover {
+        background: #2e8aea;
+    }
+
+    .ujet-individual--selected .ujet-individual__button,
+    .ujet-individual--selected .ujet-individual__button:link,
+    .ujet-individual--selected .ujet-individual__button:visited,
+    .ujet-individual--selected .ujet-individual__button:hover,
+    .ujet-individual--selected .ujet-individual__button:active {
         color: #fff;
     }
 
-.ujet-individual_selected__button {
-    float: right;
-}
-
-    .ujet-individual_selected__button,
-    .ujet-individual_selected__button:link,
-    .ujet-individual_selected__button:visited,
-    .ujet-individual_selected__button:hover,
-    .ujet-individual_selected__button:active {
+    .ujet-individual--selected .ujet-individual__name {
         color: #fff;
-        text-decoration: none;
     }
 
 /* Individual Select
@@ -122,8 +125,7 @@
 /* Button
    ========================================================================== */
 
-.ujet-button,
-.ujet-button_disabled {
+.ujet-button {
     display: inline-block;
     border: #ccc solid 1px;
     border-radius: 2px;
@@ -134,42 +136,31 @@
     .ujet-button:link,
     .ujet-button:visited,
     .ujet-button:hover,
-    .ujet-button:active,
-    .ujet-button_disabled,
-    .ujet-button_disabled:link,
-    .ujet-button_disabled:visited,
-    .ujet-button_disabled:hover,
-    .ujet-button_disabled:active {
+    .ujet-button:active {
         text-decoration: none;
+        background: #f2f2f2;
     }
 
-        .ujet-button i,
-        .ujet-button_disabled i {
-            font-size: 12px;
+        .ujet-button:hover {
+            background: #e4e4e4;
         }
 
-        .ujet-button,
-        .ujet-button:link,
-        .ujet-button:visited,
-        .ujet-button:active {
-            background: #f2f2f2;
-        }
+.ujet-button--disabled,
+.ujet-button--disabled:link,
+.ujet-button--disabled:visited,
+.ujet-button--disabled:hover,
+.ujet-button--disabled:active {
+    color: #ccc;
+    cursor: default;
+}
 
-            .ujet-button:hover {
-                background: #e4e4e4;
-            }
+    .ujet-button--disabled:hover {
+        background: #f2f2f2;
+    }
 
-        .ujet-button_disabled,
-        .ujet-button_disabled:link,
-        .ujet-button_disabled:visited,
-        .ujet-button_disabled:hover,
-        .ujet-button_disabled:active {
-            /*background: #f1f1f1;*/
-            color: #ccc;
-            cursor: default;
-        }
-
-
+.ujet-button__icon {
+    font-size: 12px;
+}
 
 
 

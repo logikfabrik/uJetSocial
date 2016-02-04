@@ -1,16 +1,16 @@
 ﻿<div class="ujet-object-status-select">
     <ul class="ujet-object-status-select__list">
         <li class="ujet-object-status-select__list-item">
-            <a href="#" ng-click="ngModel = 0"
-               ng-class="ngModel === 0 ? 'ujet-button_disabled' : 'ujet-button'" prevent-default><i class="icon icon-time"></i> Pending</a>
+            <a href="#" ng-click="ngModel = 0" class="ujet-button"
+               ng-class="{'ujet-button--disabled': ngModel === 0}" prevent-default><i class="ujet-button__icon icon icon-time"></i> Pending</a>
         </li>
         <li class="ujet-object-status-select__list-item">
-            <a href="#" ng-click="ngModel = 1"
-               ng-class="ngModel === 1 ? 'ujet-button_disabled' : 'ujet-button'" prevent-default><i class="icon icon-check"></i> Approved</a>
+            <a href="#" ng-click="ngModel = 1" class="ujet-button"
+               ng-class="{'ujet-button--disabled': ngModel === 1}" prevent-default><i class="ujet-button__icon icon icon-check"></i> Approved</a>
         </li>
         <li class="ujet-object-status-select__list-item">
-            <a href="#" ng-click="ngModel = 2"
-               ng-class="ngModel === 2 ? 'ujet-button_disabled' : 'ujet-button'" prevent-default><i class="icon icon-block"></i> Rejected</a>
+            <a href="#" ng-click="ngModel = 2" class="ujet-button"
+               ng-class="{'ujet-button--disabled': ngModel === 2}" prevent-default><i class="ujet-button__icon icon icon-block"></i> Rejected</a>
         </li>
     </ul>
 </div>
