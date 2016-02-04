@@ -162,14 +162,52 @@
     font-size: 12px;
 }
 
+/* List
+   ========================================================================== */
 
+.ujet-list {
+    width: 100%;
+}
 
+.ujet-list__icon {
+    font-size: 12px;
+}
 
+.ujet-list__header-row {
+    border: #dbdbdb solid;
+    border-width: 0 0 2px;
+}
 
+.ujet-list__header {
+    text-transform: uppercase;
+    display: block;
+    padding: 8px;
+}
 
+    .ujet-list__header,
+    .ujet-list__header:link,
+    .ujet-list__header:visited,
+    .ujet-list__header:hover,
+    .ujet-list__header:active {
+        text-decoration: none;
+    }
 
+        .ujet-list__header:hover {
+            background: #f8f8f8;
+        }
 
+.ujet-list__row {
+    border: #dbdbdb solid;
+    border-width: 0 0 1px;
+}
 
+    .ujet-list__row:nth-child(even) {
+        background: #f8f8f8;
+    }
+
+.ujet-list__column {
+    padding: 8px;
+}
 
 
 
@@ -184,50 +222,3 @@
     border-width: 0 0 1px;
     padding: 0 0 50px;
 }
-
-/* uJet List */
-
-table.ujet-list {
-    width: 100%;
-}
-
-    table.ujet-list tr {
-        border: #dbdbdb solid;
-        border-width: 0 0 1px;
-    }
-
-    table.ujet-list td {
-        padding: 8px;
-    }
-
-    table.ujet-list thead {
-        border: #dbdbdb solid;
-        border-width: 0 0 2px;
-    }
-
-        table.ujet-list thead td {
-            padding: 0;
-        }
-
-        table.ujet-list thead i {
-            font-size: 12px;
-        }
-
-        table.ujet-list thead a {
-            text-decoration: none;
-            text-transform: uppercase;
-            display: block;
-            padding: 8px;
-        }
-
-            table.ujet-list thead a:hover {
-                background: #f8f8f8;
-            }
-
-    table.ujet-list tbody tr {
-        cursor: pointer;
-    }
-
-        table.ujet-list tbody tr:nth-child(even) {
-            background: #f8f8f8;
-        }
