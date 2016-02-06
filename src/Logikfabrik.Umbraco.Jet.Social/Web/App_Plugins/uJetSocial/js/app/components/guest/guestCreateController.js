@@ -1,35 +1,47 @@
-﻿angular.module("umbraco")
-    .controller("uJetSocial.guestCreateController", [
-        "$scope", "$location", "notificationsService", "guestFactory",
-        function ($scope, $location, notificationsService, guestFactory) {
-            $scope.create = function (form) {
-                if (!form.$valid) {
-                    return;
-                }
+﻿(function () {
+    'use strict';
 
-                guestFactory.add($scope.model)
-                    .success(function (id) {
-                        notificationsService.success("Guest created");
+    angular
+        .module("umbraco")
+        .controller("ujetGuestCreateController", ujetGuestCreateController);
 
-                        $location.path("/uJetSocial/guest/dashboard/-1");
+    ujetGuestCreateController.$inject = ["$scope", "$location", "notificationsService", "guestFactory"];
 
-                        close();
-                    })
-                    .error(function () {
-                        notificationsService.error("Guest could not be created");
-                    });
-            };
+    function ujetGuestCreateController($scope, $location, notificationsService, guestFactory) {
+        var vm = this;
 
-            $scope.cancel = function () {
-                close();
-            };
+        vm.guest = {};
+        vm.create = create;
+        vm.cancel = cancel;
 
-            function close() {
-                /*
-                 * We cannot use the dialog service, as it doesn't allow the dialog to be closed gracefully.
-                 * As a hack we emit an internal event that Umbraco handles.
-                */
-                $scope.$emit("app.closeDialogs", undefined);
-            };
-        }
-    ]);
+        function create(form) {
+            if (!form.$valid) {
+                return;
+            }
+
+            guestFactory.add(vm.guest)
+                .success(function (id) {
+                    notificationsService.success("Guest created");
+
+                    $location.path("/uJetSocial/guest/dashboard/-1");
+
+                    close();
+                })
+                .error(function () {
+                    notificationsService.error("Guest could not be created");
+                });
+        };
+
+        function cancel() {
+            close();
+        };
+
+        function close() {
+            /*
+             * We cannot use the dialog service, as it doesn't allow the dialog to be closed gracefully.
+             * As a hack we emit an internal event that Umbraco handles.
+            */
+            $scope.$emit("app.closeDialogs", undefined);
+        };
+    };
+})();

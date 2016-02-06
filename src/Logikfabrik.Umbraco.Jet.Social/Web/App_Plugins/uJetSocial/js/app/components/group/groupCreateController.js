@@ -1,35 +1,47 @@
-﻿angular.module("umbraco")
-    .controller("uJetSocial.groupCreateController", [
-        "$scope", "$location", "notificationsService", "groupFactory",
-        function ($scope, $location, notificationsService, groupFactory) {
-            $scope.create = function (form) {
-                if (!form.$valid) {
-                    return;
-                }
+﻿(function () {
+    'use strict';
 
-                groupFactory.add($scope.model)
-                    .success(function (id) {
-                        notificationsService.success("Group created");
+    angular
+        .module("umbraco")
+        .controller("ujetGroupCreateController", ujetGroupCreateController);
 
-                        $location.path("/uJetSocial/group/dashboard/-1");
+    ujetGroupCreateController.$inject = ["$scope", "$location", "notificationsService", "groupFactory"];
 
-                        close();
-                    })
-                    .error(function () {
-                        notificationsService.error("Group could not be created");
-                    });
-            };
+    function ujetGroupCreateController($scope, $location, notificationsService, groupFactory) {
+        var vm = this;
 
-            $scope.cancel = function () {
-                close();
-            };
+        vm.group = {};
+        vm.create = create;
+        vm.cancel = cancel;
 
-            function close() {
-                /*
-                 * We cannot use the dialog service, as it doesn't allow the dialog to be closed gracefully.
-                 * As a hack we emit an internal event that Umbraco handles.
-                */
-                $scope.$emit("app.closeDialogs", undefined);
-            };
-        }
-    ]);
+        function create(form) {
+            if (!form.$valid) {
+                return;
+            }
+
+            groupFactory.add(vm.group)
+                .success(function (id) {
+                    notificationsService.success("Group created");
+
+                    $location.path("/uJetSocial/group/dashboard/-1");
+
+                    close();
+                })
+                .error(function () {
+                    notificationsService.error("Group could not be created");
+                });
+        };
+
+        function cancel() {
+            close();
+        };
+
+        function close() {
+            /*
+             * We cannot use the dialog service, as it doesn't allow the dialog to be closed gracefully.
+             * As a hack we emit an internal event that Umbraco handles.
+            */
+            $scope.$emit("app.closeDialogs", undefined);
+        };
+    };
+})();

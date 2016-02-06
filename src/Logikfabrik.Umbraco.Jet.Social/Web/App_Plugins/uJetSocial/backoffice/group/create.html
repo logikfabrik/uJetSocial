@@ -1,4 +1,4 @@
-﻿<div class="umbracoDialog umb-dialog" ng-controller="uJetSocial.groupCreateController">
+﻿<div class="umbracoDialog umb-dialog" ng-controller="ujetGroupCreateController as vm">
 
     <umb-pane>
 
@@ -8,24 +8,24 @@
 
                 <label class="control-label" for="">Name</label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="model.Name" class="input-block-level" />
+                    <input type="text" required ng-model="vm.group.Name" class="input-block-level" />
                 </div>
 
                 <label class="control-label" for="">Description</label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="model.Description" class="input-block-level" />
+                    <input type="text" required ng-model="vm.group.Description" class="input-block-level" />
                 </div>
 
                 <label class="control-label" for="">Owner</label>
                 <div class="controls-row">
-                    <ujet-individual-select ng-model="model.OwnerId"></ujet-individual-select>
+                    <ujet-individual-select ng-model="vm.group.OwnerId"></ujet-individual-select>
                 </div>
 
             </div>
 
             <div class="btn-toolbar umb-btn-toolbar">
-                <a class="btn btn-link" ng-click="cancel()">Cancel</a>
-                <input type="submit" value="Create" class="btn btn-primary" ng-click="create(form)" />
+                <a class="btn btn-link" ng-click="vm.cancel()">Cancel</a>
+                <input type="submit" value="Create" class="btn btn-primary" ng-click="vm.create(form)" />
             </div>
             
         </form>

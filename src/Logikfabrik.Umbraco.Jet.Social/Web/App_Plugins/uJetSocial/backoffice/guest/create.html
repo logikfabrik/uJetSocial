@@ -1,4 +1,4 @@
-﻿<div class="umbracoDialog umb-dialog" ng-controller="uJetSocial.guestCreateController">
+﻿<div class="umbracoDialog umb-dialog" ng-controller="ujetGuestCreateController as vm">
 
     <umb-pane>
 
@@ -8,24 +8,24 @@
 
                 <label class="control-label" for="">First name</label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="model.FirstName" class="input-block-level" />
+                    <input type="text" required ng-model="vm.guest.FirstName" class="input-block-level" />
                 </div>
 
                 <label class="control-label" for="">Last name</label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="model.LastName" class="input-block-level" />
+                    <input type="text" required ng-model="vm.guest.LastName" class="input-block-level" />
                 </div>
 
                 <label class="control-label" for="">E-mail</label>
                 <div class="controls-row">
-                    <input type="email" required ng-model="model.Email" class="input-block-level" />
+                    <input type="email" required ng-model="vm.guest.Email" class="input-block-level" />
                 </div>
 
             </div>
 
             <div class="btn-toolbar umb-btn-toolbar">
-                <a class="btn btn-link" ng-click="cancel()">Cancel</a>
-                <input type="submit" value="Create" class="btn btn-primary" ng-click="create(form)" />
+                <a class="btn btn-link" ng-click="vm.cancel()">Cancel</a>
+                <input type="submit" value="Create" class="btn btn-primary" ng-click="vm.create(form)" />
             </div>
 
         </form>

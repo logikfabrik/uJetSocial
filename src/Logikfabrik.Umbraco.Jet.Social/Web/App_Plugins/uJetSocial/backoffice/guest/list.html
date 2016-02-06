@@ -1,4 +1,4 @@
-﻿<umb-panel ng-controller="uJetSocial.guestListController">
+﻿<umb-panel ng-controller="ujetGuestListController as vm">
     <umb-header>
         <h1><localize key="uJetSocial_guests">Guests</localize></h1>
     </umb-header>
@@ -6,7 +6,7 @@
         <umb-tab style="display: block;">
             <umb-pane>
                 
-                <ujet-guest-list ng-model="params"></ujet-guest-list>
+                <ujet-guest-list ng-model="vm.params"></ujet-guest-list>
 
             </umb-pane>
         </umb-tab>

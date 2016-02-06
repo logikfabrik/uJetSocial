@@ -1,12 +1,19 @@
-﻿angular.module("umbraco")
-    .controller("uJetSocial.guestListController", [
-        "$scope", "$routeParams", "navigationService",
-        function ($scope, $routeParams, navigationService) {
+﻿(function () {
+    'use strict';
 
-            $scope.params = {
-                "FirstName": $routeParams.id
-            };
+    angular
+        .module("umbraco")
+        .controller("ujetGuestListController", ujetGuestListController);
 
-            navigationService.syncTree({ tree: "guest", path: ["-1", $routeParams.id], forceReload: false });
-        }
-    ]);
+    ujetGuestListController.$inject = ["$routeParams", "navigationService"];
+
+    function ujetGuestListController($routeParams, navigationService) {
+        var vm = this;
+
+        vm.params = {
+            "FirstName": $routeParams.id
+        };
+        
+        navigationService.syncTree({ tree: "guest", path: ["-1", $routeParams.id], forceReload: false });
+    };
+})();
