@@ -1,12 +1,19 @@
-﻿angular.module("umbraco")
-    .controller("uJetSocial.groupListController", [
-        "$scope", "$routeParams", "navigationService",
-        function ($scope, $routeParams, navigationService) {
+﻿(function () {
+    'use strict';
 
-            $scope.params = {
-                "Name": $routeParams.id
-            };
+    angular
+        .module("umbraco")
+        .controller("ujetGroupListController", ujetGroupListController);
 
-            navigationService.syncTree({ tree: "group", path: ["-1", $routeParams.id], forceReload: false });
-        }
-    ]);
+    ujetGroupListController.$inject = ["$routeParams", "navigationService"];
+
+    function ujetGroupListController($routeParams, navigationService) {
+        var vm = this;
+
+        vm.params = {
+            "Name": $routeParams.id
+        };
+
+        navigationService.syncTree({ tree: "group", path: ["-1", $routeParams.id], forceReload: false });
+    };
+})();
