@@ -1,0 +1,35 @@
+﻿<div class="umbracoDialog umb-dialog" ng-controller="ujetCommentCreateController as vm">
+
+    <umb-pane>
+
+        <form name="form">
+            
+            <div class="umb-control-group">
+
+                <label class="control-label" for="">Entity ID</label>
+                <div class="controls-row">
+                    <input type="number" required ng-model="vm.comment.EntityId" class="input-block-level" />
+                </div>
+
+                <label class="control-label" for="">Author ID</label>
+                <div class="controls-row">
+                    <input type="number" required ng-model="vm.comment.AuthorId" class="input-block-level" />
+                </div>
+
+                <label class="control-label" for="">Text</label>
+                <div class="controls-row">
+                    <input type="text" required ng-model="vm.comment.Text" class="input-block-level" />
+                </div>
+
+            </div>
+
+            <div class="btn-toolbar umb-btn-toolbar">
+                <a class="btn btn-link" ng-click="vm.cancel()">Cancel</a>
+                <input type="submit" value="Create" class="btn btn-primary" ng-click="vm.create(form)" />
+            </div>
+            
+        </form>
+
+    </umb-pane>
+
+</div>

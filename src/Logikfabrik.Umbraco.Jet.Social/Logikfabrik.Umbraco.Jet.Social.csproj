@@ -358,6 +358,7 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\dashboard.html" />
@@ -370,6 +371,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\css\app\uJetSocial.css" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentDashboardController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentCreateController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\dashboard\dashboardController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\objectEditController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\group\groupDashboardController.js" />
@@ -382,6 +384,8 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportDashboardController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\commentList\commentListDirective.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\commentList\commentListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\groupList\groupListDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\groupList\groupListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\guestList\guestListView.html" />

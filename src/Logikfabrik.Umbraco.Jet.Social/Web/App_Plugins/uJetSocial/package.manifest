@@ -14,6 +14,7 @@
         // Directives
 		        
 		// Presenter directives
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/commentList/commentListDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/groupList/groupListDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/guestList/guestListDirective.js',
         '~/App_Plugins/uJetSocial/js/app/directives/presenters/individualSelect/individualSelectDirective.js',
@@ -28,7 +29,8 @@
         '~/App_Plugins/uJetSocial/js/app/components/dashboard/dashboardController.js',
 		
 		// Comment component
-        '~/App_Plugins/uJetSocial/js/app/components/comment/commentDashboardController.js',
+        '~/App_Plugins/uJetSocial/js/app/components/comment/commentCreateController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/comment/commentDashboardController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/comment/commentFactory.js',
 		
         // Group component
