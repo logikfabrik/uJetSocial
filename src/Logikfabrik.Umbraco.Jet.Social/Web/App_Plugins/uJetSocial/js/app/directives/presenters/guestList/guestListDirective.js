@@ -1,7 +1,7 @@
 ﻿angular.module("umbraco.directives")
     .directive("ujetGuestList", [
-        "_", "dialogService", "notificationsService", "guestFactory", "queryService",
-        function (_, dialogService, notificationsService, guestFactory, queryService) {
+        "_", "dialogService", "notificationsService", "ujetGuestFactory", "queryService",
+        function (_, dialogService, notificationsService, ujetGuestFactory, queryService) {
             return {
                 restrict: "E",
                 templateUrl: "/App_Plugins/uJetSocial/js/app/directives/presenters/guestList/guestListView.html",
@@ -14,7 +14,7 @@
                     var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "FirstName", "LastName"]);
 
                     function runQuery() {
-                        guestFactory.query(query.compile(scope.ngModel)).success(function (data) {
+                        ujetGuestFactory.query(query.compile(scope.ngModel)).success(function (data) {
                             scope.result =
                             {
                                 Columns: query.OrderBy.Options,
@@ -51,7 +51,7 @@
                             dialogService.close(dialog);
                         }
 
-                        guestFactory.update(obj)
+                        ujetGuestFactory.update(obj)
                             .success(function () {
                                 notificationsService.success("Guest updated");
 

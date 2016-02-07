@@ -1,12 +1,43 @@
-﻿angular.module("umbraco.resources")
-    .factory("commentFactory", [
-        "$http", function ($http) {
-            var dataFactory = {};
+﻿(function () {
+    'use strict';
 
-            dataFactory.search = function (searchQuery) {
-                return $http.post("backoffice/uJetSocial/CommentAPI/Search", searchQuery);
-            };
+    angular
+        .module("umbraco.resources")
+        .factory("ujetCommentFactory", ujetCommentFactory);
 
-            return dataFactory;
+    ujetCommentFactory.$inject = ["$http"];
+
+    function ujetCommentFactory($http) {
+        var factory = {
+            add: add,
+            update: update,
+            get: get,
+            query: query
+        };
+
+        return factory;
+
+        function add(dto) {
+            return $http.post("backoffice/uJetSocial/CommentAPI/Add", dto);
         }
-    ]);
+
+        function update(dto) {
+            return $http({
+                method: "POST",
+                url: "backoffice/uJetSocial/CommentAPI/Update",
+                params: {
+                    id: dto.Id
+                },
+                data: dto
+            });
+        }
+
+        function get(id) {
+            return $http.get("backoffice/uJetSocial/CommentAPI/Get/" + id);
+        }
+
+        function query(q) {
+            return $http.post("backoffice/uJetSocial/CommentAPI/Query", q);
+        }
+    };
+})();

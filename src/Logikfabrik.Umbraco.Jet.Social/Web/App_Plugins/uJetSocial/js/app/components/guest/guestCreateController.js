@@ -5,9 +5,9 @@
         .module("umbraco")
         .controller("ujetGuestCreateController", ujetGuestCreateController);
 
-    ujetGuestCreateController.$inject = ["$scope", "$location", "notificationsService", "guestFactory"];
+    ujetGuestCreateController.$inject = ["$scope", "$location", "notificationsService", "ujetGuestFactory"];
 
-    function ujetGuestCreateController($scope, $location, notificationsService, guestFactory) {
+    function ujetGuestCreateController($scope, $location, notificationsService, ujetGuestFactory) {
         var vm = this;
 
         vm.guest = {};
@@ -19,7 +19,7 @@
                 return;
             }
 
-            guestFactory.add(vm.guest)
+            ujetGuestFactory.add(vm.guest)
                 .success(function (id) {
                     notificationsService.success("Guest created");
 

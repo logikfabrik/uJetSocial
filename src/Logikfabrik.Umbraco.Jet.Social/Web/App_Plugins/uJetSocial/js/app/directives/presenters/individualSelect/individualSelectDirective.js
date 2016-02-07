@@ -1,7 +1,7 @@
 ﻿angular.module("umbraco.directives")
     .directive("ujetIndividualSelect", [
-        "_", "guestFactory", "queryService",
-        function (_, guestFactory, queryService) {
+        "_", "ujetGuestFactory", "queryService",
+        function (_, ujetGuestFactory, queryService) {
             return {
                 restrict: "E",
                 templateUrl: "/App_Plugins/uJetSocial/js/app/directives/presenters/individualSelect/individualSelectView.html",
@@ -17,7 +17,7 @@
                     scope.search = function () {
                         var q = queryService.getQuery().compile({ "FirstName": scope.query });
 
-                        guestFactory.query(q).success(function (data) {
+                        ujetGuestFactory.query(q).success(function (data) {
                             scope.objects = data.Objects;
                         });
                     };
@@ -38,7 +38,7 @@
                     scope.$watch('ngModel', function () {
                         var q = queryService.getQuery().compile({ "Id": scope.ngModel });
 
-                        guestFactory.query(q).success(function (data) {
+                        ujetGuestFactory.query(q).success(function (data) {
                             if (_.size(data.Objects) !== 1) {
                                 return;
                             }

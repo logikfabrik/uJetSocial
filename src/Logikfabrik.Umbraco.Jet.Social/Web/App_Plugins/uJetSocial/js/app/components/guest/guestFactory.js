@@ -1,31 +1,43 @@
-﻿angular.module("umbraco.resources")
-    .factory("guestFactory", [
-        "$http", function ($http) {
-            var dataFactory = {};
+﻿(function () {
+    'use strict';
 
-            dataFactory.add = function (dto) {
-                return $http.post("backoffice/uJetSocial/IndividualGuestAPI/Add", dto);
-            };
+    angular
+        .module("umbraco.resources")
+        .factory("ujetGuestFactory", ujetGuestFactory);
 
-            dataFactory.update = function (dto) {
-                return $http({
-                    method: "POST",
-                    url: "backoffice/uJetSocial/IndividualGuestAPI/Update",
-                    params: {
-                        id: dto.Id
-                    },
-                    data: dto
-                });
-            };
+    ujetGuestFactory.$inject = ["$http"];
 
-            dataFactory.get = function (id) {
-                return $http.get("backoffice/uJetSocial/IndividualGuestAPI/Get/" + id);
-            };
+    function ujetGuestFactory($http) {
+        var factory = {
+            add: add,
+            update: update,
+            get: get,
+            query: query
+        };
 
-            dataFactory.query = function (query) {
-                return $http.post("backoffice/uJetSocial/IndividualGuestAPI/Query", query);
-            };
+        return factory;
 
-            return dataFactory;
+        function add(dto) {
+            return $http.post("backoffice/uJetSocial/IndividualGuestAPI/Add", dto);
         }
-    ]);
+
+        function update(dto) {
+            return $http({
+                method: "POST",
+                url: "backoffice/uJetSocial/IndividualGuestAPI/Update",
+                params: {
+                    id: dto.Id
+                },
+                data: dto
+            });
+        }
+
+        function get(id) {
+            return $http.get("backoffice/uJetSocial/IndividualGuestAPI/Get/" + id);
+        }
+
+        function query(q) {
+            return $http.post("backoffice/uJetSocial/IndividualGuestAPI/Query", q);
+        }
+    };
+})();
