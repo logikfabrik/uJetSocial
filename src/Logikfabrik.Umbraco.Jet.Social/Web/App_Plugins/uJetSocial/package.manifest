@@ -29,7 +29,6 @@
 		
 		// Comment component
         '~/App_Plugins/uJetSocial/js/app/components/comment/commentDashboardController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/comment/commentEditController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/comment/commentFactory.js',
 		
         // Group component
@@ -46,7 +45,6 @@
 
         // Report component
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportDashboardController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/report/reportEditController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportFactory.js',
 
 		// General components

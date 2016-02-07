@@ -1,31 +1,43 @@
-﻿angular.module("umbraco.resources")
-    .factory("groupFactory", [
-        "$http", function ($http) {
-            var dataFactory = {};
+﻿(function () {
+    'use strict';
 
-            dataFactory.add = function (dto) {
-                return $http.post("backoffice/uJetSocial/GroupAPI/Add", dto);
-            };
+    angular
+        .module("umbraco.resources")
+        .factory("ujetGroupFactory", ujetGroupFactory);
 
-            dataFactory.update = function (dto) {
-                return $http({
-                    method: "POST",
-                    url: "backoffice/uJetSocial/GroupAPI/Update",
-                    params: {
-                        id: dto.Id
-                    },
-                    data: dto
-                });
-            };
+    ujetGroupFactory.$inject = ["$http"];
 
-            dataFactory.get = function (id) {
-                return $http.get("backoffice/uJetSocial/GroupAPI/Get/" + id);
-            };
+    function ujetGroupFactory($http) {
+        var factory = {
+            add: add,
+            update: update,
+            get: get,
+            query: query
+        };
 
-            dataFactory.query = function (query) {
-                return $http.post("backoffice/uJetSocial/GroupAPI/Query", query);
-            };
+        return factory;
 
-            return dataFactory;
+        function add(dto) {
+            return $http.post("backoffice/uJetSocial/GroupAPI/Add", dto);
         }
-    ]);
+
+        function update(dto) {
+            return $http({
+                method: "POST",
+                url: "backoffice/uJetSocial/GroupAPI/Update",
+                params: {
+                    id: dto.Id
+                },
+                data: dto
+            });
+        }
+
+        function get(id) {
+            return $http.get("backoffice/uJetSocial/GroupAPI/Get/" + id);
+        }
+
+        function query(q) {
+            return $http.post("backoffice/uJetSocial/GroupAPI/Query", q);
+        }
+    };
+})();

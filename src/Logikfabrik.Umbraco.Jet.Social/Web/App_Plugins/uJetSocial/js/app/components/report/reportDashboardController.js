@@ -1,8 +1,13 @@
-﻿angular.module("umbraco")
-    .controller("uJetSocial.reportDashboardController", [
-        "$scope", "$routeParams", "navigationService", "_", "reportFactory",
-        function ($scope, $routeParams, navigationService, _, reportFactory) {
+﻿(function () {
+    'use strict';
 
-            navigationService.syncTree({ tree: "report", path: ["-1", $routeParams.id], forceReload: false });
-        }
-    ]);
+    angular
+        .module("umbraco")
+        .controller("ujetReportDashboardController", ujetReportDashboardController);
+
+    ujetReportDashboardController.$inject = ["$routeParams", "navigationService"];
+
+    function ujetReportDashboardController($routeParams, navigationService) {
+        navigationService.syncTree({ tree: "report", path: ["-1", $routeParams.id], forceReload: false });
+    };
+})();

@@ -5,9 +5,9 @@
         .module("umbraco")
         .controller("ujetGroupCreateController", ujetGroupCreateController);
 
-    ujetGroupCreateController.$inject = ["$scope", "$location", "notificationsService", "groupFactory"];
+    ujetGroupCreateController.$inject = ["$scope", "$location", "notificationsService", "ujetGroupFactory"];
 
-    function ujetGroupCreateController($scope, $location, notificationsService, groupFactory) {
+    function ujetGroupCreateController($scope, $location, notificationsService, ujetGroupFactory) {
         var vm = this;
 
         vm.group = {};
@@ -19,7 +19,7 @@
                 return;
             }
 
-            groupFactory.add(vm.group)
+            ujetGroupFactory.add(vm.group)
                 .success(function (id) {
                     notificationsService.success("Group created");
 

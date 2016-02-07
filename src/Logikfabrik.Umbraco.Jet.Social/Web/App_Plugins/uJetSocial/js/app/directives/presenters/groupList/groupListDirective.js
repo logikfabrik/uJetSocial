@@ -1,7 +1,7 @@
 ﻿angular.module("umbraco.directives")
     .directive("ujetGroupList", [
-        "_", "dialogService", "notificationsService", "groupFactory", "queryService",
-        function (_, dialogService, notificationsService, groupFactory, queryService) {
+        "_", "dialogService", "notificationsService", "ujetGroupFactory", "queryService",
+        function (_, dialogService, notificationsService, ujetGroupFactory, queryService) {
             return {
                 restrict: "E",
                 templateUrl: "/App_Plugins/uJetSocial/js/app/directives/presenters/groupList/groupListView.html",
@@ -14,7 +14,7 @@
                     var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "Name", "Description", "OwnerId"]);
 
                     function runQuery() {
-                        groupFactory.query(query.compile(scope.ngModel)).success(function (data) {
+                        ujetGroupFactory.query(query.compile(scope.ngModel)).success(function (data) {
                             scope.result =
                             {
                                 Columns: query.OrderBy.Options,
@@ -51,7 +51,7 @@
                             dialogService.close(dialog);
                         }
 
-                        groupFactory.update(obj)
+                        ujetGroupFactory.update(obj)
                             .success(function () {
                                 notificationsService.success("Group updated");
 

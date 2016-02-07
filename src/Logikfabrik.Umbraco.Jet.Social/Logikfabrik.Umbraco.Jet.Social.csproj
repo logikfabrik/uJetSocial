@@ -369,7 +369,6 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\css\app\uJetSocial.css" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentDashboardController.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentEditController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\dashboard\dashboardController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\objectEditController.js" />
@@ -382,7 +381,6 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestListController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportDashboardController.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportEditController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\groupList\groupListDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\groupList\groupListView.html" />
