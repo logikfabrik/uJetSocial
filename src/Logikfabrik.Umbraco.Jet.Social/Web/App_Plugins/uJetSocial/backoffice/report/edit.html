@@ -1,16 +1,21 @@
-﻿<umb-panel ng-controller="uJetSocial.reportEditController">
-    <umb-header>
-        <div class="umb-headline-editor-wrapper span12">
-            <h1>
-                <localize key="uJetSocial_reports">Reports</localize>
-            </h1>
-        </div>
-    </umb-header>
-    <umb-tab-view>
-        <umb-tab id="tabReports" rel="Reports" style="display: block;">
-            <umb-pane>
-                Reports Edit
-            </umb-pane>
-        </umb-tab>
-    </umb-tab-view>
-</umb-panel>
+﻿<div class="ujet-dialog" ng-controller="ujetObjectEditController as vm">
+
+    <h1>Edit</h1>
+
+    <umb-pane>
+
+        <form name="form">
+
+            <div class="umb-control-group">
+
+            </div>
+
+            <div class="btn-toolbar umb-btn-toolbar">
+                <input type="submit" value="Save" class="btn btn-primary" ng-click="vm.save(form)" />
+            </div>
+
+        </form>
+
+    </umb-pane>
+
+</div>

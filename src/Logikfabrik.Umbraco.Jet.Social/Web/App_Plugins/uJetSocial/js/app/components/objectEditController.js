@@ -1,16 +1,24 @@
-﻿angular.module("umbraco")
-    .controller("uJetSocial.objectEditController", [
-        "$scope", "_",
-        function($scope, _) {
+﻿(function () {
+    'use strict';
 
-            $scope.model = _.clone($scope.dialogData);
+    angular
+        .module("umbraco")
+        .controller("ujetObjectEditController", ujetObjectEditController);
 
-            $scope.save = function(form) {
-                if (!form.$valid) {
-                    return;
-                }
+    ujetObjectEditController.$inject = ["$scope", "_"];
 
-                $scope.dialogOptions.callback($scope.model);
-            };
-        }
-    ]);
+    function ujetObjectEditController($scope, _) {
+        var vm = this;
+
+        vm.object = _.clone($scope.dialogData);
+        vm.save = save;
+
+        function save(form) {
+            if (!form.$valid) {
+                return;
+            }
+
+            $scope.dialogOptions.callback(vm.object);
+        };
+    };
+})();

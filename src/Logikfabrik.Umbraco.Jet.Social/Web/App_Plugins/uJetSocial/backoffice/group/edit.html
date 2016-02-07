@@ -1,4 +1,4 @@
-﻿<div class="ujet-dialog" ng-controller="uJetSocial.objectEditController">
+﻿<div class="ujet-dialog" ng-controller="ujetObjectEditController as vm">
 
     <h1>Edit</h1>
 
@@ -10,38 +10,38 @@
 
                 <label class="control-label" for="">Name</label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="model.Name" class="input-block-level" />
+                    <input type="text" required ng-model="vm.object.Name" class="input-block-level" />
                 </div>
 
                 <label class="control-label" for="">Description</label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="model.Description" class="input-block-level" />
+                    <input type="text" required ng-model="vm.object.Description" class="input-block-level" />
                 </div>
 
                 <label class="control-label" for="">Owner</label>
                 <div class="controls-row">
-                    <ujet-individual-select ng-model="model.OwnerId"></ujet-individual-select>
+                    <ujet-individual-select ng-model="vm.object.OwnerId"></ujet-individual-select>
                 </div>
 
                 <label class="control-label" for="">Created</label>
                 <div class="controls-row">
-                    <ujet-value value="{{model.Created}}"></ujet-value>
+                    <ujet-value value="{{vm.object.Created}}"></ujet-value>
                 </div>
 
                 <label class="control-label" for="">Updated</label>
                 <div class="controls-row">
-                    <ujet-value value="{{model.Updated}}"></ujet-value>
+                    <ujet-value value="{{vm.object.Updated}}"></ujet-value>
                 </div>
 
                 <label class="control-label" for="">Status</label>
                 <div class="controls-row">
-                    <ujet-object-status-select ng-model="model.Status"></ujet-object-status-select>
+                    <ujet-object-status-select ng-model="vm.object.Status"></ujet-object-status-select>
                 </div>
 
             </div>
 
             <div class="btn-toolbar umb-btn-toolbar">
-                <input type="submit" value="Save" class="btn btn-primary" ng-click="save(form)" />
+                <input type="submit" value="Save" class="btn btn-primary" ng-click="vm.save(form)" />
             </div>
 
         </form>
