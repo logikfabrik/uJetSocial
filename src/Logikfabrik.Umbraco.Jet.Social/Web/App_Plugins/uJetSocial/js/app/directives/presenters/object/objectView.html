@@ -1,0 +1,22 @@
+﻿<div class="ujet-object">
+    
+    <a href="#" ng-click="vm.selectObj()" prevent-default>
+        Object
+        <h5 class="ujet-object__label">{{vm.label}}</h5>
+        {{vm.subLabel}}
+    </a>
+
+    <ul class="ujet-object__action-list">
+        <li class="ujet-object__action-list-item" ng-show="vm.canEdit">
+            <a class="ujet-object__button" href="#" ng-click="vm.editObj()" prevent-default>
+                <i class="ujet-object__icon icon icon-edit"></i>
+            </a>
+        </li>
+        <li class="ujet-object__action-list-item" ng-show="vm.canDelete">
+            <a class="ujet-object__button" href="#" ng-click="vm.deleteObj()" prevent-default>
+                <i class="ujet-object__icon icon icon-delete"></i>
+            </a>
+        </li>
+    </ul>
+
+</div>

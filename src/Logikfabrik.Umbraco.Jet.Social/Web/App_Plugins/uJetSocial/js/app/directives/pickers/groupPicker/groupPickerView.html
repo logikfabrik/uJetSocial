@@ -1,0 +1,13 @@
+﻿<div class="ujet-group-picker">
+
+    <input class="ujet-group-picker__query" type="text" placeholder="Type to search..." ng-model="vm.query" ng-change="vm.search()" />
+
+    <ul class="ujet-group-picker__list" ng-show="_.size(vm.groups) > 0">
+        
+        <li class="ujet-group-picker__list-item" ng-repeat="group in vm.groups">
+            <ujet-object model="group" can-edit="true" can-delete="true"></ujet-object>
+        </li>
+
+    </ul>
+
+</div>

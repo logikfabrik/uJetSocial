@@ -11,19 +11,7 @@
 		// Services
 		'~/App_Plugins/uJetSocial/js/app/services/queryService.js',
 
-        // Directives
-		        
-		// Presenter directives
-		'~/App_Plugins/uJetSocial/js/app/directives/presenters/commentList/commentListDirective.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/presenters/groupList/groupListDirective.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/presenters/guestList/guestListDirective.js',
-        '~/App_Plugins/uJetSocial/js/app/directives/presenters/individualSelect/individualSelectDirective.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/presenters/list/listDirective.js',
-        '~/App_Plugins/uJetSocial/js/app/directives/presenters/listPaging/listPagingDirective.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/presenters/objectStatusSelect/objectStatusSelectDirective.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/presenters/value/valueDirective.js',
-
-        // Components
+		 // Components
 
         // Dashboard component
         '~/App_Plugins/uJetSocial/js/app/components/dashboard/dashboardController.js',
@@ -50,7 +38,28 @@
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportFactory.js',
 
 		// General components
-		'~/App_Plugins/uJetSocial/js/app/components/objectEditController.js'
+		'~/App_Plugins/uJetSocial/js/app/components/objectEditController.js',
+
+        // Directives
+		        
+		// Presenter directives
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/commentList/commentListDirective.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/groupList/groupListDirective.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/guestList/guestListDirective.js',
+        '~/App_Plugins/uJetSocial/js/app/directives/presenters/individualSelect/individualSelectDirective.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/list/listDirective.js',
+        '~/App_Plugins/uJetSocial/js/app/directives/presenters/listPaging/listPagingDirective.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/object/objectDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/object/objectDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/objectPicker/objectPickerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/objectPicker/objectPickerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/objectStatusSelect/objectStatusSelectDirective.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/presenters/value/valueDirective.js',
+
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerDirCtrl.js'
+
+       
     ],
     css: [
         '~/App_Plugins/uJetSocial/css/app/uJetSocial.css',
