@@ -351,6 +351,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Media\" />
+    <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\commentPicker\" />
+    <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
@@ -421,6 +423,10 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\value\valueDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\momentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\lodashFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asPageFilter.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asMemberFilter.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asReportFilter.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asCommentFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asGuestFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asGroupFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\services\queryService.js" />
