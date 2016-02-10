@@ -13,6 +13,7 @@
 
 		// Filters
 		'~/App_Plugins/uJetSocial/js/app/filters/asGroupFilter.js',
+		'~/App_Plugins/uJetSocial/js/app/filters/asGuestFilter.js',
 
 		// Components
 
@@ -59,6 +60,7 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/objectStatusSelect/objectStatusSelectDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/value/valueDirective.js',
 
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/pickerCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/guestPicker/guestPickerDir.js',

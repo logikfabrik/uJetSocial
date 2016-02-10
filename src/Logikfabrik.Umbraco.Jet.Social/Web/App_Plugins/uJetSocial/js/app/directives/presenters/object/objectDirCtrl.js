@@ -18,8 +18,6 @@
             deleteObj: deleteObj
         };
 
-        console.log($scope.obj);
-
         $scope.vm = vm;
 
         function selectObj() {

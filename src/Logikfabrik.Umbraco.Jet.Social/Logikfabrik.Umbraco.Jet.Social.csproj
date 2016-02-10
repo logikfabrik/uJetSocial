@@ -388,6 +388,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestCreateController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestListController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\pickerCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\guestPicker\guestPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\guestPicker\guestPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\guestPicker\guestPickerView.html" />
@@ -420,6 +421,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\value\valueDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\momentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\lodashFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asGuestFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asGroupFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\services\queryService.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\vendor\lodash-3.10.1\lodash.js" />

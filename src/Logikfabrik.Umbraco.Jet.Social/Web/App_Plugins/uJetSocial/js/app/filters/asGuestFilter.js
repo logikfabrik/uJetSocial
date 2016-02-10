@@ -3,11 +3,11 @@
 
     angular
         .module("umbraco.resources")
-        .filter("ujetAsGroup", ujetAsGroupFilter);
+        .filter("ujetAsGuest", ujetAsGuestFilter);
 
-    function ujetAsGroupFilter() {
+    function ujetAsGuestFilter() {
         return function (obj) {
-            obj.label = "Group";
+            obj.label = "Guest";
 
             return obj;
         };
