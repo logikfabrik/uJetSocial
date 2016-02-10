@@ -65,6 +65,8 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/value/valueDirective.js',
 
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/pickerCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/commentPicker/commentPickerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/commentPicker/commentPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/guestPicker/guestPickerDir.js',

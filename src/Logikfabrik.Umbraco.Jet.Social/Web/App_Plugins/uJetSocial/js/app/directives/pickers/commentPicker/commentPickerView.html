@@ -1,0 +1,13 @@
+﻿<div class="ujet-object-picker ujet-object-picker--comment">
+
+    <input class="ujet-object-picker__query" type="text" placeholder="Type to search..." ng-model="vm.query" ng-change="vm.search({ 'Text': vm.query })" />
+
+    <ul class="ujet-object-picker__list" ng-show="vm.hasObjects">
+
+        <li class="ujet-object-picker__list-item" ng-repeat="object in vm.objects">
+            <ujet-object obj="object | ujetAsComment" can-select="true"></ujet-object>
+        </li>
+
+    </ul>
+
+</div>

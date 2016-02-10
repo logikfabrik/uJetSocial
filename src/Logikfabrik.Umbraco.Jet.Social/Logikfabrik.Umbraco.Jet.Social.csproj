@@ -351,7 +351,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Media\" />
-    <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\commentPicker\" />
     <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\" />
   </ItemGroup>
   <ItemGroup>
@@ -390,6 +389,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestCreateController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestListController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\commentPicker\commentPickerDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\commentPicker\commentPickerDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\commentPicker\commentPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\pickerCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\guestPicker\guestPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\guestPicker\guestPickerDirCtrl.js" />
