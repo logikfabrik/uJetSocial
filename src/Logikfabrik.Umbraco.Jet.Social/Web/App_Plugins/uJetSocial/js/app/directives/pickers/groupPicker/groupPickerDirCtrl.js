@@ -5,9 +5,9 @@
         .module("umbraco")
         .controller("ujetGroupPickerDirCtrl", ujetGroupPickerDirCtrl);
 
-    ujetGroupPickerDirCtrl.$inject = ["$scope", "_", "ujetGuestFactory", "queryService"];
+    ujetGroupPickerDirCtrl.$inject = ["$scope", "_", "ujetGroupFactory", "queryService"];
 
-    function ujetGroupPickerDirCtrl($scope, _, ujetGuestFactory, queryService) {
+    function ujetGroupPickerDirCtrl($scope, _, ujetGroupFactory, queryService) {
         var vm = {
             groups: null,
             search: search
@@ -17,9 +17,9 @@
         $scope._ = _;
 
         function search() {
-            var q = queryService.getQuery().compile({ "FirstName": vm.query });
+            var q = queryService.getQuery().compile({ "Name": vm.query });
 
-            ujetGuestFactory.query(q).success(function (data) {
+            ujetGroupFactory.query(q).success(function (data) {
                 vm.groups = data.Objects;
             });
         };

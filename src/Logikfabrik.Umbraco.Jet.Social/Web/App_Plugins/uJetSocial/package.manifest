@@ -11,7 +11,10 @@
 		// Services
 		'~/App_Plugins/uJetSocial/js/app/services/queryService.js',
 
-		 // Components
+		// Filters
+		'~/App_Plugins/uJetSocial/js/app/filters/asGroupFilter.js',
+
+		// Components
 
         // Dashboard component
         '~/App_Plugins/uJetSocial/js/app/components/dashboard/dashboardController.js',
@@ -57,7 +60,9 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/value/valueDirective.js',
 
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerDir.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerDirCtrl.js'
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/guestPicker/guestPickerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/guestPicker/guestPickerDirCtrl.js'
 
        
     ],

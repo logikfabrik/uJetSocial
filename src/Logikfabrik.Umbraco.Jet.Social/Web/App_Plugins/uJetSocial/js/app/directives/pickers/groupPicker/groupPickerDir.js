@@ -3,9 +3,9 @@
 
     angular
         .module("umbraco.directives")
-        .directive("ujetGroupPicker", ujetGroupPicker);
+        .directive("ujetGroupPicker", ujetGroupPickerDir);
 
-    function ujetGroupPicker() {
+    function ujetGroupPickerDir() {
         var directive = {
             restrict: "E",
             templateUrl: "/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerView.html",
