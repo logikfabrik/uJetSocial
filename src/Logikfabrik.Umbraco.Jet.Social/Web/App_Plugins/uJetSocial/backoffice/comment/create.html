@@ -21,7 +21,14 @@
                     <input type="text" required ng-model="vm.comment.Text" class="input-block-level" />
                 </div>
 
-                <ujet-object-picker></ujet-object-picker>
+                <ujet-object-picker
+                    can-pick-page="true"
+                    can-pick-comment="true"
+                    can-pick-group="true"
+                    can-pick-guest="true"
+                    can-pick-user="true"
+                    can-pick-report="true">
+                </ujet-object-picker>
 
             </div>
 

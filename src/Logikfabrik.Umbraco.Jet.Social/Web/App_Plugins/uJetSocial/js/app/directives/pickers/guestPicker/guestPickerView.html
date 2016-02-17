@@ -1,10 +1,10 @@
-﻿<div class="ujet-object-picker ujet-object-picker--guest">
+﻿<div class="ujet-guest-picker">
 
-    <input class="ujet-object-picker__query" type="text" placeholder="Type to search..." ng-model="vm.query" ng-change="vm.search({ 'FirstName': vm.query })" />
+    <input class="ujet-guest-picker__query" type="text" placeholder="Type to search..." ng-model="vm.query" ng-change="vm.search({ 'FirstName': vm.query })" />
 
-    <ul class="ujet-object-picker__list" ng-show="vm.hasObjects">
+    <ul class="ujet-guest-picker__list" ng-show="vm.hasObjects">
 
-        <li class="ujet-object-picker__list-item" ng-repeat="object in vm.objects">
+        <li class="ujet-guest-picker__list-item" ng-repeat="object in vm.objects">
             <ujet-object obj="object | ujetAsGuest" can-select="true"></ujet-object>
         </li>
 

@@ -1,24 +1,39 @@
 ﻿<div class="ujet-object-picker">
-    
-    <ul>
-        <li>
-            <a href="#" ng-click="vm.showPicker('page')" prevent-default>Page</a>
-        </li>
-        <li>
-            <a href="#" ng-click="vm.showPicker('comment')" prevent-default>Comment</a>
-        </li>
-        <li>
-            <a href="#" ng-click="vm.showPicker('group')" prevent-default>Group</a>
-        </li>
-        <li>
-            <a href="#" ng-click="vm.showPicker('guest')" prevent-default>Guest</a>
-        </li>
-        <li>
-            <a href="#" ng-click="vm.showPicker('user')" prevent-default>User</a>
-        </li>
-        <li>
-            <a href="#" ng-click="vm.showPicker('report')" prevent-default>Report</a>
-        </li>
-    </ul>
+
+    <ujet-object ng-if="vm.hasObject" obj="vm.obj | ujetAsGuest" can-delete="true"></ujet-object>
+
+    <div ng-if="!vm.hasObject">
+
+        <div class="ujet-object-picker__header">Choose...</div>
+
+        <ul class="ujet-object-picker__list">
+
+            <li class="ujet-object-picker__list-item" ng-show="vm.canPickPage">
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('page')" prevent-default>Page</a>
+            </li>
+
+            <li class="ujet-object-picker__list-item" ng-show="vm.canPickComment">
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('comment')" prevent-default>Comment</a>
+            </li>
+
+            <li class="ujet-object-picker__list-item" ng-show="vm.canPickGroup">
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('group')" prevent-default>Group</a>
+            </li>
+
+            <li class="ujet-object-picker__list-item" ng-show="vm.canPickGuest">
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('guest')" prevent-default>Guest</a>
+            </li>
+
+            <li class="ujet-object-picker__list-item" ng-show="vm.canPickUser">
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('user')" prevent-default>User</a>
+            </li>
+
+            <li class="ujet-object-picker__list-item" ng-show="vm.canPickReport">
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('report')" prevent-default>Report</a>
+            </li>
+
+        </ul>
+
+    </div>
 
 </div>
