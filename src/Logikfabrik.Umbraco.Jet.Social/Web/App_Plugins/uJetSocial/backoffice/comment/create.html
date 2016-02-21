@@ -8,27 +8,28 @@
 
                 <label class="control-label" for="">Entity ID</label>
                 <div class="controls-row">
-                    <input type="number" required ng-model="vm.comment.EntityId" class="input-block-level" />
+                    <ujet-object-picker model="vm.comment.EntityId"
+                                        can-pick-page="true"
+                                        can-pick-comment="true"
+                                        can-pick-group="true"
+                                        can-pick-guest="true"
+                                        can-pick-user="true"
+                                        can-pick-report="true">
+                    </ujet-object-picker>
                 </div>
 
                 <label class="control-label" for="">Author ID</label>
                 <div class="controls-row">
-                    <input type="number" required ng-model="vm.comment.AuthorId" class="input-block-level" />
+                    <ujet-object-picker model="vm.comment.AuthorId"
+                                        can-pick-guest="true"
+                                        can-pick-user="true">
+                    </ujet-object-picker>
                 </div>
 
                 <label class="control-label" for="">Text</label>
                 <div class="controls-row">
                     <input type="text" required ng-model="vm.comment.Text" class="input-block-level" />
                 </div>
-
-                <ujet-object-picker
-                    can-pick-page="true"
-                    can-pick-comment="true"
-                    can-pick-group="true"
-                    can-pick-guest="true"
-                    can-pick-user="true"
-                    can-pick-report="true">
-                </ujet-object-picker>
 
             </div>
 

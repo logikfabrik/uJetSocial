@@ -324,6 +324,7 @@
     <Compile Include="Report\ReportProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\Controllers\CommentAPIController.cs" />
+    <Compile Include="Web\Controllers\EntityAPIController.cs" />
     <Compile Include="Web\Controllers\DataTransferObjectAPIController{T}.cs" />
     <Compile Include="Web\Controllers\GroupAPIController.cs" />
     <Compile Include="Web\Controllers\IndividualGuestAPIController.cs" />
@@ -423,6 +424,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\object\objectView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\value\valueView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\value\valueDirective.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\entityFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\momentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\lodashFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asPageFilter.js" />

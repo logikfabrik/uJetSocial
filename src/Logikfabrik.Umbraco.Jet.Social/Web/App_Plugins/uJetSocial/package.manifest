@@ -7,6 +7,7 @@
         // Factories
         '~/App_Plugins/uJetSocial/js/app/factories/lodashFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/momentFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/entityFactory.js',
 
 		// Services
 		'~/App_Plugins/uJetSocial/js/app/services/queryService.js',

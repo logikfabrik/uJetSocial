@@ -20,7 +20,10 @@
 
                 <label class="control-label" for="">Owner</label>
                 <div class="controls-row">
-                    <ujet-individual-select ng-model="vm.object.OwnerId"></ujet-individual-select>
+                    <ujet-object-picker model="vm.object.OwnerId"
+                                        can-pick-guest="true"
+                                        can-pick-user="true">
+                    </ujet-object-picker>
                 </div>
 
                 <label class="control-label" for="">Created</label>
