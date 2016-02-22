@@ -1,6 +1,6 @@
 ﻿<div class="ujet-guest-picker">
 
-    <input class="ujet-guest-picker__query" type="text" placeholder="Type to search..." ng-model="vm.query" ng-change="vm.search({ 'FirstName': vm.query })" />
+    <input class="ujet-guest-picker__query" type="text" placeholder="Type to search..." ng-model="vm.query" ng-change="vm.search()" />
 
     <ul class="ujet-guest-picker__list" ng-show="vm.hasObjects">
 
@@ -9,5 +9,7 @@
         </li>
 
     </ul>
+
+    <ujet-list-paging model="vm.paging"></ujet-list-paging>
 
 </div>

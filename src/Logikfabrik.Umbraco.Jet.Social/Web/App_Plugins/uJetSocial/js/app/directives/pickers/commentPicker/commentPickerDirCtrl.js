@@ -11,7 +11,8 @@
         $controller('ujetPickerCtrl', {
             $scope: $scope,
             objectFactory: objectFactory,
-            queryService: queryService
+            queryService: queryService,
+            param: "Text"
         });
     };
 })();
