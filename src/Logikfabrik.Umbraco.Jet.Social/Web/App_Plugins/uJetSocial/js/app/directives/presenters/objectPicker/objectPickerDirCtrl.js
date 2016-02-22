@@ -47,13 +47,9 @@
         };
 
         function selectObj(obj) {
-            console.log(obj);
-
             $scope.model = obj.Id;
             vm.obj = obj;
             vm.hasObject = true;
-
-            console.log($scope.model);
         };
 
         function deselectObj() {
@@ -71,7 +67,9 @@
                 var factory = ujetEntityFactory.getFactory(type.Name);
 
                 factory.get($scope.model).success(function (obj) {
-                    selectObj(obj);
+                    var filter = ujetEntityFactory.getFilter(type.Name);
+
+                    selectObj(filter(obj));
                 });
             });
         };

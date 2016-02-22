@@ -7,16 +7,18 @@
 
     ujetEntityFactory.$inject = [
         "$http",
+        "$filter",
         "ujetCommentFactory",
         "ujetGroupFactory",
         "ujetGuestFactory",
         "ujetReportFactory"
     ];
     
-    function ujetEntityFactory($http, ujetCommentFactory, ujetGroupFactory, ujetGuestFactory, ujetReportFactory) {
+    function ujetEntityFactory($http, $filter, ujetCommentFactory, ujetGroupFactory, ujetGuestFactory, ujetReportFactory) {
         var factory = {
             getType: getType,
-            getFactory: getFactory
+            getFactory: getFactory,
+            getFilter: getFilter
         };
 
         return factory;
@@ -26,8 +28,6 @@
         }
 
         function getFactory(entityTypeName) {
-            console.log(entityTypeName);
-
             switch (entityTypeName) {
                 case "Comment":
                     return ujetCommentFactory;
@@ -37,6 +37,21 @@
                     return ujetGuestFactory;
                 case "Report":
                     return ujetReportFactory;
+                default:
+                    return null;
+            }
+        }
+
+        function getFilter(entityTypeName) {
+            switch (entityTypeName) {
+                case "Comment":
+                    return $filter("ujetAsComment");
+                case "Group":
+                    return $filter("ujetAsGroup");
+                case "IndividualGuest":
+                    return $filter("ujetAsGuest");
+                case "Report":
+                    return $filter("ujetAsReport");
                 default:
                     return null;
             }
