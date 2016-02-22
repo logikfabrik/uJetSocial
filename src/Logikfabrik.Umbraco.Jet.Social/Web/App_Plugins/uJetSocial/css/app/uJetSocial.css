@@ -121,30 +121,36 @@
             color: #000;
         }
 
-
-
-
-
-
-
-
-
-/* Status Select
+/* Status Picker
    ========================================================================== */
 
-.ujet-object-status-select__list {
+.ujet-status-picker__list {
     margin: 0;
     list-style-type: none;
 }
 
-.ujet-object-status-select__list-item {
+.ujet-status-picker__list-item {
     float: left;
     margin: 0 4px 0 0;
 }
 
-    .ujet-object-status-select__list-item:last-child {
+    .ujet-status-picker__list-item:last-child {
         margin: 0;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* List Paging
    ========================================================================== */

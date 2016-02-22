@@ -2,17 +2,15 @@
 //   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
-using Umbraco.Core.Logging;
-using Umbraco.Core.ObjectResolution;
-using Umbraco.Core.Persistence;
-
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
     using System;
     using System.Web.Http;
     using global::Umbraco.Web.Mvc;
     using global::Umbraco.Web.Editors;
-    using Models;
+    using global::Umbraco.Core.Logging;
+    using global::Umbraco.Core.ObjectResolution;
+    using global::Umbraco.Core.Persistence;
 
     /// <summary>
     /// The <see cref="EntityAPIController" /> class.

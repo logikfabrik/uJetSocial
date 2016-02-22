@@ -9,7 +9,7 @@
 
     function ujetObjectPickerDirCtrl($scope, _, dialogService, ujetEntityFactory) {
         var vm = {
-            model: $scope.model,
+            objId: $scope.model,
             canPickPage: $scope.canPickPage,
             canPickComment: $scope.canPickComment,
             canPickGroup: $scope.canPickGroup,
@@ -47,26 +47,26 @@
         };
 
         function selectObj(obj) {
-            $scope.model = obj.Id;
+            vm.objId = obj.Id;
             vm.obj = obj;
             vm.hasObject = true;
         };
 
         function deselectObj() {
-            $scope.model = null;
+            vm.objId = null;
             vm.obj = null;
             vm.hasObject = false;
         };
 
         function init() {
-            if (_.isNaN($scope.model) || !_.isNumber($scope.model)) {
+            if (_.isNaN(vm.objId) || !_.isNumber(vm.objId)) {
                 return;
             }
 
-            ujetEntityFactory.getType($scope.model).success(function (type) {
+            ujetEntityFactory.getType(vm.objId).success(function(type) {
                 var factory = ujetEntityFactory.getFactory(type.Name);
 
-                factory.get($scope.model).success(function (obj) {
+                factory.get(vm.objId).success(function (obj) {
                     var filter = ujetEntityFactory.getFilter(type.Name);
 
                     selectObj(filter(obj));
@@ -76,6 +76,10 @@
 
         $scope.$on("deleteObject", function (e) {
             deselectObj();
+        });
+
+        $scope.$watch("vm.objId", function(newValue, oldValue) {
+            $scope.model = newValue;
         });
 
         init();
