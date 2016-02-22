@@ -55,7 +55,6 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/commentList/commentListDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/groupList/groupListDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/guestList/guestListDirective.js',
-        '~/App_Plugins/uJetSocial/js/app/directives/presenters/individualSelect/individualSelectDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/list/listDirective.js',
         '~/App_Plugins/uJetSocial/js/app/directives/presenters/listPaging/listPagingDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/object/objectDir.js',
@@ -65,6 +64,7 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/objectStatusSelect/objectStatusSelectDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/value/valueDirective.js',
 
+		// Picker directives
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/pickerCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/commentPicker/commentPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/commentPicker/commentPickerDirCtrl.js',

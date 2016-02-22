@@ -409,8 +409,6 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\groupList\groupListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\guestList\guestListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\guestList\guestListDirective.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\individualSelect\individualSelectDirective.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\individualSelect\individualSelectView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\listPaging\listPagingDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\listPaging\listPagingView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listDirective.js" />
