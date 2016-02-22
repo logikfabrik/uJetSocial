@@ -8,7 +8,7 @@
     function ujetObjectPickerDir() {
         var directive = {
             restrict: "E",
-            templateUrl: "/App_Plugins/uJetSocial/js/app/directives/presenters/objectPicker/objectPickerView.html",
+            templateUrl: "/App_Plugins/uJetSocial/js/app/directives/pickers/objectPicker/objectPickerView.html",
             scope: {
                 model: "=",
                 canPickPage: "=",

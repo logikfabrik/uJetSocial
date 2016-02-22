@@ -398,7 +398,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\guestPicker\guestPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\guestPicker\guestPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\statusPicker\statusPickerDir.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\objectPicker\objectPickerDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectPicker\objectPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportDashboardController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\groupPicker\groupPickerDir.js" />
@@ -414,8 +414,8 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\listPaging\listPagingView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listView.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\objectPicker\objectPickerDir.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\objectPicker\objectPickerView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectPicker\objectPickerDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectPicker\objectPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\statusPicker\statusPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\statusPicker\statusPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\object\objectDirCtrl.js" />
