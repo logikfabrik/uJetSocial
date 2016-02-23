@@ -27,19 +27,19 @@
                 ujetGroupFactory.query(query.compile(scope.ngModel)).success(function (data) {
                     scope.result =
                     {
-                        Columns: query.OrderBy.Options,
-                        Rows: data.Objects
+                        columns: query.orderBy.options,
+                        rows: data.objects
                     };
 
                     scope.paging = {
-                        PageIndex: query.PageIndex.Value,
-                        PageCount: Math.ceil(data.Total / query.PageSize.Value)
+                        pageIndex: query.pageIndex.value,
+                        pageCount: Math.ceil(data.total / query.pageSize.value)
                     };
                 });
             };
 
             scope.$on("pageIndexChanged", function (e, pageIndex) {
-                query.PageIndex.Value = pageIndex;
+                query.pageIndex.value = pageIndex;
 
                 runQuery();
             });

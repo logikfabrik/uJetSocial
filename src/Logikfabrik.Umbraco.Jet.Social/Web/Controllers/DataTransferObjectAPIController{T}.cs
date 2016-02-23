@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     /// </summary>
     /// <typeparam name="T">The data transfer object type.</typeparam>
     // ReSharper disable once InconsistentNaming
-    public abstract class DataTransferObjectAPIController<T> : UmbracoAuthorizedJsonController
+    public abstract class DataTransferObjectAPIController<T> : APIController
         where T : DataTransferObject
     {
         /// <summary>

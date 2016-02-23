@@ -10,17 +10,17 @@
 
                 <label class="control-label" for="">Name</label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="vm.object.Name" class="input-block-level" />
+                    <input type="text" required ng-model="vm.object.name" class="input-block-level" />
                 </div>
 
                 <label class="control-label" for="">Description</label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="vm.object.Description" class="input-block-level" />
+                    <input type="text" required ng-model="vm.object.description" class="input-block-level" />
                 </div>
 
                 <label class="control-label" for="">Owner</label>
                 <div class="controls-row">
-                    <ujet-object-picker model="vm.object.OwnerId"
+                    <ujet-object-picker model="vm.object.ownerId"
                                         can-pick-guest="true"
                                         can-pick-user="true">
                     </ujet-object-picker>
@@ -28,17 +28,17 @@
 
                 <label class="control-label" for="">Created</label>
                 <div class="controls-row">
-                    <ujet-value value="{{vm.object.Created}}"></ujet-value>
+                    <ujet-value value="{{vm.object.created}}"></ujet-value>
                 </div>
 
                 <label class="control-label" for="">Updated</label>
                 <div class="controls-row">
-                    <ujet-value value="{{vm.object.Updated}}"></ujet-value>
+                    <ujet-value value="{{vm.object.updated}}"></ujet-value>
                 </div>
 
                 <label class="control-label" for="">Status</label>
                 <div class="controls-row">
-                    <ujet-status-picker model="vm.object.Status"></ujet-status-picker>
+                    <ujet-status-picker model="vm.object.status"></ujet-status-picker>
                 </div>
 
             </div>

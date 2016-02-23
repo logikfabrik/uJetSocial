@@ -16,19 +16,19 @@
                     };
 
                     scope.goToPreviousPage = function () {
-                        scope.goToPage(scope.model.PageIndex - 1);
+                        scope.goToPage(scope.model.pageIndex - 1);
                     };
 
                     scope.goToNextPage = function () {
-                        scope.goToPage(scope.model.PageIndex + 1);
+                        scope.goToPage(scope.model.pageIndex + 1);
                     };
 
                     scope.goToLastPage = function () {
-                        scope.goToPage(scope.model.PageCount);
+                        scope.goToPage(scope.model.pageCount);
                     };
 
                     scope.goToPage = function (pageIndex) {
-                        if (pageIndex < 1 || pageIndex > scope.model.PageCount) {
+                        if (pageIndex < 1 || pageIndex > scope.model.pageCount) {
                             return;
                         }
 

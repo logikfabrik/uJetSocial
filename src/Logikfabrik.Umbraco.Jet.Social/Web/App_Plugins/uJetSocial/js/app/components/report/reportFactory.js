@@ -26,7 +26,7 @@
                 method: "POST",
                 url: "backoffice/uJetSocial/ReportAPI/Update",
                 params: {
-                    id: dto.Id
+                    id: dto.id
                 },
                 data: dto
             });

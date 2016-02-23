@@ -18,7 +18,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     [PluginController("uJetSocial")]
 
     // ReSharper disable once InconsistentNaming
-    public class EntityAPIController : UmbracoAuthorizedJsonController
+    public class EntityAPIController : APIController
     {
         private readonly Lazy<IDatabaseWrapper> _database;
 

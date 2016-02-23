@@ -15,7 +15,7 @@
 
         var query = queryService.getQuery();
 
-        query.PageSize.Value = 5;
+        query.pageSize.value = 5;
 
         function search() {
             var q = {};
@@ -23,12 +23,12 @@
             q[param] = vm.query;
 
             objectFactory.query(query.compile(q)).success(function (data) {
-                vm.objects = data.Objects;
+                vm.objects = data.objects;
                 vm.hasObjects = true;
 
                 vm.paging = {
-                    PageIndex: query.PageIndex.Value,
-                    PageCount: Math.ceil(data.Total / query.PageSize.Value)
+                    pageIndex: query.pageIndex.value,
+                    pageCount: Math.ceil(data.Total / query.pageSize.value)
                 };
             });
         };
@@ -38,7 +38,7 @@
         });
 
         $scope.$on("pageIndexChanged", function (e, pageIndex) {
-            query.PageIndex.Value = pageIndex;
+            query.pageIndex.value = pageIndex;
 
             search();
         });

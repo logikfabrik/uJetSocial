@@ -26,7 +26,7 @@
                 method: "POST",
                 url: "backoffice/uJetSocial/IndividualGuestAPI/Update",
                 params: {
-                    id: dto.Id
+                    id: dto.id
                 },
                 data: dto
             });

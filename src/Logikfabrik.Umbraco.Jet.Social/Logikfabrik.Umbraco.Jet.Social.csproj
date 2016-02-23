@@ -323,6 +323,7 @@
     <Compile Include="Report\Report.cs" />
     <Compile Include="Report\ReportProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Controllers\ApiController.cs" />
     <Compile Include="Web\Controllers\CommentAPIController.cs" />
     <Compile Include="Web\Controllers\EntityAPIController.cs" />
     <Compile Include="Web\Controllers\DataTransferObjectAPIController{T}.cs" />

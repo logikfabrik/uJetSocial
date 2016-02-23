@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logikfabrik.Umbraco.Jet.Social", "Logikfabrik.Umbraco.Jet.Social\Logikfabrik.Umbraco.Jet.Social.csproj", "{7F0C9F02-D55D-4969-87BD-00528349E05D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logikfabrik.Umbraco.Jet.Social.Test", "Logikfabrik.Umbraco.Jet.Social.Test\Logikfabrik.Umbraco.Jet.Social.Test.csproj", "{F48864E5-1E6C-4728-92E9-A7311F17DFFA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logikfabrik.Umbraco.Jet.Social.Demo", "Logikfabrik.Umbraco.Jet.Social.Demo\Logikfabrik.Umbraco.Jet.Social.Demo.csproj", "{335FCDE6-8EFA-4631-B8BB-8A06A50FAB66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +15,6 @@ Global
 		{7F0C9F02-D55D-4969-87BD-00528349E05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F0C9F02-D55D-4969-87BD-00528349E05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F0C9F02-D55D-4969-87BD-00528349E05D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F48864E5-1E6C-4728-92E9-A7311F17DFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F48864E5-1E6C-4728-92E9-A7311F17DFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F48864E5-1E6C-4728-92E9-A7311F17DFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F48864E5-1E6C-4728-92E9-A7311F17DFFA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{335FCDE6-8EFA-4631-B8BB-8A06A50FAB66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{335FCDE6-8EFA-4631-B8BB-8A06A50FAB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{335FCDE6-8EFA-4631-B8BB-8A06A50FAB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{335FCDE6-8EFA-4631-B8BB-8A06A50FAB66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

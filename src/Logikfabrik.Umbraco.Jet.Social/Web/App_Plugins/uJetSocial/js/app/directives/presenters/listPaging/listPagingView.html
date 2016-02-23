@@ -1,18 +1,18 @@
-﻿<div class="ujet-list-paging" ng-hide="(_.isNull(model) || _.isUndefined(model) || model.PageCount <= 1)">
+﻿<div class="ujet-list-paging" ng-hide="(_.isNull(model) || _.isUndefined(model) || model.pageCount <= 1)">
 
-    <a class="ujet-button" href="#" ng-hide="model.PageIndex === 1" ng-click="goToFirstPage()" prevent-default>
+    <a class="ujet-button" href="#" ng-hide="model.pageIndex === 1" ng-click="goToFirstPage()" prevent-default>
         <i class="ujet-button__icon icon icon-navigation-first"></i>
     </a>
-    <a class="ujet-button" href="#" ng-hide="model.PageIndex === 1" ng-click="goToPreviousPage()" prevent-default>
+    <a class="ujet-button" href="#" ng-hide="model.pageIndex === 1" ng-click="goToPreviousPage()" prevent-default>
         <i class="ujet-button__icon icon icon-navigation-left"></i>
     </a>
     <div class="ujet-list-paging__numbering">
-        <input type="number" min="1" max="{{model.PageCount}}" ng-model="model.PageIndex" ng-change="goToPage(model.PageIndex)"/> / {{model.PageCount}}
+        <input type="number" min="1" max="{{model.pageCount}}" ng-model="model.pageIndex" ng-change="goToPage(model.pageIndex)"/> / {{model.PageCount}}
     </div>
-    <a class="ujet-button" href="#" ng-show="model.PageIndex < model.PageCount" ng-click="goToNextPage()" prevent-default>
+    <a class="ujet-button" href="#" ng-show="model.pageIndex < model.pageCount" ng-click="goToNextPage()" prevent-default>
         <i class="ujet-button__icon icon icon-navigation-right"></i>
     </a>
-    <a class="ujet-button" href="#" ng-hide="model.PageIndex === model.PageCount" ng-click="goToLastPage()" prevent-default>
+    <a class="ujet-button" href="#" ng-hide="model.pageIndex === model.pageCount" ng-click="goToLastPage()" prevent-default>
         <i class="ujet-button__icon icon icon-navigation-last"></i>
     </a>
 

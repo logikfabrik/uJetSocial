@@ -6,27 +6,27 @@
             dataService.getQuery = function(orderByOptions) {
                 var query = {};
 
-                query.PageIndex = {
-                    Value: 1
+                query.pageIndex = {
+                    value: 1
                 };
 
-                query.PageSize = {
-                    Value: 20,
-                    Min: 10,
-                    Max: 100,
-                    Step: 10
+                query.pageSize = {
+                    value: 20,
+                    min: 10,
+                    max: 100,
+                    step: 10
                 };
 
-                query.OrderBy = {
-                    Value: _.head(orderByOptions),
-                    Options: orderByOptions
+                query.orderBy = {
+                    value: _.head(orderByOptions),
+                    options: orderByOptions
                 };
 
                 query.compile = function(params) {
                     var q = {
-                        PageIndex: query.PageIndex.Value - 1,
-                        PageSize: query.PageSize.Value,
-                        OrderBy: query.OrderBy.Value
+                        pageIndex: query.pageIndex.value - 1,
+                        pageSize: query.pageSize.value,
+                        orderBy: query.orderBy.value
                     };
 
                     if (!_.isNull(params) && !_.isUndefined(params)) {
