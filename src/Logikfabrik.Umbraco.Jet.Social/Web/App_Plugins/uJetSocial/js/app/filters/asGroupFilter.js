@@ -7,7 +7,7 @@
 
     function ujetAsGroupFilter() {
         return function (obj) {
-            obj.label = "Group";
+            obj.label = obj.name;
 
             return obj;
         };

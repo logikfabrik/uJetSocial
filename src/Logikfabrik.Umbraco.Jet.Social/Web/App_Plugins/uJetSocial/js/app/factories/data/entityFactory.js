@@ -8,27 +8,45 @@
     ujetEntityFactory.$inject = [
         "$http",
         "$filter",
+        "$q",
         "ujetCommentFactory",
         "ujetGroupFactory",
         "ujetGuestFactory",
         "ujetReportFactory"
     ];
-    
-    function ujetEntityFactory($http, $filter, ujetCommentFactory, ujetGroupFactory, ujetGuestFactory, ujetReportFactory) {
+
+    function ujetEntityFactory($http, $filter, $q, ujetCommentFactory, ujetGroupFactory, ujetGuestFactory, ujetReportFactory) {
         var factory = {
-            getType: getType,
-            getFactory: getFactory,
-            getFilter: getFilter
+            get: get
         };
 
         return factory;
+
+        function get(id) {
+            var defer = $q.defer();
+            var type;
+
+            getType(id)
+                .then(function (response) {
+                    type = response.data;
+
+                    return getFactory(type).get(id);
+                })
+                .then(function (response) {
+                    var filter = getFilter(type);
+
+                    defer.resolve(filter(response.data));
+                });
+
+            return defer.promise;
+        }
 
         function getType(id) {
             return $http.get("backoffice/uJetSocial/EntityAPI/GetType/" + id);
         }
 
-        function getFactory(entityTypeName) {
-            switch (entityTypeName) {
+        function getFactory(type) {
+            switch (type.name) {
                 case "Comment":
                     return ujetCommentFactory;
                 case "Group":
@@ -42,8 +60,8 @@
             }
         }
 
-        function getFilter(entityTypeName) {
-            switch (entityTypeName) {
+        function getFilter(type) {
+            switch (type.name) {
                 case "Comment":
                     return $filter("ujetAsComment");
                 case "Group":

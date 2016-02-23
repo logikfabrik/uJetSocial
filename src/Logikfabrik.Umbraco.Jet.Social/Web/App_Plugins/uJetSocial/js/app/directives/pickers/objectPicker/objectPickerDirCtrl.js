@@ -63,14 +63,8 @@
                 return;
             }
 
-            ujetEntityFactory.getType(vm.objId).success(function(type) {
-                var factory = ujetEntityFactory.getFactory(type.name);
-
-                factory.get(vm.objId).success(function (obj) {
-                    var filter = ujetEntityFactory.getFilter(type.name);
-
-                    selectObj(filter(obj));
-                });
+            ujetEntityFactory.get(vm.objId).then(function(obj) {
+                selectObj(obj);
             });
         };
 

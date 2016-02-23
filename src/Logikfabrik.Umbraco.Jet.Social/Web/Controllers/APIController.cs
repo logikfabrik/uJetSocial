@@ -1,5 +1,5 @@
 ﻿// <copyright file="APIController.cs" company="Logikfabrik">
-// Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
+//   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
@@ -24,6 +24,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         {
             base.Initialize(controllerContext);
 
+            SetCamelCaseContractResolver(controllerContext);
+        }
+
+        private static void SetCamelCaseContractResolver(HttpControllerContext controllerContext)
+        {
             var formatters = controllerContext.Configuration.Formatters;
 
             var formatter = formatters.OfType<JsonMediaTypeFormatter>().FirstOrDefault();
