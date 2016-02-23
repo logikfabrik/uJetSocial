@@ -413,7 +413,8 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\guestList\guestListDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\listPaging\listPagingDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\listPaging\listPagingView.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listDirective.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectPicker\objectPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectPicker\objectPickerView.html" />
