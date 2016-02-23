@@ -1,10 +1,10 @@
-﻿<div class="ujet-object-picker ujet-object-picker--group">
+﻿<div class="ujet-group-picker">
 
-    <input class="ujet-object-picker__query" type="text" placeholder="Type to search..." ng-model="vm.query" ng-change="vm.search()" />
+    <input class="ujet-group-picker__query" type="text" placeholder="Type to search..." ng-model="vm.query" ng-change="vm.search()" />
 
-    <ul class="ujet-object-picker__list" ng-show="vm.hasObjects">
+    <ul class="ujet-group-picker__list" ng-show="vm.hasObjects">
 
-        <li class="ujet-object-picker__list-item" ng-repeat="object in vm.objects">
+        <li class="ujet-group-picker__list-item" ng-repeat="object in vm.objects">
             <ujet-object obj="object | ujetAsGroup" can-select="true"></ujet-object>
         </li>
 

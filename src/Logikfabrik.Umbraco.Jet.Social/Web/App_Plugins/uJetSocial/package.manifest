@@ -3,10 +3,12 @@
         // Dependencies
         '~/App_Plugins/uJetSocial/js/vendor/lodash-3.10.1/lodash.js',
 		'~/App_Plugins/uJetSocial/js/vendor/moment-2.11.1/moment.js',
+		'~/App_Plugins/uJetSocial/js/vendor/sprintf-1.0.3/sprintf.js',
         
         // Factories
         '~/App_Plugins/uJetSocial/js/app/factories/lodashFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/momentFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/sprintfFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/entityFactory.js',
 
 		// Services

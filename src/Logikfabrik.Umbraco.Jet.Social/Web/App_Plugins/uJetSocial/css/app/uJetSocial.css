@@ -1,9 +1,6 @@
 ﻿/* Object Picker
    ========================================================================== */
 
-.ujet-object-picker {
-}
-
 .ujet-object-picker__header {
     border: #dbdbdb solid;
     border-width: 1px 1px 0;
@@ -18,9 +15,6 @@
     border-radius: 0 0 2px 2px;
     margin: 0;
     list-style-type: none;
-}
-
-.ujet-object-picker__list-item:first-of-type {
 }
 
 .ujet-object-picker__picker {
@@ -39,6 +33,56 @@
         .ujet-object-picker__picker:hover {
             background: #f8f8f8;
         }
+
+/* Comment Picker
+   ========================================================================== */
+
+.ujet-comment-picker__query {
+    box-sizing: border-box;
+    min-height: 30px;
+    width: 100%;
+}
+
+.ujet-comment-picker__list {
+    border: #dbdbdb solid 1px;
+    border-radius: 2px;
+    margin: 0;
+    padding: 8px;
+    list-style-type: none;
+}
+
+.ujet-comment-picker__list-item {
+    margin: 0 0 4px;
+}
+
+    .ujet-comment-picker__list-item:last-child {
+        margin: 0;
+    }
+
+/* Group Picker
+   ========================================================================== */
+
+.ujet-group-picker__query {
+    box-sizing: border-box;
+    min-height: 30px;
+    width: 100%;
+}
+
+.ujet-group-picker__list {
+    border: #dbdbdb solid 1px;
+    border-radius: 2px;
+    margin: 0;
+    padding: 8px;
+    list-style-type: none;
+}
+
+.ujet-group-picker__list-item {
+    margin: 0 0 4px;
+}
+
+    .ujet-group-picker__list-item:last-child {
+        margin: 0;
+    }
 
 /* Guest Picker
    ========================================================================== */
@@ -62,6 +106,23 @@
 }
 
     .ujet-guest-picker__list-item:last-child {
+        margin: 0;
+    }
+
+/* Status Picker
+   ========================================================================== */
+
+.ujet-status-picker__list {
+    margin: 0;
+    list-style-type: none;
+}
+
+.ujet-status-picker__list-item {
+    float: left;
+    margin: 0 4px 0 0;
+}
+
+    .ujet-status-picker__list-item:last-child {
         margin: 0;
     }
 
@@ -94,6 +155,10 @@
 
 .ujet-object__label {
     display: block;
+    color: #b3b3b3;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .ujet-object__sub-label {
@@ -121,22 +186,7 @@
             color: #000;
         }
 
-/* Status Picker
-   ========================================================================== */
 
-.ujet-status-picker__list {
-    margin: 0;
-    list-style-type: none;
-}
-
-.ujet-status-picker__list-item {
-    float: left;
-    margin: 0 4px 0 0;
-}
-
-    .ujet-status-picker__list-item:last-child {
-        margin: 0;
-    }
 
 
 

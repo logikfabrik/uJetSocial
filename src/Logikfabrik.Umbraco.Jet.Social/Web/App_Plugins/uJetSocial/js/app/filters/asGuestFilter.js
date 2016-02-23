@@ -5,9 +5,12 @@
         .module("umbraco.resources")
         .filter("ujetAsGuest", ujetAsGuestFilter);
 
-    function ujetAsGuestFilter() {
+    ujetAsGuestFilter.$inject = ["sprintf"];
+
+    function ujetAsGuestFilter(sprintf) {
         return function (obj) {
-            obj.label = "Guest";
+            obj.label = sprintf("%(firstName)s %(lastName)s", obj);
+            obj.subLabel = obj.email;
 
             return obj;
         };

@@ -1,16 +1,22 @@
 ﻿<div class="ujet-status-picker">
+
     <ul class="ujet-status-picker__list">
+
         <li class="ujet-status-picker__list-item">
             <a href="#" ng-click="vm.status = 0" class="ujet-button"
                ng-class="{'ujet-button--disabled': vm.status === 0}" prevent-default><i class="ujet-button__icon icon icon-time"></i> Pending</a>
         </li>
+
         <li class="ujet-status-picker__list-item">
             <a href="#" ng-click="vm.status = 1" class="ujet-button"
                ng-class="{'ujet-button--disabled': vm.status === 1}" prevent-default><i class="ujet-button__icon icon icon-check"></i> Approved</a>
         </li>
+
         <li class="ujet-status-picker__list-item">
             <a href="#" ng-click="vm.status = 2" class="ujet-button"
                ng-class="{'ujet-button--disabled': vm.status === 2}" prevent-default><i class="ujet-button__icon icon icon-block"></i> Rejected</a>
         </li>
+
     </ul>
+
 </div>
