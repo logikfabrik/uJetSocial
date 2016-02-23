@@ -4,3 +4,10 @@ App_Plugins/
 splashes/
 umbraco/
 umbraco_client/
+
+# Fanoe files
+css/
+js/
+media/
+scripts/
+Views/
