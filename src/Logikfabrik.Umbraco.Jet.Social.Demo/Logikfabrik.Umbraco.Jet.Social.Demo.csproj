@@ -398,6 +398,12 @@
   <ItemGroup>
     <Content Include="Config\404handlers.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logikfabrik.Umbraco.Jet.Social\Logikfabrik.Umbraco.Jet.Social.csproj">
+      <Project>{7f0c9f02-d55d-4969-87bd-00528349e05d}</Project>
+      <Name>Logikfabrik.Umbraco.Jet.Social</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -436,6 +442,13 @@
     <Error Condition="!Exists('..\packages\UmbracoCms.7.3.1\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.3.1\build\UmbracoCms.targets'))" />
   </Target>
   <Import Project="..\packages\UmbracoCms.7.3.1\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.3.1\build\UmbracoCms.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>Robocopy "$(SolutionDir)Logikfabrik.Umbraco.Jet.Social\Web\App_Plugins" "$(ProjectDir)App_Plugins"  /e /is
+if errorlevel leq 3 
+exit 0 
+else 
+exit errorlevel</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
