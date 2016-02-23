@@ -47,7 +47,7 @@
         };
 
         function selectObj(obj) {
-            vm.objId = obj.Id;
+            vm.objId = obj.id;
             vm.obj = obj;
             vm.hasObject = true;
         };
@@ -64,10 +64,10 @@
             }
 
             ujetEntityFactory.getType(vm.objId).success(function(type) {
-                var factory = ujetEntityFactory.getFactory(type.Name);
+                var factory = ujetEntityFactory.getFactory(type.name);
 
                 factory.get(vm.objId).success(function (obj) {
-                    var filter = ujetEntityFactory.getFilter(type.Name);
+                    var filter = ujetEntityFactory.getFilter(type.name);
 
                     selectObj(filter(obj));
                 });

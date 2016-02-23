@@ -31,8 +31,6 @@
                         rows: data.objects
                     };
 
-                    console.log(scope.result);
-
                     scope.paging = {
                         pageIndex: query.pageIndex.value,
                         pageCount: Math.ceil(data.total / query.pageSize.value)
