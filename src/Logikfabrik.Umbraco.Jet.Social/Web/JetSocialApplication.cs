@@ -10,7 +10,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web
     /// <summary>
     /// The <see cref="JetSocialApplication" /> class.
     /// </summary>
-    [Application("uJetSocial", "uJetSocial", "traymember")]
+    [Application("uJetSocial", "uJetSocial", "icon-dashboard")]
     public class JetSocialApplication : IApplication
     {
     }

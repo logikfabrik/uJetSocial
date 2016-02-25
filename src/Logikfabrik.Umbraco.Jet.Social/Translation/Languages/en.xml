@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
+  <area alias="sections">
+    <key alias="uJetSocial">uJetSocial</key>
+  </area>
+  <area alias="treeHeaders">
+    <key alias="comments">Comments</key>
+    <key alias="groups">Groups</key>
+    <key alias="guests">Guests</key>
+    <key alias="reports">Reports</key>
+  </area>
+  <area alias="sections_uJetSocial">
+  </area>
+</language>

@@ -7,7 +7,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     using System;
     using System.Web.Http;
     using global::Umbraco.Web.Mvc;
-    using global::Umbraco.Web.Editors;
     using global::Umbraco.Core.Logging;
     using global::Umbraco.Core.ObjectResolution;
     using global::Umbraco.Core.Persistence;
