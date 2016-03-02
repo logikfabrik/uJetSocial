@@ -3,10 +3,15 @@
   <area alias="sections">
     <key alias="uJetSocial">uJetSocial</key>
   </area>
-  <area alias="uJetSocialTrees">
-    <key alias="comment">Kommentarer</key>
-    <key alias="group">Grupper</key>
-    <key alias="guest">Gäster</key>
-    <key alias="report">Rapporter</key>
+  <area alias="uJetSocial">
+    <key alias="commentTree">Kommentarer</key>
+    <key alias="groupTree">Grupper</key>
+    <key alias="guestTree">Gäster</key>
+    <key alias="reportTree">Rapporter</key>
+
+    <key alias="comments">Kommentarer</key>
+    <key alias="groups">Grupper</key>
+    <key alias="guests">Gäster</key>
+    <key alias="reports">Rapporter</key>
   </area>
 </language>

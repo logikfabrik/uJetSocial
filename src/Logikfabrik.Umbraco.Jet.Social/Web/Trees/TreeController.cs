@@ -36,7 +36,15 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         /// <summary>
         /// Gets the root node display name.
         /// </summary>
-        public override string RootNodeDisplayName => LocalizedTextService.Localize(TreeAlias);
+        public override string RootNodeDisplayName
+        {
+            get
+            {
+                var attr = GetType().GetCustomAttribute<TreeAttribute>();
+
+                return attr == null ? TreeAlias : LocalizedTextService.Localize($"{attr.ApplicationAlias}/{TreeAlias}Tree");
+            }
+        }
 
         /// <summary>
         /// Gets a value indicating whether this instance has children.
