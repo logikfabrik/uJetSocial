@@ -21,6 +21,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     {
         private readonly Lazy<IDatabaseWrapper> _database;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EntityAPIController" /> class.
+        /// </summary>
         public EntityAPIController()
             : this(GetDatabase())
         {

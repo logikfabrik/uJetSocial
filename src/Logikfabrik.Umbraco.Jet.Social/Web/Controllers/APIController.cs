@@ -7,8 +7,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     using System.Linq;
     using System.Net.Http.Formatting;
     using System.Web.Http.Controllers;
-    using Newtonsoft.Json.Serialization;
     using global::Umbraco.Web.Editors;
+    using Newtonsoft.Json.Serialization;
 
     /// <summary>
     /// The <see cref="APIController" /> class.

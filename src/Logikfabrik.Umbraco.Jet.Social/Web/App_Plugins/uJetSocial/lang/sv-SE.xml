@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language alias="sv" intName="Swedish" localName="Svenska" lcid="29" culture="sv-SE">
+  <area alias="sections">
+    <key alias="uJetSocial">uJetSocial</key>
+  </area>
+  <area alias="uJetSocialTrees">
+    <key alias="comment">Kommentarer</key>
+    <key alias="group">Grupper</key>
+    <key alias="guest">Gäster</key>
+    <key alias="report">Rapporter</key>
+  </area>
+</language>
