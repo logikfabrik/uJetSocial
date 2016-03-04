@@ -1,0 +1,15 @@
+﻿<div class="ujet-report-picker">
+
+    <input class="ujet-report-picker__query" type="text" placeholder="Type to search..." ng-model="vm.query" ng-change="vm.search()" />
+
+    <ul class="ujet-report-picker__list" ng-show="vm.hasObjects">
+
+        <li class="ujet-report-picker__list-item" ng-repeat="object in vm.objects">
+            <ujet-object obj="object | ujetAsReport" can-select="true"></ujet-object>
+        </li>
+
+    </ul>
+
+    <ujet-pager model="vm.paging"></ujet-pager>
+
+</div>

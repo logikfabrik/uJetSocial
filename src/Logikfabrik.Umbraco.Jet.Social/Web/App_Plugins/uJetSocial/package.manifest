@@ -47,6 +47,7 @@
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestListCtrl.js',
 
         // Report component
+		'~/App_Plugins/uJetSocial/js/app/components/report/reportCreateCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportDashboardCtrl.js',
 
 		// General components
@@ -69,6 +70,8 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/guestPicker/guestPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/objectPicker/objectPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/objectPicker/objectPickerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/reportPicker/reportPickerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/reportPicker/reportPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/statusPicker/statusPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/statusPicker/statusPickerDirCtrl.js',
 
@@ -83,7 +86,9 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/list/listDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/list/listDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/pager/pagerDir.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/lists/pager/pagerDirCtrl.js'
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/pager/pagerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/reportList/reportListDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/reportList/reportListDirCtrl.js'
     ],
     css: [
         '~/App_Plugins/uJetSocial/css/app/uJetSocial.css',

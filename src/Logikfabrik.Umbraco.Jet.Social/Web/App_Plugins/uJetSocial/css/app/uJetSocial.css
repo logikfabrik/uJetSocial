@@ -109,6 +109,31 @@
         margin: 0;
     }
 
+/* Guest Picker
+   ========================================================================== */
+
+.ujet-report-picker__query {
+    box-sizing: border-box;
+    min-height: 30px;
+    width: 100%;
+}
+
+.ujet-report-picker__list {
+    border: #dbdbdb solid 1px;
+    border-radius: 2px;
+    margin: 0;
+    padding: 8px;
+    list-style-type: none;
+}
+
+.ujet-report-picker__list-item {
+    margin: 0 0 4px;
+}
+
+    .ujet-report-picker__list-item:last-child {
+        margin: 0;
+    }
+
 /* Status Picker
    ========================================================================== */
 

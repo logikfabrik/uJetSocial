@@ -354,7 +354,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Media\" />
-    <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
@@ -377,9 +376,17 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\guest.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\page.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\group.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\css\app\uJetSocial.css" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentDashboardCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportCreateCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\commentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentCreateCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\dashboard\dashboardController.js" />

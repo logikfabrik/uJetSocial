@@ -1,16 +1,14 @@
-﻿<div class="ujet-dialog" ng-controller="ujetObjectEditCtrl as vm">
-
-    <h1>Edit</h1>
+﻿<div class="umbracoDialog umb-dialog" ng-controller="ujetReportCreateCtrl as vm">
 
     <umb-pane>
 
         <form name="form">
-
+            
             <div class="umb-control-group">
 
                 <label class="control-label" for="">Entity</label>
                 <div class="controls-row">
-                    <ujet-object-picker model="vm.object.entityId"
+                    <ujet-object-picker model="vm.report.entityId"
                                         can-pick-page="true"
                                         can-pick-comment="true"
                                         can-pick-group="true"
@@ -22,7 +20,7 @@
 
                 <label class="control-label" for="">Author</label>
                 <div class="controls-row">
-                    <ujet-object-picker model="vm.object.authorId"
+                    <ujet-object-picker model="vm.report.authorId"
                                         can-pick-guest="true"
                                         can-pick-user="true">
                     </ujet-object-picker>
@@ -30,30 +28,16 @@
 
                 <label class="control-label" for="">Text</label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="vm.object.text" class="input-block-level" />
-                </div>
-
-                <label class="control-label" for="">Created</label>
-                <div class="controls-row">
-                    <ujet-value value="{{vm.object.created}}"></ujet-value>
-                </div>
-
-                <label class="control-label" for="">Updated</label>
-                <div class="controls-row">
-                    <ujet-value value="{{vm.object.updated}}"></ujet-value>
-                </div>
-
-                <label class="control-label" for="">Status</label>
-                <div class="controls-row">
-                    <ujet-status-picker model="vm.object.status"></ujet-status-picker>
+                    <input type="text" required ng-model="vm.report.text" class="input-block-level" />
                 </div>
 
             </div>
 
             <div class="btn-toolbar umb-btn-toolbar">
-                <input type="submit" value="Save" class="btn btn-primary" ng-click="vm.save(form)" />
+                <a class="btn btn-link" ng-click="vm.cancel()">Cancel</a>
+                <input type="submit" value="Create" class="btn btn-primary" ng-click="vm.create(form)" />
             </div>
-
+            
         </form>
 
     </umb-pane>
