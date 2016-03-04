@@ -5,14 +5,16 @@
         .module("umbraco")
         .controller("ujetCommentPickerDirCtrl", ujetCommentPickerDirCtrl);
 
-    ujetCommentPickerDirCtrl.$inject = ["$scope", "$controller", "ujetCommentFactory", "queryService"];
+    ujetCommentPickerDirCtrl.$inject = ["$scope", "$controller", "queryService", "ujetCommentFactory"];
 
-    function ujetCommentPickerDirCtrl($scope, $controller, objectFactory, queryService) {
+    function ujetCommentPickerDirCtrl($scope, $controller, queryService, ujetCommentFactory) {
         $controller("ujetPickerCtrl", {
             $scope: $scope,
-            objectFactory: objectFactory,
             queryService: queryService,
-            param: "Text"
+            config: {
+                objectFactory: ujetCommentFactory,
+                objectParam: "Text"
+            }
         });
     };
 })();

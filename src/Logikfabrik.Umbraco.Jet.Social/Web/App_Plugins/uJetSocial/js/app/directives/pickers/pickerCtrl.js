@@ -5,7 +5,7 @@
         .module("umbraco")
         .controller("ujetPickerCtrl", ujetPickerCtrl);
 
-    function ujetPickerCtrl($scope, objectFactory, queryService, param) {
+    function ujetPickerCtrl($scope, queryService, config) {
         var vm = {
             hasObjects: false,
             search: search
@@ -20,9 +20,9 @@
         function search() {
             var q = {};
 
-            q[param] = vm.query;
+            q[config.objectParam] = vm.query;
 
-            objectFactory.query(query.compile(q)).success(function (data) {
+            config.objectFactory.query(query.compile(q)).success(function (data) {
                 vm.objects = data.objects;
 
                 vm.paging = {

@@ -5,14 +5,16 @@
         .module("umbraco")
         .controller("ujetGroupPickerDirCtrl", ujetGroupPickerDirCtrl);
 
-    ujetGroupPickerDirCtrl.$inject = ["$scope", "$controller", "ujetGroupFactory", "queryService"];
+    ujetGroupPickerDirCtrl.$inject = ["$scope", "$controller", "queryService", "ujetGroupFactory"];
 
-    function ujetGroupPickerDirCtrl($scope, $controller, objectFactory, queryService) {
+    function ujetGroupPickerDirCtrl($scope, $controller, queryService, ujetGroupFactory) {
         $controller("ujetPickerCtrl", {
             $scope: $scope,
-            objectFactory: objectFactory,
             queryService: queryService,
-            param: "Name"
+            config: {
+                objectFactory: ujetGroupFactory,
+                objectParam: "Name"
+            }
         });
     };
 })();

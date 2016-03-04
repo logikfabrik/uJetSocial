@@ -5,14 +5,16 @@
         .module("umbraco")
         .controller("ujetGuestPickerDirCtrl", ujetGuestPickerDirCtrl);
 
-    ujetGuestPickerDirCtrl.$inject = ["$scope", "$controller", "ujetGuestFactory", "queryService"];
+    ujetGuestPickerDirCtrl.$inject = ["$scope", "$controller", "queryService", "ujetGuestFactory"];
 
-    function ujetGuestPickerDirCtrl($scope, $controller, objectFactory, queryService) {
+    function ujetGuestPickerDirCtrl($scope, $controller, queryService, ujetGuestFactory) {
         $controller("ujetPickerCtrl", {
             $scope: $scope,
-            objectFactory: objectFactory,
             queryService: queryService,
-            param: "FirstName"
+            config: {
+                objectFactory: ujetGuestFactory,
+                objectParam: "FirstName"
+            }
         });
     };
 })();
