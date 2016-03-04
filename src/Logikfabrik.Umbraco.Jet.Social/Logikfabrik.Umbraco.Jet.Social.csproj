@@ -392,6 +392,10 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestCreateController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestListController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\guestList\guestListDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\guestList\guestListDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\guestList\guestListView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\listCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\pager\pagerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\pager\pagerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\pager\pagerView.html" />
@@ -413,11 +417,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\commentList\commentListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\groupList\groupListDirective.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\groupList\groupListView.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\guestList\guestListView.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\guestList\guestListDirective.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listDir.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listDirCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\list\listDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\list\listDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\list\listView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectPicker\objectPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectPicker\objectPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\statusPicker\statusPickerDirCtrl.js" />

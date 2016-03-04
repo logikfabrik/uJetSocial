@@ -8,7 +8,7 @@
     function ujetList() {
         var directive = {
             restrict: "E",
-            templateUrl: "/App_Plugins/uJetSocial/js/app/directives/presenters/list/listView.html",
+            templateUrl: "/App_Plugins/uJetSocial/js/app/directives/lists/list/listView.html",
             scope: {
                 model: "="
             },

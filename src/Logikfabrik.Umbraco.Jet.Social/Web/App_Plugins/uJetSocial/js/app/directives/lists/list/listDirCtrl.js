@@ -36,7 +36,7 @@
             return _.property(propertyName)(row);
         };
 
-        $scope.$watch("model", function (newValue, oldValue) {
+        $scope.$watch("model", function (newValue) {
             if (!_.isObject(newValue)) {
                 return;
             }

@@ -24,12 +24,13 @@
 
             objectFactory.query(query.compile(q)).success(function (data) {
                 vm.objects = data.objects;
-                vm.hasObjects = true;
 
                 vm.paging = {
                     pageIndex: query.pageIndex.value,
                     pageCount: Math.ceil(data.total / query.pageSize.value)
                 };
+
+                vm.hasObjects = true;
             });
         };
 
