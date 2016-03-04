@@ -5,43 +5,19 @@
         .module("umbraco")
         .controller("ujetReportCreateCtrl", ujetReportCreateCtrl);
 
-    ujetReportCreateCtrl.$inject = ["$scope", "$location", "notificationsService", "ujetReportFactory"];
+    ujetReportCreateCtrl.$inject = ["$scope", "$controller", "$location", "notificationsService", "ujetReportFactory"];
 
-    function ujetReportCreateCtrl($scope, $location, notificationsService, ujetReportFactory) {
-        var vm = this;
-
-        vm.report = {};
-        vm.create = create;
-        vm.cancel = cancel;
-
-        function create(form) {
-            if (!form.$valid) {
-                return;
+    function ujetReportCreateCtrl($scope, $controller, $location, notificationsService, ujetReportFactory) {
+        $controller("ujetObjectCreateCtrl", {
+            $scope: $scope,
+            $location: $location,
+            notificationsService: notificationsService,
+            config: {
+                objectFactory: ujetReportFactory,
+                path: "/uJetSocial/report/dashboard/-1",
+                createSuccessMessage: "Report created",
+                createErrorMessage: "Report could not be created"
             }
-
-            ujetReportFactory.add(vm.report)
-                .success(function (id) {
-                    notificationsService.success("Report created");
-
-                    $location.path("/uJetSocial/report/dashboard/-1");
-
-                    close();
-                })
-                .error(function () {
-                    notificationsService.error("Report could not be created");
-                });
-        };
-
-        function cancel() {
-            close();
-        };
-
-        function close() {
-            /*
-             * We cannot use the dialog service, as it doesn't allow the dialog to be closed gracefully.
-             * As a hack we emit an internal event that Umbraco handles.
-            */
-            $scope.$emit("app.closeDialogs", undefined);
-        };
+        });
     };
 })();

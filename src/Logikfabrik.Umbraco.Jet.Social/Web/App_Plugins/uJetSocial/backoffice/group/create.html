@@ -1,4 +1,4 @@
-﻿<div class="umbracoDialog umb-dialog" ng-controller="ujetGroupCreateCtrl as vm">
+﻿<div class="umbracoDialog umb-dialog" ng-controller="ujetGroupCreateCtrl">
 
     <umb-pane>
 
@@ -8,17 +8,17 @@
 
                 <label class="control-label" for="">Name</label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="vm.group.name" class="input-block-level" />
+                    <input type="text" required ng-model="vm.object.name" class="input-block-level" />
                 </div>
 
                 <label class="control-label" for="">Description</label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="vm.group.description" class="input-block-level" />
+                    <input type="text" required ng-model="vm.object.description" class="input-block-level" />
                 </div>
 
                 <label class="control-label" for="">Owner</label>
                 <div class="controls-row">
-                    <ujet-object-picker model="vm.group.ownerId"
+                    <ujet-object-picker model="vm.object.ownerId"
                                         can-pick-guest="true"
                                         can-pick-user="true">
                     </ujet-object-picker>

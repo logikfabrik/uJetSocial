@@ -51,6 +51,7 @@
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportDashboardCtrl.js',
 
 		// General components
+		'~/App_Plugins/uJetSocial/js/app/components/objectCreateCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/components/objectEditCtrl.js',
 
         // Directives

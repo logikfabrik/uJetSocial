@@ -30,7 +30,7 @@
                     pageCount: Math.ceil(data.total / query.pageSize.value)
                 };
 
-                vm.hasObjects = true;
+                vm.hasObjects = vm.objects.length > 0;
             });
         };
 

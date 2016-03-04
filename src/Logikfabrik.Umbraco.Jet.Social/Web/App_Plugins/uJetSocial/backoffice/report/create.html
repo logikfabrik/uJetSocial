@@ -1,4 +1,4 @@
-﻿<div class="umbracoDialog umb-dialog" ng-controller="ujetReportCreateCtrl as vm">
+﻿<div class="umbracoDialog umb-dialog" ng-controller="ujetReportCreateCtrl">
 
     <umb-pane>
 
@@ -8,7 +8,7 @@
 
                 <label class="control-label" for="">Entity</label>
                 <div class="controls-row">
-                    <ujet-object-picker model="vm.report.entityId"
+                    <ujet-object-picker model="vm.object.entityId"
                                         can-pick-page="true"
                                         can-pick-comment="true"
                                         can-pick-group="true"
@@ -20,7 +20,7 @@
 
                 <label class="control-label" for="">Author</label>
                 <div class="controls-row">
-                    <ujet-object-picker model="vm.report.authorId"
+                    <ujet-object-picker model="vm.object.authorId"
                                         can-pick-guest="true"
                                         can-pick-user="true">
                     </ujet-object-picker>
@@ -28,7 +28,7 @@
 
                 <label class="control-label" for="">Text</label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="vm.report.text" class="input-block-level" />
+                    <input type="text" required ng-model="vm.object.text" class="input-block-level" />
                 </div>
 
             </div>
