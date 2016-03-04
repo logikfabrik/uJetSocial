@@ -1,5 +1,5 @@
 ﻿(function () {
-    'use strict';
+    "use strict";
 
     angular
         .module("umbraco")
@@ -14,7 +14,7 @@
 
         $scope.vm = vm;
 
-        $scope.$watch("vm.status", function (newValue, oldValue) {
+        $scope.$watch("vm.status", function (newValue) {
             $scope.model = newValue;
         });
     };

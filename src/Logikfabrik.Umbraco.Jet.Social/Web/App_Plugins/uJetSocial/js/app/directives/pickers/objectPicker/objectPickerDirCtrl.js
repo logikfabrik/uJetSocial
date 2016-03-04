@@ -1,5 +1,5 @@
 ﻿(function () {
-    'use strict';
+    "use strict";
 
     angular
         .module("umbraco")
@@ -72,7 +72,7 @@
             deselectObj();
         });
 
-        $scope.$watch("vm.objId", function(newValue, oldValue) {
+        $scope.$watch("vm.objId", function(newValue) {
             $scope.model = newValue;
         });
 

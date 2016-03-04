@@ -3,16 +3,16 @@
 
     angular
         .module("umbraco.directives")
-        .directive("ujetList", ujetList);
+        .directive("ujetPager", ujetPager);
 
-    function ujetList() {
+    function ujetPager() {
         var directive = {
             restrict: "E",
-            templateUrl: "/App_Plugins/uJetSocial/js/app/directives/presenters/list/listView.html",
+            templateUrl: "/App_Plugins/uJetSocial/js/app/directives/lists/pager/pagerView.html",
             scope: {
                 model: "="
             },
-            controller: "ujetListDirCtrl"
+            controller: "ujetPagerDirCtrl"
         };
 
         return directive;

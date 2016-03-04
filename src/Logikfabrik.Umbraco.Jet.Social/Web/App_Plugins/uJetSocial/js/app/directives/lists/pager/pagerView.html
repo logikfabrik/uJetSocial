@@ -1,0 +1,19 @@
+﻿<div class="ujet-list-paging" ng-show="vm.hasPages">
+
+    <a class="ujet-button" href="#" ng-hide="vm.pageIndex === 1" ng-click="vm.goToFirstPage()" prevent-default>
+        <i class="ujet-button__icon icon icon-navigation-first"></i>
+    </a>
+    <a class="ujet-button" href="#" ng-hide="vm.pageIndex === 1" ng-click="vm.goToPreviousPage()" prevent-default>
+        <i class="ujet-button__icon icon icon-navigation-left"></i>
+    </a>
+    <div class="ujet-list-paging__numbering">
+        <input type="number" min="1" max="{{vm.pageCount}}" ng-model="vm.pageIndex" ng-change="vm.goToPage(vm.pageIndex)"/> / {{vm.pageCount}}
+    </div>
+    <a class="ujet-button" href="#" ng-show="vm.pageIndex < vm.pageCount" ng-click="vm.goToNextPage()" prevent-default>
+        <i class="ujet-button__icon icon icon-navigation-right"></i>
+    </a>
+    <a class="ujet-button" href="#" ng-hide="vm.pageIndex === vm.pageCount" ng-click="vm.goToLastPage()" prevent-default>
+        <i class="ujet-button__icon icon icon-navigation-last"></i>
+    </a>
+
+</div>

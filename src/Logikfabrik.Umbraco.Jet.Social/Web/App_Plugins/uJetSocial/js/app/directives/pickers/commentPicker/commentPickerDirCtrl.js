@@ -1,5 +1,5 @@
 ﻿(function () {
-    'use strict';
+    "use strict";
 
     angular
         .module("umbraco")
@@ -8,7 +8,7 @@
     ujetCommentPickerDirCtrl.$inject = ["$scope", "$controller", "ujetCommentFactory", "queryService"];
 
     function ujetCommentPickerDirCtrl($scope, $controller, objectFactory, queryService) {
-        $controller('ujetPickerCtrl', {
+        $controller("ujetPickerCtrl", {
             $scope: $scope,
             objectFactory: objectFactory,
             queryService: queryService,

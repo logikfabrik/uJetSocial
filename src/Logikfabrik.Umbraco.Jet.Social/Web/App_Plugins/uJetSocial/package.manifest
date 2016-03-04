@@ -59,7 +59,6 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/guestList/guestListDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/list/listDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/list/listDirCtrl.js',
-        '~/App_Plugins/uJetSocial/js/app/directives/presenters/listPaging/listPagingDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/object/objectDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/object/objectDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/value/valueDirective.js',
@@ -75,8 +74,11 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/objectPicker/objectPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/objectPicker/objectPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/statusPicker/statusPickerDir.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/pickers/statusPicker/statusPickerDirCtrl.js'
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/statusPicker/statusPickerDirCtrl.js',
 
+		// List directives
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/pager/pagerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/pager/pagerDirCtrl.js'
     ],
     css: [
         '~/App_Plugins/uJetSocial/css/app/uJetSocial.css',

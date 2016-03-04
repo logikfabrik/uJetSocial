@@ -392,6 +392,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestCreateController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestListController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\pager\pagerDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\pager\pagerDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\pager\pagerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\commentPicker\commentPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\commentPicker\commentPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\commentPicker\commentPickerView.html" />
@@ -412,8 +415,6 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\groupList\groupListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\guestList\guestListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\guestList\guestListDirective.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\listPaging\listPagingDirective.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\listPaging\listPagingView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\list\listView.html" />

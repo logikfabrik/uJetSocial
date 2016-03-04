@@ -1,5 +1,5 @@
 ﻿(function () {
-    'use strict';
+    "use strict";
 
     angular
         .module("umbraco")
@@ -28,7 +28,7 @@
 
                 vm.paging = {
                     pageIndex: query.pageIndex.value,
-                    pageCount: Math.ceil(data.Total / query.pageSize.value)
+                    pageCount: Math.ceil(data.total / query.pageSize.value)
                 };
             });
         };
