@@ -12,6 +12,7 @@
 
         vm.object = _.clone($scope.dialogData);
         vm.save = save;
+        vm.cancel = close;
 
         function save(form) {
             if (!form.$valid) {
@@ -19,6 +20,14 @@
             }
 
             $scope.dialogOptions.callback(vm.object);
+        };
+
+        function close() {
+            /*
+             * We cannot use the dialog service, as it doesn't allow the dialog to be closed gracefully.
+             * As a hack we emit an internal event that Umbraco handles.
+            */
+            $scope.$emit("app.closeDialogs", undefined);
         };
     };
 })();
