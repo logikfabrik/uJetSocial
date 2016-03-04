@@ -36,15 +36,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         /// <summary>
         /// Gets the root node display name.
         /// </summary>
-        public override string RootNodeDisplayName
-        {
-            get
-            {
-                var attr = GetType().GetCustomAttribute<TreeAttribute>();
-
-                return attr == null ? TreeAlias : LocalizedTextService.Localize($"{attr.ApplicationAlias}/{TreeAlias}Tree");
-            }
-        }
+        public override string RootNodeDisplayName => LocalizedTextService.Localize($"{TreeApplicationAlias}/{TreeAlias}Tree");
 
         /// <summary>
         /// Gets a value indicating whether this instance has children.
@@ -77,6 +69,22 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         /// The localized text service.
         /// </value>
         protected ILocalizedTextService LocalizedTextService { get; }
+
+        /// <summary>
+        /// Gets the tree application alias.
+        /// </summary>
+        /// <value>
+        /// The tree application alias.
+        /// </value>
+        protected string TreeApplicationAlias
+        {
+            get
+            {
+                var attr = GetType().GetCustomAttribute<TreeAttribute>();
+
+                return attr?.ApplicationAlias;
+            }
+        }
 
         /// <summary>
         /// Determines whether the node with the specified identifier is the root node.
@@ -125,9 +133,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 
         private string GetRoutePath()
         {
-            var attr = GetType().GetCustomAttribute<TreeAttribute>();
-
-            return attr == null ? null : $"/{attr.ApplicationAlias}/{attr.Alias}/dashboard/-1";
+            return $"/{TreeApplicationAlias}/{TreeAlias}/dashboard/-1";
         }
 
         private void OnRootNodeRendering(TreeControllerBase sender, TreeNodeRenderingEventArgs e)

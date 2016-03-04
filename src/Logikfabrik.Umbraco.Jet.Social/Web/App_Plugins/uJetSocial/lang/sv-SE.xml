@@ -13,5 +13,8 @@
     <key alias="groups">Grupper</key>
     <key alias="guests">Gäster</key>
     <key alias="reports">Rapporter</key>
+
+    <key alias="newAction">Skapa</key>
+    <key alias="refreshAction">Ladds om</key>
   </area>
 </language>

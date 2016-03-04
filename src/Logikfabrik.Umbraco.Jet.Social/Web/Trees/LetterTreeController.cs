@@ -7,10 +7,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
     using System;
     using System.Linq;
     using System.Net.Http.Formatting;
-    using System.Reflection;
     using global::Umbraco.Core.Services;
     using global::Umbraco.Web.Models.Trees;
-    using global::Umbraco.Web.Trees;
 
     /// <summary>
     /// The <see cref="LetterTreeController" /> class.
@@ -61,9 +59,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 
         private string GetRoutePath(string letter)
         {
-            var attr = GetType().GetCustomAttribute<TreeAttribute>();
-
-            return attr == null ? null : $"/{attr.ApplicationAlias}/{attr.Alias}/list/{letter}";
+            return $"/{TreeApplicationAlias}/{TreeAlias}/list/{letter}";
         }
     }
 }

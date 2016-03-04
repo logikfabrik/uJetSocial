@@ -13,5 +13,8 @@
     <key alias="groups">Groups</key>
     <key alias="guests">Guests</key>
     <key alias="reports">Reports</key>
+
+    <key alias="newAction">Create</key>
+    <key alias="refreshAction">Reload</key>
   </area>
 </language>
