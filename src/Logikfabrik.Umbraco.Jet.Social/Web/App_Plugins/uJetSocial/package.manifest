@@ -39,12 +39,10 @@
         // Group component
         '~/App_Plugins/uJetSocial/js/app/components/group/groupCreateCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/components/group/groupDashboardCtrl.js',
-		'~/App_Plugins/uJetSocial/js/app/components/group/groupListCtrl.js',
 
 		// Guest component
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestCreateCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestDashboardCtrl.js',
-		'~/App_Plugins/uJetSocial/js/app/components/guest/guestListCtrl.js',
 
         // Report component
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportCreateCtrl.js',

@@ -365,10 +365,8 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\dashboard.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\list.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\create.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\list.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\comment.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\user.html" />
@@ -393,12 +391,10 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\dashboard\dashboardController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\objectEditCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\group\groupDashboardCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\group\groupListCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\groupFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\group\groupCreateCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestDashboardCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestCreateCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestListCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\guestFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\commentList\commentListDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\commentList\commentListDirCtrl.js" />

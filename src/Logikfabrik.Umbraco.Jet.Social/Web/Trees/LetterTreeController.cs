@@ -59,7 +59,13 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 
         private string GetRoutePath(string letter)
         {
-            return $"/{TreeApplicationAlias}/{TreeAlias}/list/{letter}";
+            /*
+             * This function is redundant, but left for reference. The dashboard segment can be
+             * replaced with whatever view to load. Dashboard being the default if the
+             * CreateTreeNode overload used is replaced, with another one where route path
+             * isn't specified.
+             */
+            return $"/{TreeApplicationAlias}/{TreeAlias}/dashboard/{letter}";
         }
     }
 }
