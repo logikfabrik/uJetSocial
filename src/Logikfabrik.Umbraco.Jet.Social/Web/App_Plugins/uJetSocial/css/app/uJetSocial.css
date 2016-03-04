@@ -109,7 +109,7 @@
         margin: 0;
     }
 
-/* Guest Picker
+/* Report Picker
    ========================================================================== */
 
 .ujet-report-picker__query {
@@ -211,77 +211,21 @@
             color: #000;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* List Paging
+/* Pager
    ========================================================================== */
 
-.ujet-list-paging {
+.ujet-pager {
     padding: 8px;
 }
 
-.ujet-list-paging__numbering {
+.ujet-pager__numbering {
     display: inline-block;
 }
 
-    .ujet-list-paging__numbering input {
+    .ujet-pager__numbering input {
         vertical-align: baseline;
         width: 50px;
     }
-
-/* Button
-   ========================================================================== */
-
-.ujet-button {
-    display: inline-block;
-    border: #ccc solid 1px;
-    border-radius: 2px;
-    padding: 4px 12px;
-}
-
-    .ujet-button,
-    .ujet-button:link,
-    .ujet-button:visited,
-    .ujet-button:hover,
-    .ujet-button:active {
-        text-decoration: none;
-        background: #f2f2f2;
-    }
-
-        .ujet-button:hover {
-            background: #e4e4e4;
-        }
-
-.ujet-button--disabled,
-.ujet-button--disabled:link,
-.ujet-button--disabled:visited,
-.ujet-button--disabled:hover,
-.ujet-button--disabled:active {
-    color: #ccc;
-    cursor: default;
-}
-
-    .ujet-button--disabled:hover {
-        background: #f2f2f2;
-    }
-
-.ujet-button__icon {
-    font-size: 12px;
-}
 
 /* List
    ========================================================================== */
@@ -330,13 +274,53 @@
     padding: 8px;
 }
 
+/* Button
+   ========================================================================== */
 
+.ujet-button {
+    display: inline-block;
+    border: #ccc solid 1px;
+    border-radius: 2px;
+    padding: 4px 12px;
+}
 
+    .ujet-button,
+    .ujet-button:link,
+    .ujet-button:visited,
+    .ujet-button:hover,
+    .ujet-button:active {
+        text-decoration: none;
+        background: #f2f2f2;
+    }
 
+        .ujet-button:hover {
+            background: #e4e4e4;
+        }
 
-/* uJet Dialog */
+.ujet-button--disabled,
+.ujet-button--disabled:link,
+.ujet-button--disabled:visited,
+.ujet-button--disabled:hover,
+.ujet-button--disabled:active {
+    color: #ccc;
+    cursor: default;
+}
 
-.ujet-dialog h1 {
+    .ujet-button--disabled:hover {
+        background: #f2f2f2;
+    }
+
+.ujet-button__icon {
+    font-size: 12px;
+}
+
+/* Dialog
+   ========================================================================== */
+
+.ujet-dialog {
+}
+
+.ujet-dialog__header {
     font-size: 16px;
     margin: 10px 20px 0;
     border: #f8f8f8 solid;
