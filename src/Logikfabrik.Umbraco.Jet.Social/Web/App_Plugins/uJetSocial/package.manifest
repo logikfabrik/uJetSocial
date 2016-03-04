@@ -9,7 +9,12 @@
         '~/App_Plugins/uJetSocial/js/app/factories/lodashFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/momentFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/sprintfFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/commentFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/entityFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/groupFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/guestFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/reportFactory.js',
+
 
 		// Services
 		'~/App_Plugins/uJetSocial/js/app/services/queryService.js',
@@ -30,23 +35,19 @@
 		// Comment component
         '~/App_Plugins/uJetSocial/js/app/components/comment/commentCreateController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/comment/commentDashboardController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/comment/commentFactory.js',
 		
         // Group component
         '~/App_Plugins/uJetSocial/js/app/components/group/groupCreateController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/group/groupDashboardController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/group/groupFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/components/group/groupListController.js',
 
 		// Guest component
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestCreateController.js',
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestDashboardController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/guest/guestFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/components/guest/guestListController.js',
 
         // Report component
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportDashboardController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/report/reportFactory.js',
 
 		// General components
 		'~/App_Plugins/uJetSocial/js/app/components/objectEditController.js',
