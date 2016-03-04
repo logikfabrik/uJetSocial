@@ -54,8 +54,6 @@
         // Directives
 		        
 		// Presenter directives
-		'~/App_Plugins/uJetSocial/js/app/directives/presenters/commentList/commentListDirective.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/presenters/groupList/groupListDirective.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/object/objectDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/object/objectDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/presenters/value/valueDirective.js',
@@ -75,6 +73,10 @@
 
 		// List directives
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/listCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/commentList/commentListDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/commentList/commentListDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/groupList/groupListDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/groupList/groupListDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/guestList/guestListDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/guestList/guestListDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/list/listDir.js',

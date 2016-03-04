@@ -392,6 +392,12 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestCreateController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestListController.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\commentList\commentListDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\commentList\commentListDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\commentList\commentListView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\groupList\groupListDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\groupList\groupListDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\groupList\groupListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\guestList\guestListDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\guestList\guestListDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\guestList\guestListView.html" />
@@ -413,10 +419,6 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\groupPicker\groupPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\groupPicker\groupPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\groupPicker\groupPickerDirCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\commentList\commentListDirective.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\commentList\commentListView.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\groupList\groupListDirective.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\presenters\groupList\groupListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\list\listDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\list\listDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\list\listView.html" />
