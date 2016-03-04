@@ -5,18 +5,18 @@
         .module("umbraco")
         .controller("ujetCommentListDirCtrl", ujetCommentListDirCtrl);
 
-    ujetCommentListDirCtrl.$inject = ["$scope", "$controller", "_", "dialogService", "notificationsService", "queryService", "ujetCommentFactory"];
+    ujetCommentListDirCtrl.$inject = ["$scope", "$controller", "dialogService", "notificationsService", "queryService", "ujetCommentFactory"];
 
-    function ujetCommentListDirCtrl($scope, $controller, _, dialogService, notificationsService, queryService, ujetCommentFactory) {
+    function ujetCommentListDirCtrl($scope, $controller, dialogService, notificationsService, queryService, ujetCommentFactory) {
+        var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "EntityId", "AuthorId", "Text"]);
+
         $controller("ujetListCtrl", {
             $scope: $scope,
-            _: _,
             dialogService: dialogService,
             notificationsService: notificationsService,
-            queryService: queryService,
+            query: query,
             config: {
                 objectFactory: ujetCommentFactory,
-                objectParams: ["Id", "Created", "Updated", "Status", "EntityId", "AuthorId", "Text"],
                 editTemplate: "/App_Plugins/uJetSocial/backoffice/comment/edit.html",
                 editSuccessMessage: "Comment updated",
                 editErrorMessage: "Comment could not be updated"

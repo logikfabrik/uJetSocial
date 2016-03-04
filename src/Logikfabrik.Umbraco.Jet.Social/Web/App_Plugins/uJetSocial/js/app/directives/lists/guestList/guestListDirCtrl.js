@@ -5,22 +5,28 @@
         .module("umbraco")
         .controller("ujetGuestListDirCtrl", ujetGuestListDirCtrl);
 
-    ujetGuestListDirCtrl.$inject = ["$scope", "$controller", "_", "dialogService", "notificationsService", "queryService", "ujetGuestFactory"];
+    ujetGuestListDirCtrl.$inject = ["$scope", "$controller", "$routeParams", "dialogService", "notificationsService", "queryService", "ujetGuestFactory"];
 
-    function ujetGuestListDirCtrl($scope, $controller, _, dialogService, notificationsService, queryService, ujetGuestFactory) {
+    function ujetGuestListDirCtrl($scope, $controller, $routeParams, dialogService, notificationsService, queryService, ujetGuestFactory) {
+        var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "FirstName", "LastName"]);
+
+        var config = {
+            objectFactory: ujetGuestFactory,
+            editTemplate: "/App_Plugins/uJetSocial/backoffice/guest/edit.html",
+            editSuccessMessage: "Guest updated",
+            editErrorMessage: "Guest could not be updated"
+        };
+
+        if (isNaN(parseInt($routeParams.id, 10))) {
+            config.searchParams = { firstName: $routeParams.id }
+        }
+
         $controller("ujetListCtrl", {
             $scope: $scope,
-            _: _,
             dialogService: dialogService,
             notificationsService: notificationsService,
-            queryService: queryService,
-            config: {
-                objectFactory: ujetGuestFactory,
-                objectParams: ["Id", "Created", "Updated", "Status", "FirstName", "LastName"],
-                editTemplate: "/App_Plugins/uJetSocial/backoffice/guest/edit.html",
-                editSuccessMessage: "Guest updated",
-                editErrorMessage: "Guest could not be updated"
-            }
+            query: query,
+            config: config
         });
     };
 })();

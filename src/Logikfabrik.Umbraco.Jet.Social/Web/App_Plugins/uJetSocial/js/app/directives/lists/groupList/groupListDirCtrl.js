@@ -5,22 +5,28 @@
         .module("umbraco")
         .controller("ujetGroupListDirCtrl", ujetGroupListDirCtrl);
 
-    ujetGroupListDirCtrl.$inject = ["$scope", "$controller", "_", "dialogService", "notificationsService", "queryService", "ujetGroupFactory"];
+    ujetGroupListDirCtrl.$inject = ["$scope", "$controller", "$routeParams", "dialogService", "notificationsService", "queryService", "ujetGroupFactory"];
 
-    function ujetGroupListDirCtrl($scope, $controller, _, dialogService, notificationsService, queryService, ujetGroupFactory) {
+    function ujetGroupListDirCtrl($scope, $controller, $routeParams, dialogService, notificationsService, queryService, ujetGroupFactory) {
+        var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "Name", "Description", "OwnerId"]);
+
+        var config = {
+            objectFactory: ujetGroupFactory,
+            editTemplate: "/App_Plugins/uJetSocial/backoffice/group/edit.html",
+            editSuccessMessage: "Group updated",
+            editErrorMessage: "Group could not be updated"
+        };
+        
+        if (isNaN(parseInt($routeParams.id, 10))) {
+            config.searchParams = { name: $routeParams.id }
+        }
+
         $controller("ujetListCtrl", {
             $scope: $scope,
-            _: _,
             dialogService: dialogService,
             notificationsService: notificationsService,
-            queryService: queryService,
-            config: {
-                objectFactory: ujetGroupFactory,
-                objectParams: ["Id", "Created", "Updated", "Status", "Name", "Description", "OwnerId"],
-                editTemplate: "/App_Plugins/uJetSocial/backoffice/group/edit.html",
-                editSuccessMessage: "Group updated",
-                editErrorMessage: "Group could not be updated"
-            }
+            query: query,
+            config: config
         });
     };
 })();

@@ -5,7 +5,7 @@
         .module("umbraco")
         .controller("ujetListCtrl", ujetListCtrl);
 
-    function ujetListCtrl($scope, _, dialogService, notificationsService, queryService, config) {
+    function ujetListCtrl($scope, dialogService, notificationsService, query, config) {
         var vm = {
             hasObjects: false
         };
@@ -13,10 +13,9 @@
         $scope.vm = vm;
 
         var dialog;
-        var query = queryService.getQuery(config.objectParams);
-
+        
         function search() {
-            config.objectFactory.query(query.compile(config.objectParams)).success(function (data) {
+            config.objectFactory.query(query.compile(config.searchParams)).success(function (data) {
                 vm.objects =
                 {
                     columns: query.orderBy.options,
@@ -33,7 +32,7 @@
         };
 
         function updateObj(obj) {
-            if (!_.isNull(dialog)) {
+            if (dialog !== null) {
                 dialogService.close(dialog);
             }
 
@@ -57,7 +56,7 @@
         });
 
         $scope.$on("selectedRowChanged", function (e, row) {
-            if (!_.isNull(dialog)) {
+            if (dialog !== null) {
                 dialogService.close(dialog);
             }
 
