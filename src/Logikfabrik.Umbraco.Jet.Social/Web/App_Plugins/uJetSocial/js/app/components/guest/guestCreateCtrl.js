@@ -3,14 +3,14 @@
 
     angular
         .module("umbraco")
-        .controller("ujetCommentCreateController", ujetCommentCreateController);
+        .controller("ujetGuestCreateCtrl", ujetGuestCreateCtrl);
 
-    ujetCommentCreateController.$inject = ["$scope", "$location", "notificationsService", "ujetCommentFactory"];
+    ujetGuestCreateCtrl.$inject = ["$scope", "$location", "notificationsService", "ujetGuestFactory"];
 
-    function ujetCommentCreateController($scope, $location, notificationsService, ujetCommentFactory) {
+    function ujetGuestCreateCtrl($scope, $location, notificationsService, ujetGuestFactory) {
         var vm = this;
 
-        vm.comment = {};
+        vm.guest = {};
         vm.create = create;
         vm.cancel = cancel;
 
@@ -19,16 +19,16 @@
                 return;
             }
 
-            ujetCommentFactory.add(vm.comment)
+            ujetGuestFactory.add(vm.guest)
                 .success(function (id) {
-                    notificationsService.success("Comment created");
+                    notificationsService.success("Guest created");
 
-                    $location.path("/uJetSocial/comment/dashboard/-1");
+                    $location.path("/uJetSocial/guest/dashboard/-1");
 
                     close();
                 })
                 .error(function () {
-                    notificationsService.error("Comment could not be created");
+                    notificationsService.error("Guest could not be created");
                 });
         };
 

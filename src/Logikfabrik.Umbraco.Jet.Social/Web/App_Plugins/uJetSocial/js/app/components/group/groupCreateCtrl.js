@@ -3,14 +3,14 @@
 
     angular
         .module("umbraco")
-        .controller("ujetGuestCreateController", ujetGuestCreateController);
+        .controller("ujetGroupCreateCtrl", ujetGroupCreateCtrl);
 
-    ujetGuestCreateController.$inject = ["$scope", "$location", "notificationsService", "ujetGuestFactory"];
+    ujetGroupCreateCtrl.$inject = ["$scope", "$location", "notificationsService", "ujetGroupFactory"];
 
-    function ujetGuestCreateController($scope, $location, notificationsService, ujetGuestFactory) {
+    function ujetGroupCreateCtrl($scope, $location, notificationsService, ujetGroupFactory) {
         var vm = this;
 
-        vm.guest = {};
+        vm.group = {};
         vm.create = create;
         vm.cancel = cancel;
 
@@ -19,16 +19,16 @@
                 return;
             }
 
-            ujetGuestFactory.add(vm.guest)
+            ujetGroupFactory.add(vm.group)
                 .success(function (id) {
-                    notificationsService.success("Guest created");
+                    notificationsService.success("Group created");
 
-                    $location.path("/uJetSocial/guest/dashboard/-1");
+                    $location.path("/uJetSocial/group/dashboard/-1");
 
                     close();
                 })
                 .error(function () {
-                    notificationsService.error("Guest could not be created");
+                    notificationsService.error("Group could not be created");
                 });
         };
 

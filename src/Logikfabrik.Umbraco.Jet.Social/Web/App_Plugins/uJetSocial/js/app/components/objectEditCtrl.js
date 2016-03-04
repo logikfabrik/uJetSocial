@@ -3,11 +3,11 @@
 
     angular
         .module("umbraco")
-        .controller("ujetObjectEditController", ujetObjectEditController);
+        .controller("ujetObjectEditCtrl", ujetObjectEditCtrl);
 
-    ujetObjectEditController.$inject = ["$scope", "_"];
+    ujetObjectEditCtrl.$inject = ["$scope", "_"];
 
-    function ujetObjectEditController($scope, _) {
+    function ujetObjectEditCtrl($scope, _) {
         var vm = this;
 
         vm.object = _.clone($scope.dialogData);

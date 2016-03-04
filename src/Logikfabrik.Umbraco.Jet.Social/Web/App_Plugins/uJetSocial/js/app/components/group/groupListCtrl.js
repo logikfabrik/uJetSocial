@@ -3,11 +3,11 @@
 
     angular
         .module("umbraco")
-        .controller("ujetGroupListController", ujetGroupListController);
+        .controller("ujetGroupListCtrl", ujetGroupListCtrl);
 
-    ujetGroupListController.$inject = ["$routeParams", "navigationService"];
+    ujetGroupListCtrl.$inject = ["$routeParams", "navigationService"];
 
-    function ujetGroupListController($routeParams, navigationService) {
+    function ujetGroupListCtrl($routeParams, navigationService) {
         var vm = this;
 
         vm.params = {

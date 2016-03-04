@@ -33,24 +33,24 @@
         '~/App_Plugins/uJetSocial/js/app/components/dashboard/dashboardController.js',
 		
 		// Comment component
-        '~/App_Plugins/uJetSocial/js/app/components/comment/commentCreateController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/comment/commentDashboardController.js',
+        '~/App_Plugins/uJetSocial/js/app/components/comment/commentCreateCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/components/comment/commentDashboardCtrl.js',
 		
         // Group component
-        '~/App_Plugins/uJetSocial/js/app/components/group/groupCreateController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/group/groupDashboardController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/group/groupListController.js',
+        '~/App_Plugins/uJetSocial/js/app/components/group/groupCreateCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/components/group/groupDashboardCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/components/group/groupListCtrl.js',
 
 		// Guest component
-		'~/App_Plugins/uJetSocial/js/app/components/guest/guestCreateController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/guest/guestDashboardController.js',
-		'~/App_Plugins/uJetSocial/js/app/components/guest/guestListController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/guest/guestCreateCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/components/guest/guestDashboardCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/components/guest/guestListCtrl.js',
 
         // Report component
-		'~/App_Plugins/uJetSocial/js/app/components/report/reportDashboardController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/report/reportDashboardCtrl.js',
 
 		// General components
-		'~/App_Plugins/uJetSocial/js/app/components/objectEditController.js',
+		'~/App_Plugins/uJetSocial/js/app/components/objectEditCtrl.js',
 
         // Directives
 		        

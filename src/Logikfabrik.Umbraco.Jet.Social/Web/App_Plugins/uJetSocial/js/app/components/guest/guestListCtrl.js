@@ -3,11 +3,11 @@
 
     angular
         .module("umbraco")
-        .controller("ujetGuestListController", ujetGuestListController);
+        .controller("ujetGuestListCtrl", ujetGuestListCtrl);
 
-    ujetGuestListController.$inject = ["$routeParams", "navigationService"];
+    ujetGuestListCtrl.$inject = ["$routeParams", "navigationService"];
 
-    function ujetGuestListController($routeParams, navigationService) {
+    function ujetGuestListCtrl($routeParams, navigationService) {
         var vm = this;
 
         vm.params = {
