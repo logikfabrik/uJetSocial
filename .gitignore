@@ -182,3 +182,6 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# Umbraco
+Logikfabrik.Umbraco.Jet.Social.Demo/
