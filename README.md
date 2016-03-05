@@ -1,4 +1,4 @@
-# uJetSocial [![Build status](https://ci.appveyor.com/api/projects/status/ ?svg=true)](https://ci.appveyor.com/project/logikfabrik/ujetsocial)
+# uJetSocial [![Build status](https://ci.appveyor.com/api/projects/status/r9liipj6eaumv9p7?svg=true)](https://ci.appveyor.com/project/logikfabrik/ujetsocial)
 
 Umbraco Jet Social (uJetSocial) is a developer tool for building social applications in Umbraco 7, released as Open Source (MIT).
 
