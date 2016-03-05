@@ -27,15 +27,6 @@ namespace Logikfabrik.Umbraco.Jet.Social
         Transaction GetTransaction();
 
         /// <summary>
-        /// Gets the object of the specified object type using the specified query.
-        /// </summary>
-        /// <typeparam name="T">The object type.</typeparam>
-        /// <param name="sql">The query.</param>
-        /// <returns>The object.</returns>
-        T Get<T>(Sql sql)
-            where T : class;
-
-        /// <summary>
         /// Pages the table of the specified object type for objects.
         /// </summary>
         /// <typeparam name="T">The object type.</typeparam>
