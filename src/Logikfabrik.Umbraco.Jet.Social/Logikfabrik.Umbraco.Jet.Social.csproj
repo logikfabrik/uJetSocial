@@ -379,6 +379,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\css\app\uJetSocial.css" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentDashboardCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\objectCreateCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\pickerDialogCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportCreateCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListDirCtrl.js" />

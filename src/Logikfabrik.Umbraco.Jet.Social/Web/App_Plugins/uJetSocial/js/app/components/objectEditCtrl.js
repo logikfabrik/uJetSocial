@@ -26,7 +26,7 @@
             /*
              * We cannot use the dialog service, as it doesn't allow the dialog to be closed gracefully.
              * As a hack we emit an internal event that Umbraco handles.
-            */
+             */
             $scope.$emit("app.closeDialogs", undefined);
         };
     };

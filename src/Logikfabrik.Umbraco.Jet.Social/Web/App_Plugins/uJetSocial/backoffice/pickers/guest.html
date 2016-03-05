@@ -1,4 +1,4 @@
-﻿<div class="ujet-dialog">
+﻿<div class="ujet-dialog" ng-controller="ujetPickerDialogCtrl as vm">
 
     <h1 class="ujet-dialog__header">Pick a Guest</h1>
 
@@ -11,9 +11,13 @@
                 <ujet-guest-picker></ujet-guest-picker>
 
             </div>
-            
-        </form>
 
+            <div class="btn-toolbar umb-btn-toolbar">
+                <a class="btn btn-link" ng-click="vm.cancel()">Cancel</a>
+            </div>
+
+        </form>
+        
     </umb-pane>
 
 </div>

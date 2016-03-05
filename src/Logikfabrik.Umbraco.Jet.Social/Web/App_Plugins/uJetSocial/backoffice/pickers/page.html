@@ -1,4 +1,4 @@
-﻿<div class="ujet-dialog">
+﻿<div class="ujet-dialog" ng-controller="ujetPickerDialogCtrl as vm">
 
     <h1 class="ujet-dialog__header">Pick a Page</h1>
 
@@ -11,7 +11,7 @@
             </div>
 
             <div class="btn-toolbar umb-btn-toolbar">
-                <input type="submit" value="Save" class="btn btn-primary" ng-click="vm.save(form)" />
+                <a class="btn btn-link" ng-click="vm.cancel()">Cancel</a>
             </div>
 
         </form>

@@ -26,7 +26,7 @@
         var dialog;
 
         function showPicker(type) {
-            if (!_.isNull(dialog)) {
+            if (dialog !== null) {
                 dialogService.close(dialog);
             }
 
@@ -35,12 +35,14 @@
             dialog = dialogService.open({
                 template: template,
                 callback: function (obj) {
-                    if (!_.isNull(dialog)) {
+                    if (dialog !== null) {
                         dialogService.close(dialog);
                     }
 
-                    selectObj(obj);
-
+                    if (obj !== null) {
+                        selectObj(obj);
+                    }
+                    
                     dialog = null;
                 }
             });
