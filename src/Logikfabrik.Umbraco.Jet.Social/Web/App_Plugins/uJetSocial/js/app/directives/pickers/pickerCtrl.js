@@ -44,5 +44,8 @@
 
             search();
         });
+
+        // Do an initial search, displaying hits as the picker has loaded.
+        search();
     };
 })();

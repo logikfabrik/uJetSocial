@@ -16,18 +16,19 @@
     <key alias="reports">Reports</key>
 
     <!-- Properties -->
-    <key alias="entityProp">Entity</key>
-    <key alias="authorProp">Author</key>
+    <key alias="entityIdProp">Entity</key>
+    <key alias="authorIdProp">Author</key>
     <key alias="textProp">Text</key>
     <key alias="nameProp">Name</key>
     <key alias="descriptionProp">Description</key>
-    <key alias="ownerProp">Owner</key>
+    <key alias="ownerIdProp">Owner</key>
     <key alias="firstNameProp">First name</key>
     <key alias="lastNameProp">Last name</key>
     <key alias="emailProp">E-mail</key>
     <key alias="createdProp">Created</key>
     <key alias="updatedProp">Updated</key>
     <key alias="statusProp">Status</key>
+    <key alias="idProp">ID</key>
 
     <!-- Buttons -->
     <key alias="cancelBtn">Cancel</key>
@@ -45,5 +46,7 @@
     <key alias="pickPage">Pick a Page</key>
     <key alias="pickReport">Pick a Report</key>
     <key alias="pickUser">Pick a User</key>
+
+    <key alias="emptyList">The list is empty</key>
   </area>
 </language>

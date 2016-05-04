@@ -4,6 +4,7 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Filters
 {
+    using System.Linq;
     using System.Net.Http;
     using System.Net.Http.Formatting;
     using System.Web.Http;
@@ -24,6 +25,15 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Filters
         /// <param name="context">The context.</param>
         public override void OnException(HttpActionExecutedContext context)
         {
+            var formatters = context.ActionContext.ControllerContext.Configuration.Formatters;
+
+            var formatter = formatters.OfType<JsonMediaTypeFormatter>().FirstOrDefault();
+
+            if (formatter == null)
+            {
+                return;
+            }
+
             var ex = context.Exception;
 
             var response = new HttpResponseMessage
@@ -34,7 +44,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Filters
                         Message = ex.Message,
                         Source = ex.Source,
                         StackTrace = ex.StackTrace
-                    }, new JsonMediaTypeFormatter())
+                    }, formatter)
             };
 
             throw new HttpResponseException(response);

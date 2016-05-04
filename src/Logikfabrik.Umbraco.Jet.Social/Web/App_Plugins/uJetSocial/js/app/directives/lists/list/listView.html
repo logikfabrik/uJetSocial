@@ -4,7 +4,7 @@
         <tr class="ujet-list__header-row">
             <td ng-repeat="column in vm.columns">
                 <a class="ujet-list__header" href="#" ng-click="vm.sort(column)" prevent-default>
-                    {{column}} <i ng-show="column === vm.sortColumn" class="ujet-list__icon icon" ng-class="vm.sortAscending ? 'icon-navigation-up' : 'icon-navigation-down'"></i>
+                    <localize key="{{vm.getColumnLangKey(column)}}">{{column}}</localize> <i ng-show="column === vm.sortColumn" class="ujet-list__icon icon" ng-class="vm.sortAscending ? 'icon-navigation-up' : 'icon-navigation-down'"></i>
                 </a>
             </td>
         </tr>
@@ -13,7 +13,7 @@
     <tbody ng-show="_.size(vm.rows) === 0">
         <tr class="ujet-list__row">
             <td class="ujet-list__column" colspan="{{_.size(vm.columns)}}">
-                No objects to list
+                <localize key="uJetSocial_emptyList">The list is empty</localize>
             </td>
         </tr>
     </tbody>

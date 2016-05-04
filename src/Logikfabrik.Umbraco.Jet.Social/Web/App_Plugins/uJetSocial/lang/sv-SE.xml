@@ -16,18 +16,19 @@
     <key alias="reports">Rapporter</key>
 
     <!-- Properties -->
-    <key alias="entityProp">Entitet</key>
-    <key alias="authorProp">Författare</key>
+    <key alias="entityIdProp">Entitet</key>
+    <key alias="authorIdProp">Författare</key>
     <key alias="textProp">Text</key>
     <key alias="nameProp">Namn</key>
     <key alias="descriptionProp">Beskrivning</key>
-    <key alias="ownerProp">Ägare</key>
+    <key alias="ownerIdProp">Ägare</key>
     <key alias="firstNameProp">Förnamn</key>
     <key alias="lastNameProp">Efternamn</key>
     <key alias="emailProp">E-post</key>
     <key alias="createdProp">Skapad</key>
     <key alias="updatedProp">Uppdaterad</key>
     <key alias="statusProp">Status</key>
+    <key alias="idProp">ID</key>
 
     <!-- Buttons -->
     <key alias="cancelBtn">Avbryt</key>
@@ -45,5 +46,7 @@
     <key alias="pickPage">Välj en sida</key>
     <key alias="pickReport">Välj en rapport</key>
     <key alias="pickUser">Välj en användare</key>
+
+    <key alias="emptyList">Listan är tom</key>
   </area>
 </language>

@@ -15,12 +15,12 @@
 
         function close() {
             /*
-             * The picker dialog is opened from the object picker, which passes its 
-             * options on using the current scope. The picker dialog in turn uses one of 
+             * The picker dialog is opened from the object picker, which passes its
+             * options on using the current scope. The picker dialog in turn uses one of
              * the picker directives (in its template) to display the actual picker.
              *
              * Knowing this we can access the options and call the callback. Calling
-             * the callback without specifying  an object will make the object picker 
+             * the callback without specifying an object will make the object picker
              * to close the current picker dialog, without picking an object.
              */
             $scope.dialogOptions.callback(null);
