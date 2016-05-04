@@ -5,8 +5,10 @@
         <form name="form">
             
             <div class="umb-control-group">
-
-                <label class="control-label" for="">Entity</label>
+                
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_entityProp">Entity</localize>
+                </label>
                 <div class="controls-row">
                     <ujet-object-picker model="vm.object.entityId"
                                         can-pick-page="true"
@@ -18,7 +20,9 @@
                     </ujet-object-picker>
                 </div>
 
-                <label class="control-label" for="">Author</label>
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_authorProp">Author</localize>
+                </label>
                 <div class="controls-row">
                     <ujet-object-picker model="vm.object.authorId"
                                         can-pick-guest="true"
@@ -26,7 +30,9 @@
                     </ujet-object-picker>
                 </div>
 
-                <label class="control-label" for="">Text</label>
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_textProp">Text</localize>
+                </label>
                 <div class="controls-row">
                     <input type="text" required ng-model="vm.object.text" class="input-block-level" />
                 </div>
@@ -34,8 +40,12 @@
             </div>
 
             <div class="btn-toolbar umb-btn-toolbar">
-                <a class="btn btn-link" ng-click="vm.cancel()">Cancel</a>
-                <input type="submit" value="Create" class="btn btn-primary" ng-click="vm.create(form)" />
+                <a class="btn btn-link" ng-click="vm.cancel()">
+                    <localize key="uJetSocial_cancelBtn">Cancel</localize>
+                </a>
+                <button class="btn btn-primary" ng-click="vm.create(form)">
+                    <localize key="uJetSocial_createBtn">Create</localize>
+                </button>
             </div>
             
         </form>

@@ -1,6 +1,7 @@
 ﻿(function () {
     "use strict";
 
+    // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco")
         .controller("ujetGroupListDirCtrl", ujetGroupListDirCtrl);
@@ -16,7 +17,7 @@
             editSuccessMessage: "Group updated",
             editErrorMessage: "Group could not be updated"
         };
-        
+
         if (isNaN(parseInt($routeParams.id, 10))) {
             config.searchParams = { name: $routeParams.id }
         }

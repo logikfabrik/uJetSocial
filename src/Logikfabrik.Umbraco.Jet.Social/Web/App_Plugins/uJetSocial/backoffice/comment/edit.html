@@ -1,6 +1,8 @@
 ﻿<div class="ujet-dialog" ng-controller="ujetObjectEditCtrl as vm">
 
-    <h1 class="ujet-dialog__header">Edit</h1>
+    <h1 class="ujet-dialog__header">
+        <localize key="uJetSocial_edit">Edit</localize>
+    </h1>
 
     <umb-pane>
 
@@ -8,7 +10,9 @@
 
             <div class="umb-control-group">
 
-                <label class="control-label" for="">Entity</label>
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_entityProp">Entity</localize>
+                </label>
                 <div class="controls-row">
                     <ujet-object-picker model="vm.object.entityId"
                                         can-pick-page="true"
@@ -20,7 +24,9 @@
                     </ujet-object-picker>
                 </div>
 
-                <label class="control-label" for="">Author</label>
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_authorProp">Author</localize>
+                </label>
                 <div class="controls-row">
                     <ujet-object-picker model="vm.object.authorId"
                                         can-pick-guest="true"
@@ -28,22 +34,30 @@
                     </ujet-object-picker>
                 </div>
 
-                <label class="control-label" for="">Text</label>
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_textProp">Text</localize>
+                </label>
                 <div class="controls-row">
                     <input type="text" required ng-model="vm.object.text" class="input-block-level"/>
                 </div>
 
-                <label class="control-label" for="">Created</label>
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_createdProp">Created</localize>
+                </label>
                 <div class="controls-row">
                     <ujet-value value="{{vm.object.created}}"></ujet-value>
                 </div>
 
-                <label class="control-label" for="">Updated</label>
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_updatedProp">Updated</localize>
+                </label>
                 <div class="controls-row">
                     <ujet-value value="{{vm.object.updated}}"></ujet-value>
                 </div>
 
-                <label class="control-label" for="">Status</label>
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_statusProp">Status</localize>
+                </label>
                 <div class="controls-row">
                     <ujet-status-picker model="vm.object.status"></ujet-status-picker>
                 </div>
@@ -51,8 +65,12 @@
             </div>
 
             <div class="btn-toolbar umb-btn-toolbar">
-                <input type="submit" value="Save" class="btn btn-primary" ng-click="vm.save(form)"/>
-                <a class="btn btn-link" ng-click="vm.cancel()">Cancel</a>
+                <button class="btn btn-primary" ng-click="vm.save(form)">
+                    <localize key="uJetSocial_saveBtn">Save</localize>
+                </button>
+                <a class="btn btn-link" ng-click="vm.cancel()">
+                    <localize key="uJetSocial_cancelBtn">Cancel</localize>
+                </a>
             </div>
 
         </form>

@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>..\Logikfabrik.Umbraco.Jet.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Logikfabrik.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\Debug\Logikfabrik.Umbraco.Jet.Social.XML</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
@@ -32,7 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>..\Logikfabrik.Umbraco.Jet.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Logikfabrik.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\Release\Logikfabrik.Umbraco.Jet.Social.XML</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
@@ -98,7 +98,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Logikfabrik.Umbraco.Jet, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uJet.4.0.0.0-beta\lib\net45\Logikfabrik.Umbraco.Jet.dll</HintPath>
+      <HintPath>..\packages\uJet.4.0.0.0\lib\net45\Logikfabrik.Umbraco.Jet.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
@@ -331,6 +331,8 @@
     <Compile Include="Web\Controllers\GroupAPIController.cs" />
     <Compile Include="Web\Controllers\IndividualGuestAPIController.cs" />
     <Compile Include="Web\Controllers\ReportAPIController.cs" />
+    <Compile Include="Web\Filters\APIExceptionFilterAttribute.cs" />
+    <Compile Include="Web\Models\APIException.cs" />
     <Compile Include="Web\Models\CommentQuery.cs" />
     <Compile Include="Web\Models\GroupQuery.cs" />
     <Compile Include="Web\Models\IndividualGuestQuery.cs" />
@@ -381,6 +383,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectsPicker\objectsPickerDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectsPicker\objectsPickerView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectsPicker\objectsPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerView.html" />

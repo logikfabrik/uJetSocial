@@ -6,17 +6,23 @@
             
             <div class="umb-control-group">
 
-                <label class="control-label" for="">Name</label>
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_nameProp">Name</localize>
+                </label>
                 <div class="controls-row">
                     <input type="text" required ng-model="vm.object.name" class="input-block-level" />
                 </div>
 
-                <label class="control-label" for="">Description</label>
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_descriptionProp">Description</localize>
+                </label>
                 <div class="controls-row">
                     <input type="text" required ng-model="vm.object.description" class="input-block-level" />
                 </div>
 
-                <label class="control-label" for="">Owner</label>
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_ownerProp">Owner</localize>
+                </label>
                 <div class="controls-row">
                     <ujet-object-picker model="vm.object.ownerId"
                                         can-pick-guest="true"
@@ -27,8 +33,12 @@
             </div>
 
             <div class="btn-toolbar umb-btn-toolbar">
-                <a class="btn btn-link" ng-click="vm.cancel()">Cancel</a>
-                <input type="submit" value="Create" class="btn btn-primary" ng-click="vm.create(form)" />
+                <a class="btn btn-link" ng-click="vm.cancel()">
+                    <localize key="uJetSocial_cancelBtn">Cancel</localize>
+                </a>
+                <button class="btn btn-primary" ng-click="vm.create(form)">
+                    <localize key="uJetSocial_createBtn">Create</localize>
+                </button>
             </div>
             
         </form>

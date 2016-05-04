@@ -1,6 +1,7 @@
 ﻿(function () {
     "use strict";
 
+    // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco")
         .controller("ujetPagerDirCtrl", ujetPagerDirCtrl);
@@ -18,7 +19,7 @@
         };
 
         $scope.vm = vm;
-        
+
         function goToPreviousPage() {
             goToPage(vm.pageIndex - 1);
         };

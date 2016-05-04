@@ -4,21 +4,21 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco")
-        .controller("ujetObjectPickerDirCtrl", ujetObjectPickerDirCtrl);
+        .controller("ujetObjectsPickerDirCtrl", ujetObjectsPickerDirCtrl);
 
-    ujetObjectPickerDirCtrl.$inject = ["$scope", "_", "dialogService", "ujetEntityFactory"];
+    ujetObjectsPickerDirCtrl.$inject = ["$scope", "_", "dialogService", "ujetEntityFactory"];
 
-    function ujetObjectPickerDirCtrl($scope, _, dialogService, ujetEntityFactory) {
+    function ujetObjectsPickerDirCtrl($scope, _, dialogService, ujetEntityFactory) {
         var vm = {
-            objId: $scope.model,
+            objIds: $scope.model,
             canPickPage: $scope.canPickPage,
             canPickComment: $scope.canPickComment,
             canPickGroup: $scope.canPickGroup,
             canPickGuest: $scope.canPickGuest,
             canPickUser: $scope.canPickUser,
             canPickReport: $scope.canPickReport,
-            obj: null,
-            hasObject: false,
+            objs: [],
+            hasObjects: false,
             showPicker: showPicker
         };
 
@@ -50,15 +50,25 @@
         };
 
         function selectObj(obj) {
-            vm.objId = obj.id;
-            vm.obj = obj;
-            vm.hasObject = true;
+            if (_.indexOf(vm.objIds, obj.id) !== -1) {
+                // The object is selected.
+                return;
+            }
+
+            vm.objIds.push(obj.id);
+            vm.objs.push(obj);
+            vm.hasObjects = !_.isEmpty(vm.objIds);
         };
 
-        function deselectObj() {
-            vm.objId = null;
-            vm.obj = null;
-            vm.hasObject = false;
+        function deselectObj(obj) {
+            if (_.indexOf(vm.objIds, obj.id) === -1) {
+                // The object is not selected.
+                return;
+            }
+
+            vm.objIds = _.without(vm.objIds, obj.id);
+            vm.objs.pop(obj);
+            vm.hasObjects = !_.isEmpty(vm.objIds);
         };
 
         function init() {
@@ -71,11 +81,11 @@
             });
         };
 
-        $scope.$on("deleteObject", function (e) {
-            deselectObj();
+        $scope.$on("deleteObject", function (e, obj) {
+            deselectObj(obj);
         });
 
-        $scope.$watch("vm.objId", function (newValue) {
+        $scope.$watch("vm.objIds", function (newValue) {
             $scope.model = newValue;
         });
 

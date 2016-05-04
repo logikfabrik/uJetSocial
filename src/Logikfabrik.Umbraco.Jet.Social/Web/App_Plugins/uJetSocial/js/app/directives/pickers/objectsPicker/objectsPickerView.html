@@ -1,0 +1,41 @@
+﻿<div class="ujet-objects-picker">
+
+    <div ng-if="!vm.hasObjects">
+        <ujet-object ng-repeat="obj in vm.objs" obj="obj" can-delete="true"></ujet-object>
+    </div>
+    
+    <div ng-if="!vm.hasObjects">
+
+        <div class="ujet-objects-picker__header">Choose...</div>
+
+        <ul class="ujet-objects-picker__list">
+
+            <li ng-show="vm.canPickPage">
+                <a class="ujet-objects-picker__picker" href="#" ng-click="vm.showPicker('page')" prevent-default>Page</a>
+            </li>
+
+            <li ng-show="vm.canPickComment">
+                <a class="ujet-objects-picker__picker" href="#" ng-click="vm.showPicker('comment')" prevent-default>Comment</a>
+            </li>
+
+            <li ng-show="vm.canPickGroup">
+                <a class="ujet-objects-picker__picker" href="#" ng-click="vm.showPicker('group')" prevent-default>Group</a>
+            </li>
+
+            <li ng-show="vm.canPickGuest">
+                <a class="ujet-objects-picker__picker" href="#" ng-click="vm.showPicker('guest')" prevent-default>Guest</a>
+            </li>
+
+            <li ng-show="vm.canPickUser">
+                <a class="ujet-objects-picker__picker" href="#" ng-click="vm.showPicker('user')" prevent-default>User</a>
+            </li>
+
+            <li ng-show="vm.canPickReport">
+                <a class="ujet-objects-picker__picker" href="#" ng-click="vm.showPicker('report')" prevent-default>Report</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>

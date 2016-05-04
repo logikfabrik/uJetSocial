@@ -7,7 +7,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     using System;
     using System.Linq.Expressions;
     using System.Web.Http;
-    using global::Umbraco.Web.Editors;
     using Models;
 
     /// <summary>

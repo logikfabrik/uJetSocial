@@ -1,6 +1,7 @@
 ﻿(function () {
     "use strict";
 
+    // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco")
         .controller("ujetListCtrl", ujetListCtrl);
@@ -13,7 +14,7 @@
         $scope.vm = vm;
 
         var dialog;
-        
+
         function search() {
             config.objectFactory.query(query.compile(config.searchParams)).success(function (data) {
                 vm.objects =

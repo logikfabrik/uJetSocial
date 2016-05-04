@@ -1,6 +1,7 @@
 ﻿(function () {
     "use strict";
 
+    // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco")
         .controller("ujetPickerDialogCtrl", ujetPickerDialogCtrl);
@@ -11,7 +12,7 @@
         var vm = this;
 
         vm.cancel = close;
-        
+
         function close() {
             /*
              * The picker dialog is opened from the object picker, which passes its 

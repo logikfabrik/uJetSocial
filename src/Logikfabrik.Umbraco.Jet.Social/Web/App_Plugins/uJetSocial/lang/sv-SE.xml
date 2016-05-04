@@ -4,6 +4,7 @@
     <key alias="uJetSocial">uJetSocial</key>
   </area>
   <area alias="uJetSocial">
+    <!-- Trees -->
     <key alias="commentTree">Kommentarer</key>
     <key alias="groupTree">Grupper</key>
     <key alias="guestTree">Gäster</key>
@@ -14,7 +15,35 @@
     <key alias="guests">Gäster</key>
     <key alias="reports">Rapporter</key>
 
+    <!-- Properties -->
+    <key alias="entityProp">Entitet</key>
+    <key alias="authorProp">Författare</key>
+    <key alias="textProp">Text</key>
+    <key alias="nameProp">Namn</key>
+    <key alias="descriptionProp">Beskrivning</key>
+    <key alias="ownerProp">Ägare</key>
+    <key alias="firstNameProp">Förnamn</key>
+    <key alias="lastNameProp">Efternamn</key>
+    <key alias="emailProp">E-post</key>
+    <key alias="createdProp">Skapad</key>
+    <key alias="updatedProp">Uppdaterad</key>
+    <key alias="statusProp">Status</key>
+
+    <!-- Buttons -->
+    <key alias="cancelBtn">Avbryt</key>
+    <key alias="createBtn">Skapa</key>
+    <key alias="saveBtn">Spara</key>
+
+    <!-- Actions -->
     <key alias="newAction">Skapa</key>
-    <key alias="refreshAction">Ladds om</key>
+    <key alias="refreshAction">Ladda om</key>
+
+    <key alias="edit">Redigera</key>
+    <key alias="pickComment">Välj en kommentar</key>
+    <key alias="pickGroup">Välj en grupp</key>
+    <key alias="pickGuest">Välj en gäst</key>
+    <key alias="pickPage">Välj en sida</key>
+    <key alias="pickReport">Välj en rapport</key>
+    <key alias="pickUser">Välj en användare</key>
   </area>
 </language>

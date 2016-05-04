@@ -4,6 +4,7 @@
     <key alias="uJetSocial">uJetSocial</key>
   </area>
   <area alias="uJetSocial">
+    <!-- Trees -->
     <key alias="commentTree">Comments</key>
     <key alias="groupTree">Groups</key>
     <key alias="guestTree">Guests</key>
@@ -14,7 +15,35 @@
     <key alias="guests">Guests</key>
     <key alias="reports">Reports</key>
 
+    <!-- Properties -->
+    <key alias="entityProp">Entity</key>
+    <key alias="authorProp">Author</key>
+    <key alias="textProp">Text</key>
+    <key alias="nameProp">Name</key>
+    <key alias="descriptionProp">Description</key>
+    <key alias="ownerProp">Owner</key>
+    <key alias="firstNameProp">First name</key>
+    <key alias="lastNameProp">Last name</key>
+    <key alias="emailProp">E-mail</key>
+    <key alias="createdProp">Created</key>
+    <key alias="updatedProp">Updated</key>
+    <key alias="statusProp">Status</key>
+
+    <!-- Buttons -->
+    <key alias="cancelBtn">Cancel</key>
+    <key alias="createBtn">Create</key>
+    <key alias="saveBtn">Save</key>
+
+    <!-- Actions -->
     <key alias="newAction">Create</key>
     <key alias="refreshAction">Reload</key>
+
+    <key alias="edit">Edit</key>
+    <key alias="pickComment">Pick a Comment</key>
+    <key alias="pickGroup">Pick a Group</key>
+    <key alias="pickGuest">Pick a Guest</key>
+    <key alias="pickPage">Pick a Page</key>
+    <key alias="pickReport">Pick a Report</key>
+    <key alias="pickUser">Pick a User</key>
   </area>
 </language>

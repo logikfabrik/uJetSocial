@@ -1,6 +1,7 @@
 ﻿(function () {
     "use strict";
 
+    // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco")
         .controller("ujetObjectDirCtrl", ujetObjectDirCtrl);

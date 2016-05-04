@@ -1,6 +1,7 @@
 ﻿(function () {
     "use strict";
 
+    // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco")
         .controller("ujetObjectCreateCtrl", ujetObjectCreateCtrl);
@@ -11,7 +12,7 @@
             create: create,
             cancel: cancel
         };
-        
+
         $scope.vm = vm;
 
         function create(form) {

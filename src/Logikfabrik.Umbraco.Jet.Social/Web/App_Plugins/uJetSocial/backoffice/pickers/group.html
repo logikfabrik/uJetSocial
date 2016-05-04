@@ -1,6 +1,8 @@
 ﻿<div class="ujet-dialog" ng-controller="ujetPickerDialogCtrl as vm">
 
-    <h1 class="ujet-dialog__header">Pick a Group</h1>
+    <h1 class="ujet-dialog__header">
+        <localize key="uJetSocial_pickGroup">Pick a Group</localize>
+    </h1>
 
     <umb-pane>
 
@@ -13,7 +15,9 @@
             </div>
 
             <div class="btn-toolbar umb-btn-toolbar">
-                <a class="btn btn-link" ng-click="vm.cancel()">Cancel</a>
+                <a class="btn btn-link" ng-click="vm.cancel()">
+                    <localize key="uJetSocial_cancelBtn">Cancel</localize>
+                </a>
             </div>
 
         </form>

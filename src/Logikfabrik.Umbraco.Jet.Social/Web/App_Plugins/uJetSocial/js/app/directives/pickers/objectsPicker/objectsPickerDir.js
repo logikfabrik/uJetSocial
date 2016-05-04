@@ -4,17 +4,17 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco.directives")
-        .directive("ujetObjectPicker", ujetObjectPickerDir);
+        .directive("ujetObjectsPicker", ujetObjectsPickerDir);
 
     /**
-     * Directive for picking one object.
+     * Directive for picking one or more objects.
      * 
-     * @returns {} 
+     * @returns {undefined} 
      */
-    function ujetObjectPickerDir() {
+    function ujetObjectsPickerDir() {
         var directive = {
             restrict: "E",
-            templateUrl: "/App_Plugins/uJetSocial/js/app/directives/pickers/objectPicker/objectPickerView.html",
+            templateUrl: "/App_Plugins/uJetSocial/js/app/directives/pickers/objectsPicker/objectsPickerView.html",
             scope: {
                 model: "=",
                 canPickPage: "=",
@@ -24,7 +24,7 @@
                 canPickUser: "=",
                 canPickReport: "="
             },
-            controller: "ujetObjectPickerDirCtrl"
+            controller: "ujetObjectsPickerDirCtrl"
         };
 
         return directive;
