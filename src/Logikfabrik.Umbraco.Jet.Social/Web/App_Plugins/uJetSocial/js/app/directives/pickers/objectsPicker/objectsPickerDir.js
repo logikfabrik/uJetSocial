@@ -17,11 +17,12 @@
             templateUrl: "/App_Plugins/uJetSocial/js/app/directives/pickers/objectsPicker/objectsPickerView.html",
             scope: {
                 model: "=",
-                canPickPage: "=",
                 canPickComment: "=",
+                canPickDocument: "=",
                 canPickGroup: "=",
                 canPickGuest: "=",
-                canPickUser: "=",
+                canPickMedia: "=",
+                canPickMember: "=",
                 canPickReport: "="
             },
             controller: "ujetObjectsPickerDirCtrl"

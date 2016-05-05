@@ -5,10 +5,12 @@
 		'~/App_Plugins/uJetSocial/js/vendor/moment-2.11.1/moment.js',
 		'~/App_Plugins/uJetSocial/js/vendor/sprintf-1.0.3/sprintf.js',
         
-        // Factories
+        // Dependency factories
         '~/App_Plugins/uJetSocial/js/app/factories/lodashFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/momentFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/sprintfFactory.js',
+
+		// Data factories
 		'~/App_Plugins/uJetSocial/js/app/factories/data/commentFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/entityFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/groupFactory.js',
@@ -17,18 +19,17 @@
 		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoDocumentFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoMediaFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoMemberFactory.js',
-
-
+		
 		// Services
 		'~/App_Plugins/uJetSocial/js/app/services/queryService.js',
 
 		// Filters
 		'~/App_Plugins/uJetSocial/js/app/filters/asCommentFilter.js',
+		'~/App_Plugins/uJetSocial/js/app/filters/asDocumentFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asGroupFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asGuestFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asMediaFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asMemberFilter.js',
-		'~/App_Plugins/uJetSocial/js/app/filters/asDocumentFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asReportFilter.js',
 
 		// Components
@@ -66,7 +67,6 @@
 
 		// Picker directives
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/pickerCtrl.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/pickers/umbracoPickerCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/commentPicker/commentPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/commentPicker/commentPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/documentPicker/documentPickerDir.js',
@@ -75,6 +75,10 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/guestPicker/guestPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/guestPicker/guestPickerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/mediaPicker/mediaPickerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/mediaPicker/mediaPickerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/memberPicker/memberPickerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/memberPicker/memberPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/objectPicker/objectPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/objectPicker/objectPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/reportPicker/reportPickerDir.js',

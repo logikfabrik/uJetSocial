@@ -6,7 +6,7 @@
         .module("umbraco")
         .controller("ujetPickerCtrl", ujetPickerCtrl);
 
-    function ujetPickerCtrl($scope, queryService, config) {
+    function ujetPickerCtrl($scope, queryService, config, callback) {
         var vm = {
             hasObjects: false,
             search: search
@@ -36,7 +36,7 @@
         };
 
         $scope.$on("selectObject", function (e, obj) {
-            $scope.dialogOptions.callback(obj);
+            callback(obj);
         });
 
         $scope.$on("pageIndexChanged", function (e, pageIndex) {

@@ -15,7 +15,8 @@
             config: {
                 objectFactory: ujetGroupFactory,
                 objectParam: "Name"
-            }
+            },
+            callback: $scope.dialogOptions.callback
         });
     };
 })();

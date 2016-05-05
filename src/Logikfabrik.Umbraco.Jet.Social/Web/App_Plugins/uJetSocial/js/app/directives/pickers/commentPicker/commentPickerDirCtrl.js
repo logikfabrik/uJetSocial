@@ -15,7 +15,8 @@
             config: {
                 objectFactory: ujetCommentFactory,
                 objectParam: "Text"
-            }
+            },
+            callback: $scope.dialogOptions.callback
         });
     };
 })();

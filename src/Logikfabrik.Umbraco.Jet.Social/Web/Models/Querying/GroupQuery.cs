@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models.Querying
     /// <summary>
     /// The <see cref="GroupQuery" /> class.
     /// </summary>
-    public class GroupQuery : Query
+    public class GroupQuery : DataTransferObjectQuery
     {
         /// <summary>
         /// Gets or sets the name to query by.

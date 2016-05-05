@@ -15,7 +15,8 @@
             config: {
                 objectFactory: ujetGuestFactory,
                 objectParam: "FirstName"
-            }
+            },
+            callback: $scope.dialogOptions.callback
         });
     };
 })();

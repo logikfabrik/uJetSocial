@@ -1,4 +1,4 @@
-﻿// <copyright file="Query.cs" company="Logikfabrik">
+﻿// <copyright file="DataTransferObjectQuery.cs" company="Logikfabrik">
 //   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
@@ -7,9 +7,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models.Querying
     using System;
 
     /// <summary>
-    /// The <see cref="Query" /> class.
+    /// The <see cref="DataTransferObjectQuery" /> class.
     /// </summary>
-    public abstract class Query
+    public abstract class DataTransferObjectQuery : PagedQuery
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -58,22 +58,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models.Querying
         /// The status.
         /// </value>
         public DataTransferObjectStatuses? Status { get; set; }
-
-        /// <summary>
-        /// Gets or sets the page index.
-        /// </summary>
-        /// <value>
-        /// The page index.
-        /// </value>
-        public int PageIndex { get; set; }
-
-        /// <summary>
-        /// Gets or sets the page size.
-        /// </summary>
-        /// <value>
-        /// The page size.
-        /// </value>
-        public int PageSize { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the property to order by.

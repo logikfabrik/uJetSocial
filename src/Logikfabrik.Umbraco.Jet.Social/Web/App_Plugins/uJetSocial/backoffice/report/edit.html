@@ -15,11 +15,12 @@
                 </label>
                 <div class="controls-row">
                     <ujet-object-picker model="vm.object.entityId"
-                                        can-pick-page="true"
                                         can-pick-comment="true"
+                                        can-pick-document="true"
                                         can-pick-group="true"
                                         can-pick-guest="true"
-                                        can-pick-user="true"
+                                        can-pick-media="true"
+                                        can-pick-member="true"
                                         can-pick-report="true">
                     </ujet-object-picker>
                 </div>
@@ -30,7 +31,7 @@
                 <div class="controls-row">
                     <ujet-object-picker model="vm.object.authorId"
                                         can-pick-guest="true"
-                                        can-pick-user="true">
+                                        can-pick-member="true">
                     </ujet-object-picker>
                 </div>
 

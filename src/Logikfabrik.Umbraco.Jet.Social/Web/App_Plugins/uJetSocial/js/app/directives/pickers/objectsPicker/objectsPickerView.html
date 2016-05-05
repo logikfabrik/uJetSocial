@@ -12,15 +12,15 @@
 
         <ul class="ujet-objects-picker__list">
 
-            <li ng-show="vm.canPickPage">
-                <a class="ujet-objects-picker__picker" href="#" ng-click="vm.showPicker('document')" prevent-default>
-                    <localize key="uJetSocial_document">Document</localize>
-                </a>
-            </li>
-
             <li ng-show="vm.canPickComment">
                 <a class="ujet-objects-picker__picker" href="#" ng-click="vm.showPicker('comment')" prevent-default>
                     <localize key="uJetSocial_comment">Comment</localize>
+                </a>
+            </li>
+
+            <li ng-show="vm.canPickDocument">
+                <a class="ujet-objects-picker__picker" href="#" ng-click="vm.showPicker('document')" prevent-default>
+                    <localize key="uJetSocial_document">Document</localize>
                 </a>
             </li>
 
@@ -36,7 +36,13 @@
                 </a>
             </li>
 
-            <li ng-show="vm.canPickUser">
+            <li ng-show="vm.canPickMedia">
+                <a class="ujet-objects-picker__picker" href="#" ng-click="vm.showPicker('media')" prevent-default>
+                    <localize key="uJetSocial_media">Media</localize>
+                </a>
+            </li>
+
+            <li ng-show="vm.canPickMember">
                 <a class="ujet-objects-picker__picker" href="#" ng-click="vm.showPicker('member')" prevent-default>
                     <localize key="uJetSocial_member">Member</localize>
                 </a>

@@ -11,11 +11,12 @@
     function ujetObjectPickerDirCtrl($scope, _, dialogService, ujetEntityFactory) {
         var vm = {
             objId: $scope.model,
-            canPickPage: $scope.canPickPage,
             canPickComment: $scope.canPickComment,
+            canPickDocument: $scope.canPickDocument,
             canPickGroup: $scope.canPickGroup,
             canPickGuest: $scope.canPickGuest,
-            canPickUser: $scope.canPickUser,
+            canPickMedia: $scope.canPickMedia,
+            canPickMember: $scope.canPickMember,
             canPickReport: $scope.canPickReport,
             obj: null,
             hasObject: false,

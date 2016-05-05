@@ -16,11 +16,12 @@
     <key alias="reports">Reports</key>
 
     <key alias="comment">Comment</key>
+    <key alias="document">Document</key>
     <key alias="group">Group</key>
     <key alias="guest">Guest</key>
-    <key alias="document">Document</key>
-    <key alias="report">Report</key>
+    <key alias="media">Media</key>
     <key alias="member">Member</key>
+    <key alias="report">Report</key>
 
     <!-- Properties -->
     <key alias="entityIdProp">Entity</key>
@@ -47,12 +48,13 @@
     <key alias="refreshAction">Reload</key>
 
     <key alias="edit">Edit</key>
+    <key alias="pickDocument">Pick a Document</key>
     <key alias="pickComment">Pick a Comment</key>
     <key alias="pickGroup">Pick a Group</key>
     <key alias="pickGuest">Pick a Guest</key>
-    <key alias="pickDocument">Pick a Document</key>
-    <key alias="pickReport">Pick a Report</key>
+    <key alias="pickMedia">Pick Media</key>
     <key alias="pickMember">Pick a Member</key>
+    <key alias="pickReport">Pick a Report</key>
 
     <key alias="emptyList">The list is empty</key>
     <key alias="chooseType">Choose...</key>

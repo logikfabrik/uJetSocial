@@ -9,9 +9,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models.Querying
     /// <summary>
     /// The <see cref="QueryResult{T}" /> class.
     /// </summary>
-    /// <typeparam name="T">The data transfer object type.</typeparam>
+    /// <typeparam name="T">The object type.</typeparam>
     public class QueryResult<T>
-        where T : DataTransferObject
     {
         /// <summary>
         /// Gets or sets the total number of objects.

@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models.Querying
     /// <summary>
     /// The <see cref="IndividualGuestQuery" /> class.
     /// </summary>
-    public class IndividualGuestQuery : Query
+    public class IndividualGuestQuery : DataTransferObjectQuery
     {
         /// <summary>
         /// Gets or sets the first name to query by.

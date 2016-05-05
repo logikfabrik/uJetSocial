@@ -339,10 +339,12 @@
     <Compile Include="Web\Models\Querying\CommentQuery.cs" />
     <Compile Include="Web\Models\Querying\GroupQuery.cs" />
     <Compile Include="Web\Models\Querying\IndividualGuestQuery.cs" />
-    <Compile Include="Web\Models\Querying\Query.cs" />
+    <Compile Include="Web\Models\Querying\PagedQuery.cs" />
+    <Compile Include="Web\Models\Querying\DataTransferObjectQuery.cs" />
     <Compile Include="Web\Models\Querying\QueryResult{T}.cs" />
     <Compile Include="Web\JetSocialApplication.cs" />
     <Compile Include="Web\Models\Querying\ReportQuery.cs" />
+    <Compile Include="Web\Models\Querying\UmbracoQuery.cs" />
     <Compile Include="Web\Models\UmbracoDocument.cs" />
     <Compile Include="Web\Models\UmbracoMedia.cs" />
     <Compile Include="Web\Models\UmbracoMember.cs" />
@@ -364,8 +366,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Media\" />
-    <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\mediaPicker\" />
-    <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\memberPicker\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\create.html" />
@@ -376,6 +376,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\comment.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\media.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\member.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\report.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\guest.html" />
@@ -394,10 +395,15 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\documentPicker\documentPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\documentPicker\documentPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\documentPicker\documentPickerView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\mediaPicker\mediaPickerDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\mediaPicker\mediaPickerDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\mediaPicker\mediaPickerView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\memberPicker\memberPickerDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\memberPicker\memberPickerDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\memberPicker\memberPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectsPicker\objectsPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectsPicker\objectsPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectsPicker\objectsPickerDir.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\umbracoPickerCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerView.html" />

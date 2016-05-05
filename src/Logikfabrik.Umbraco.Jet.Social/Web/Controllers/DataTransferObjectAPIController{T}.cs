@@ -75,7 +75,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         /// <param name="query">The query.</param>
         /// <returns>A query.</returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="query" /> is <c>null</c>.</exception>
-        protected Query<T> GetQuery(Query query)
+        protected Query<T> GetQuery(DataTransferObjectQuery query)
         {
             if (query == null)
             {

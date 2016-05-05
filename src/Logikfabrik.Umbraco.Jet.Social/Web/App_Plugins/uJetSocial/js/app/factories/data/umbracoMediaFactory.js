@@ -10,8 +10,13 @@
 
     function ujetUmbracoMediaFactory($http) {
         var factory = {
+            query: query
         };
 
         return factory;
+
+        function query(q) {
+            return $http.post("backoffice/uJetSocial/UmbracoMediaAPI/Query", q);
+        }
     };
 })();

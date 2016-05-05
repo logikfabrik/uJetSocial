@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models.Querying
     /// <summary>
     /// The <see cref="ReportQuery" /> class.
     /// </summary>
-    public class ReportQuery : Query
+    public class ReportQuery : DataTransferObjectQuery
     {
         /// <summary>
         /// Gets or sets the text to query by.
