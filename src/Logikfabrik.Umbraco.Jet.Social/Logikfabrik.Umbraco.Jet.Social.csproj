@@ -331,15 +331,21 @@
     <Compile Include="Web\Controllers\GroupAPIController.cs" />
     <Compile Include="Web\Controllers\IndividualGuestAPIController.cs" />
     <Compile Include="Web\Controllers\ReportAPIController.cs" />
+    <Compile Include="Web\Controllers\UmbracoDocumentAPIController.cs" />
+    <Compile Include="Web\Controllers\UmbracoMediaAPIController.cs" />
+    <Compile Include="Web\Controllers\UmbracoMemberAPIController.cs" />
     <Compile Include="Web\Filters\APIExceptionFilterAttribute.cs" />
     <Compile Include="Web\Models\APIException.cs" />
-    <Compile Include="Web\Models\CommentQuery.cs" />
-    <Compile Include="Web\Models\GroupQuery.cs" />
-    <Compile Include="Web\Models\IndividualGuestQuery.cs" />
-    <Compile Include="Web\Models\Query.cs" />
-    <Compile Include="Web\Models\QueryResult{T}.cs" />
+    <Compile Include="Web\Models\Querying\CommentQuery.cs" />
+    <Compile Include="Web\Models\Querying\GroupQuery.cs" />
+    <Compile Include="Web\Models\Querying\IndividualGuestQuery.cs" />
+    <Compile Include="Web\Models\Querying\Query.cs" />
+    <Compile Include="Web\Models\Querying\QueryResult{T}.cs" />
     <Compile Include="Web\JetSocialApplication.cs" />
-    <Compile Include="Web\Models\ReportQuery.cs" />
+    <Compile Include="Web\Models\Querying\ReportQuery.cs" />
+    <Compile Include="Web\Models\UmbracoDocument.cs" />
+    <Compile Include="Web\Models\UmbracoMedia.cs" />
+    <Compile Include="Web\Models\UmbracoMember.cs" />
     <Compile Include="Web\Trees\CommentTreeController.cs" />
     <Compile Include="Web\Trees\GroupTreeController.cs" />
     <Compile Include="Web\Trees\GuestTreeController.cs" />
@@ -358,6 +364,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Media\" />
+    <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\mediaPicker\" />
+    <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\memberPicker\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\create.html" />
@@ -383,12 +391,19 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\documentPicker\documentPickerDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\documentPicker\documentPickerDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\documentPicker\documentPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectsPicker\objectsPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectsPicker\objectsPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectsPicker\objectsPickerDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\umbracoPickerCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\umbracoMemberFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\umbracoMediaFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\umbracoDocumentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\commentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentCreateCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\dashboard\dashboardController.js" />
@@ -442,6 +457,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\sprintfFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\momentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\lodashFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asMediaFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asDocumentFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asMemberFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asReportFilter.js" />

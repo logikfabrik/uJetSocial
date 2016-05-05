@@ -8,7 +8,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     using System.Web.Http;
     using global::Umbraco.Web.Mvc;
     using Individual;
-    using Models;
+    using Models.Querying;
 
     /// <summary>
     /// The <see cref="IndividualGuestAPIController" /> class.

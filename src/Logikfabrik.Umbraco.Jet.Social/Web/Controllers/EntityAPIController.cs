@@ -44,6 +44,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
             _database = new Lazy<IDatabaseWrapper>(database);
         }
 
+        /// <summary>
+        /// Gets the type of the entity with the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>The type of the entity with the specified identifier.</returns>
         [HttpGet]
         public object GetType(int id)
         {

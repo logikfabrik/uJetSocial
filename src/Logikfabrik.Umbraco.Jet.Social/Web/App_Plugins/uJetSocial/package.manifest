@@ -14,6 +14,9 @@
 		'~/App_Plugins/uJetSocial/js/app/factories/data/groupFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/guestFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/reportFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoDocumentFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoMediaFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoMemberFactory.js',
 
 
 		// Services
@@ -23,6 +26,7 @@
 		'~/App_Plugins/uJetSocial/js/app/filters/asCommentFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asGroupFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asGuestFilter.js',
+		'~/App_Plugins/uJetSocial/js/app/filters/asMediaFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asMemberFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asDocumentFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asReportFilter.js',
@@ -62,8 +66,11 @@
 
 		// Picker directives
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/pickerCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/umbracoPickerCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/commentPicker/commentPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/commentPicker/commentPickerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/documentPicker/documentPickerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/documentPicker/documentPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/groupPicker/groupPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/guestPicker/guestPickerDir.js',

@@ -7,7 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     using System;
     using System.Linq.Expressions;
     using System.Web.Http;
-    using Models;
+    using Models.Querying;
 
     /// <summary>
     /// The <see cref="DataTransferObjectAPIController{T}" /> class.
