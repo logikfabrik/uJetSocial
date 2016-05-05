@@ -289,6 +289,8 @@
     <Compile Include="Comment\CommentProvider.cs" />
     <Compile Include="Contact\Contact.cs" />
     <Compile Include="Contact\ContactProvider.cs" />
+    <Compile Include="ContentLookup.cs" />
+    <Compile Include="DatabaseWrapperFactory.cs" />
     <Compile Include="Document\Document.cs" />
     <Compile Include="Document\DocumentProvider.cs" />
     <Compile Include="ForeignKeyAttribute.cs" />
@@ -306,6 +308,7 @@
     <Compile Include="Group\GroupMembership.cs" />
     <Compile Include="Group\GroupMembershipProvider.cs" />
     <Compile Include="IAuthorable.cs" />
+    <Compile Include="IContentLookup.cs" />
     <Compile Include="IDatabaseWrapper.cs" />
     <Compile Include="IDataTransferObjectProvider.cs" />
     <Compile Include="IDataTransferObjectProvider{T}.cs" />
@@ -324,6 +327,7 @@
     <Compile Include="Report\Report.cs" />
     <Compile Include="Report\ReportProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UmbracoNodeObjectTypes.cs" />
     <Compile Include="Web\Controllers\APIController.cs" />
     <Compile Include="Web\Controllers\CommentAPIController.cs" />
     <Compile Include="Web\Controllers\EntityAPIController.cs" />

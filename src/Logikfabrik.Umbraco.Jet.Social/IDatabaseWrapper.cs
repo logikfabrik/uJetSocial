@@ -4,6 +4,7 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social
 {
+    using System.Collections.Generic;
     using global::Umbraco.Core.Persistence;
     using global::Umbraco.Core.Persistence.SqlSyntax;
 
@@ -35,6 +36,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <param name="sql">The query.</param>
         /// <returns>A table page.</returns>
         Page<T> Page<T>(int pageIndex, int pageSize, Sql sql)
+            where T : class;
+
+        IEnumerable<T> Fetch<T>(Sql sql)
             where T : class;
 
         /// <summary>

@@ -8,9 +8,6 @@ namespace Logikfabrik.Umbraco.Jet.Social
     using Comment;
     using Contact;
     using Document;
-    using global::Umbraco.Core;
-    using global::Umbraco.Core.Logging;
-    using global::Umbraco.Core.ObjectResolution;
     using Group;
     using Individual;
     using Report;
@@ -49,22 +46,15 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <returns>The default providers.</returns>
         private static DataTransferObjectProviderDictionary GetDefaultProviders()
         {
-            Func<IDatabaseWrapper> database = () =>
-            {
-                var context = ApplicationContext.Current.DatabaseContext;
-
-                return new DatabaseWrapper(context.Database, ResolverBase<LoggerResolver>.Current.Logger, context.SqlSyntax);
-            };
-
             return new DataTransferObjectProviderDictionary
             {
-                { typeof(Comment.Comment), new CommentProvider(database) },
-                { typeof(Contact.Contact), new ContactProvider(database) },
-                { typeof(Document.Document), new DocumentProvider(database) },
-                { typeof(Group.Group), new GroupProvider(database) },
-                { typeof(IndividualGuest), new IndividualGuestProvider(database) },
-                { typeof(IndividualMember), new IndividualMemberProvider(database) },
-                { typeof(Report.Report), new ReportProvider(database) }
+                { typeof(Comment.Comment), new CommentProvider(DatabaseWrapperFactory.GetDatabase) },
+                { typeof(Contact.Contact), new ContactProvider(DatabaseWrapperFactory.GetDatabase) },
+                { typeof(Document.Document), new DocumentProvider(DatabaseWrapperFactory.GetDatabase) },
+                { typeof(Group.Group), new GroupProvider(DatabaseWrapperFactory.GetDatabase) },
+                { typeof(IndividualGuest), new IndividualGuestProvider(DatabaseWrapperFactory.GetDatabase) },
+                { typeof(IndividualMember), new IndividualMemberProvider(DatabaseWrapperFactory.GetDatabase) },
+                { typeof(Report.Report), new ReportProvider(DatabaseWrapperFactory.GetDatabase) }
             };
         }
     }

@@ -5,6 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social
 {
     using System;
+    using System.Collections.Generic;
     using global::Umbraco.Core.Logging;
     using global::Umbraco.Core.Persistence;
     using global::Umbraco.Core.Persistence.SqlSyntax;
@@ -79,6 +80,17 @@ namespace Logikfabrik.Umbraco.Jet.Social
             pageIndex++;
 
             return _database.Page<T>(pageIndex, pageSize, sql);
+        }
+
+        public IEnumerable<T> Fetch<T>(Sql sql)
+            where T : class
+        {
+            if (sql == null)
+            {
+                throw new ArgumentNullException(nameof(sql));
+            }
+
+            return _database.Fetch<T>(sql);
         }
 
         /// <summary>

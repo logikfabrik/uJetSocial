@@ -6,8 +6,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
     using System;
     using System.Web.Http;
-    using global::Umbraco.Core.Logging;
-    using global::Umbraco.Core.ObjectResolution;
     using global::Umbraco.Core.Persistence;
     using global::Umbraco.Web.Mvc;
 
@@ -25,7 +23,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         /// Initializes a new instance of the <see cref="EntityAPIController" /> class.
         /// </summary>
         public EntityAPIController()
-            : this(GetDatabase())
+            : this(DatabaseWrapperFactory.GetDatabase)
         {
         }
 
@@ -78,13 +76,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
                 type.Name,
                 type.FullName
             };
-        }
-
-        private static Func<IDatabaseWrapper> GetDatabase()
-        {
-            var context = global::Umbraco.Core.ApplicationContext.Current.DatabaseContext;
-
-            return () => new DatabaseWrapper(context.Database, ResolverBase<LoggerResolver>.Current.Logger, context.SqlSyntax);
         }
     }
 }

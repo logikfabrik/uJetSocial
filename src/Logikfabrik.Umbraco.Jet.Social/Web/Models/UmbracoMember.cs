@@ -9,5 +9,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models
     /// </summary>
     public class UmbracoMember
     {
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public string Name { get; set; }
     }
 }
