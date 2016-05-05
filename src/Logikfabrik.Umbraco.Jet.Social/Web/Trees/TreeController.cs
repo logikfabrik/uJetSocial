@@ -5,8 +5,10 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 {
     using System;
+    using System.Globalization;
     using System.Net.Http.Formatting;
     using System.Reflection;
+    using global::Umbraco.Core.Models;
     using global::Umbraco.Core.Services;
     using global::Umbraco.Web.Models.Trees;
     using global::Umbraco.Web.Trees;
@@ -16,6 +18,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
     /// </summary>
     public abstract class TreeController : global::Umbraco.Web.Trees.TreeController
     {
+        private readonly ILocalizedTextService _localizedTextService;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TreeController" /> class.
         /// </summary>
@@ -28,7 +32,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
                 throw new ArgumentNullException(nameof(localizedTextService));
             }
 
-            LocalizedTextService = localizedTextService;
+            _localizedTextService = localizedTextService;
 
             RootNodeRendering += OnRootNodeRendering;
         }
@@ -36,7 +40,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         /// <summary>
         /// Gets the root node display name.
         /// </summary>
-        public override string RootNodeDisplayName => LocalizedTextService.Localize($"{TreeApplicationAlias}/{TreeAlias}Tree");
+        public override string RootNodeDisplayName => Localize($"{TreeApplicationAlias}/{TreeAlias}Tree");
 
         /// <summary>
         /// Gets a value indicating whether this instance has children.
@@ -61,14 +65,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         /// The root icon.
         /// </value>
         protected virtual string RootIcon => string.Empty;
-
-        /// <summary>
-        /// Gets the localized text service.
-        /// </summary>
-        /// <value>
-        /// The localized text service.
-        /// </value>
-        protected ILocalizedTextService LocalizedTextService { get; }
 
         /// <summary>
         /// Gets the tree application alias.
@@ -131,9 +127,28 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
             return new TreeNodeCollection();
         }
 
+        /// <summary>
+        /// Localizes the specified key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns>The specified key localized.</returns>
+        protected string Localize(string key)
+        {
+            return _localizedTextService.Localize(key, GetUICulture());
+        }
+
         private string GetRoutePath()
         {
             return $"/{TreeApplicationAlias}/{TreeAlias}/dashboard/-1";
+        }
+
+        /// <summary>
+        /// Gets the UI culture for the current user.
+        /// </summary>
+        /// <returns>The UI culture for the current user.</returns>
+        private CultureInfo GetUICulture()
+        {
+            return Security.CurrentUser.GetUserCulture(_localizedTextService);
         }
 
         private void OnRootNodeRendering(TreeControllerBase sender, TreeNodeRenderingEventArgs e)

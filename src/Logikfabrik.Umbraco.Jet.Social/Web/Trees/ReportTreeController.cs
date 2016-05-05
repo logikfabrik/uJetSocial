@@ -61,8 +61,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 
             var menu = new MenuItemCollection();
 
-            menu.Items.Add<ActionNew>(LocalizedTextService.Localize($"{TreeApplicationAlias}/newAction"));
-            menu.Items.Add<ActionRefresh>(LocalizedTextService.Localize($"{TreeApplicationAlias}/refreshAction"), true);
+            menu.Items.Add<ActionNew>(Localize($"{TreeApplicationAlias}/newAction"));
+            menu.Items.Add<ActionRefresh>(Localize($"{TreeApplicationAlias}/refreshAction"), true);
 
             return menu;
         }
