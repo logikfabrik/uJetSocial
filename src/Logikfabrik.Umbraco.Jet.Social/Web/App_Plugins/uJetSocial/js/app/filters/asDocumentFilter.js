@@ -4,11 +4,11 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco.resources")
-        .filter("ujetAsPage", ujetAsPageFilter);
+        .filter("ujetAsPage", ujetAsDocumentFilter);
 
-    function ujetAsPageFilter() {
+    function ujetAsDocumentFilter() {
         return function (obj) {
-            obj.label = "Page";
+            obj.label = "Document";
 
             return obj;
         };

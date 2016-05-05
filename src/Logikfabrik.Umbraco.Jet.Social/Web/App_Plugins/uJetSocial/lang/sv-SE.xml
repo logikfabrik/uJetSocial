@@ -15,6 +15,13 @@
     <key alias="guests">Gäster</key>
     <key alias="reports">Rapporter</key>
 
+    <key alias="comment">Kommentar</key>
+    <key alias="group">Grupp</key>
+    <key alias="guest">Gäst</key>
+    <key alias="document">Dokument</key>
+    <key alias="report">Rapport</key>
+    <key alias="member">Medlem</key>
+
     <!-- Properties -->
     <key alias="entityIdProp">Entitet</key>
     <key alias="authorIdProp">Författare</key>
@@ -43,10 +50,11 @@
     <key alias="pickComment">Välj en kommentar</key>
     <key alias="pickGroup">Välj en grupp</key>
     <key alias="pickGuest">Välj en gäst</key>
-    <key alias="pickPage">Välj en sida</key>
+    <key alias="pickDocument">Välj ett dokument</key>
     <key alias="pickReport">Välj en rapport</key>
-    <key alias="pickUser">Välj en användare</key>
+    <key alias="pickMember">Välj en medlem</key>
 
     <key alias="emptyList">Listan är tom</key>
+    <key alias="chooseType">Välj...</key>
   </area>
 </language>

@@ -24,7 +24,7 @@
 		'~/App_Plugins/uJetSocial/js/app/filters/asGroupFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asGuestFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asMemberFilter.js',
-		'~/App_Plugins/uJetSocial/js/app/filters/asPageFilter.js',
+		'~/App_Plugins/uJetSocial/js/app/filters/asDocumentFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asReportFilter.js',
 
 		// Components

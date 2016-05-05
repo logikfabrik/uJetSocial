@@ -368,10 +368,10 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\comment.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\user.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\member.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\report.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\guest.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\page.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\document.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\group.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\dashboard.html" />
@@ -442,7 +442,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\sprintfFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\momentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\lodashFactory.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asPageFilter.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asDocumentFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asMemberFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asReportFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asCommentFilter.js" />

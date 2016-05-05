@@ -4,32 +4,46 @@
 
     <div ng-if="!vm.hasObject">
 
-        <div class="ujet-object-picker__header">Choose...</div>
+        <div class="ujet-object-picker__header">
+            <localize key="uJetSocial_chooseType">Choose...</localize>
+        </div>
 
         <ul class="ujet-object-picker__list">
 
             <li ng-show="vm.canPickPage">
-                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('page')" prevent-default>Page</a>
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('document')" prevent-default>
+                    <localize key="uJetSocial_document">Document</localize>
+                </a>
             </li>
 
             <li ng-show="vm.canPickComment">
-                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('comment')" prevent-default>Comment</a>
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('comment')" prevent-default>
+                    <localize key="uJetSocial_comment">Comment</localize>
+                </a>
             </li>
 
             <li ng-show="vm.canPickGroup">
-                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('group')" prevent-default>Group</a>
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('group')" prevent-default>
+                    <localize key="uJetSocial_group">Group</localize>
+                </a>
             </li>
 
             <li ng-show="vm.canPickGuest">
-                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('guest')" prevent-default>Guest</a>
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('guest')" prevent-default>
+                    <localize key="uJetSocial_guest">Guest</localize>
+                </a>
             </li>
 
             <li ng-show="vm.canPickUser">
-                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('user')" prevent-default>User</a>
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('member')" prevent-default>
+                    <localize key="uJetSocial_member">Member</localize>
+                </a>
             </li>
 
             <li ng-show="vm.canPickReport">
-                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('report')" prevent-default>Report</a>
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('report')" prevent-default>
+                    <localize key="uJetSocial_report">Report</localize>
+                </a>
             </li>
 
         </ul>
