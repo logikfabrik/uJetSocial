@@ -38,6 +38,12 @@ namespace Logikfabrik.Umbraco.Jet.Social
         Page<T> Page<T>(int pageIndex, int pageSize, Sql sql)
             where T : class;
 
+        /// <summary>
+        /// Fetches object using the specified query.
+        /// </summary>
+        /// <typeparam name="T">The object type.</typeparam>
+        /// <param name="sql">The query.</param>
+        /// <returns>The objects.</returns>
         IEnumerable<T> Fetch<T>(Sql sql)
             where T : class;
 

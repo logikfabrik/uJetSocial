@@ -5,11 +5,11 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
     using System;
-    using System.Linq;
-    using System.Web.Http;
+    using System.Collections.Generic;
+    using System.Xml.XPath;
+    using global::Umbraco.Core.Models;
     using global::Umbraco.Web.Mvc;
     using Models;
-    using Models.Querying;
 
     /// <summary>
     /// The <see cref="UmbracoMediaAPIController" /> class.
@@ -17,7 +17,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     [PluginController("uJetSocial")]
 
     // ReSharper disable once InconsistentNaming
-    public class UmbracoMediaAPIController : APIController
+    public class UmbracoMediaAPIController : UmbracoContentAPIController<UmbracoMedia>
     {
         private readonly IContentLookup _contentLookup;
 
@@ -45,29 +45,13 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         }
 
         /// <summary>
-        /// Queries Umbraco for media.
+        /// Gets content by selection criteria.
         /// </summary>
-        /// <param name="query">The query.</param>
-        /// <returns>Matching Umbraco media.</returns>
-        [HttpPost]
-        public QueryResult<UmbracoMedia> Query(UmbracoQuery query)
+        /// <param name="expression">The selection criteria.</param>
+        /// <returns>The content matching the selection criteria.</returns>
+        protected override IEnumerable<IPublishedContent> Lookup(XPathExpression expression)
         {
-            // TODO: Update XPath expression.
-            const string xPath = "xPath";
-
-            var documents = _contentLookup.GetMediaByXPath(xPath);
-
-            var items = documents
-                .Skip(query.PageIndex * query.PageSize)
-                .Take(query.PageSize)
-                .Select(media => new UmbracoMedia())
-                .ToArray();
-
-            return new QueryResult<UmbracoMedia>
-            {
-                Objects = items,
-                Total = items.Length
-            };
+            return _contentLookup.GetMediaByXPath(expression);
         }
     }
 }

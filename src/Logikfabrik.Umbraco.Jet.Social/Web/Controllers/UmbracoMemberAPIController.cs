@@ -5,11 +5,11 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
     using System;
-    using System.Linq;
-    using System.Web.Http;
+    using System.Collections.Generic;
+    using System.Xml.XPath;
+    using global::Umbraco.Core.Models;
     using global::Umbraco.Web.Mvc;
     using Models;
-    using Models.Querying;
 
     /// <summary>
     /// The <see cref="UmbracoMemberAPIController" /> class.
@@ -17,7 +17,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     [PluginController("uJetSocial")]
 
     // ReSharper disable once InconsistentNaming
-    public class UmbracoMemberAPIController : APIController
+    public class UmbracoMemberAPIController : UmbracoContentAPIController<UmbracoMember>
     {
         private readonly IContentLookup _contentLookup;
 
@@ -45,29 +45,13 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         }
 
         /// <summary>
-        /// Queries Umbraco for members.
+        /// Gets content by selection criteria.
         /// </summary>
-        /// <param name="query">The query.</param>
-        /// <returns>Matching Umbraco members.</returns>
-        [HttpPost]
-        public QueryResult<UmbracoMember> Query(UmbracoQuery query)
+        /// <param name="expression">The selection criteria.</param>
+        /// <returns>The content matching the selection criteria.</returns>
+        protected override IEnumerable<IPublishedContent> Lookup(XPathExpression expression)
         {
-            // TODO: Update XPath expression.
-            const string xPath = "xPath";
-
-            var documents = _contentLookup.GetMembersByXPath(xPath);
-
-            var items = documents
-                .Skip(query.PageIndex * query.PageSize)
-                .Take(query.PageSize)
-                .Select(member => new UmbracoMember())
-                .ToArray();
-
-            return new QueryResult<UmbracoMember>
-            {
-                Objects = items,
-                Total = items.Length
-            };
+            return _contentLookup.GetMembersByXPath(expression);
         }
     }
 }

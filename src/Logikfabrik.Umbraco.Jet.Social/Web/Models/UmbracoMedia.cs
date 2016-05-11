@@ -7,14 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models
     /// <summary>
     /// The <see cref="UmbracoMedia" /> class.
     /// </summary>
-    public class UmbracoMedia
+    public class UmbracoMedia : UmbracoContent
     {
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
-        public string Name { get; set; }
     }
 }

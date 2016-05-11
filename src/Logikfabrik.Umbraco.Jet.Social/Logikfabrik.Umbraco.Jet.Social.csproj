@@ -290,6 +290,7 @@
     <Compile Include="Contact\Contact.cs" />
     <Compile Include="Contact\ContactProvider.cs" />
     <Compile Include="ContentLookup.cs" />
+    <Compile Include="ContentLookupExpressionBuilder.cs" />
     <Compile Include="DatabaseWrapperFactory.cs" />
     <Compile Include="Document\Document.cs" />
     <Compile Include="Document\DocumentProvider.cs" />
@@ -335,6 +336,7 @@
     <Compile Include="Web\Controllers\GroupAPIController.cs" />
     <Compile Include="Web\Controllers\IndividualGuestAPIController.cs" />
     <Compile Include="Web\Controllers\ReportAPIController.cs" />
+    <Compile Include="Web\Controllers\UmbracoContentAPIController{T}.cs" />
     <Compile Include="Web\Controllers\UmbracoDocumentAPIController.cs" />
     <Compile Include="Web\Controllers\UmbracoMediaAPIController.cs" />
     <Compile Include="Web\Controllers\UmbracoMemberAPIController.cs" />
@@ -349,6 +351,7 @@
     <Compile Include="Web\JetSocialApplication.cs" />
     <Compile Include="Web\Models\Querying\ReportQuery.cs" />
     <Compile Include="Web\Models\Querying\UmbracoQuery.cs" />
+    <Compile Include="Web\Models\UmbracoContent.cs" />
     <Compile Include="Web\Models\UmbracoDocument.cs" />
     <Compile Include="Web\Models\UmbracoMedia.cs" />
     <Compile Include="Web\Models\UmbracoMember.cs" />

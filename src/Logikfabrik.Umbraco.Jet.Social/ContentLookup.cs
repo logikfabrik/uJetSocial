@@ -9,6 +9,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
     using System.Linq;
     using System.Text;
     using System.Xml;
+    using System.Xml.XPath;
     using global::Umbraco.Core.Models;
     using global::Umbraco.Core.Persistence;
     using Jet.Web.Data;
@@ -55,17 +56,17 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <summary>
         /// Gets documents by selection criteria.
         /// </summary>
-        /// <param name="xPath">The selection criteria.</param>
+        /// <param name="expression">The selection criteria.</param>
         /// <returns>The documents matching the selection criteria.</returns>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="xPath" /> is <c>null</c> or white space.</exception>
-        public IEnumerable<IPublishedContent> GetDocumentsByXPath(string xPath)
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="expression" /> is <c>null</c></exception>
+        public IEnumerable<IPublishedContent> GetDocumentsByXPath(XPathExpression expression)
         {
-            if (string.IsNullOrWhiteSpace(xPath))
+            if (expression == null)
             {
-                throw new ArgumentException("Selection criteria cannot be null or white space.", nameof(xPath));
+                throw new ArgumentNullException(nameof(expression));
             }
 
-            var identifiers = GetNodeIdentifiers(UmbracoNodeObjectTypes.Document, xPath);
+            var identifiers = GetNodeIdentifiers(UmbracoNodeObjectTypes.Document, expression);
 
             return identifiers.Select(id => _umbracoHelper.TypedDocument(id));
         }
@@ -73,17 +74,17 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <summary>
         /// Gets media by selection criteria.
         /// </summary>
-        /// <param name="xPath">The selection criteria.</param>
+        /// <param name="expression">The selection criteria.</param>
         /// <returns>The media matching the selection criteria.</returns>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="xPath" /> is <c>null</c> or white space.</exception>
-        public IEnumerable<IPublishedContent> GetMediaByXPath(string xPath)
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="expression" /> is <c>null</c></exception>
+        public IEnumerable<IPublishedContent> GetMediaByXPath(XPathExpression expression)
         {
-            if (string.IsNullOrWhiteSpace(xPath))
+            if (expression == null)
             {
-                throw new ArgumentException("Selection criteria cannot be null or white space.", nameof(xPath));
+                throw new ArgumentNullException(nameof(expression));
             }
 
-            var identifiers = GetNodeIdentifiers(UmbracoNodeObjectTypes.Media, xPath);
+            var identifiers = GetNodeIdentifiers(UmbracoNodeObjectTypes.Media, expression);
 
             return identifiers.Select(id => _umbracoHelper.TypedMedia(id));
         }
@@ -91,27 +92,26 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <summary>
         /// Gets members by selection criteria.
         /// </summary>
-        /// <param name="xPath">The selection criteria.</param>
+        /// <param name="expression">The selection criteria.</param>
         /// <returns>The members matching the selection criteria.</returns>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="xPath" /> is <c>null</c> or white space.</exception>
-        public IEnumerable<IPublishedContent> GetMembersByXPath(string xPath)
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="expression" /> is <c>null</c></exception>
+        public IEnumerable<IPublishedContent> GetMembersByXPath(XPathExpression expression)
         {
-            if (string.IsNullOrWhiteSpace(xPath))
+            if (expression == null)
             {
-                throw new ArgumentException("Selection criteria cannot be null or white space.", nameof(xPath));
+                throw new ArgumentNullException(nameof(expression));
             }
 
-            var identifiers = GetNodeIdentifiers(UmbracoNodeObjectTypes.Member, xPath);
+            var identifiers = GetNodeIdentifiers(UmbracoNodeObjectTypes.Member, expression);
 
             return identifiers.Select(id => _umbracoHelper.TypedMember(id));
         }
 
-        private IEnumerable<int> GetNodeIdentifiers(string umbracoNodeObjectType, string xPath)
+        private IEnumerable<int> GetNodeIdentifiers(string umbracoNodeObjectType, XPathExpression expression)
         {
             var xml = GetPublishedXml(umbracoNodeObjectType);
 
-            // TODO: Find the bug in this code. Will produce 0 hits.
-            var iterator = xml.CreateNavigator().Select(xPath);
+            var iterator = xml.CreateNavigator().Select(expression);
 
             while (iterator.MoveNext())
             {
@@ -128,18 +128,20 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
         private XmlDocument GetPublishedXml(string umbracoNodeObjectType)
         {
-            var xml = new XmlDocument();
-
-            xml.AppendChild(xml.CreateElement("nodes"));
-
             var builder = new StringBuilder();
+
+            builder.Append("<nodes>");
 
             foreach (var row in _database.Value.Fetch<dynamic>(new Sql("SELECT xml FROM cmsContentXml WHERE nodeId IN (SELECT id FROM umbracoNode WHERE nodeObjectType = @nodeObjectType)", new { nodeObjectType = Guid.Parse(umbracoNodeObjectType) })))
             {
                 builder.Append(row.xml);
             }
 
-            xml.FirstChild.InnerXml = builder.ToString();
+            builder.Append("</nodes>");
+
+            var xml = new XmlDocument();
+
+            xml.LoadXml(builder.ToString());
 
             return xml;
         }

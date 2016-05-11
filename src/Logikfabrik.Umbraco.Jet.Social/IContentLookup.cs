@@ -5,6 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social
 {
     using System.Collections.Generic;
+    using System.Xml.XPath;
     using global::Umbraco.Core.Models;
 
     /// <summary>
@@ -15,22 +16,22 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <summary>
         /// Gets documents by selection criteria.
         /// </summary>
-        /// <param name="xPath">The selection criteria.</param>
+        /// <param name="expression">The selection criteria.</param>
         /// <returns>The documents matching the selection criteria.</returns>
-        IEnumerable<IPublishedContent> GetDocumentsByXPath(string xPath);
+        IEnumerable<IPublishedContent> GetDocumentsByXPath(XPathExpression expression);
 
         /// <summary>
         /// Gets media by selection criteria.
         /// </summary>
-        /// <param name="xPath">The selection criteria.</param>
+        /// <param name="expression">The selection criteria.</param>
         /// <returns>The media matching the selection criteria.</returns>
-        IEnumerable<IPublishedContent> GetMediaByXPath(string xPath);
+        IEnumerable<IPublishedContent> GetMediaByXPath(XPathExpression expression);
 
         /// <summary>
         /// Gets members by selection criteria.
         /// </summary>
-        /// <param name="xPath">The selection criteria.</param>
+        /// <param name="expression">The selection criteria.</param>
         /// <returns>The members matching the selection criteria.</returns>
-        IEnumerable<IPublishedContent> GetMembersByXPath(string xPath);
+        IEnumerable<IPublishedContent> GetMembersByXPath(XPathExpression expression);
     }
 }

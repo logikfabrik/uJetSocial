@@ -82,6 +82,13 @@ namespace Logikfabrik.Umbraco.Jet.Social
             return _database.Page<T>(pageIndex, pageSize, sql);
         }
 
+        /// <summary>
+        /// Fetches object using the specified query.
+        /// </summary>
+        /// <typeparam name="T">The object type.</typeparam>
+        /// <param name="sql">The query.</param>
+        /// <returns>The objects.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="sql" /> is <c>null</c>.</exception>
         public IEnumerable<T> Fetch<T>(Sql sql)
             where T : class
         {

@@ -5,11 +5,11 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
     using System;
-    using System.Linq;
-    using System.Web.Http;
+    using System.Collections.Generic;
+    using System.Xml.XPath;
+    using global::Umbraco.Core.Models;
     using global::Umbraco.Web.Mvc;
     using Models;
-    using Models.Querying;
 
     /// <summary>
     /// The <see cref="UmbracoDocumentAPIController" /> class.
@@ -17,7 +17,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     [PluginController("uJetSocial")]
 
     // ReSharper disable once InconsistentNaming
-    public class UmbracoDocumentAPIController : APIController
+    public class UmbracoDocumentAPIController : UmbracoContentAPIController<UmbracoDocument>
     {
         private readonly IContentLookup _contentLookup;
 
@@ -45,30 +45,13 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         }
 
         /// <summary>
-        /// Queries Umbraco for documents.
+        /// Gets content by selection criteria.
         /// </summary>
-        /// <param name="query">The query.</param>
-        /// <returns>Matching Umbraco documents.</returns>
-        [HttpPost]
-        public QueryResult<UmbracoDocument> Query(UmbracoQuery query)
+        /// <param name="expression">The selection criteria.</param>
+        /// <returns>The content matching the selection criteria.</returns>
+        protected override IEnumerable<IPublishedContent> Lookup(XPathExpression expression)
         {
-            // TODO: Update XPath expression.
-            // TODO: Figure out how to order, before skipping and taking.
-            var xPath = $"*[@nodeName=\"{query.Name}\"]";
-
-            var documents = _contentLookup.GetDocumentsByXPath(xPath).ToArray();
-
-            var items = documents
-                .Skip(query.PageIndex * query.PageSize)
-                .Take(query.PageSize)
-                .Select(document => new UmbracoDocument())
-                .ToArray();
-
-            return new QueryResult<UmbracoDocument>
-            {
-                Objects = items,
-                Total = items.Length
-            };
+            return _contentLookup.GetDocumentsByXPath(expression);
         }
     }
 }

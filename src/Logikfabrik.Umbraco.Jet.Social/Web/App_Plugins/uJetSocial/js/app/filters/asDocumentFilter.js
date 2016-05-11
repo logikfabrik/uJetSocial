@@ -8,7 +8,7 @@
 
     function ujetAsDocumentFilter() {
         return function (obj) {
-            obj.label = "Document";
+            obj.label = obj.name;
 
             return obj;
         };
