@@ -57,16 +57,19 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Gets documents by selection criteria.
         /// </summary>
         /// <param name="expression">The selection criteria.</param>
+        /// <param name="pageIndex">The page index.</param>
+        /// <param name="pageSize">The page size.</param>
+        /// <param name="total">The total.</param>
         /// <returns>The documents matching the selection criteria.</returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="expression" /> is <c>null</c></exception>
-        public IEnumerable<IPublishedContent> GetDocumentsByXPath(XPathExpression expression)
+        public IEnumerable<IPublishedContent> GetDocumentsByXPath(XPathExpression expression, int pageIndex, int pageSize, out int total)
         {
             if (expression == null)
             {
                 throw new ArgumentNullException(nameof(expression));
             }
 
-            var identifiers = GetNodeIdentifiers(UmbracoNodeObjectTypes.Document, expression);
+            var identifiers = GetNodeIdentifiers(UmbracoNodeObjectTypes.Document, expression, pageIndex, pageSize, out total);
 
             return identifiers.Select(id => _umbracoHelper.TypedDocument(id));
         }
@@ -75,16 +78,19 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Gets media by selection criteria.
         /// </summary>
         /// <param name="expression">The selection criteria.</param>
+        /// <param name="pageIndex">The page index.</param>
+        /// <param name="pageSize">The page size.</param>
+        /// <param name="total">The total.</param>
         /// <returns>The media matching the selection criteria.</returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="expression" /> is <c>null</c></exception>
-        public IEnumerable<IPublishedContent> GetMediaByXPath(XPathExpression expression)
+        public IEnumerable<IPublishedContent> GetMediaByXPath(XPathExpression expression, int pageIndex, int pageSize, out int total)
         {
             if (expression == null)
             {
                 throw new ArgumentNullException(nameof(expression));
             }
 
-            var identifiers = GetNodeIdentifiers(UmbracoNodeObjectTypes.Media, expression);
+            var identifiers = GetNodeIdentifiers(UmbracoNodeObjectTypes.Media, expression, pageIndex, pageSize, out total);
 
             return identifiers.Select(id => _umbracoHelper.TypedMedia(id));
         }
@@ -93,18 +99,30 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Gets members by selection criteria.
         /// </summary>
         /// <param name="expression">The selection criteria.</param>
+        /// <param name="pageIndex">The page index.</param>
+        /// <param name="pageSize">The page size.</param>
+        /// <param name="total">The total.</param>
         /// <returns>The members matching the selection criteria.</returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="expression" /> is <c>null</c></exception>
-        public IEnumerable<IPublishedContent> GetMembersByXPath(XPathExpression expression)
+        public IEnumerable<IPublishedContent> GetMembersByXPath(XPathExpression expression, int pageIndex, int pageSize, out int total)
         {
             if (expression == null)
             {
                 throw new ArgumentNullException(nameof(expression));
             }
 
-            var identifiers = GetNodeIdentifiers(UmbracoNodeObjectTypes.Member, expression);
+            var identifiers = GetNodeIdentifiers(UmbracoNodeObjectTypes.Member, expression, pageIndex, pageSize, out total);
 
             return identifiers.Select(id => _umbracoHelper.TypedMember(id));
+        }
+
+        private IEnumerable<int> GetNodeIdentifiers(string umbracoNodeObjectType, XPathExpression expression, int pageIndex, int pageSize, out int total)
+        {
+            var identifiers = GetNodeIdentifiers(umbracoNodeObjectType, expression).ToArray();
+
+            total = identifiers.Length;
+
+            return identifiers.Skip(pageIndex * pageSize).Take(pageSize);
         }
 
         private IEnumerable<int> GetNodeIdentifiers(string umbracoNodeObjectType, XPathExpression expression)

@@ -17,21 +17,30 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Gets documents by selection criteria.
         /// </summary>
         /// <param name="expression">The selection criteria.</param>
+        /// <param name="pageIndex">The page index.</param>
+        /// <param name="pageSize">The page size.</param>
+        /// <param name="total">The total.</param>
         /// <returns>The documents matching the selection criteria.</returns>
-        IEnumerable<IPublishedContent> GetDocumentsByXPath(XPathExpression expression);
+        IEnumerable<IPublishedContent> GetDocumentsByXPath(XPathExpression expression, int pageIndex, int pageSize, out int total);
 
         /// <summary>
         /// Gets media by selection criteria.
         /// </summary>
         /// <param name="expression">The selection criteria.</param>
+        /// <param name="pageIndex">The page index.</param>
+        /// <param name="pageSize">The page size.</param>
+        /// <param name="total">The total.</param>
         /// <returns>The media matching the selection criteria.</returns>
-        IEnumerable<IPublishedContent> GetMediaByXPath(XPathExpression expression);
+        IEnumerable<IPublishedContent> GetMediaByXPath(XPathExpression expression, int pageIndex, int pageSize, out int total);
 
         /// <summary>
         /// Gets members by selection criteria.
         /// </summary>
         /// <param name="expression">The selection criteria.</param>
+        /// <param name="pageIndex">The page index.</param>
+        /// <param name="pageSize">The page size.</param>
+        /// <param name="total">The total.</param>
         /// <returns>The members matching the selection criteria.</returns>
-        IEnumerable<IPublishedContent> GetMembersByXPath(XPathExpression expression);
+        IEnumerable<IPublishedContent> GetMembersByXPath(XPathExpression expression, int pageIndex, int pageSize, out int total);
     }
 }

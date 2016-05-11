@@ -32,18 +32,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 
             var expression = builder.SortByAttribute(builder.SelectByAttribute("nodeName", query.Name), "nodeName", XmlDataType.Text);
 
-            var content = Lookup(expression);
+            int total;
 
-            var items = content
-                .Skip(query.PageIndex * query.PageSize)
-                .Take(query.PageSize)
-                .Select(GetModel)
-                .ToArray();
+            var content = Lookup(expression, query.PageIndex, query.PageSize, out total).Select(GetModel);
 
             return new QueryResult<T>
             {
-                Objects = items,
-                Total = items.Length
+                Objects = content,
+                Total = total
             };
         }
 
@@ -51,8 +47,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         /// Gets content by selection criteria.
         /// </summary>
         /// <param name="expression">The selection criteria.</param>
+        /// <param name="pageIndex">The page index.</param>
+        /// <param name="pageSize">The page size.</param>
+        /// <param name="total">The total.</param>
         /// <returns>The content matching the selection criteria.</returns>
-        protected abstract IEnumerable<IPublishedContent> Lookup(XPathExpression expression);
+        protected abstract IEnumerable<IPublishedContent> Lookup(XPathExpression expression, int pageIndex, int pageSize, out int total);
 
         private static T GetModel(IPublishedContent content)
         {

@@ -48,10 +48,13 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         /// Gets content by selection criteria.
         /// </summary>
         /// <param name="expression">The selection criteria.</param>
+        /// <param name="pageIndex">The page index.</param>
+        /// <param name="pageSize">The page size.</param>
+        /// <param name="total">The total.</param>
         /// <returns>The content matching the selection criteria.</returns>
-        protected override IEnumerable<IPublishedContent> Lookup(XPathExpression expression)
+        protected override IEnumerable<IPublishedContent> Lookup(XPathExpression expression, int pageIndex, int pageSize, out int total)
         {
-            return _contentLookup.GetMediaByXPath(expression);
+            return _contentLookup.GetMediaByXPath(expression, pageIndex, pageSize, out total);
         }
     }
 }

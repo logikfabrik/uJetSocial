@@ -19,7 +19,6 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <param name="value">The value to match.</param>
         /// <returns>An expression.</returns>
         /// <exception cref="ArgumentException">Thrown if <paramref name="attribute" /> is <c>null</c> or white space.</exception>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value" /> is <c>null</c> or white space.</exception>
         public XPathExpression SelectByAttribute(string attribute, string value)
         {
             if (string.IsNullOrWhiteSpace(attribute))
@@ -27,13 +26,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 throw new ArgumentException("Attribute cannot be null or white space.", nameof(attribute));
             }
 
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                throw new ArgumentException("Value cannot be null or white space.", nameof(value));
-            }
-
-            // Will find all nodes with a matching name, case insensitive.
-            var expression = XPathExpression.Compile($"//*[contains(translate(@{attribute}, '{value.ToUpper()}', '{value.ToLower()}'),'{value.ToLower()}')]");
+            var expression = XPathExpression.Compile(string.IsNullOrWhiteSpace(value)
+                ? $"//*[@{attribute}]"
+                : $"//*[contains(translate(@{attribute}, '{value.ToUpper()}', '{value.ToLower()}'),'{value.ToLower()}')]");
 
             return expression;
         }
