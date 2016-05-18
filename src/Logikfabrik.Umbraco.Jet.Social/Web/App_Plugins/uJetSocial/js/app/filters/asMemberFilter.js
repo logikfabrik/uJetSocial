@@ -8,7 +8,7 @@
 
     function ujetAsMemberFilter() {
         return function (obj) {
-            obj.label = "Member";
+            obj.label = "Member from Umbraco";
 
             return obj;
         };

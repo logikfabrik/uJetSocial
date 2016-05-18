@@ -293,7 +293,9 @@
     <Compile Include="ContentLookupExpressionBuilder.cs" />
     <Compile Include="DatabaseWrapperFactory.cs" />
     <Compile Include="Document\Document.cs" />
+    <Compile Include="Document\DocumentApplicationHandler.cs" />
     <Compile Include="Document\DocumentProvider.cs" />
+    <Compile Include="Document\IDocumentProvider.cs" />
     <Compile Include="ForeignKeyAttribute.cs" />
     <Compile Include="DatabaseWrapper.cs" />
     <Compile Include="DataTransferObjectProviderDictionary.cs" />
@@ -331,6 +333,7 @@
     <Compile Include="UmbracoNodeObjectTypes.cs" />
     <Compile Include="Web\Controllers\APIController.cs" />
     <Compile Include="Web\Controllers\CommentAPIController.cs" />
+    <Compile Include="Web\Controllers\DocumentAPIController.cs" />
     <Compile Include="Web\Controllers\EntityAPIController.cs" />
     <Compile Include="Web\Controllers\DataTransferObjectAPIController{T}.cs" />
     <Compile Include="Web\Controllers\GroupAPIController.cs" />
@@ -414,6 +417,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\documentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\umbracoMemberFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\umbracoMediaFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\umbracoDocumentFactory.js" />
@@ -470,6 +474,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\sprintfFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\momentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\lodashFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asUmbracoMemberFilter.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asUmbracoMediaFilter.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asUmbracoDocumentFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asMediaFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asDocumentFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asMemberFilter.js" />

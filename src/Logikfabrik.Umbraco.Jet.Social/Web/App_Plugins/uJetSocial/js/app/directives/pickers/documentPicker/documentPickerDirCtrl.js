@@ -6,9 +6,9 @@
         .module("umbraco")
         .controller("ujetDocumentPickerDirCtrl", ujetDocumentPickerDirCtrl);
 
-    ujetDocumentPickerDirCtrl.$inject = ["$scope", "$controller", "queryService", "ujetUmbracoDocumentFactory"];
+    ujetDocumentPickerDirCtrl.$inject = ["$scope", "$controller", "$filter", "queryService", "ujetUmbracoDocumentFactory", "ujetDocumentFactory"];
 
-    function ujetDocumentPickerDirCtrl($scope, $controller, queryService, ujetUmbracoDocumentFactory) {
+    function ujetDocumentPickerDirCtrl($scope, $controller, $filter, queryService, ujetUmbracoDocumentFactory, ujetDocumentFactory) {
         $controller("ujetPickerCtrl", {
             $scope: $scope,
             queryService: queryService,
@@ -16,7 +16,11 @@
                 objectFactory: ujetUmbracoDocumentFactory,
                 objectParam: "Name"
             },
-            callback: function (obj) { alert("HEJ");}
+            callback: function(obj) {
+                ujetDocumentFactory.getByDocumentId(obj.id).success(function (data) {
+                    $scope.dialogOptions.callback($filter("ujetAsDocument")(data));
+                });
+            }
         });
     };
 })();

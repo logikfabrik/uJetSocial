@@ -20,7 +20,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Document
         /// <value>
         /// The document identifier.
         /// </value>
-        [ForeignKey("Umbraco.Core.Models.Rdbms.DocumentDto,Umbraco.Core", Name = "FK_uJetSocialDocument_cmsDocument_nodeId_As_DocumentId")]
+        [ForeignKey("Umbraco.Core.Models.Rdbms.NodeDto, Umbraco.Core")]
+        [ForeignKey("Umbraco.Core.Models.Rdbms.ContentDto, Umbraco.Core", Column = "nodeId")]
         [Column("DocumentId")]
         public int DocumentId
         {

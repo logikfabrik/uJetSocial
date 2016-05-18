@@ -12,6 +12,7 @@
 
 		// Data factories
 		'~/App_Plugins/uJetSocial/js/app/factories/data/commentFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/documentFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/entityFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/groupFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/guestFactory.js',
@@ -31,6 +32,9 @@
 		'~/App_Plugins/uJetSocial/js/app/filters/asMediaFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asMemberFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asReportFilter.js',
+		'~/App_Plugins/uJetSocial/js/app/filters/asUmbracoDocumentFilter.js',
+		'~/App_Plugins/uJetSocial/js/app/filters/asUmbracoMediaFilter.js',
+		'~/App_Plugins/uJetSocial/js/app/filters/asUmbracoMemberFilter.js',
 
 		// Components
 

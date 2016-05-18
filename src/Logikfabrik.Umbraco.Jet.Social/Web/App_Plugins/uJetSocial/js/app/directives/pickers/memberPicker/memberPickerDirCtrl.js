@@ -6,9 +6,9 @@
         .module("umbraco")
         .controller("ujetMemberPickerDirCtrl", ujetMemberPickerDirCtrl);
 
-    ujetMemberPickerDirCtrl.$inject = ["$scope", "$controller", "queryService", "ujetUmbracoMemberFactory"];
+    ujetMemberPickerDirCtrl.$inject = ["$scope", "$controller", "$filter", "queryService", "ujetUmbracoMemberFactory"];
 
-    function ujetMemberPickerDirCtrl($scope, $controller, queryService, ujetUmbracoMemberFactory) {
+    function ujetMemberPickerDirCtrl($scope, $controller, $filter, queryService, ujetUmbracoMemberFactory) {
         $controller("ujetPickerCtrl", {
             $scope: $scope,
             queryService: queryService,

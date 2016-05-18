@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// </summary>
         /// <param name="typeName">The type name.</param>
         public ForeignKeyAttribute(string typeName)
-            : base(Type.GetType(typeName, false))
+            : base(Type.GetType(typeName, true))
         {
         }
 
