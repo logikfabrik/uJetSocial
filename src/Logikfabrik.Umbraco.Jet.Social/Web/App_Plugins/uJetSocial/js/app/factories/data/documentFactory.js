@@ -10,10 +10,15 @@
 
     function ujetDocumentFactory($http) {
         var factory = {
+            get: get,
             getByDocumentId: getByDocumentId
         };
 
         return factory;
+
+        function get(id) {
+            return $http.get("backoffice/uJetSocial/DocumentAPI/Get/" + id);
+        }
 
         function getByDocumentId(id) {
             return $http.get("backoffice/uJetSocial/DocumentAPI/GetByDocumentId/" + id);

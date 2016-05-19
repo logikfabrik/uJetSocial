@@ -38,12 +38,10 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
                 return;
             }
 
-            formatters.Remove(formatter);
-
-            formatters.Add(new JsonMediaTypeFormatter
+            if (formatter.SerializerSettings.ContractResolver.GetType() != typeof(CamelCasePropertyNamesContractResolver))
             {
-                SerializerSettings = { ContractResolver = new CamelCasePropertyNamesContractResolver() }
-            });
+                formatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            }
         }
     }
 }

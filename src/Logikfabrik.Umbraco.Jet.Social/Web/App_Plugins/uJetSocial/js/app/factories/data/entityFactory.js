@@ -11,12 +11,25 @@
         "$filter",
         "$q",
         "ujetCommentFactory",
+        "ujetDocumentFactory",
         "ujetGroupFactory",
         "ujetGuestFactory",
+        "ujetMediaFactory",
+        "ujetMemberFactory",
         "ujetReportFactory"
     ];
 
-    function ujetEntityFactory($http, $filter, $q, ujetCommentFactory, ujetGroupFactory, ujetGuestFactory, ujetReportFactory) {
+    function ujetEntityFactory(
+        $http,
+        $filter,
+        $q,
+        ujetCommentFactory,
+        ujetDocumentFactory,
+        ujetGroupFactory,
+        ujetGuestFactory,
+        ujetMediaFactory,
+        ujetMemberFactory,
+        ujetReportFactory) {
         var factory = {
             get: get
         };
@@ -50,10 +63,16 @@
             switch (type.name) {
                 case "Comment":
                     return ujetCommentFactory;
+                case "Document":
+                    return ujetDocumentFactory;
                 case "Group":
                     return ujetGroupFactory;
                 case "IndividualGuest":
                     return ujetGuestFactory;
+                case "IndividualMember":
+                    return ujetMemberFactory;
+                case "Media":
+                    return ujetMediaFactory;
                 case "Report":
                     return ujetReportFactory;
                 default:
@@ -65,10 +84,16 @@
             switch (type.name) {
                 case "Comment":
                     return $filter("ujetAsComment");
+                case "Document":
+                    return $filter("ujetAsDocument");
                 case "Group":
                     return $filter("ujetAsGroup");
                 case "IndividualGuest":
                     return $filter("ujetAsGuest");
+                case "IndividualMember":
+                    return $filter("ujetAsMember");
+                case "Media":
+                    return $filter("ujetAsMedia");
                 case "Report":
                     return $filter("ujetAsReport");
                 default:

@@ -6,9 +6,9 @@
         .module("umbraco")
         .controller("ujetMediaPickerDirCtrl", ujetMediaPickerDirCtrl);
 
-    ujetMediaPickerDirCtrl.$inject = ["$scope", "$controller", "$filter", "queryService", "ujetUmbracoMediaFactory"];
+    ujetMediaPickerDirCtrl.$inject = ["$scope", "$controller", "$filter", "queryService", "ujetUmbracoMediaFactory", "ujetMediaFactory"];
 
-    function ujetMediaPickerDirCtrl($scope, $controller, $filter, queryService, ujetUmbracoMediaFactory) {
+    function ujetMediaPickerDirCtrl($scope, $controller, $filter, queryService, ujetUmbracoMediaFactory, ujetMediaFactory) {
         $controller("ujetPickerCtrl", {
             $scope: $scope,
             queryService: queryService,
@@ -16,7 +16,11 @@
                 objectFactory: ujetUmbracoMediaFactory,
                 objectParam: "Name"
             },
-            callback: function (obj) { alert("HEJ");}
+            callback: function (obj) {
+                ujetMediaFactory.getByMediaId(obj.id).success(function (data) {
+                    $scope.dialogOptions.callback($filter("ujetAsMedia")(data));
+                });
+            }
         });
     };
 })();

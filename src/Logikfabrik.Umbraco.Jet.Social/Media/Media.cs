@@ -1,38 +1,39 @@
-﻿// <copyright file="Member.cs" company="Logikfabrik">
+﻿// <copyright file="Media.cs" company="Logikfabrik">
 //   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
-namespace Logikfabrik.Umbraco.Jet.Social.Member
+namespace Logikfabrik.Umbraco.Jet.Social.Media
 {
     using global::Umbraco.Core.Persistence;
 
     /// <summary>
-    /// The <see cref="Member" /> class.
+    /// The <see cref="Media" /> class.
     /// </summary>
-    [TableName("uJetSocialMember")]
-    public class Member : DataTransferObject
+    [TableName("uJetSocialMedia")]
+    public class Media : DataTransferObject
     {
-        private int _memberId;
+        private int _mediaId;
 
         /// <summary>
-        /// Gets or sets the member identifier.
+        /// Gets or sets the media identifier.
         /// </summary>
         /// <value>
-        /// The member identifier.
+        /// The media identifier.
         /// </value>
-        [ForeignKey("Umbraco.Core.Models.Rdbms.MemberDto,Umbraco.Core", Name = "FK_uJetSocialMember_cmsMember_nodeId_As_MemberId")]
-        [Column("MemberId")]
-        public int MemberId
+        [ForeignKey("Umbraco.Core.Models.Rdbms.NodeDto, Umbraco.Core")]
+        [ForeignKey("Umbraco.Core.Models.Rdbms.ContentDto, Umbraco.Core", Column = "nodeId")]
+        [Column("MediaId")]
+        public int MediaId
         {
             get
             {
-                return _memberId;
+                return _mediaId;
             }
 
             set
             {
                 AssertIsWritableClone();
-                _memberId = value;
+                _mediaId = value;
             }
         }
 
@@ -40,9 +41,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         /// Gets a writable clone.
         /// </summary>
         /// <returns>A writable clone.</returns>
-        public Member CreateWritableClone()
+        public Media CreateWritableClone()
         {
-            return CreateWritableClone<Member>();
+            return CreateWritableClone<Media>();
         }
 
         /// <summary>
@@ -53,9 +54,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Member
         /// </returns>
         protected override DataTransferObject Clone()
         {
-            var clone = new Member
+            var clone = new Media
             {
-                MemberId = _memberId
+                MediaId = _mediaId
             };
 
             return clone;

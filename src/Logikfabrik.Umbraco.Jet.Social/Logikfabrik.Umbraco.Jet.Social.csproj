@@ -315,6 +315,7 @@
     <Compile Include="IDatabaseWrapper.cs" />
     <Compile Include="IDataTransferObjectProvider.cs" />
     <Compile Include="IDataTransferObjectProvider{T}.cs" />
+    <Compile Include="Individual\IIndividualMemberProvider.cs" />
     <Compile Include="Individual\Individual.cs" />
     <Compile Include="Individual\IndividualGuest.cs" />
     <Compile Include="Individual\IndividualGuestProvider.cs" />
@@ -322,8 +323,9 @@
     <Compile Include="Individual\IndividualMemberProvider.cs" />
     <Compile Include="Individual\IndividualProvider{T}.cs" />
     <Compile Include="IOwnable.cs" />
-    <Compile Include="Member\Member.cs" />
-    <Compile Include="Member\MemberProvider.cs" />
+    <Compile Include="Media\IMediaProvider.cs" />
+    <Compile Include="Media\Media.cs" />
+    <Compile Include="Media\MediaProvider.cs" />
     <Compile Include="OwnableExtensions.cs" />
     <Compile Include="QueryResult{T}.cs" />
     <Compile Include="Query{T}.cs" />
@@ -338,6 +340,8 @@
     <Compile Include="Web\Controllers\DataTransferObjectAPIController{T}.cs" />
     <Compile Include="Web\Controllers\GroupAPIController.cs" />
     <Compile Include="Web\Controllers\IndividualGuestAPIController.cs" />
+    <Compile Include="Web\Controllers\IndividualMemberAPIController.cs" />
+    <Compile Include="Web\Controllers\MediaAPIController.cs" />
     <Compile Include="Web\Controllers\ReportAPIController.cs" />
     <Compile Include="Web\Controllers\UmbracoContentAPIController{T}.cs" />
     <Compile Include="Web\Controllers\UmbracoDocumentAPIController.cs" />
@@ -374,9 +378,7 @@
     <None Include="uJetSocial.nuspec" />
     <None Include="Web\App_Plugins\uJetSocial\package.manifest" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Media\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\dashboard.html" />
@@ -417,6 +419,8 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\memberFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\mediaFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\documentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\umbracoMemberFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\umbracoMediaFactory.js" />

@@ -16,6 +16,8 @@
 		'~/App_Plugins/uJetSocial/js/app/factories/data/entityFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/groupFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/guestFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/mediaFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/memberFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/reportFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoDocumentFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoMediaFactory.js',

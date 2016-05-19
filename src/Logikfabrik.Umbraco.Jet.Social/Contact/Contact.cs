@@ -5,7 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Contact
 {
     using global::Umbraco.Core.Persistence;
-    using Member;
+    using Individual;
 
     /// <summary>
     /// The <see cref="Contact" /> class.
@@ -22,7 +22,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
         /// <value>
         /// The from member identifier.
         /// </value>
-        [ForeignKey(typeof(Member), Name = "FK_uJetSocialContact_uJetSocialMember_Id_As_FromMemberId")]
+        [ForeignKey(typeof(IndividualMember), Name = "FK_uJetSocialContact_uJetSocialIndividualMember_Id_As_FromMemberId")]
         [Column("FromMemberId")]
         public int FromMemberId
         {
@@ -44,7 +44,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
         /// <value>
         /// The to member identifier.
         /// </value>
-        [ForeignKey(typeof(Member), Name = "FK_uJetSocialContact_uJetSocialMember_Id_As_ToMemberId")]
+        [ForeignKey(typeof(IndividualMember), Name = "FK_uJetSocialContact_uJetSocialIndividualMember_Id_As_ToMemberId")]
         [Column("ToMemberId")]
         public int ToMemberId
         {

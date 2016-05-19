@@ -32,9 +32,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Document
 
             query.Criterias.Add(document => document.DocumentId == id);
 
-            var documents = Query(query).Objects;
+            var objects = Query(query).Objects;
 
-            return documents.SingleOrDefault();
+            return objects.SingleOrDefault();
         }
     }
 }

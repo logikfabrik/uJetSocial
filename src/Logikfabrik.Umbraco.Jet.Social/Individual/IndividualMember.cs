@@ -5,7 +5,6 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Individual
 {
     using global::Umbraco.Core.Persistence;
-    using Member;
 
     /// <summary>
     /// The <see cref="IndividualMember" /> class.
@@ -21,7 +20,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         /// <value>
         /// The member identifier.
         /// </value>
-        [ForeignKey(typeof(Member), Name = "FK_uJetSocialIndividualMember_uJetSocialMember_Id_As_MemberId")]
+        [ForeignKey("Umbraco.Core.Models.Rdbms.NodeDto, Umbraco.Core")]
+        [ForeignKey("Umbraco.Core.Models.Rdbms.ContentDto, Umbraco.Core", Column = "nodeId")]
         [Column("MemberId")]
         public int MemberId
         {

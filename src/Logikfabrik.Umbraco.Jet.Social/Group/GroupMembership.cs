@@ -5,7 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Group
 {
     using global::Umbraco.Core.Persistence;
-    using Member;
+    using Individual;
 
     /// <summary>
     /// The <see cref="GroupMembership" /> class.
@@ -22,8 +22,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         /// <value>
         /// The group identifier.
         /// </value>
-        [ForeignKey(typeof(Member), Name = "FK_uJetSocialGroupMembership_uJetSocialGroup_Id_As_GroupId")]
-        [Column("MemberId")]
+        [ForeignKey(typeof(Group), Name = "FK_uJetSocialGroupMembership_uJetSocialGroup_Id_As_GroupId")]
+        [Column("GroupId")]
         public int GroupId
         {
             get
@@ -44,7 +44,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         /// <value>
         /// The member identifier.
         /// </value>
-        [ForeignKey(typeof(Member), Name = "FK_uJetSocialGroupMembership_uJetSocialMember_Id_As_MemberId")]
+        [ForeignKey(typeof(IndividualMember), Name = "FK_uJetSocialGroupMembership_uJetSocialIndividualMember_Id_As_MemberId")]
         [Column("MemberId")]
         public int MemberId
         {
