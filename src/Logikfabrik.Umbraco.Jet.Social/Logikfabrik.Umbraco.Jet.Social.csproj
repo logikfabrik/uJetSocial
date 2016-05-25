@@ -380,8 +380,6 @@
     <None Include="Web\App_Plugins\uJetSocial\package.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Web\App_Plugins\uJetSocial\backoffice\individualMember\" />
-    <Folder Include="Web\App_Plugins\uJetSocial\js\app\components\individualMember\" />
     <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\individualMemberList\" />
   </ItemGroup>
   <ItemGroup>
@@ -392,6 +390,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualGuest\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualGuest\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualGuest\edit.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualMember\create.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualMember\dashboard.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualMember\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\comment.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\media.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\individualMember.html" />
@@ -403,6 +404,8 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\css\app\uJetSocial.css" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentDashboardCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\individualMember\individualMemberCreateCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\individualMember\individualMemberDashboardCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\objectCreateCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\pickerDialogCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportCreateCtrl.js" />

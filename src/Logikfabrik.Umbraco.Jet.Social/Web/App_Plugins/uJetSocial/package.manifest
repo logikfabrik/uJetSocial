@@ -56,6 +56,8 @@
 		'~/App_Plugins/uJetSocial/js/app/components/individualGuest/individualGuestDashboardCtrl.js',
 
 		// IndividualMember component
+		'~/App_Plugins/uJetSocial/js/app/components/individualMember/individualMemberCreateCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/components/individualMember/individualMemberDashboardCtrl.js',
 
         // Report component
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportCreateCtrl.js',
