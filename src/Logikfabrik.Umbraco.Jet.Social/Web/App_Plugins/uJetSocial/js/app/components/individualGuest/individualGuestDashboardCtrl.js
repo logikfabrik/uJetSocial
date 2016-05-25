@@ -4,11 +4,11 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco")
-        .controller("ujetGuestDashboardCtrl", ujetGuestDashboardCtrl);
+        .controller("ujetIndividualGuestDashboardCtrl", ujetIndividualGuestDashboardCtrl);
 
-    ujetGuestDashboardCtrl.$inject = ["$routeParams", "navigationService"];
+    ujetIndividualGuestDashboardCtrl.$inject = ["$routeParams", "navigationService"];
 
-    function ujetGuestDashboardCtrl($routeParams, navigationService) {
+    function ujetIndividualGuestDashboardCtrl($routeParams, navigationService) {
         navigationService.syncTree({ tree: "individualGuest", path: ["-1", $routeParams.id], forceReload: false });
     };
 })();

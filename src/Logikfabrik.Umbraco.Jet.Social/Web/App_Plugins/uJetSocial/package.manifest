@@ -15,9 +15,9 @@
 		'~/App_Plugins/uJetSocial/js/app/factories/data/documentFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/entityFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/groupFactory.js',
-		'~/App_Plugins/uJetSocial/js/app/factories/data/guestFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/individualGuestFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/individualMemberFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/mediaFactory.js',
-		'~/App_Plugins/uJetSocial/js/app/factories/data/memberFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/reportFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoDocumentFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoMediaFactory.js',
@@ -30,9 +30,9 @@
 		'~/App_Plugins/uJetSocial/js/app/filters/asCommentFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asDocumentFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asGroupFilter.js',
-		'~/App_Plugins/uJetSocial/js/app/filters/asGuestFilter.js',
+		'~/App_Plugins/uJetSocial/js/app/filters/asIndividualGuestFilter.js',
+		'~/App_Plugins/uJetSocial/js/app/filters/asIndividualMemberFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asMediaFilter.js',
-		'~/App_Plugins/uJetSocial/js/app/filters/asMemberFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asReportFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asUmbracoDocumentFilter.js',
 		'~/App_Plugins/uJetSocial/js/app/filters/asUmbracoMediaFilter.js',
@@ -51,9 +51,11 @@
         '~/App_Plugins/uJetSocial/js/app/components/group/groupCreateCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/components/group/groupDashboardCtrl.js',
 
-		// Guest component
-		'~/App_Plugins/uJetSocial/js/app/components/guest/guestCreateCtrl.js',
-		'~/App_Plugins/uJetSocial/js/app/components/guest/guestDashboardCtrl.js',
+		// IndividualGuest component
+		'~/App_Plugins/uJetSocial/js/app/components/individualGuest/individualGuestCreateCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/components/individualGuest/individualGuestDashboardCtrl.js',
+
+		// IndividualMember component
 
         // Report component
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportCreateCtrl.js',
@@ -98,8 +100,8 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/commentList/commentListDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/groupList/groupListDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/groupList/groupListDirCtrl.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/lists/guestList/guestListDir.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/lists/guestList/guestListDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/individualGuestList/individualGuestListDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/individualGuestList/individualGuestListDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/list/listDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/list/listDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/pager/pagerDir.js',

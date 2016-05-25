@@ -4,17 +4,17 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco")
-        .controller("ujetGuestCreateCtrl", ujetGuestCreateCtrl);
+        .controller("ujetIndividualGuestCreateCtrl", ujetIndividualGuestCreateCtrl);
 
-    ujetGuestCreateCtrl.$inject = ["$scope", "$controller", "$location", "notificationsService", "ujetGuestFactory"];
+    ujetIndividualGuestCreateCtrl.$inject = ["$scope", "$controller", "$location", "notificationsService", "ujetIndividualGuestFactory"];
 
-    function ujetGuestCreateCtrl($scope, $controller, $location, notificationsService, ujetGuestFactory) {
+    function ujetIndividualGuestCreateCtrl($scope, $controller, $location, notificationsService, ujetIndividualGuestFactory) {
         $controller("ujetObjectCreateCtrl", {
             $scope: $scope,
             $location: $location,
             notificationsService: notificationsService,
             config: {
-                objectFactory: ujetGuestFactory,
+                objectFactory: ujetIndividualGuestFactory,
                 path: "/uJetSocial/individualGuest/dashboard/-1",
                 createSuccessMessage: "Guest created",
                 createErrorMessage: "Guest could not be created"

@@ -4,11 +4,11 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco.resources")
-        .factory("ujetGuestFactory", ujetGuestFactory);
+        .factory("ujetIndividualGuestFactory", ujetIndividualGuestFactory);
 
-    ujetGuestFactory.$inject = ["$http"];
+    ujetIndividualGuestFactory.$inject = ["$http"];
 
-    function ujetGuestFactory($http) {
+    function ujetIndividualGuestFactory($http) {
         var factory = {
             add: add,
             update: update,

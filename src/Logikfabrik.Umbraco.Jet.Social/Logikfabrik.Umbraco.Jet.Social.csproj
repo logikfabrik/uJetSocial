@@ -381,6 +381,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Web\App_Plugins\uJetSocial\backoffice\individualMember\" />
+    <Folder Include="Web\App_Plugins\uJetSocial\js\app\components\individualMember\" />
+    <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\individualMemberList\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\create.html" />
@@ -422,7 +424,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\reportPicker\reportPickerView.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\memberFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\individualMemberFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\mediaFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\documentFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\umbracoMemberFactory.js" />
@@ -435,18 +437,18 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\group\groupDashboardCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\groupFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\group\groupCreateCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestDashboardCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\guest\guestCreateCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\guestFactory.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\individualGuest\individualGuestDashboardCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\individualGuest\individualGuestCreateCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\individualGuestFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\commentList\commentListDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\commentList\commentListDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\commentList\commentListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\groupList\groupListDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\groupList\groupListDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\groupList\groupListView.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\guestList\guestListDirCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\guestList\guestListDir.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\guestList\guestListView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\individualGuestList\individualGuestListDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\individualGuestList\individualGuestListDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\individualGuestList\individualGuestListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\listCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\pager\pagerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\pager\pagerDirCtrl.js" />
@@ -486,10 +488,10 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asUmbracoDocumentFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asMediaFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asDocumentFilter.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asMemberFilter.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asIndividualMemberFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asReportFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asCommentFilter.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asGuestFilter.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asIndividualGuestFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asGroupFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\services\queryService.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\vendor\lodash-3.10.1\lodash.js" />

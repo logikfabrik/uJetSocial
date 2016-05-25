@@ -6,9 +6,9 @@
         .module("umbraco")
         .controller("ujetMemberPickerDirCtrl", ujetMemberPickerDirCtrl);
 
-    ujetMemberPickerDirCtrl.$inject = ["$scope", "$controller", "$filter", "queryService", "ujetUmbracoMemberFactory", "ujetMemberFactory"];
+    ujetMemberPickerDirCtrl.$inject = ["$scope", "$controller", "$filter", "queryService", "ujetUmbracoMemberFactory", "ujetIndividualMemberFactory"];
 
-    function ujetMemberPickerDirCtrl($scope, $controller, $filter, queryService, ujetUmbracoMemberFactory, ujetMemberFactory) {
+    function ujetMemberPickerDirCtrl($scope, $controller, $filter, queryService, ujetUmbracoMemberFactory, ujetIndividualMemberFactory) {
         $controller("ujetPickerCtrl", {
             $scope: $scope,
             queryService: queryService,
@@ -17,8 +17,8 @@
                 objectParam: "Name"
             },
             callback: function (obj) {
-                ujetMemberFactory.getByMemberId(obj.id).success(function (data) {
-                    $scope.dialogOptions.callback($filter("ujetAsMember")(data));
+                ujetIndividualMemberFactory.getByMemberId(obj.id).success(function (data) {
+                    $scope.dialogOptions.callback($filter("ujetAsIndividualMember")(data));
                 });
             }
         });

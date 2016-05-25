@@ -4,15 +4,15 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco")
-        .controller("ujetGuestListDirCtrl", ujetGuestListDirCtrl);
+        .controller("ujetIndividualGuestListDirCtrl", ujetIndividualGuestListDirCtrl);
 
-    ujetGuestListDirCtrl.$inject = ["$scope", "$controller", "$routeParams", "dialogService", "notificationsService", "queryService", "ujetGuestFactory"];
+    ujetIndividualGuestListDirCtrl.$inject = ["$scope", "$controller", "$routeParams", "dialogService", "notificationsService", "queryService", "ujetIndividualGuestFactory"];
 
-    function ujetGuestListDirCtrl($scope, $controller, $routeParams, dialogService, notificationsService, queryService, ujetGuestFactory) {
+    function ujetIndividualGuestListDirCtrl($scope, $controller, $routeParams, dialogService, notificationsService, queryService, ujetIndividualGuestFactory) {
         var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "FirstName", "LastName"]);
 
         var config = {
-            objectFactory: ujetGuestFactory,
+            objectFactory: ujetIndividualGuestFactory,
             editTemplate: "/App_Plugins/uJetSocial/backoffice/individualGuest/edit.html",
             editSuccessMessage: "Guest updated",
             editErrorMessage: "Guest could not be updated"

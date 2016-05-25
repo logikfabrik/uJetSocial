@@ -13,9 +13,9 @@
         "ujetCommentFactory",
         "ujetDocumentFactory",
         "ujetGroupFactory",
-        "ujetGuestFactory",
+        "ujetIndividualGuestFactory",
+        "ujetIndividualMemberFactory",
         "ujetMediaFactory",
-        "ujetMemberFactory",
         "ujetReportFactory"
     ];
 
@@ -26,9 +26,9 @@
         ujetCommentFactory,
         ujetDocumentFactory,
         ujetGroupFactory,
-        ujetGuestFactory,
+        ujetIndividualGuestFactory,
+        ujetIndividualMemberFactory,
         ujetMediaFactory,
-        ujetMemberFactory,
         ujetReportFactory) {
         var factory = {
             get: get
@@ -68,9 +68,9 @@
                 case "Group":
                     return ujetGroupFactory;
                 case "IndividualGuest":
-                    return ujetGuestFactory;
+                    return ujetIndividualGuestFactory;
                 case "IndividualMember":
-                    return ujetMemberFactory;
+                    return ujetIndividualMemberFactory;
                 case "Media":
                     return ujetMediaFactory;
                 case "Report":
@@ -89,9 +89,9 @@
                 case "Group":
                     return $filter("ujetAsGroup");
                 case "IndividualGuest":
-                    return $filter("ujetAsGuest");
+                    return $filter("ujetAsIndividualGuest");
                 case "IndividualMember":
-                    return $filter("ujetAsMember");
+                    return $filter("ujetAsIndividualMember");
                 case "Media":
                     return $filter("ujetAsMedia");
                 case "Report":

@@ -4,11 +4,11 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco.resources")
-        .filter("ujetAsGuest", ujetAsGuestFilter);
+        .filter("ujetAsIndividualGuest", ujetAsIndividualGuestFilter);
 
-    ujetAsGuestFilter.$inject = ["sprintf"];
+    ujetAsIndividualGuestFilter.$inject = ["sprintf"];
 
-    function ujetAsGuestFilter(sprintf) {
+    function ujetAsIndividualGuestFilter(sprintf) {
         return function (obj) {
             obj.label = sprintf("%(firstName)s %(lastName)s", obj);
             obj.subLabel = obj.email;
