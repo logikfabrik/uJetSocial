@@ -5,8 +5,8 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
     using System.Web.Http;
-    using Individual;
     using global::Umbraco.Web.Mvc;
+    using Individual;
 
     /// <summary>
     /// The <see cref="IndividualMemberAPIController" /> class.

@@ -7,12 +7,14 @@
     <!-- Trees -->
     <key alias="commentTree">Comments</key>
     <key alias="groupTree">Groups</key>
-    <key alias="guestTree">Guests</key>
+    <key alias="individualGuestTree">Guests</key>
+    <key alias="individualMemberTree">Members</key>
     <key alias="reportTree">Reports</key>
 
     <key alias="comments">Comments</key>
     <key alias="groups">Groups</key>
     <key alias="guests">Guests</key>
+    <key alias="members">Members</key>
     <key alias="reports">Reports</key>
 
     <key alias="comment">Comment</key>

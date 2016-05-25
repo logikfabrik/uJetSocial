@@ -1,4 +1,4 @@
-﻿// <copyright file="GuestTreeController.cs" company="Logikfabrik">
+﻿// <copyright file="IndividualMemberTreeController.cs" company="Logikfabrik">
 //   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
@@ -13,25 +13,25 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
     using umbraco.BusinessLogic.Actions;
 
     /// <summary>
-    /// The <see cref="GroupTreeController" /> class.
+    /// The <see cref="IndividualMemberTreeController" /> class.
     /// </summary>
     [PluginController("uJetSocial")]
-    [Tree("uJetSocial", "guest", "Guests")]
-    public class GuestTreeController : LetterTreeController
+    [Tree("uJetSocial", "individualMember", "Members")]
+    public class IndividualMemberTreeController : LetterTreeController
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GuestTreeController" /> class.
+        /// Initializes a new instance of the <see cref="IndividualMemberTreeController" /> class.
         /// </summary>
         /// <param name="localizedTextService">The localized text service.</param>
-        public GuestTreeController(ILocalizedTextService localizedTextService)
+        public IndividualMemberTreeController(ILocalizedTextService localizedTextService)
             : base(localizedTextService)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GuestTreeController" /> class.
+        /// Initializes a new instance of the <see cref="IndividualMemberTreeController" /> class.
         /// </summary>
-        public GuestTreeController()
+        public IndividualMemberTreeController()
             : this(ApplicationContext.Current.Services.TextService)
         {
         }

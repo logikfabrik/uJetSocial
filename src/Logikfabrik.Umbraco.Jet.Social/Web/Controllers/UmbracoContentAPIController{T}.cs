@@ -43,8 +43,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
             };
         }
 
-        // TODO: Make it possible to select Document/Media/Member in the back office. Create a matching DTO-object if one doesn't already exist (C# and AngularJS).
-
         /// <summary>
         /// Gets content by selection criteria.
         /// </summary>

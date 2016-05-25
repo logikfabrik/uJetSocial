@@ -65,7 +65,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
              * CreateTreeNode overload used is replaced, with another one where route path
              * isn't specified.
              */
-            return $"/{TreeApplicationAlias}/{TreeAlias}/dashboard/{letter}";
+            return $"{TreeApplicationAlias}/{TreeAlias}/dashboard/{letter}";
         }
     }
 }

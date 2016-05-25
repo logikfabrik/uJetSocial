@@ -364,8 +364,9 @@
     <Compile Include="Web\Models\UmbracoMember.cs" />
     <Compile Include="Web\Trees\CommentTreeController.cs" />
     <Compile Include="Web\Trees\GroupTreeController.cs" />
-    <Compile Include="Web\Trees\GuestTreeController.cs" />
+    <Compile Include="Web\Trees\IndividualGuestTreeController.cs" />
     <Compile Include="Web\Trees\LetterTreeController.cs" />
+    <Compile Include="Web\Trees\IndividualMemberTreeController.cs" />
     <Compile Include="Web\Trees\ReportTreeController.cs" />
     <Compile Include="Web\Trees\TreeController.cs" />
   </ItemGroup>
@@ -378,15 +379,17 @@
     <None Include="uJetSocial.nuspec" />
     <None Include="Web\App_Plugins\uJetSocial\package.manifest" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Web\App_Plugins\uJetSocial\backoffice\individualMember\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\dashboard.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\dashboard.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\create.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\guest\edit.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualGuest\dashboard.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualGuest\create.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualGuest\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\comment.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\media.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\member.html" />
@@ -496,8 +499,12 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\vendor\moment-2.11.1\moment.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\vendor\sprintf-1.0.3\sprintf.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\lang\en-GB.xml" />
-    <Content Include="Web\App_Plugins\uJetSocial\lang\sv-SE.xml" />
+    <Content Include="Web\App_Plugins\uJetSocial\lang\en-GB.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web\App_Plugins\uJetSocial\lang\sv-SE.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />

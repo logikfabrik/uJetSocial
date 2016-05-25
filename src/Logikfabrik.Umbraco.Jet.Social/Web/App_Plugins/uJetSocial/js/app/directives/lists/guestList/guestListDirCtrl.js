@@ -13,7 +13,7 @@
 
         var config = {
             objectFactory: ujetGuestFactory,
-            editTemplate: "/App_Plugins/uJetSocial/backoffice/guest/edit.html",
+            editTemplate: "/App_Plugins/uJetSocial/backoffice/individualGuest/edit.html",
             editSuccessMessage: "Guest updated",
             editErrorMessage: "Guest could not be updated"
         };

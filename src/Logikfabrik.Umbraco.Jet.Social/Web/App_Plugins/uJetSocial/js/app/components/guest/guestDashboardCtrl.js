@@ -9,6 +9,6 @@
     ujetGuestDashboardCtrl.$inject = ["$routeParams", "navigationService"];
 
     function ujetGuestDashboardCtrl($routeParams, navigationService) {
-        navigationService.syncTree({ tree: "guest", path: ["-1", $routeParams.id], forceReload: false });
+        navigationService.syncTree({ tree: "individualGuest", path: ["-1", $routeParams.id], forceReload: false });
     };
 })();

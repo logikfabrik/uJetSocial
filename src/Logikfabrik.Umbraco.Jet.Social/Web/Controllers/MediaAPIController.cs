@@ -5,8 +5,8 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
     using System.Web.Http;
-    using Media;
     using global::Umbraco.Web.Mvc;
+    using Media;
 
     /// <summary>
     /// The <see cref="MediaAPIController" /> class.

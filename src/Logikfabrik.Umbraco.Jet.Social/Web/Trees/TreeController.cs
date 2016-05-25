@@ -139,7 +139,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 
         private string GetRoutePath()
         {
-            return $"/{TreeApplicationAlias}/{TreeAlias}/dashboard/-1";
+            return $"{TreeApplicationAlias}/{TreeAlias}/dashboard/-1";
         }
 
         /// <summary>
