@@ -29,20 +29,20 @@
             </li>
 
             <li ng-show="vm.canPickGuest">
-                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('guest')" prevent-default>
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('individualGuest')" prevent-default>
                     <localize key="uJetSocial_guest">Guest</localize>
+                </a>
+            </li>
+
+            <li ng-show="vm.canPickMember">
+                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('individualMember')" prevent-default>
+                    <localize key="uJetSocial_member">Member</localize>
                 </a>
             </li>
 
             <li ng-show="vm.canPickMedia">
                 <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('media')" prevent-default>
                     <localize key="uJetSocial_media">Media</localize>
-                </a>
-            </li>
-
-            <li ng-show="vm.canPickMember">
-                <a class="ujet-object-picker__picker" href="#" ng-click="vm.showPicker('member')" prevent-default>
-                    <localize key="uJetSocial_member">Member</localize>
                 </a>
             </li>
 

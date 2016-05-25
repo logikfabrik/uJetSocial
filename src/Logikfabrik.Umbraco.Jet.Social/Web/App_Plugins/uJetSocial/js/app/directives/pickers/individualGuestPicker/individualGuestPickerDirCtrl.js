@@ -4,11 +4,11 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco")
-        .controller("ujetGuestPickerDirCtrl", ujetGuestPickerDirCtrl);
+        .controller("ujetIndividualGuestPickerDirCtrl", ujetIndividualGuestPickerDirCtrl);
 
-    ujetGuestPickerDirCtrl.$inject = ["$scope", "$controller", "queryService", "ujetIndividualGuestFactory"];
+    ujetIndividualGuestPickerDirCtrl.$inject = ["$scope", "$controller", "queryService", "ujetIndividualGuestFactory"];
 
-    function ujetGuestPickerDirCtrl($scope, $controller, queryService, ujetIndividualGuestFactory) {
+    function ujetIndividualGuestPickerDirCtrl($scope, $controller, queryService, ujetIndividualGuestFactory) {
         $controller("ujetPickerCtrl", {
             $scope: $scope,
             queryService: queryService,

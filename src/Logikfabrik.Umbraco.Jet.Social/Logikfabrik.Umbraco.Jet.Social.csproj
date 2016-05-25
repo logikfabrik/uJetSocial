@@ -394,9 +394,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualGuest\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\comment.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\media.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\member.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\individualMember.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\report.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\guest.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\individualGuest.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\document.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\group.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\create.html" />
@@ -415,9 +415,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\mediaPicker\mediaPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\mediaPicker\mediaPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\mediaPicker\mediaPickerView.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\memberPicker\memberPickerDir.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\memberPicker\memberPickerDirCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\memberPicker\memberPickerView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\individualMemberPicker\individualMemberPickerDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\individualMemberPicker\individualMemberPickerDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\individualMemberPicker\individualMemberPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectsPicker\objectsPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectsPicker\objectsPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectsPicker\objectsPickerDir.js" />
@@ -457,9 +457,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\commentPicker\commentPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\commentPicker\commentPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\pickerCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\guestPicker\guestPickerDir.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\guestPicker\guestPickerDirCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\guestPicker\guestPickerView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\individualGuestPicker\individualGuestPickerDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\individualGuestPicker\individualGuestPickerDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\individualGuestPicker\individualGuestPickerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\statusPicker\statusPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\pickers\objectPicker\objectPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportDashboardCtrl.js" />
