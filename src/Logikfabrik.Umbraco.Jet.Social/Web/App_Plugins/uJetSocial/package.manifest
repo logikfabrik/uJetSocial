@@ -47,6 +47,9 @@
         '~/App_Plugins/uJetSocial/js/app/components/comment/commentCreateCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/components/comment/commentDashboardCtrl.js',
 		
+		// Document component
+		'~/App_Plugins/uJetSocial/js/app/components/document/documentDashboardCtrl.js',
+
         // Group component
         '~/App_Plugins/uJetSocial/js/app/components/group/groupCreateCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/components/group/groupDashboardCtrl.js',
@@ -58,6 +61,9 @@
 		// IndividualMember component
 		'~/App_Plugins/uJetSocial/js/app/components/individualMember/individualMemberCreateCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/components/individualMember/individualMemberDashboardCtrl.js',
+
+		// Media component
+		'~/App_Plugins/uJetSocial/js/app/components/media/mediaDashboardCtrl.js',
 
         // Report component
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportCreateCtrl.js',
