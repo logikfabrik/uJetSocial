@@ -363,10 +363,12 @@
     <Compile Include="Web\Models\UmbracoMedia.cs" />
     <Compile Include="Web\Models\UmbracoMember.cs" />
     <Compile Include="Web\Trees\CommentTreeController.cs" />
+    <Compile Include="Web\Trees\DocumentTreeController.cs" />
     <Compile Include="Web\Trees\GroupTreeController.cs" />
     <Compile Include="Web\Trees\IndividualGuestTreeController.cs" />
     <Compile Include="Web\Trees\LetterTreeController.cs" />
     <Compile Include="Web\Trees\IndividualMemberTreeController.cs" />
+    <Compile Include="Web\Trees\MediaTreeController.cs" />
     <Compile Include="Web\Trees\ReportTreeController.cs" />
     <Compile Include="Web\Trees\TreeController.cs" />
   </ItemGroup>

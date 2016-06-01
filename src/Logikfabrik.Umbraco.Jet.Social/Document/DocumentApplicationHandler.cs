@@ -4,6 +4,7 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Document
 {
+    using System;
     using global::Umbraco.Core;
     using global::Umbraco.Core.Events;
     using global::Umbraco.Core.Models;
@@ -43,9 +44,37 @@ namespace Logikfabrik.Umbraco.Jet.Social.Document
             }
         }
 
-        private void Deleting(IContentService sender, DeleteEventArgs<IContent> deleteEventArgs)
+        private static void Deleting(IContentService sender, DeleteEventArgs<IContent> args)
         {
-            // TODO: Delete uJetSocial documents for the Umbraco document deleted.
+            if (args.Cancel)
+            {
+                return;
+            }
+
+            var provider = (IDocumentProvider)DataTransferObjectProviders.GetProvider(typeof(Document));
+
+            foreach (var entity in args.DeletedEntities)
+            {
+                var document = provider.GetByDocumentId(entity.Id);
+
+                if (document == null)
+                {
+                    continue;
+                }
+
+                try
+                {
+                    provider.Remove(document.Id);
+                }
+                catch (Exception)
+                {
+                    if (args.CanCancel)
+                    {
+                        // TODO: The document cannot be removed as it's used within uJetSocial. Show an error message.
+                        args.Cancel = true;
+                    }
+                }
+            }
         }
     }
 }
