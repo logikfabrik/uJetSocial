@@ -9,6 +9,6 @@
     ujetGroupDashboardCtrl.$inject = ["$routeParams", "navigationService"];
 
     function ujetGroupDashboardCtrl($routeParams, navigationService) {
-        navigationService.syncTree({ tree: "group", path: ["-1", $routeParams.id], forceReload: false });
+        navigationService.syncTree({ tree: "ujetGroup", path: ["-1", $routeParams.id], forceReload: false });
     };
 })();

@@ -18,7 +18,7 @@
             query: query,
             config: {
                 objectFactory: ujetCommentFactory,
-                editTemplate: "/App_Plugins/uJetSocial/backoffice/comment/edit.html",
+                editTemplate: "/App_Plugins/uJetSocial/backoffice/ujetComment/edit.html",
                 editSuccessMessage: "Comment updated",
                 editErrorMessage: "Comment could not be updated"
             }

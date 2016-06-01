@@ -9,6 +9,6 @@
     ujetReportDashboardCtrl.$inject = ["$routeParams", "navigationService"];
 
     function ujetReportDashboardCtrl($routeParams, navigationService) {
-        navigationService.syncTree({ tree: "report", path: ["-1", $routeParams.id], forceReload: false });
+        navigationService.syncTree({ tree: "ujetReport", path: ["-1", $routeParams.id], forceReload: false });
     };
 })();

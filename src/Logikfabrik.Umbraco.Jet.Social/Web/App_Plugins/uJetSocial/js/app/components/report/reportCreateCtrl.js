@@ -15,7 +15,7 @@
             notificationsService: notificationsService,
             config: {
                 objectFactory: ujetReportFactory,
-                path: "/uJetSocial/report/dashboard/-1",
+                path: "/uJetSocial/ujetReport/dashboard/-1",
                 createSuccessMessage: "Report created",
                 createErrorMessage: "Report could not be created"
             }

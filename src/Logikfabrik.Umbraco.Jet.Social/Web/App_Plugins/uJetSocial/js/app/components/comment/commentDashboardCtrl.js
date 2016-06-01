@@ -9,6 +9,6 @@
     ujetCommentDashboardCtrl.$inject = ["$routeParams", "navigationService"];
 
     function ujetCommentDashboardCtrl($routeParams, navigationService) {
-        navigationService.syncTree({ tree: "comment", path: ["-1", $routeParams.id], forceReload: false });
+        navigationService.syncTree({ tree: "ujetComment", path: ["-1", $routeParams.id], forceReload: false });
     };
 })();

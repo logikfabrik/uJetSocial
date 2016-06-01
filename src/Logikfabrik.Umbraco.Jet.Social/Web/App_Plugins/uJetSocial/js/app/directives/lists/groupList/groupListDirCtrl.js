@@ -13,7 +13,7 @@
 
         var config = {
             objectFactory: ujetGroupFactory,
-            editTemplate: "/App_Plugins/uJetSocial/backoffice/group/edit.html",
+            editTemplate: "/App_Plugins/uJetSocial/backoffice/ujetGroup/edit.html",
             editSuccessMessage: "Group updated",
             editErrorMessage: "Group could not be updated"
         };

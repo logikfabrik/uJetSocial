@@ -5,15 +5,19 @@
   </area>
   <area alias="uJetSocial">
     <!-- Trees -->
-    <key alias="commentTree">Comments</key>
-    <key alias="groupTree">Groups</key>
-    <key alias="individualGuestTree">Guests</key>
-    <key alias="individualMemberTree">Members</key>
-    <key alias="reportTree">Reports</key>
+    <key alias="ujetCommentTree">Comments</key>
+    <key alias="ujetDocumentTree">Documents</key>
+    <key alias="ujetGroupTree">Groups</key>
+    <key alias="ujetIndividualGuestTree">Guests</key>
+    <key alias="ujetIndividualMemberTree">Members</key>
+    <key alias="ujetMediaTree">Media</key>
+    <key alias="ujetReportTree">Reports</key>
 
     <key alias="comments">Comments</key>
+    <key alias="documents">Documents</key>
     <key alias="groups">Groups</key>
     <key alias="guests">Guests</key>
+    <key alias="media">Media</key>
     <key alias="members">Members</key>
     <key alias="reports">Reports</key>
 

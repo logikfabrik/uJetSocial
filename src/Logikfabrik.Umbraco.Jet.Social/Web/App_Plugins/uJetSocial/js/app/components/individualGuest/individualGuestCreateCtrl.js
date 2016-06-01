@@ -15,7 +15,7 @@
             notificationsService: notificationsService,
             config: {
                 objectFactory: ujetIndividualGuestFactory,
-                path: "/uJetSocial/individualGuest/dashboard/-1",
+                path: "/uJetSocial/ujetIndividualGuest/dashboard/-1",
                 createSuccessMessage: "Guest created",
                 createErrorMessage: "Guest could not be created"
             }

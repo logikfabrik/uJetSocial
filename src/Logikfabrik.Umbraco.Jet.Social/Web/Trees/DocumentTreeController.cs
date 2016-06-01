@@ -16,7 +16,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
     /// The <see cref="DocumentTreeController" /> class.
     /// </summary>
     [PluginController("uJetSocial")]
-    [Tree("uJetSocial", "document", "Documents")]
+    [Tree("uJetSocial", "ujetDocument", "Documents")]
     public class DocumentTreeController : TreeController
     {
         /// <summary>

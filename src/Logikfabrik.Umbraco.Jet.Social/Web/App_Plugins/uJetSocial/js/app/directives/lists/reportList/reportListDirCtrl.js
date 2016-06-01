@@ -18,7 +18,7 @@
             query: query,
             config: {
                 objectFactory: ujetReportFactory,
-                editTemplate: "/App_Plugins/uJetSocial/backoffice/report/edit.html",
+                editTemplate: "/App_Plugins/uJetSocial/backoffice/ujetReport/edit.html",
                 editSuccessMessage: "Report updated",
                 editErrorMessage: "Report could not be updated"
             }

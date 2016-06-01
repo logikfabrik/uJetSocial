@@ -15,7 +15,7 @@
             notificationsService: notificationsService,
             config: {
                 objectFactory: ujetGroupFactory,
-                path: "/uJetSocial/group/dashboard/-1",
+                path: "/uJetSocial/ujetGroup/dashboard/-1",
                 createSuccessMessage: "Group created",
                 createErrorMessage: "Group could not be created"
             }

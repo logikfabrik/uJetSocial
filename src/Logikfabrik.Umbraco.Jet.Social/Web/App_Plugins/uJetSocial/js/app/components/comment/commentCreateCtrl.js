@@ -15,7 +15,7 @@
             notificationsService: notificationsService,
             config: {
                 objectFactory: ujetCommentFactory,
-                path: "/uJetSocial/comment/dashboard/-1",
+                path: "/uJetSocial/ujetComment/dashboard/-1",
                 createSuccessMessage: "Comment created",
                 createErrorMessage: "Comment could not be created"
             }

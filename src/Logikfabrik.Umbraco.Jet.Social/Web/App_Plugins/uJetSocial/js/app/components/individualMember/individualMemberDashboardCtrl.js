@@ -9,6 +9,6 @@
     ujetIndividualMemberDashboardCtrl.$inject = ["$routeParams", "navigationService"];
 
     function ujetIndividualMemberDashboardCtrl($routeParams, navigationService) {
-        navigationService.syncTree({ tree: "individualMember", path: ["-1", $routeParams.id], forceReload: false });
+        navigationService.syncTree({ tree: "ujetIndividualMember", path: ["-1", $routeParams.id], forceReload: false });
     };
 })();

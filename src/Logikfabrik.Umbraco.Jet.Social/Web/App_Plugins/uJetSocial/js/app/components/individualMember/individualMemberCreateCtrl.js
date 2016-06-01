@@ -15,7 +15,7 @@
             notificationsService: notificationsService,
             config: {
                 objectFactory: ujetIndividualMemberFactory,
-                path: "/uJetSocial/individualMember/dashboard/-1",
+                path: "/uJetSocial/ujetIndividualMember/dashboard/-1",
                 createSuccessMessage: "Member created",
                 createErrorMessage: "Member could not be created"
             }

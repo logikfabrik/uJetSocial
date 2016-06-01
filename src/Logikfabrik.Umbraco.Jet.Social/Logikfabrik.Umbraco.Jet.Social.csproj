@@ -382,19 +382,21 @@
     <None Include="Web\App_Plugins\uJetSocial\package.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Web\App_Plugins\uJetSocial\backoffice\ujetDocument\" />
+    <Folder Include="Web\App_Plugins\uJetSocial\backoffice\ujetMedia\" />
     <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\individualMemberList\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\create.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\dashboard.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\create.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\dashboard.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualGuest\dashboard.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualGuest\create.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualGuest\edit.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualMember\create.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualMember\dashboard.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\individualMember\edit.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetComment\create.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetComment\dashboard.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetGroup\create.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetGroup\dashboard.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualGuest\dashboard.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualGuest\create.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualGuest\edit.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualMember\create.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualMember\dashboard.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualMember\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\comment.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\media.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\individualMember.html" />
@@ -402,8 +404,8 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\individualGuest.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\document.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\group.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\create.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\dashboard.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetReport\create.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetReport\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\css\app\uJetSocial.css" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentDashboardCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\individualMember\individualMemberCreateCtrl.js" />
@@ -500,10 +502,10 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asGroupFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\services\queryService.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\vendor\lodash-3.10.1\lodash.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\comment\edit.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetComment\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\dashboard.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\group\edit.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\report\edit.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetGroup\edit.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetReport\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\vendor\moment-2.11.1\moment.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\vendor\sprintf-1.0.3\sprintf.js" />
     <Content Include="Web\App_Plugins\uJetSocial\lang\en-GB.xml">
