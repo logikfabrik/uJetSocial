@@ -323,12 +323,15 @@
     <Compile Include="Individual\IndividualMemberProvider.cs" />
     <Compile Include="Individual\IndividualProvider{T}.cs" />
     <Compile Include="IOwnable.cs" />
+    <Compile Include="IUmbracoToDataTransferObjectProvider{T}.cs" />
     <Compile Include="Media\IMediaProvider.cs" />
     <Compile Include="Media\Media.cs" />
+    <Compile Include="Media\MediaApplicationHandler.cs" />
     <Compile Include="Media\MediaProvider.cs" />
     <Compile Include="OwnableExtensions.cs" />
     <Compile Include="QueryResult{T}.cs" />
     <Compile Include="Query{T}.cs" />
+    <Compile Include="RecycleBinApplicationHandler{T}.cs" />
     <Compile Include="Report\Report.cs" />
     <Compile Include="Report\ReportProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

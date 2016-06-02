@@ -21,7 +21,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         {
             var provider = (IDocumentProvider)Provider;
 
-            var document = provider.GetByDocumentId(id);
+            var document = provider.GetByUmbracoId(id);
 
             return document ?? provider.Add(new Document { DocumentId = id });
         }

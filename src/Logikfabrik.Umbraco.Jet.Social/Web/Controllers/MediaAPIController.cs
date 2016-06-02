@@ -21,7 +21,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         {
             var provider = (IMediaProvider)Provider;
 
-            var media = provider.GetByMediaId(id);
+            var media = provider.GetByUmbracoId(id);
 
             return media ?? provider.Add(new Media { MediaId = id });
         }

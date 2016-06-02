@@ -64,5 +64,13 @@
 
     <key alias="emptyList">Listan är tom</key>
     <key alias="chooseType">Välj...</key>
+
+    <!-- Errors -->
+    <key alias="errorCategoryGeneral">Något gick fel</key>
+    <key alias="errorCategoryEmptyRecycleBin">Papperskorgen kunde inte tömmas</key>
+    <key alias="emptyRecycleBinDocumentError">Dokumentet {0} används och kan inte tas bort.</key>
+    <key alias="emptyRecycleBinDocumentErrors">Dokumenten {0} används och kan inte tas bort.</key>
+    <key alias="emptyRecycleBinMediaError">Media {0} används och kan inte tas bort.</key>
+    <key alias="emptyRecycleBinMediaErrors">Media {0} används och kan inte tas bort.</key>
   </area>
 </language>

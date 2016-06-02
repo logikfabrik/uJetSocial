@@ -1,8 +1,8 @@
-﻿// <copyright file="DocumentApplicationHandler.cs" company="Logikfabrik">
+﻿// <copyright file="MediaApplicationHandler.cs" company="Logikfabrik">
 //   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
-namespace Logikfabrik.Umbraco.Jet.Social.Document
+namespace Logikfabrik.Umbraco.Jet.Social.Media
 {
     using System.Linq;
     using global::Umbraco.Core;
@@ -11,9 +11,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Document
     using global::Umbraco.Core.Services;
 
     /// <summary>
-    /// The <see cref="DocumentApplicationHandler" /> class.
+    /// The <see cref="MediaApplicationHandler" /> class.
     /// </summary>
-    public class DocumentApplicationHandler : RecycleBinApplicationHandler<Document>
+    public class MediaApplicationHandler : RecycleBinApplicationHandler<Media>
     {
         private static readonly object Lock = new object();
 
@@ -38,16 +38,16 @@ namespace Logikfabrik.Umbraco.Jet.Social.Document
 
             lock (Lock)
             {
-                ContentService.Deleting += Deleting;
-                ContentService.EmptyingRecycleBin += EmptyingRecycleBin;
+                MediaService.Deleting += Deleting;
+                MediaService.EmptyingRecycleBin += EmptyingRecycleBin;
 
                 configured = true;
             }
         }
 
-        private static void EmptyingRecycleBin(IContentService sender, RecycleBinEventArgs args)
+        private static void EmptyingRecycleBin(IMediaService sender, RecycleBinEventArgs args)
         {
-            if (!args.IsContentRecycleBin)
+            if (!args.IsMediaRecycleBin)
             {
                 return;
             }
@@ -60,14 +60,14 @@ namespace Logikfabrik.Umbraco.Jet.Social.Document
             Delete(args.Ids, args);
         }
 
-        private static void Deleting(IContentService sender, DeleteEventArgs<IContent> args)
+        private static void Deleting(IMediaService sender, DeleteEventArgs<IMedia> args)
         {
             if (args.CanCancel && args.Cancel)
             {
                 return;
             }
 
-            Delete(args.DeletedEntities.Select(document => document.Id), args);
+            Delete(args.DeletedEntities.Select(media => media.Id), args);
         }
     }
 }

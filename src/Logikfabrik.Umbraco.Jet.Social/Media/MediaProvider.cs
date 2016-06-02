@@ -22,11 +22,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Media
         }
 
         /// <summary>
-        /// Gets the data transfer object with the specified media identifier.
+        /// Gets the data transfer object with the specified Umbraco identifier.
         /// </summary>
-        /// <param name="id">The media identifier.</param>
-        /// <returns>The data transfer object with the specified media identifier.</returns>
-        public Media GetByMediaId(int id)
+        /// <param name="id">The Umbraco identifier.</param>
+        /// <returns>The data transfer object with the specified Umbraco identifier.</returns>
+        public Media GetByUmbracoId(int id)
         {
             var query = new Query<Media>(0, int.MaxValue);
 

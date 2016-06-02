@@ -10,6 +10,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
     using Document;
     using Group;
     using Individual;
+    using Media;
     using Report;
 
     /// <summary>
@@ -54,6 +55,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 { typeof(Group.Group), new GroupProvider(DatabaseWrapperFactory.GetDatabase) },
                 { typeof(IndividualGuest), new IndividualGuestProvider(DatabaseWrapperFactory.GetDatabase) },
                 { typeof(IndividualMember), new IndividualMemberProvider(DatabaseWrapperFactory.GetDatabase) },
+                { typeof(Media.Media), new MediaProvider(DatabaseWrapperFactory.GetDatabase) },
                 { typeof(Report.Report), new ReportProvider(DatabaseWrapperFactory.GetDatabase) }
             };
         }

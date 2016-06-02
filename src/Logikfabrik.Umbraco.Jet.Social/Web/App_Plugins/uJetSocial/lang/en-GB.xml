@@ -64,5 +64,13 @@
 
     <key alias="emptyList">The list is empty</key>
     <key alias="chooseType">Choose...</key>
+    
+    <!-- Errors -->
+    <key alias="errorCategoryGeneral">Something went wrong</key>
+    <key alias="errorCategoryEmptyRecycleBin">The Recycle Bin could not be emptied</key>
+    <key alias="emptyRecycleBinDocumentError">Documents {0} are in use and cannot be deleted.</key>
+    <key alias="emptyRecycleBinDocumentErrors">Document {0} is in use and cannot be deleted.</key>
+    <key alias="emptyRecycleBinMediaError">Media {0} is in use and cannot be deleted.</key>
+    <key alias="emptyRecycleBinMediaErrors">Media {0} are in use and cannot be deleted.</key>
   </area>
 </language>

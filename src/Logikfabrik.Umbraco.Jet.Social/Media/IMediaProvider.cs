@@ -7,13 +7,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Media
     /// <summary>
     /// The <see cref="IMediaProvider" /> interface.
     /// </summary>
-    public interface IMediaProvider : IDataTransferObjectProvider<Media>
+    public interface IMediaProvider : IUmbracoToDataTransferObjectProvider<Media>
     {
-        /// <summary>
-        /// Gets the data transfer object with the specified media identifier.
-        /// </summary>
-        /// <param name="id">The media identifier.</param>
-        /// <returns>The data transfer object with the specified media identifier.</returns>
-        Media GetByMediaId(int id);
     }
 }

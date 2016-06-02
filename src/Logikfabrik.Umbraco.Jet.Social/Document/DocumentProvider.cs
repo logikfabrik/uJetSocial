@@ -22,11 +22,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Document
         }
 
         /// <summary>
-        /// Gets the data transfer object with the specified document identifier.
+        /// Gets the data transfer object with the specified Umbraco identifier.
         /// </summary>
-        /// <param name="id">The document identifier.</param>
-        /// <returns>The data transfer object with the specified document identifier.</returns>
-        public Document GetByDocumentId(int id)
+        /// <param name="id">The Umbraco identifier.</param>
+        /// <returns>The data transfer object with the specified Umbraco identifier.</returns>
+        public Document GetByUmbracoId(int id)
         {
             var query = new Query<Document>(0, int.MaxValue);
 
