@@ -353,8 +353,11 @@
     <Compile Include="Web\Filters\APIExceptionFilterAttribute.cs" />
     <Compile Include="Web\Models\APIException.cs" />
     <Compile Include="Web\Models\Querying\CommentQuery.cs" />
+    <Compile Include="Web\Models\Querying\DocumentQuery.cs" />
     <Compile Include="Web\Models\Querying\GroupQuery.cs" />
     <Compile Include="Web\Models\Querying\IndividualGuestQuery.cs" />
+    <Compile Include="Web\Models\Querying\IndividualMemberQuery.cs" />
+    <Compile Include="Web\Models\Querying\MediaQuery.cs" />
     <Compile Include="Web\Models\Querying\PagedQuery.cs" />
     <Compile Include="Web\Models\Querying\DataTransferObjectQuery.cs" />
     <Compile Include="Web\Models\Querying\QueryResult{T}.cs" />
@@ -384,19 +387,17 @@
     <None Include="uJetSocial.nuspec" />
     <None Include="Web\App_Plugins\uJetSocial\package.manifest" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\individualMemberList\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetComment\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetComment\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetDocument\dashboard.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetDocument\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetGroup\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetGroup\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualGuest\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualGuest\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualGuest\edit.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualMember\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualMember\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualMember\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\comment.html" />
@@ -407,17 +408,26 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\document.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\pickers\group.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetMedia\dashboard.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetMedia\edit.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetReport\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetReport\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\css\app\uJetSocial.css" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\comment\commentDashboardCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\document\documentDashboardCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\components\individualMember\individualMemberCreateCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\individualMember\individualMemberDashboardCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\media\mediaDashboardCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\objectCreateCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\pickerDialogCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\report\reportCreateCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\documentList\documentListDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\documentList\documentListDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\documentList\documentListView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\individualMemberList\individualMemberListDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\individualMemberList\individualMemberListDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\individualMemberList\individualMemberListView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\mediaList\mediaListDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\mediaList\mediaListDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\mediaList\mediaListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\reportList\reportListView.html" />

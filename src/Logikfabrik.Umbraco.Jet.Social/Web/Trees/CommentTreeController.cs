@@ -40,7 +40,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         /// Gets a value indicating whether this instance has children.
         /// </summary>
         /// <value>
-        /// <c>true</c> if this instance has children; otherwise, <c>false</c>.
+        ///   <c>true</c> if this instance has children; otherwise, <c>false</c>.
         /// </value>
         protected override bool HasChildren => false;
 
@@ -49,9 +49,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="queryStrings">The query strings.</param>
-        /// <returns>
-        /// The menu.
-        /// </returns>
+        /// <returns>The menu.</returns>
         protected override MenuItemCollection GetMenuForNode(string id, FormDataCollection queryStrings)
         {
             if (!IsRootNode(id))

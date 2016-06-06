@@ -11,7 +11,8 @@
     function ujetMediaFactory($http) {
         var factory = {
             get: get,
-            getByMediaId: getByMediaId
+            getByMediaId: getByMediaId,
+            query: query
         };
 
         return factory;
@@ -22,6 +23,10 @@
 
         function getByMediaId(id) {
             return $http.get("backoffice/uJetSocial/MediaAPI/GetByMediaId/" + id);
+        }
+
+        function query(q) {
+            return $http.post("backoffice/uJetSocial/MediaAPI/Query", q);
         }
     };
 })();

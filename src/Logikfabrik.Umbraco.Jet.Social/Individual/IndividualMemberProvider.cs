@@ -22,11 +22,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         }
 
         /// <summary>
-        /// Gets the data transfer object with the specified member identifier.
+        /// Gets the data transfer object with the specified Umbraco identifier.
         /// </summary>
-        /// <param name="id">The member identifier.</param>
-        /// <returns>The data transfer object with the specified member identifier.</returns>
-        public IndividualMember GetByMemberId(int id)
+        /// <param name="id">The Umbraco identifier.</param>
+        /// <returns>The data transfer object with the specified Umbraco identifier.</returns>
+        public IndividualMember GetByUmbracoId(int id)
         {
             var query = new Query<IndividualMember>(0, int.MaxValue);
 

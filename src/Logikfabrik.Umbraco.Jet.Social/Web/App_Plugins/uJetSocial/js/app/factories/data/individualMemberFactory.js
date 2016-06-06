@@ -11,7 +11,8 @@
     function ujetIndividualMemberFactory($http) {
         var factory = {
             get: get,
-            getByMemberId: getByMemberId
+            getByMemberId: getByMemberId,
+            query: query
         };
 
         return factory;
@@ -22,6 +23,10 @@
 
         function getByMemberId(id) {
             return $http.get("backoffice/uJetSocial/IndividualMemberAPI/GetByMemberId/" + id);
+        }
+
+        function query(q) {
+            return $http.post("backoffice/uJetSocial/IndividualMemberAPI/Query", q);
         }
     };
 })();

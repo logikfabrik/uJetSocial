@@ -11,7 +11,8 @@
     function ujetDocumentFactory($http) {
         var factory = {
             get: get,
-            getByDocumentId: getByDocumentId
+            getByDocumentId: getByDocumentId,
+            query: query
         };
 
         return factory;
@@ -22,6 +23,10 @@
 
         function getByDocumentId(id) {
             return $http.get("backoffice/uJetSocial/DocumentAPI/GetByDocumentId/" + id);
+        }
+
+        function query(q) {
+            return $http.post("backoffice/uJetSocial/DocumentAPI/Query", q);
         }
     };
 })();

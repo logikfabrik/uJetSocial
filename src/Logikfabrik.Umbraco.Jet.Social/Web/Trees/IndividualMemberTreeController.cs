@@ -17,7 +17,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
     /// </summary>
     [PluginController("uJetSocial")]
     [Tree("uJetSocial", "ujetIndividualMember", "Members")]
-    public class IndividualMemberTreeController : LetterTreeController
+    public class IndividualMemberTreeController : TreeController
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="IndividualMemberTreeController" /> class.
@@ -37,21 +37,19 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
         }
 
         /// <summary>
-        /// Gets the child icon.
+        /// Gets a value indicating whether this instance has children.
         /// </summary>
         /// <value>
-        /// The child icon.
+        ///   <c>true</c> if this instance has children; otherwise, <c>false</c>.
         /// </value>
-        protected override string ChildIcon => "icon-users";
+        protected override bool HasChildren => false;
 
         /// <summary>
         /// Gets the menu for the node with the specified identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="queryStrings">The query strings.</param>
-        /// <returns>
-        /// The menu.
-        /// </returns>
+        /// <returns>The menu.</returns>
         protected override MenuItemCollection GetMenuForNode(string id, FormDataCollection queryStrings)
         {
             if (!IsRootNode(id))
@@ -61,8 +59,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Trees
 
             var menu = new MenuItemCollection();
 
-            menu.Items.Add<ActionNew>(Localize($"{TreeApplicationAlias}/newAction"));
-            menu.Items.Add<ActionRefresh>(Localize($"{TreeApplicationAlias}/refreshAction"), true);
+            menu.Items.Add<ActionRefresh>(Localize($"{TreeApplicationAlias}/refreshAction"), false);
 
             return menu;
         }

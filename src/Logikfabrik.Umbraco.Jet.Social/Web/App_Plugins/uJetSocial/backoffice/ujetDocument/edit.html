@@ -1,4 +1,8 @@
-﻿<div class="umbracoDialog umb-dialog" ng-controller="ujetIndividualMemberCreateCtrl">
+﻿<div class="ujet-dialog" ng-controller="ujetObjectEditCtrl as vm">
+
+    <h1 class="ujet-dialog__header">
+        <localize key="uJetSocial_edit">Edit</localize>
+    </h1>
 
     <umb-pane>
 
@@ -9,12 +13,12 @@
             </div>
 
             <div class="btn-toolbar umb-btn-toolbar">
+                <button class="btn btn-primary" ng-click="vm.save(form)">
+                    <localize key="uJetSocial_saveBtn">Save</localize>
+                </button>
                 <a class="btn btn-link" ng-click="vm.cancel()">
                     <localize key="uJetSocial_cancelBtn">Cancel</localize>
                 </a>
-                <button class="btn btn-primary" ng-click="vm.create(form)">
-                    <localize key="uJetSocial_createBtn">Create</localize>
-                </button>
             </div>
 
         </form>

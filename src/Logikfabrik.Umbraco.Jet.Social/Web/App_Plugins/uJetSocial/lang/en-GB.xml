@@ -43,6 +43,9 @@
     <key alias="updatedProp">Updated</key>
     <key alias="statusProp">Status</key>
     <key alias="idProp">ID</key>
+    <key alias="documentIdProp">Document</key>
+    <key alias="memberIdProp">Member</key>
+    <key alias="mediaIdProp">Media</key>
 
     <!-- Buttons -->
     <key alias="cancelBtn">Cancel</key>
