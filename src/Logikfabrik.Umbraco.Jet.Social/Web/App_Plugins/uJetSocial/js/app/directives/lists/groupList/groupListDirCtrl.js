@@ -6,16 +6,13 @@
         .module("umbraco")
         .controller("ujetGroupListDirCtrl", ujetGroupListDirCtrl);
 
-    ujetGroupListDirCtrl.$inject = ["$scope", "$controller", "$routeParams", "dialogService", "notificationsService", "queryService", "ujetGroupFactory"];
+    ujetGroupListDirCtrl.$inject = ["$scope", "$controller", "$routeParams", "queryService", "ujetGroupFactory"];
 
-    function ujetGroupListDirCtrl($scope, $controller, $routeParams, dialogService, notificationsService, queryService, ujetGroupFactory) {
+    function ujetGroupListDirCtrl($scope, $controller, $routeParams, queryService, ujetGroupFactory) {
         var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "Name", "Description", "OwnerId"]);
 
         var config = {
-            objectFactory: ujetGroupFactory,
-            editTemplate: "/App_Plugins/uJetSocial/backoffice/ujetGroup/edit.html",
-            editSuccessMessage: "Group updated",
-            editErrorMessage: "Group could not be updated"
+            objectFactory: ujetGroupFactory
         };
 
         if (isNaN(parseInt($routeParams.id, 10))) {
@@ -24,8 +21,6 @@
 
         $controller("ujetListCtrl", {
             $scope: $scope,
-            dialogService: dialogService,
-            notificationsService: notificationsService,
             query: query,
             config: config
         });

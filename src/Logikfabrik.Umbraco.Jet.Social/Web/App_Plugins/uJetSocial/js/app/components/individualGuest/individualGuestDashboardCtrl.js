@@ -6,9 +6,19 @@
         .module("umbraco")
         .controller("ujetIndividualGuestDashboardCtrl", ujetIndividualGuestDashboardCtrl);
 
-    ujetIndividualGuestDashboardCtrl.$inject = ["$routeParams", "navigationService"];
+    ujetIndividualGuestDashboardCtrl.$inject = ["$scope", "$controller", "$routeParams", "navigationService", "notificationsService", "ujetIndividualGuestFactory"];
 
-    function ujetIndividualGuestDashboardCtrl($routeParams, navigationService) {
+    function ujetIndividualGuestDashboardCtrl($scope, $controller, $routeParams, navigationService, notificationsService, ujetIndividualGuestFactory) {
         navigationService.syncTree({ tree: "ujetIndividualGuest", path: ["-1", $routeParams.id], forceReload: false });
+
+        $controller("ujetDashboardCtrl", {
+            $scope: $scope,
+            notificationsService: notificationsService,
+            config: {
+                objectFactory: ujetIndividualGuestFactory,
+                successMessage: "Success",
+                errorMessage: "Error"
+            }
+        });
     };
 })();

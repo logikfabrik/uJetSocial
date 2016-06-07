@@ -7,10 +7,10 @@
         .filter("ujetAsGroup", ujetAsGroupFilter);
 
     function ujetAsGroupFilter() {
-        return function (obj) {
-            obj.label = obj.name;
+        return function (object) {
+            object.label = object.name;
 
-            return obj;
+            return object;
         };
     };
 })();

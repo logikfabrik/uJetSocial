@@ -7,10 +7,10 @@
         .filter("ujetAsDocument", ujetAsDocumentFilter);
 
     function ujetAsDocumentFilter() {
-        return function (obj) {
-            obj.label = "Document from Umbraco";
+        return function (object) {
+            object.label = "Document from Umbraco";
 
-            return obj;
+            return object;
         };
     };
 })();

@@ -6,21 +6,16 @@
         .module("umbraco")
         .controller("ujetReportListDirCtrl", ujetReportListDirCtrl);
 
-    ujetReportListDirCtrl.$inject = ["$scope", "$controller", "dialogService", "notificationsService", "queryService", "ujetReportFactory"];
+    ujetReportListDirCtrl.$inject = ["$scope", "$controller", "queryService", "ujetReportFactory"];
 
-    function ujetReportListDirCtrl($scope, $controller, dialogService, notificationsService, queryService, ujetReportFactory) {
+    function ujetReportListDirCtrl($scope, $controller, queryService, ujetReportFactory) {
         var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "EntityId", "AuthorId", "Text"]);
 
         $controller("ujetListCtrl", {
             $scope: $scope,
-            dialogService: dialogService,
-            notificationsService: notificationsService,
             query: query,
             config: {
-                objectFactory: ujetReportFactory,
-                editTemplate: "/App_Plugins/uJetSocial/backoffice/ujetReport/edit.html",
-                editSuccessMessage: "Report updated",
-                editErrorMessage: "Report could not be updated"
+                objectFactory: ujetReportFactory
             }
         });
     };

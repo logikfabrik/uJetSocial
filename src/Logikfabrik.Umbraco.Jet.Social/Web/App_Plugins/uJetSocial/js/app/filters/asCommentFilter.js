@@ -7,10 +7,10 @@
         .filter("ujetAsComment", ujetAsCommentFilter);
 
     function ujetAsCommentFilter() {
-        return function (obj) {
-            obj.label = "Comment";
+        return function (object) {
+            object.label = "Comment";
 
-            return obj;
+            return object;
         };
     };
 })();

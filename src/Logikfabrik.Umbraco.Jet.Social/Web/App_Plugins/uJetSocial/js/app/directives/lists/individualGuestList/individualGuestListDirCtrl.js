@@ -6,16 +6,13 @@
         .module("umbraco")
         .controller("ujetIndividualGuestListDirCtrl", ujetIndividualGuestListDirCtrl);
 
-    ujetIndividualGuestListDirCtrl.$inject = ["$scope", "$controller", "$routeParams", "dialogService", "notificationsService", "queryService", "ujetIndividualGuestFactory"];
+    ujetIndividualGuestListDirCtrl.$inject = ["$scope", "$controller", "$routeParams", "queryService", "ujetIndividualGuestFactory"];
 
-    function ujetIndividualGuestListDirCtrl($scope, $controller, $routeParams, dialogService, notificationsService, queryService, ujetIndividualGuestFactory) {
+    function ujetIndividualGuestListDirCtrl($scope, $controller, $routeParams, queryService, ujetIndividualGuestFactory) {
         var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "FirstName", "LastName"]);
 
         var config = {
-            objectFactory: ujetIndividualGuestFactory,
-            editTemplate: "/App_Plugins/uJetSocial/backoffice/ujetIndividualGuest/edit.html",
-            editSuccessMessage: "Guest updated",
-            editErrorMessage: "Guest could not be updated"
+            objectFactory: ujetIndividualGuestFactory
         };
 
         if (isNaN(parseInt($routeParams.id, 10))) {
@@ -24,8 +21,6 @@
 
         $controller("ujetListCtrl", {
             $scope: $scope,
-            dialogService: dialogService,
-            notificationsService: notificationsService,
             query: query,
             config: config
         });

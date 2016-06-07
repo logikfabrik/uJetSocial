@@ -1,4 +1,4 @@
-﻿<umb-panel ng-controller="ujetIndividualMemberDashboardCtrl as vm">
+﻿<umb-panel ng-controller="ujetIndividualMemberDashboardCtrl">
     <umb-header>
         <h1><localize key="uJetSocial_members">Members</localize></h1>
     </umb-header>
@@ -7,6 +7,7 @@
             <umb-pane>
 
                 <ujet-individual-member-list></ujet-individual-member-list>
+                <ujet-individual-member-edit model="vm.object"></ujet-individual-member-edit>
 
             </umb-pane>
         </umb-tab>

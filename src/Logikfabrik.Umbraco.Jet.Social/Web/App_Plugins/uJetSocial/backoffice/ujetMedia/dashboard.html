@@ -1,4 +1,4 @@
-﻿<umb-panel ng-controller="ujetMediaDashboardCtrl as vm">
+﻿<umb-panel ng-controller="ujetMediaDashboardCtrl">
     <umb-header>
         <h1><localize key="uJetSocial_media">Media</localize></h1>
     </umb-header>
@@ -7,6 +7,7 @@
             <umb-pane>
 
                 <ujet-media-list></ujet-media-list>
+                <ujet-media-edit model="vm.object"></ujet-media-edit>
 
             </umb-pane>
         </umb-tab>

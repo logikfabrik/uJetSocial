@@ -1,20 +1,20 @@
 ﻿<div class="ujet-object">
 
     <div class="ujet-object__action" ng-show="!vm.canSelect">
-        <span class="ujet-object__label">{{vm.obj.label}}</span>
-        <span class="ujet-object__sub-label">{{vm.obj.subLabel}}</span>
+        <span class="ujet-object__label">{{vm.object.label}}</span>
+        <span class="ujet-object__sub-label">{{vm.object.subLabel}}</span>
     </div>
 
-    <a class="ujet-object__action" href="#" ng-show="vm.canSelect" ng-click="vm.selectObj()" prevent-default>
-        <span class="ujet-object__label">{{vm.obj.label}}</span>
-        <span class="ujet-object__sub-label">{{vm.obj.subLabel}}</span>
+    <a class="ujet-object__action" href="#" ng-show="vm.canSelect" ng-click="vm.selectObject()" prevent-default>
+        <span class="ujet-object__label">{{vm.object.label}}</span>
+        <span class="ujet-object__sub-label">{{vm.object.subLabel}}</span>
     </a>
 
-    <a class="ujet-object__button" href="#" ng-show="vm.canEdit" ng-click="vm.editObj()" prevent-default>
+    <a class="ujet-object__button" href="#" ng-show="vm.canEdit" ng-click="vm.editObject()" prevent-default>
         <i class="ujet-object__icon icon icon-edit"></i>
     </a>
 
-    <a class="ujet-object__button" href="#" ng-show="vm.canDelete" ng-click="vm.deleteObj()" prevent-default>
+    <a class="ujet-object__button" href="#" ng-show="vm.canDelete" ng-click="vm.deleteObject()" prevent-default>
         <i class="ujet-object__icon icon icon-delete"></i>
     </a>
 

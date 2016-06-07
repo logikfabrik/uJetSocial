@@ -40,9 +40,11 @@
 
 		// Components
 
-        // Dashboard component
-        '~/App_Plugins/uJetSocial/js/app/components/dashboard/dashboardController.js',
-		
+		// General components
+		'~/App_Plugins/uJetSocial/js/app/components/dashboardCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/components/objectCreateCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/components/pickerDialogCtrl.js',
+
 		// Comment component
         '~/App_Plugins/uJetSocial/js/app/components/comment/commentCreateCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/components/comment/commentDashboardCtrl.js',
@@ -67,12 +69,7 @@
         // Report component
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportCreateCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/components/report/reportDashboardCtrl.js',
-
-		// General components
-		'~/App_Plugins/uJetSocial/js/app/components/objectCreateCtrl.js',
-		'~/App_Plugins/uJetSocial/js/app/components/objectEditCtrl.js',
-		'~/App_Plugins/uJetSocial/js/app/components/pickerDialogCtrl.js',
-
+		
         // Directives
 		        
 		// Presenter directives
@@ -103,22 +100,37 @@
 
 		// List directives
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/listCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/editCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/commentEdit/commentEditDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/commentEdit/commentEditDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/commentList/commentListDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/commentList/commentListDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/documentEdit/documentEditDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/documentEdit/documentEditDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/documentList/documentListDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/documentList/documentListDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/groupEdit/groupEditDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/groupEdit/groupEditDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/groupList/groupListDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/groupList/groupListDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/individualGuestEdit/individualGuestEditDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/individualGuestEdit/individualGuestEditDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/individualGuestList/individualGuestListDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/individualGuestList/individualGuestListDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/individualMemberEdit/individualMemberEditDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/individualMemberEdit/individualMemberEditDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/individualMemberList/individualMemberListDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/individualMemberList/individualMemberListDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/list/listDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/list/listDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/mediaEdit/mediaEditDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/mediaEdit/mediaEditDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/mediaList/mediaListDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/mediaList/mediaListDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/pager/pagerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/pager/pagerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/reportEdit/reportEditDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/lists/reportEdit/reportEditDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/reportList/reportListDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/reportList/reportListDirCtrl.js'
     ],

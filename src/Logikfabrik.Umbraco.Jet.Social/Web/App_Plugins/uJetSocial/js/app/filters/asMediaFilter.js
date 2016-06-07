@@ -7,10 +7,10 @@
         .filter("ujetAsMedia", ujetAsMediaFilter);
 
     function ujetAsMediaFilter() {
-        return function (obj) {
-            obj.label = "Media from Umbraco";
+        return function (object) {
+            object.label = "Media from Umbraco";
 
-            return obj;
+            return object;
         };
     };
 })();

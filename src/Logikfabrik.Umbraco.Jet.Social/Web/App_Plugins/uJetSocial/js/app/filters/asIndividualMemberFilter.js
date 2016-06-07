@@ -7,10 +7,10 @@
         .filter("ujetAsIndividualMember", ujetAsIndividualMemberFilter);
 
     function ujetAsIndividualMemberFilter() {
-        return function (obj) {
-            obj.label = "Member from Umbraco";
+        return function (object) {
+            object.label = "Member from Umbraco";
 
-            return obj;
+            return object;
         };
     };
 })();

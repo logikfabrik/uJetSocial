@@ -16,8 +16,8 @@
                 objectFactory: ujetUmbracoDocumentFactory,
                 objectParam: "Name"
             },
-            callback: function(obj) {
-                ujetDocumentFactory.getByDocumentId(obj.id).success(function (data) {
+            callback: function(object) {
+                ujetDocumentFactory.getByDocumentId(object.id).success(function (data) {
                     $scope.dialogOptions.callback($filter("ujetAsDocument")(data));
                 });
             }

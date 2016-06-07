@@ -10,27 +10,35 @@
 
     function ujetObjectDirCtrl($scope) {
         var vm = {
-            obj: $scope.obj,
             canSelect: $scope.canSelect,
             canEdit: $scope.canEdit,
             canDelete: $scope.canDelete,
-            selectObj: selectObj,
-            editObj: editObj,
-            deleteObj: deleteObj
+            selectObject: selectObject,
+            editObject: editObject,
+            deleteObject: deleteObject
         };
 
         $scope.vm = vm;
 
-        function selectObj() {
-            $scope.$emit("selectObject", vm.obj);
+        function selectObject() {
+            $scope.$emit("selectObject", vm.object);
         };
 
-        function editObj() {
-            $scope.$emit("editObject", vm.obj);
+        function editObject() {
+            $scope.$emit("editObject", vm.object);
         };
 
-        function deleteObj() {
-            $scope.$emit("deleteObject", vm.obj);
+        function deleteObject() {
+            $scope.$emit("deleteObject", vm.object);
         };
+
+        $scope.$watch("model", function (newValue) {
+            if (_.isNull(newValue) ||
+                _.isUndefined(newValue)) {
+                return;
+            }
+
+            vm.object = newValue;
+        });
     };
 })();

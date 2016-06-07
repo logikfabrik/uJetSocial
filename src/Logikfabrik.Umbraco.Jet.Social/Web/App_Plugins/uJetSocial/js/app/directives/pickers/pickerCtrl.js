@@ -35,8 +35,8 @@
             });
         };
 
-        $scope.$on("selectObject", function (e, obj) {
-            callback(obj);
+        $scope.$on("selectObject", function (e, object) {
+            callback(object);
         });
 
         $scope.$on("pageIndexChanged", function (e, pageIndex) {

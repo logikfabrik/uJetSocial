@@ -16,8 +16,8 @@
                 objectFactory: ujetUmbracoMediaFactory,
                 objectParam: "Name"
             },
-            callback: function (obj) {
-                ujetMediaFactory.getByMediaId(obj.id).success(function (data) {
+            callback: function (object) {
+                ujetMediaFactory.getByMediaId(object.id).success(function (data) {
                     $scope.dialogOptions.callback($filter("ujetAsMedia")(data));
                 });
             }

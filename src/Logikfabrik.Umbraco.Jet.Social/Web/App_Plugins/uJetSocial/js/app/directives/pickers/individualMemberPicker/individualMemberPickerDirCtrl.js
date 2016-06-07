@@ -16,8 +16,8 @@
                 objectFactory: ujetUmbracoMemberFactory,
                 objectParam: "Name"
             },
-            callback: function (obj) {
-                ujetIndividualMemberFactory.getByMemberId(obj.id).success(function (data) {
+            callback: function (object) {
+                ujetIndividualMemberFactory.getByMemberId(object.id).success(function (data) {
                     $scope.dialogOptions.callback($filter("ujetAsIndividualMember")(data));
                 });
             }

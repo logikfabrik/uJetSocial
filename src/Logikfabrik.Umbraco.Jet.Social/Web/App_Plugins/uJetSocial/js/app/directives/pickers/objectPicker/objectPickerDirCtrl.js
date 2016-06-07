@@ -10,7 +10,6 @@
 
     function ujetObjectPickerDirCtrl($scope, _, dialogService, ujetEntityFactory) {
         var vm = {
-            objId: $scope.model,
             canPickComment: $scope.canPickComment,
             canPickDocument: $scope.canPickDocument,
             canPickGroup: $scope.canPickGroup,
@@ -18,8 +17,6 @@
             canPickMedia: $scope.canPickMedia,
             canPickMember: $scope.canPickMember,
             canPickReport: $scope.canPickReport,
-            obj: null,
-            hasObject: false,
             showPicker: showPicker
         };
 
@@ -36,13 +33,13 @@
 
             dialog = dialogService.open({
                 template: template,
-                callback: function (obj) {
+                callback: function (object) {
                     if (dialog !== null) {
                         dialogService.close(dialog);
                     }
 
-                    if (obj !== null) {
-                        selectObj(obj);
+                    if (object !== null) {
+                        selectObject(object);
                     }
 
                     dialog = null;
@@ -50,36 +47,33 @@
             });
         };
 
-        function selectObj(obj) {
-            vm.objId = obj.id;
-            vm.obj = obj;
+        function selectObject(object) {
+            $scope.model = object.id;
+
+            vm.object = object;
             vm.hasObject = true;
         };
 
-        function deselectObj() {
-            vm.objId = null;
-            vm.obj = null;
+        function deselectObject() {
+            $scope.model = null;
+
+            vm.object = null;
             vm.hasObject = false;
         };
 
-        function init() {
-            if (_.isNaN(vm.objId) || !_.isNumber(vm.objId)) {
+        $scope.$on("deleteObject", function (e) {
+            deselectObject();
+        });
+
+        $scope.$watch("model", function (newValue) {
+            if (_.isNull(newValue) ||
+                _.isUndefined(newValue)) {
                 return;
             }
 
-            ujetEntityFactory.get(vm.objId).then(function (obj) {
-                selectObj(obj);
+            ujetEntityFactory.get(newValue).then(function (object) {
+                selectObject(object);
             });
-        };
-
-        $scope.$on("deleteObject", function (e) {
-            deselectObj();
         });
-
-        $scope.$watch("vm.objId", function (newValue) {
-            $scope.model = newValue;
-        });
-
-        init();
     };
 })();

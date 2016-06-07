@@ -1,12 +1,13 @@
-﻿<umb-panel ng-controller="ujetCommentDashboardCtrl as vm">
+﻿<umb-panel ng-controller="ujetCommentDashboardCtrl">
     <umb-header>
-            <h1><localize key="uJetSocial_comments">Comments</localize></h1>
+        <h1><localize key="uJetSocial_comments">Comments</localize></h1>
     </umb-header>
     <umb-tab-view>
         <umb-tab style="display: block;">
             <umb-pane>
 
                 <ujet-comment-list></ujet-comment-list>
+                <ujet-comment-edit model="vm.object"></ujet-comment-edit>
 
             </umb-pane>
         </umb-tab>

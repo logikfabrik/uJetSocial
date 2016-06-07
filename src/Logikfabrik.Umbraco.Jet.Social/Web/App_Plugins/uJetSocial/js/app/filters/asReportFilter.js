@@ -7,10 +7,10 @@
         .filter("ujetAsReport", ujetAsReportFilter);
 
     function ujetAsReportFilter() {
-        return function (obj) {
-            obj.label = "Report";
+        return function (object) {
+            object.label = "Report";
 
-            return obj;
+            return object;
         };
     };
 })();

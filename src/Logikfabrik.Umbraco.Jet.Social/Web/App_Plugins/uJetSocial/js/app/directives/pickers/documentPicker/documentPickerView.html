@@ -5,7 +5,7 @@
     <ul class="ujet-document-picker__list" ng-show="vm.hasObjects">
 
         <li class="ujet-document-picker__list-item" ng-repeat="object in vm.objects">
-            <ujet-object obj="object | ujetAsUmbracoDocument" can-select="true"></ujet-object>
+            <ujet-object model="object | ujetAsUmbracoDocument" can-select="true"></ujet-object>
         </li>
 
     </ul>

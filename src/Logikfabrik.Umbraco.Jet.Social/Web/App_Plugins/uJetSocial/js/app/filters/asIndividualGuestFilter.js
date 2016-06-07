@@ -9,11 +9,11 @@
     ujetAsIndividualGuestFilter.$inject = ["sprintf"];
 
     function ujetAsIndividualGuestFilter(sprintf) {
-        return function (obj) {
-            obj.label = sprintf("%(firstName)s %(lastName)s", obj);
-            obj.subLabel = obj.email;
+        return function (object) {
+            object.label = sprintf("%(firstName)s %(lastName)s", object);
+            object.subLabel = object.email;
 
-            return obj;
+            return object;
         };
     };
 })();

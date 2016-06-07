@@ -1,4 +1,4 @@
-﻿<umb-panel ng-controller="ujetDocumentDashboardCtrl as vm">
+﻿<umb-panel ng-controller="ujetDocumentDashboardCtrl">
     <umb-header>
         <h1><localize key="uJetSocial_documents">Documents</localize></h1>
     </umb-header>
@@ -7,6 +7,7 @@
             <umb-pane>
 
                 <ujet-document-list></ujet-document-list>
+                <ujet-document-edit model="vm.object"></ujet-document-edit>
 
             </umb-pane>
         </umb-tab>

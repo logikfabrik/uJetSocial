@@ -1,4 +1,4 @@
-﻿<div class="ujet-dialog" ng-controller="ujetObjectEditCtrl as vm">
+﻿<div class="ujet-dialog">
 
     <h1 class="ujet-dialog__header">
         <localize key="uJetSocial_edit">Edit</localize>
@@ -11,27 +11,35 @@
             <div class="umb-control-group">
 
                 <label class="control-label" for="">
-                    <localize key="uJetSocial_nameProp">Name</localize>
+                    <localize key="uJetSocial_entityIdProp">Entity</localize>
                 </label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="vm.object.name" class="input-block-level" />
+                    <ujet-object-picker model="vm.object.entityId"
+                                        can-pick-comment="true"
+                                        can-pick-document="true"
+                                        can-pick-group="true"
+                                        can-pick-guest="true"
+                                        can-pick-media="true"
+                                        can-pick-member="true"
+                                        can-pick-report="true">
+                    </ujet-object-picker>
                 </div>
 
                 <label class="control-label" for="">
-                    <localize key="uJetSocial_descriptionProp">Description</localize>
+                    <localize key="uJetSocial_authorIdProp">Author</localize>
                 </label>
                 <div class="controls-row">
-                    <input type="text" required ng-model="vm.object.description" class="input-block-level" />
-                </div>
-
-                <label class="control-label" for="">
-                    <localize key="uJetSocial_ownerIdProp">Owner</localize>
-                </label>
-                <div class="controls-row">
-                    <ujet-object-picker model="vm.object.ownerId"
+                    <ujet-object-picker model="vm.object.authorId"
                                         can-pick-guest="true"
                                         can-pick-member="true">
                     </ujet-object-picker>
+                </div>
+
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_textProp">Text</localize>
+                </label>
+                <div class="controls-row">
+                    <input type="text" required ng-model="vm.object.text" class="input-block-level"/>
                 </div>
 
                 <label class="control-label" for="">

@@ -11,7 +11,7 @@
             restrict: "E",
             templateUrl: "/App_Plugins/uJetSocial/js/app/directives/presenters/object/objectView.html",
             scope: {
-                obj: "=",
+                model: "=",
                 canSelect: "=",
                 canEdit: "=",
                 canDelete: "="
