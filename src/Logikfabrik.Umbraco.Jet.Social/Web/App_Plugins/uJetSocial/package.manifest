@@ -43,8 +43,7 @@
 		// General components
 		'~/App_Plugins/uJetSocial/js/app/components/dashboardCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/components/objectCreateCtrl.js',
-		'~/App_Plugins/uJetSocial/js/app/components/pickerDialogCtrl.js',
-
+		
 		// Comment component
         '~/App_Plugins/uJetSocial/js/app/components/comment/commentCreateCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/components/comment/commentDashboardCtrl.js',
@@ -79,6 +78,7 @@
 
 		// Picker directives
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/pickerCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/pickerDialogCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/commentPicker/commentPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/commentPicker/commentPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/documentPicker/documentPickerDir.js',

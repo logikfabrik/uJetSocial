@@ -29,7 +29,7 @@
                 dialogService.close(dialog);
             }
 
-            var template = "/App_Plugins/uJetSocial/backoffice/pickers/" + type + ".html";
+            var template = "/App_Plugins/uJetSocial/js/app/directives/pickers/" + type + "Picker/" + type + "PickerDialogView.html";
 
             dialog = dialogService.open({
                 template: template,
