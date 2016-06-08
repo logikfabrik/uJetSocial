@@ -4,6 +4,7 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Individual
 {
+    using System;
     using global::Umbraco.Core.Persistence;
 
     /// <summary>
@@ -34,6 +35,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
             {
                 AssertIsWritableClone();
                 _firstName = value;
+
+                Updated = DateTime.Now;
             }
         }
 
@@ -55,6 +58,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
             {
                 AssertIsWritableClone();
                 _lastName = value;
+
+                Updated = DateTime.Now;
             }
         }
 
@@ -76,6 +81,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
             {
                 AssertIsWritableClone();
                 _email = value;
+
+                Updated = DateTime.Now;
             }
         }
 

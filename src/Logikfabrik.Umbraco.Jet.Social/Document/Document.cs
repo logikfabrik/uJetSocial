@@ -4,6 +4,7 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Document
 {
+    using System;
     using global::Umbraco.Core.Persistence;
 
     /// <summary>
@@ -34,6 +35,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Document
             {
                 AssertIsWritableClone();
                 _documentId = value;
+
+                Updated = DateTime.Now;
             }
         }
 

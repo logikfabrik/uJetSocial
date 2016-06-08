@@ -27,7 +27,13 @@
         };
 
         $scope.$watch("model", function (newValue) {
+            if (_.isNull(newValue) ||
+                _.isUndefined(newValue)) {
+                return;
+            }
+
             vm.object = _.clone(newValue);
+            vm.hasObject = true;
         });
     };
 })();

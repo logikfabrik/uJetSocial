@@ -4,6 +4,7 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Individual
 {
+    using System;
     using global::Umbraco.Core.Persistence;
 
     /// <summary>
@@ -34,6 +35,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
             {
                 AssertIsWritableClone();
                 _memberId = value;
+
+                Updated = DateTime.Now;
             }
         }
 

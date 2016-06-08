@@ -4,6 +4,7 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Media
 {
+    using System;
     using global::Umbraco.Core.Persistence;
 
     /// <summary>
@@ -34,6 +35,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Media
             {
                 AssertIsWritableClone();
                 _mediaId = value;
+
+                Updated = DateTime.Now;
             }
         }
 

@@ -4,6 +4,7 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Contact
 {
+    using System;
     using global::Umbraco.Core.Persistence;
     using Individual;
 
@@ -35,6 +36,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
             {
                 AssertIsWritableClone();
                 _fromMemberId = value;
+
+                Updated = DateTime.Now;
             }
         }
 
@@ -57,6 +60,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
             {
                 AssertIsWritableClone();
                 _toMemberId = value;
+
+                Updated = DateTime.Now;
             }
         }
 
