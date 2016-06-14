@@ -12,13 +12,11 @@
         $scope.vm = vm;
 
         $scope.$on("saveEdit", function (e, object) {
-            console.log("Save changes");
-
             updateObject(object);
         });
 
         $scope.$on("cancelEdit", function () {
-            console.log("Cancel changes");
+            vm.object = null;
         });
 
         $scope.$on("selectedRowChanged", function (e, row) {

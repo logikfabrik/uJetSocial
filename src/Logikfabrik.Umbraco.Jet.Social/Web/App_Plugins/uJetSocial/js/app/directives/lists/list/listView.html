@@ -19,7 +19,7 @@
     </tbody>
 
     <tbody ng-show="_.size(vm.rows) > 0">
-        <tr class="ujet-list__row" ng-repeat="row in vm.rows" ng-click="vm.select(row)">
+        <tr ng-class="row === vm.selectedRow ? 'ujet-list__row--selected' : 'ujet-list__row'" ng-repeat="row in vm.rows" ng-click="vm.select(row)">
             <td class="ujet-list__column" ng-repeat="column in vm.columns">
                 <ujet-value value="{{vm.getCellValue(row, column)}}"></ujet-value>
             </td>

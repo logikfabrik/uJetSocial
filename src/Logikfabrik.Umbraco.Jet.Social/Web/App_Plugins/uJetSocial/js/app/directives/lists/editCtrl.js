@@ -27,8 +27,11 @@
         };
 
         $scope.$watch("model", function (newValue) {
-            if (_.isNull(newValue) ||
-                _.isUndefined(newValue)) {
+            if (!_.isObject(newValue)) {
+
+                vm.object = null;
+                vm.hasObject = false;
+
                 return;
             }
 

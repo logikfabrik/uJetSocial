@@ -13,6 +13,7 @@
             sortColumn: null,
             sortAscending: true,
             sort: sort,
+            selectedRow: null,
             select: select,
             getCellValue: getCellValue,
             getColumnLangKey: getColumnLangKey
@@ -29,6 +30,8 @@
         };
 
         function select(row) {
+            vm.selectedRow = row;
+
             $scope.$emit("selectedRowChanged", row);
         };
 

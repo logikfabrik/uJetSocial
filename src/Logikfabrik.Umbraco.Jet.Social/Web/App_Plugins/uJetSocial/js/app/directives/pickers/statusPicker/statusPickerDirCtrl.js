@@ -6,17 +6,5 @@
         .module("umbraco")
         .controller("ujetStatusPickerDirCtrl", ujetStatusPickerDirCtrl);
 
-    ujetStatusPickerDirCtrl.$inject = ["$scope"];
-
-    function ujetStatusPickerDirCtrl($scope) {
-        var vm = {
-            status: $scope.model
-        }
-
-        $scope.vm = vm;
-
-        $scope.$watch("vm.status", function (newValue) {
-            $scope.model = newValue;
-        });
-    };
+    function ujetStatusPickerDirCtrl() { };
 })();

@@ -67,7 +67,11 @@
 
         $scope.$watch("model", function (newValue) {
             if (_.isNull(newValue) ||
-                _.isUndefined(newValue)) {
+                _.isUndefined(newValue) ||
+                _.isNaN(newValue)) {
+                vm.object = null;
+                vm.hasObject = false;
+
                 return;
             }
 

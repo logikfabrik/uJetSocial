@@ -345,6 +345,16 @@
         background: #f8f8f8;
     }
 
+.ujet-list__row,
+.ujet-list__row--selected {
+    cursor: pointer;
+}
+
+.ujet-list__row--selected {
+    background: #2e8aea;
+    color: #fff;
+}
+
 .ujet-list__column {
     padding: 8px;
 }
