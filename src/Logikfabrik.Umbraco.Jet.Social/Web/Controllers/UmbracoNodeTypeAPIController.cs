@@ -56,6 +56,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         [HttpGet]
         public object GetType(int id)
         {
+            // TODO: Known issue; will only query published content.
             var builder = new ContentLookupExpressionBuilder();
 
             var expression = builder.SelectByInexactAttribute("id", id.ToString());

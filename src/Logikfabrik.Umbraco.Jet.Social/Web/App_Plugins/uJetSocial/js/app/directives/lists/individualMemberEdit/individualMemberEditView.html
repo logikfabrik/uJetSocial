@@ -11,12 +11,33 @@
             <div class="umb-control-group">
                 
                 <label class="control-label" for="">
-                    <localize key="uJetSocial_memberIdProp">Entity</localize>
+                    <localize key="uJetSocial_memberIdProp">Member</localize>
                 </label>
                 <div class="controls-row">
                     <ujet-node-picker model="vm.object.memberId"
                                       can-pick-member="true">
                     </ujet-node-picker>
+                </div>
+
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_createdProp">Created</localize>
+                </label>
+                <div class="controls-row">
+                    <ujet-value value="{{vm.object.created}}"></ujet-value>
+                </div>
+
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_updatedProp">Updated</localize>
+                </label>
+                <div class="controls-row">
+                    <ujet-value value="{{vm.object.updated}}"></ujet-value>
+                </div>
+
+                <label class="control-label" for="">
+                    <localize key="uJetSocial_statusProp">Status</localize>
+                </label>
+                <div class="controls-row">
+                    <ujet-status-picker model="vm.object.status"></ujet-status-picker>
                 </div>
 
             </div>

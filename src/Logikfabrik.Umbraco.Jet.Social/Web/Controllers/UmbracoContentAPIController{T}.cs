@@ -28,6 +28,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         [HttpPost]
         public QueryResult<T> Query(UmbracoQuery query)
         {
+            // TODO: Known issue; will only query published content.
             var builder = new ContentLookupExpressionBuilder();
 
             var expression = builder.SortByAttribute(builder.SelectByInexactAttribute("nodeName", query.Name), "nodeName", XmlDataType.Text);
@@ -51,6 +52,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         [HttpGet]
         public T Get(int id)
         {
+            // TODO: Known issue; will only query published content.
             var builder = new ContentLookupExpressionBuilder();
 
             var expression = builder.SelectByExactAttribute("id", id.ToString());
