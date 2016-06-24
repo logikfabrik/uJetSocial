@@ -30,7 +30,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         {
             var builder = new ContentLookupExpressionBuilder();
 
-            var expression = builder.SortByAttribute(builder.SelectByAttribute("nodeName", query.Name), "nodeName", XmlDataType.Text);
+            var expression = builder.SortByAttribute(builder.SelectByInexactAttribute("nodeName", query.Name), "nodeName", XmlDataType.Text);
 
             int total;
 
@@ -44,6 +44,23 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         }
 
         /// <summary>
+        /// Gets the Umbraco content object with the specified identifier.
+        /// </summary>
+        /// <param name="id">The Umbraco content object identifier.</param>
+        /// <returns>The Umbraco content object with the specified identifier.</returns>
+        [HttpGet]
+        public T Get(int id)
+        {
+            var builder = new ContentLookupExpressionBuilder();
+
+            var expression = builder.SelectByExactAttribute("id", id.ToString());
+
+            var content = Lookup(expression);
+
+            return content == null ? null : GetModel(content);
+        }
+
+        /// <summary>
         /// Gets content by selection criteria.
         /// </summary>
         /// <param name="expression">The selection criteria.</param>
@@ -52,6 +69,13 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         /// <param name="total">The total.</param>
         /// <returns>The content matching the selection criteria.</returns>
         protected abstract IEnumerable<IPublishedContent> Lookup(XPathExpression expression, int pageIndex, int pageSize, out int total);
+
+        /// <summary>
+        /// Gets content by selection criteria.
+        /// </summary>
+        /// <param name="expression">The selection criteria.</param>
+        /// <returns>The content matching the selection criteria.</returns>
+        protected abstract IPublishedContent Lookup(XPathExpression expression);
 
         private static T GetModel(IPublishedContent content)
         {

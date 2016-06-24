@@ -6,9 +6,9 @@
         .module("umbraco")
         .controller("ujetObjectsPickerDirCtrl", ujetObjectsPickerDirCtrl);
 
-    ujetObjectsPickerDirCtrl.$inject = ["$scope", "_", "dialogService", "ujetEntityFactory"];
+    ujetObjectsPickerDirCtrl.$inject = ["$scope", "_", "dialogService", "ujetDataTransferObjectTypeFactory"];
 
-    function ujetObjectsPickerDirCtrl($scope, _, dialogService, ujetEntityFactory) {
+    function ujetObjectsPickerDirCtrl($scope, _, dialogService, ujetDataTransferObjectTypeFactory) {
         var vm = {
             objIds: $scope.model,
             canPickComment: $scope.canPickComment,
@@ -77,7 +77,7 @@
                 return;
             }
 
-            ujetEntityFactory.get(vm.objId).then(function (obj) {
+            ujetDataTransferObjectTypeFactory.get(vm.objId).then(function (obj) {
                 selectObj(obj);
             });
         };

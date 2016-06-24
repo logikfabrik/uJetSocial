@@ -1,4 +1,4 @@
-﻿// <copyright file="EntityAPIController.cs" company="Logikfabrik">
+﻿// <copyright file="DataTransferObjectTypeAPIController.cs" company="Logikfabrik">
 //   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
@@ -10,29 +10,29 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     using global::Umbraco.Web.Mvc;
 
     /// <summary>
-    /// The <see cref="EntityAPIController" /> class.
+    /// The <see cref="DataTransferObjectTypeAPIController" /> class.
     /// </summary>
     [PluginController("uJetSocial")]
 
     // ReSharper disable once InconsistentNaming
-    public class EntityAPIController : APIController
+    public class DataTransferObjectTypeAPIController : APIController
     {
         private readonly Lazy<IDatabaseWrapper> _database;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EntityAPIController" /> class.
+        /// Initializes a new instance of the <see cref="DataTransferObjectTypeAPIController" /> class.
         /// </summary>
-        public EntityAPIController()
+        public DataTransferObjectTypeAPIController()
             : this(DatabaseWrapperFactory.GetDatabase)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EntityAPIController" /> class.
+        /// Initializes a new instance of the <see cref="DataTransferObjectTypeAPIController" /> class.
         /// </summary>
         /// <param name="database">The database.</param>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="database" /> is <c>null</c>.</exception>
-        public EntityAPIController(Func<IDatabaseWrapper> database)
+        public DataTransferObjectTypeAPIController(Func<IDatabaseWrapper> database)
         {
             if (database == null)
             {
@@ -43,10 +43,10 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         }
 
         /// <summary>
-        /// Gets the type of the entity with the specified identifier.
+        /// Gets the type of the data transfer object with the specified identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns>The type of the entity with the specified identifier.</returns>
+        /// <returns>The type of the data transfer object with the specified identifier.</returns>
         [HttpGet]
         public object GetType(int id)
         {

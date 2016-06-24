@@ -4,19 +4,15 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco")
-        .controller("ujetObjectPickerDirCtrl", ujetObjectPickerDirCtrl);
+        .controller("ujetNodePickerDirCtrl", ujetNodePickerDirCtrl);
 
-    ujetObjectPickerDirCtrl.$inject = ["$scope", "_", "dialogService", "ujetDataTransferObjectTypeFactory"];
+    ujetNodePickerDirCtrl.$inject = ["$scope", "_", "dialogService", "ujetUmbracoNodeTypeFactory"];
 
-    function ujetObjectPickerDirCtrl($scope, _, dialogService, ujetDataTransferObjectTypeFactory) {
+    function ujetNodePickerDirCtrl($scope, _, dialogService, ujetUmbracoNodeTypeFactory) {
         var vm = {
-            canPickComment: $scope.canPickComment,
             canPickDocument: $scope.canPickDocument,
-            canPickGroup: $scope.canPickGroup,
-            canPickGuest: $scope.canPickGuest,
             canPickMedia: $scope.canPickMedia,
             canPickMember: $scope.canPickMember,
-            canPickReport: $scope.canPickReport,
             showPicker: showPicker
         };
 
@@ -75,7 +71,7 @@
                 return;
             }
 
-            ujetDataTransferObjectTypeFactory.get(newValue).then(function (object) {
+            ujetUmbracoNodeTypeFactory.get(newValue).then(function (object) {
                 selectObject(object);
             });
         });

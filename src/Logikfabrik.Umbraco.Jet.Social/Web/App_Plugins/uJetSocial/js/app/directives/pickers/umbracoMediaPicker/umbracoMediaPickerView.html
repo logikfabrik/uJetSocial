@@ -1,0 +1,15 @@
+﻿<div class="ujet-media-picker">
+
+    <input class="ujet-media-picker__query" type="text" placeholder="Type to search..." ng-model="vm.query" ng-change="vm.search()" />
+
+    <ul class="ujet-media-picker__list" ng-show="vm.hasObjects">
+
+        <li class="ujet-media-picker__list-item" ng-repeat="object in vm.objects">
+            <ujet-object model="object | ujetAsUmbracoMedia" can-select="true"></ujet-object>
+        </li>
+
+    </ul>
+
+    <ujet-pager model="vm.paging"></ujet-pager>
+
+</div>

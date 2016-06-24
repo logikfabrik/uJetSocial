@@ -10,10 +10,15 @@
 
     function ujetUmbracoDocumentFactory($http) {
         var factory = {
+            get: get,
             query: query
         };
 
         return factory;
+
+        function get(id) {
+            return $http.get("backoffice/uJetSocial/UmbracoDocumentAPI/Get/" + id);
+        }
 
         function query(q) {
             return $http.post("backoffice/uJetSocial/UmbracoDocumentAPI/Query", q);

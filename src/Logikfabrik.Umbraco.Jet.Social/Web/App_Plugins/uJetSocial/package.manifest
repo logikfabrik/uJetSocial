@@ -13,7 +13,7 @@
 		// Data factories
 		'~/App_Plugins/uJetSocial/js/app/factories/data/commentFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/documentFactory.js',
-		'~/App_Plugins/uJetSocial/js/app/factories/data/entityFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/dataTransferObjectTypeFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/groupFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/individualGuestFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/individualMemberFactory.js',
@@ -22,6 +22,7 @@
 		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoDocumentFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoMediaFactory.js',
 		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoMemberFactory.js',
+		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoNodeTypeFactory.js',
 		
 		// Services
 		'~/App_Plugins/uJetSocial/js/app/services/queryService.js',
@@ -91,12 +92,20 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/individualMemberPicker/individualMemberPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/mediaPicker/mediaPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/mediaPicker/mediaPickerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/nodePicker/nodePickerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/nodePicker/nodePickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/objectPicker/objectPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/objectPicker/objectPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/reportPicker/reportPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/reportPicker/reportPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/statusPicker/statusPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickers/statusPicker/statusPickerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/umbracoDocumentPicker/umbracoDocumentPickerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/umbracoDocumentPicker/umbracoDocumentPickerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/umbracoMediaPicker/umbracoMediaPickerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/umbracoMediaPicker/umbracoMediaPickerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/umbracoMemberPicker/umbracoMemberPickerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/pickers/umbracoMemberPicker/umbracoMemberPickerDirCtrl.js',
 
 		// List directives
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/listCtrl.js',

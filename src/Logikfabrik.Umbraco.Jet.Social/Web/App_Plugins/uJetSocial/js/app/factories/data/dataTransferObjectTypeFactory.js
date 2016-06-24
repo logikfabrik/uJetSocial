@@ -4,9 +4,9 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco.resources")
-        .factory("ujetEntityFactory", ujetEntityFactory);
+        .factory("ujetDataTransferObjectTypeFactory", ujetDataTransferObjectTypeFactory);
 
-    ujetEntityFactory.$inject = [
+    ujetDataTransferObjectTypeFactory.$inject = [
         "$http",
         "$filter",
         "$q",
@@ -19,7 +19,7 @@
         "ujetReportFactory"
     ];
 
-    function ujetEntityFactory(
+    function ujetDataTransferObjectTypeFactory(
         $http,
         $filter,
         $q,
@@ -56,7 +56,7 @@
         }
 
         function getType(id) {
-            return $http.get("backoffice/uJetSocial/EntityAPI/GetType/" + id);
+            return $http.get("backoffice/uJetSocial/DataTransferObjectTypeAPI/GetType/" + id);
         }
 
         function getFactory(type) {

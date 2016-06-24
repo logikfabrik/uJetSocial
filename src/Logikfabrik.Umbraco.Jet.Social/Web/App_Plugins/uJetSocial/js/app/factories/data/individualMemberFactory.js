@@ -10,12 +10,24 @@
 
     function ujetIndividualMemberFactory($http) {
         var factory = {
+            update: update,
             get: get,
             getByMemberId: getByMemberId,
             query: query
         };
 
         return factory;
+
+        function update(dto) {
+            return $http({
+                method: "POST",
+                url: "backoffice/uJetSocial/IndividualMemberAPI/Update",
+                params: {
+                    id: dto.id
+                },
+                data: dto
+            });
+        }
 
         function get(id) {
             return $http.get("backoffice/uJetSocial/IndividualMemberAPI/Get/" + id);

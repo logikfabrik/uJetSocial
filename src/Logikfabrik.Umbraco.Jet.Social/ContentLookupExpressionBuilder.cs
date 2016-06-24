@@ -19,7 +19,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <param name="value">The value to match.</param>
         /// <returns>An expression.</returns>
         /// <exception cref="ArgumentException">Thrown if <paramref name="attribute" /> is <c>null</c> or white space.</exception>
-        public XPathExpression SelectByAttribute(string attribute, string value)
+        public XPathExpression SelectByInexactAttribute(string attribute, string value)
         {
             if (string.IsNullOrWhiteSpace(attribute))
             {
@@ -29,6 +29,25 @@ namespace Logikfabrik.Umbraco.Jet.Social
             var expression = XPathExpression.Compile(string.IsNullOrWhiteSpace(value)
                 ? $"//*[@{attribute}]"
                 : $"//*[contains(translate(@{attribute}, '{value.ToUpper()}', '{value.ToLower()}'),'{value.ToLower()}')]");
+
+            return expression;
+        }
+
+        /// <summary>
+        /// Creates an expression for selecting by the specified attribute.
+        /// </summary>
+        /// <param name="attribute">The attribute to select by.</param>
+        /// <param name="value">The value to match.</param>
+        /// <returns>An expression.</returns>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="attribute" /> is <c>null</c> or white space.</exception>
+        public XPathExpression SelectByExactAttribute(string attribute, string value)
+        {
+            if (string.IsNullOrWhiteSpace(attribute))
+            {
+                throw new ArgumentException("Attribute cannot be null or white space.", nameof(attribute));
+            }
+
+            var expression = XPathExpression.Compile($"//*[@{attribute}=\"{value}\"]");
 
             return expression;
         }

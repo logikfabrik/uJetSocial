@@ -6,6 +6,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Xml.XPath;
     using global::Umbraco.Core.Models;
     using global::Umbraco.Web.Mvc;
@@ -55,6 +56,18 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         protected override IEnumerable<IPublishedContent> Lookup(XPathExpression expression, int pageIndex, int pageSize, out int total)
         {
             return _contentLookup.GetMembersByXPath(expression, pageIndex, pageSize, out total);
+        }
+
+        /// <summary>
+        /// Gets content by selection criteria.
+        /// </summary>
+        /// <param name="expression">The selection criteria.</param>
+        /// <returns>The content matching the selection criteria.</returns>
+        protected override IPublishedContent Lookup(XPathExpression expression)
+        {
+            int total;
+
+            return _contentLookup.GetMembersByXPath(expression, 0, 1, out total).SingleOrDefault();
         }
     }
 }
