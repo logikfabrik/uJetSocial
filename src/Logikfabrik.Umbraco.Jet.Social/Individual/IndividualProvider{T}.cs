@@ -16,9 +16,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         /// <summary>
         /// Initializes a new instance of the <see cref="IndividualProvider{T}" /> class.
         /// </summary>
+        /// <param name="cache">The cache.</param>
         /// <param name="database">The database.</param>
-        protected IndividualProvider(Func<IDatabaseWrapper> database)
-            : base(database)
+        protected IndividualProvider(
+            Func<ICacheWrapper> cache,
+            Func<IDatabaseWrapper> database)
+            : base(cache, database)
         {
         }
     }

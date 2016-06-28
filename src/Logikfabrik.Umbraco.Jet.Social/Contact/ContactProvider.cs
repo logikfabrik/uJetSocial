@@ -14,9 +14,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactProvider" /> class.
         /// </summary>
+        /// <param name="cache">The cache.</param>
         /// <param name="database">The database.</param>
-        public ContactProvider(Func<IDatabaseWrapper> database)
-            : base(database)
+        public ContactProvider(
+            Func<ICacheWrapper> cache,
+            Func<IDatabaseWrapper> database)
+            : base(cache, database)
         {
         }
     }

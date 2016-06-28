@@ -47,16 +47,19 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// <returns>The default providers.</returns>
         private static DataTransferObjectProviderDictionary GetDefaultProviders()
         {
+            Func<ICacheWrapper> cache = CacheWrapperFactory.GetCache;
+            Func<IDatabaseWrapper> database = DatabaseWrapperFactory.GetDatabase;
+
             return new DataTransferObjectProviderDictionary
             {
-                { typeof(Comment.Comment), new CommentProvider(DatabaseWrapperFactory.GetDatabase) },
-                { typeof(Contact.Contact), new ContactProvider(DatabaseWrapperFactory.GetDatabase) },
-                { typeof(Document.Document), new DocumentProvider(DatabaseWrapperFactory.GetDatabase) },
-                { typeof(Group.Group), new GroupProvider(DatabaseWrapperFactory.GetDatabase) },
-                { typeof(IndividualGuest), new IndividualGuestProvider(DatabaseWrapperFactory.GetDatabase) },
-                { typeof(IndividualMember), new IndividualMemberProvider(DatabaseWrapperFactory.GetDatabase) },
-                { typeof(Media.Media), new MediaProvider(DatabaseWrapperFactory.GetDatabase) },
-                { typeof(Report.Report), new ReportProvider(DatabaseWrapperFactory.GetDatabase) }
+                { typeof(Comment.Comment), new CommentProvider(cache, database) },
+                { typeof(Contact.Contact), new ContactProvider(cache, database) },
+                { typeof(Document.Document), new DocumentProvider(cache, database) },
+                { typeof(Group.Group), new GroupProvider(cache, database) },
+                { typeof(IndividualGuest), new IndividualGuestProvider(cache, database) },
+                { typeof(IndividualMember), new IndividualMemberProvider(cache, database) },
+                { typeof(Media.Media), new MediaProvider(cache, database) },
+                { typeof(Report.Report), new ReportProvider(cache, database) }
             };
         }
     }

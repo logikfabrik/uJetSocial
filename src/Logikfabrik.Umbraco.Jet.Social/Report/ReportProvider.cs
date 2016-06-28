@@ -14,9 +14,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportProvider" /> class.
         /// </summary>
+        /// <param name="cache">The cache.</param>
         /// <param name="database">The database.</param>
-        public ReportProvider(Func<IDatabaseWrapper> database)
-            : base(database)
+        public ReportProvider(
+            Func<ICacheWrapper> cache,
+            Func<IDatabaseWrapper> database)
+            : base(cache, database)
         {
         }
 

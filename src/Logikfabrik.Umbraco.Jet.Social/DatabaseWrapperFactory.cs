@@ -13,9 +13,9 @@ namespace Logikfabrik.Umbraco.Jet.Social
     public static class DatabaseWrapperFactory
     {
         /// <summary>
-        /// Gets a database.
+        /// Gets the database.
         /// </summary>
-        /// <returns>A database.</returns>
+        /// <returns>The database.</returns>
         public static IDatabaseWrapper GetDatabase()
         {
             var context = global::Umbraco.Core.ApplicationContext.Current.DatabaseContext;

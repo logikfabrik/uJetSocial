@@ -15,9 +15,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Media
         /// <summary>
         /// Initializes a new instance of the <see cref="MediaProvider" /> class.
         /// </summary>
+        /// <param name="cache">The cache.</param>
         /// <param name="database">The database.</param>
-        public MediaProvider(Func<IDatabaseWrapper> database)
-            : base(database)
+        public MediaProvider(
+            Func<ICacheWrapper> cache,
+            Func<IDatabaseWrapper> database)
+            : base(cache, database)
         {
         }
 

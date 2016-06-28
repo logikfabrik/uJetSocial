@@ -15,9 +15,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Document
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentProvider" /> class.
         /// </summary>
+        /// <param name="cache">The cache.</param>
         /// <param name="database">The database.</param>
-        public DocumentProvider(Func<IDatabaseWrapper> database)
-            : base(database)
+        public DocumentProvider(
+            Func<ICacheWrapper> cache,
+            Func<IDatabaseWrapper> database)
+            : base(cache, database)
         {
         }
 

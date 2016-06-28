@@ -15,20 +15,32 @@ namespace Logikfabrik.Umbraco.Jet.Social
     public abstract class DataTransferObjectProvider<T> : IDataTransferObjectProvider<T>
         where T : DataTransferObject
     {
+        private readonly Lazy<ICacheWrapper> _cache;
         private readonly Lazy<IDatabaseWrapper> _database;
         private readonly Lazy<int> _typeId;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DataTransferObjectProvider{T}" /> class.
         /// </summary>
+        /// <param name="cache">The cache.</param>
         /// <param name="database">The database.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="cache" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="database" /> is <c>null</c>.</exception>
-        protected DataTransferObjectProvider(Func<IDatabaseWrapper> database)
+        protected DataTransferObjectProvider(
+            Func<ICacheWrapper> cache,
+            Func<IDatabaseWrapper> database)
         {
+            if (cache == null)
+            {
+                throw new ArgumentNullException(nameof(cache));
+            }
+
             if (database == null)
             {
                 throw new ArgumentNullException(nameof(database));
             }
+
+            _cache = new Lazy<ICacheWrapper>(cache);
 
             _database = new Lazy<IDatabaseWrapper>(() =>
             {
@@ -191,9 +203,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// Adds the specified data transfer object.
         /// </summary>
         /// <param name="dto">The data transfer object to add.</param>
-        /// <returns>
-        /// The added data transfer object.
-        /// </returns>
+        /// <returns>The added data transfer object.</returns>
         DataTransferObject IDataTransferObjectProvider.Add(DataTransferObject dto)
         {
             return Add((T)dto);

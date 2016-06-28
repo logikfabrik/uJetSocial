@@ -284,6 +284,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorableExtensions.cs" />
+    <Compile Include="CacheWrapper.cs" />
+    <Compile Include="CacheWrapperFactory.cs" />
     <Compile Include="Comment\Comment.cs" />
     <Compile Include="Comment\CommentExtensions.cs" />
     <Compile Include="Comment\CommentProvider.cs" />
@@ -311,6 +313,7 @@
     <Compile Include="Group\GroupMembership.cs" />
     <Compile Include="Group\GroupMembershipProvider.cs" />
     <Compile Include="IAuthorable.cs" />
+    <Compile Include="ICacheWrapper.cs" />
     <Compile Include="IContentLookup.cs" />
     <Compile Include="IDatabaseWrapper.cs" />
     <Compile Include="IDataTransferObjectProvider.cs" />

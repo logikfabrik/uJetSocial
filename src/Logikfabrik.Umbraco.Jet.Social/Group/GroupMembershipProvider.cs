@@ -14,9 +14,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupMembershipProvider" /> class.
         /// </summary>
+        /// <param name="cache">The cache.</param>
         /// <param name="database">The database.</param>
-        public GroupMembershipProvider(Func<IDatabaseWrapper> database)
-            : base(database)
+        public GroupMembershipProvider(
+            Func<ICacheWrapper> cache,
+            Func<IDatabaseWrapper> database)
+            : base(cache, database)
         {
         }
     }

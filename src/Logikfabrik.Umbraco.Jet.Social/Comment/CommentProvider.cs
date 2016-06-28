@@ -14,9 +14,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
         /// <summary>
         /// Initializes a new instance of the <see cref="CommentProvider" /> class.
         /// </summary>
+        /// <param name="cache">The cache.</param>
         /// <param name="database">The database.</param>
-        public CommentProvider(Func<IDatabaseWrapper> database)
-            : base(database)
+        public CommentProvider(
+            Func<ICacheWrapper> cache,
+            Func<IDatabaseWrapper> database)
+            : base(cache, database)
         {
         }
 

@@ -112,6 +112,15 @@ namespace Logikfabrik.Umbraco.Jet.Social
         public bool IsReadOnly { get; internal set; }
 
         /// <summary>
+        /// Gets the cache key.
+        /// </summary>
+        /// <returns>The cache key.</returns>
+        public string GetCacheKey()
+        {
+            return $"{GetType()}_{Id}";
+        }
+
+        /// <summary>
         /// Gets a writable clone.
         /// </summary>
         /// <typeparam name="T">The <see cref="DataTransferObject" /> type.</typeparam>
