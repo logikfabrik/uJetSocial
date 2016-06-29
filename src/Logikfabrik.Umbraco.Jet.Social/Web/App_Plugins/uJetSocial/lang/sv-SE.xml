@@ -67,6 +67,7 @@
 
     <key alias="emptyList">Listan är tom</key>
     <key alias="chooseType">Välj...</key>
+    <key alias="typeToSearch">Skriv för att söka...</key>
 
     <!-- Errors -->
     <key alias="errorCategoryGeneral">Något gick fel</key>

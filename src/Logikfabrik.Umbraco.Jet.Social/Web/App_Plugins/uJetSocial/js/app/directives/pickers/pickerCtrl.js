@@ -6,11 +6,16 @@
         .module("umbraco")
         .controller("ujetPickerCtrl", ujetPickerCtrl);
 
-    function ujetPickerCtrl($scope, queryService, config, callback) {
+    function ujetPickerCtrl($scope, localizationService, queryService, config, callback) {
         var vm = {
             hasObjects: false,
             search: search
         };
+
+        localizationService.localize("uJetSocial_typeToSearch")
+            .then(function(value) {
+                vm.placeholder = value;
+            });
 
         $scope.vm = vm;
 

@@ -6,11 +6,12 @@
         .module("umbraco")
         .controller("ujetDocumentPickerDirCtrl", ujetDocumentPickerDirCtrl);
 
-    ujetDocumentPickerDirCtrl.$inject = ["$scope", "$controller", "$filter", "queryService", "ujetUmbracoDocumentFactory", "ujetDocumentFactory"];
+    ujetDocumentPickerDirCtrl.$inject = ["$scope", "$controller", "$filter", "localizationService", "queryService", "ujetUmbracoDocumentFactory", "ujetDocumentFactory"];
 
-    function ujetDocumentPickerDirCtrl($scope, $controller, $filter, queryService, ujetUmbracoDocumentFactory, ujetDocumentFactory) {
+    function ujetDocumentPickerDirCtrl($scope, $controller, $filter, localizationService, queryService, ujetUmbracoDocumentFactory, ujetDocumentFactory) {
         $controller("ujetPickerCtrl", {
             $scope: $scope,
+            localizationService: localizationService,
             queryService: queryService,
             config: {
                 objectFactory: ujetUmbracoDocumentFactory,

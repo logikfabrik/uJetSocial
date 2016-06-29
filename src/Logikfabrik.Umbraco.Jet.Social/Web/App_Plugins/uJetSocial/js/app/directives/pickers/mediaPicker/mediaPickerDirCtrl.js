@@ -6,11 +6,12 @@
         .module("umbraco")
         .controller("ujetMediaPickerDirCtrl", ujetMediaPickerDirCtrl);
 
-    ujetMediaPickerDirCtrl.$inject = ["$scope", "$controller", "$filter", "queryService", "ujetUmbracoMediaFactory", "ujetMediaFactory"];
+    ujetMediaPickerDirCtrl.$inject = ["$scope", "$controller", "$filter", "localizationService", "queryService", "ujetUmbracoMediaFactory", "ujetMediaFactory"];
 
-    function ujetMediaPickerDirCtrl($scope, $controller, $filter, queryService, ujetUmbracoMediaFactory, ujetMediaFactory) {
+    function ujetMediaPickerDirCtrl($scope, $controller, $filter, localizationService, queryService, ujetUmbracoMediaFactory, ujetMediaFactory) {
         $controller("ujetPickerCtrl", {
             $scope: $scope,
+            localizationService: localizationService,
             queryService: queryService,
             config: {
                 objectFactory: ujetUmbracoMediaFactory,

@@ -67,6 +67,7 @@
 
     <key alias="emptyList">The list is empty</key>
     <key alias="chooseType">Choose...</key>
+    <key alias="typeToSearch">Type to search...</key>
     
     <!-- Errors -->
     <key alias="errorCategoryGeneral">Something went wrong</key>
