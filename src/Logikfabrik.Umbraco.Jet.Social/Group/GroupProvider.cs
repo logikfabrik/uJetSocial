@@ -43,6 +43,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
 
             group.IsReadOnly = true;
 
+            Cache.AddObject(group);
+
             return group;
         }
     }

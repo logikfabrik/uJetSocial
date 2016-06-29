@@ -46,6 +46,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
 
             report.IsReadOnly = true;
 
+            Cache.AddObject(report);
+
             return report;
         }
     }

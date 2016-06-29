@@ -55,6 +55,14 @@ namespace Logikfabrik.Umbraco.Jet.Social
         }
 
         /// <summary>
+        /// Gets the cache.
+        /// </summary>
+        /// <value>
+        /// The cache.
+        /// </value>
+        protected ICacheWrapper Cache => _cache.Value;
+
+        /// <summary>
         /// Updates the specified data transfer object.
         /// </summary>
         /// <param name="dto">The data transfer object to update.</param>
@@ -75,7 +83,16 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// </returns>
         public virtual T Get(int id)
         {
-            var dto = _database.Value.Get<T>(id);
+            var cacheKey = CacheKeyFactory.GetKey<T>(id);
+
+            var dto = _cache.Value.GetObject<T>(cacheKey);
+
+            if (dto != null)
+            {
+                return dto;
+            }
+
+            dto = _database.Value.Get<T>(id);
 
             if (dto == null)
             {
@@ -124,6 +141,8 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
             dto.Id = id;
             dto.IsReadOnly = true;
+
+            _cache.Value.AddObject(dto);
 
             return dto;
         }
@@ -184,6 +203,8 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
             dto.IsReadOnly = true;
 
+            _cache.Value.AddObject(dto);
+
             return dto;
         }
 
@@ -222,6 +243,10 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
                 transaction.Complete();
             }
+
+            var cacheKey = CacheKeyFactory.GetKey<T>(id);
+
+            _cache.Value.RemoveObject<T>(cacheKey);
         }
 
         /// <summary>

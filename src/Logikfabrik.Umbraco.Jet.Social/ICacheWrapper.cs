@@ -27,15 +27,6 @@ namespace Logikfabrik.Umbraco.Jet.Social
             where T : DataTransferObject;
 
         /// <summary>
-        /// Adds a data transfer object to cache.
-        /// </summary>
-        /// <typeparam name="T">The data transfer object type.</typeparam>
-        /// <param name="dto">The data transfer object to add.</param>
-        /// <param name="cacheKeys">The data transfer object cache key.</param>
-        void AddObject<T>(T dto, string[] cacheKeys)
-            where T : DataTransferObject;
-
-        /// <summary>
         /// Removes a data transfer object from cache.
         /// </summary>
         /// <typeparam name="T">The data transfer object type.</typeparam>
@@ -44,11 +35,11 @@ namespace Logikfabrik.Umbraco.Jet.Social
             where T : DataTransferObject;
 
         /// <summary>
-        /// Updates a data transfer object in cache.
+        /// Removes a data transfer object from cache.
         /// </summary>
         /// <typeparam name="T">The data transfer object type.</typeparam>
-        /// <param name="dto">The data transfer object to update.</param>
-        void UpdateObject<T>(T dto)
+        /// <param name="cacheKey">The data transfer object cache key.</param>
+        void RemoveObject<T>(string cacheKey)
             where T : DataTransferObject;
     }
 }

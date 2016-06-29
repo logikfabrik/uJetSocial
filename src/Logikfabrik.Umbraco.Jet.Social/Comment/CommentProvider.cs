@@ -44,6 +44,8 @@ namespace Logikfabrik.Umbraco.Jet.Social.Comment
 
             comment.IsReadOnly = true;
 
+            Cache.AddObject(comment);
+
             return comment;
         }
     }

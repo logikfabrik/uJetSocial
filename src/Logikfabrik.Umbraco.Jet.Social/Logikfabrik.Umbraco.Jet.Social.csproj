@@ -284,6 +284,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorableExtensions.cs" />
+    <Compile Include="CacheKeyFactory.cs" />
     <Compile Include="CacheWrapper.cs" />
     <Compile Include="CacheWrapperFactory.cs" />
     <Compile Include="Comment\Comment.cs" />
