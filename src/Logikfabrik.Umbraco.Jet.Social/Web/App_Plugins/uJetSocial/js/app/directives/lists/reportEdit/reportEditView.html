@@ -1,19 +1,77 @@
-﻿<div ng-if="vm.hasObject" class="ujet-dialog">
+﻿<div ng-if="vm.hasObject" class="ujet-panel">
 
-    <h1 class="ujet-dialog__header">
+    <div class="ujet-panel__header">
         <localize key="uJetSocial_edit">Edit</localize>
-    </h1>
+    </div>
 
-    <umb-pane>
+    <form name="form" class="ujet-form">
 
-        <form name="form">
+        <div class="ujet-panel__section pure-g">
 
-            <div class="umb-control-group">
+            <div class="pure-u-1-1 pure-u-md-1-5">
+                <div class="ujet-label">
+                    <div class="ujet-label__title">
+                        <localize key="uJetSocial_createdProp">Created</localize>
+                    </div>
+                    <div class="ujet-label__description">
+                        A short description here.
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-1-1 pure-u-md-4-5">
+                <div class="ujet-control">
+                    <ujet-value value="{{vm.object.created}}"></ujet-value>
+                </div>
+            </div>
 
-                <label class="control-label" for="">
-                    <localize key="uJetSocial_entityIdProp">Entity</localize>
-                </label>
-                <div class="controls-row">
+            <div class="pure-u-1-1 pure-u-md-1-5">
+                <div class="ujet-label">
+                    <div class="ujet-label__title">
+                        <localize key="uJetSocial_updatedProp">Updated</localize>
+                    </div>
+                    <div class="ujet-label__description">
+                        A short description here.
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-1-1 pure-u-md-4-5">
+                <div class="ujet-control">
+                    <ujet-value value="{{vm.object.updated}}"></ujet-value>
+                </div>
+            </div>
+
+            <div class="pure-u-1-1 pure-u-md-1-5">
+                <div class="ujet-label">
+                    <div class="ujet-label__title">
+                        <localize key="uJetSocial_statusProp">Status</localize>
+                    </div>
+                    <div class="ujet-label__description">
+                        A short description here.
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-1-1 pure-u-md-4-5">
+                <div class="ujet-control">
+                    <ujet-status-picker model="vm.object.status"></ujet-status-picker>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ujet-panel__section pure-g">
+
+            <div class="pure-u-1-1 pure-u-md-1-5">
+                <div class="ujet-label">
+                    <div class="ujet-label__title">
+                        <localize key="uJetSocial_entityIdProp">Entity</localize>
+                    </div>
+                    <div class="ujet-label__description">
+                        A short description here.
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-1-1 pure-u-md-4-5">
+                <div class="ujet-control">
                     <ujet-object-picker model="vm.object.entityId"
                                         can-pick-comment="true"
                                         can-pick-document="true"
@@ -24,58 +82,57 @@
                                         can-pick-report="true">
                     </ujet-object-picker>
                 </div>
+            </div>
 
-                <label class="control-label" for="">
-                    <localize key="uJetSocial_authorIdProp">Author</localize>
-                </label>
-                <div class="controls-row">
+            <div class="pure-u-1-1 pure-u-md-1-5">
+                <div class="ujet-label">
+                    <div class="ujet-label__title">
+                        <localize key="uJetSocial_authorIdProp">Author</localize>
+                    </div>
+                    <div class="ujet-label__description">
+                        A short description here.
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-1-1 pure-u-md-4-5">
+                <div class="ujet-control">
                     <ujet-object-picker model="vm.object.authorId"
                                         can-pick-guest="true"
                                         can-pick-member="true">
                     </ujet-object-picker>
                 </div>
+            </div>
 
-                <label class="control-label" for="">
-                    <localize key="uJetSocial_textProp">Text</localize>
-                </label>
-                <div class="controls-row">
+            <div class="pure-u-1-1 pure-u-md-1-5">
+                <div class="ujet-label">
+                    <div class="ujet-label__title">
+                        <localize key="uJetSocial_textProp">Text</localize>
+                    </div>
+                    <div class="ujet-label__description">
+                        A short description here.
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-1-1 pure-u-md-4-5">
+                <div class="ujet-control">
                     <input type="text" required ng-model="vm.object.text" class="input-block-level" />
                 </div>
-
-                <label class="control-label" for="">
-                    <localize key="uJetSocial_createdProp">Created</localize>
-                </label>
-                <div class="controls-row">
-                    <ujet-value value="{{vm.object.created}}"></ujet-value>
-                </div>
-
-                <label class="control-label" for="">
-                    <localize key="uJetSocial_updatedProp">Updated</localize>
-                </label>
-                <div class="controls-row">
-                    <ujet-value value="{{vm.object.updated}}"></ujet-value>
-                </div>
-
-                <label class="control-label" for="">
-                    <localize key="uJetSocial_statusProp">Status</localize>
-                </label>
-                <div class="controls-row">
-                    <ujet-status-picker model="vm.object.status"></ujet-status-picker>
-                </div>
-
             </div>
 
-            <div class="btn-toolbar umb-btn-toolbar">
-                <button class="btn btn-primary" ng-click="vm.save(form)">
-                    <localize key="uJetSocial_saveBtn">Save</localize>
-                </button>
-                <a class="btn btn-link" ng-click="vm.cancel()">
-                    <localize key="uJetSocial_cancelBtn">Cancel</localize>
-                </a>
+        </div>
+
+        <div class="ujet-panel__section pure-g">
+
+            <div class="pure-u-1-1 pure-u-md-1-5"></div>
+
+            <div class="pure-u-1-1 pure-u-md-4-5">
+                <div class="ujet-control">
+                    <a class="ujet-button" href="#" prevent-default>Save</a>
+                    <a class="ujet-button" href="#" prevent-default>Cancel</a>
+                </div>
             </div>
 
-        </form>
-
-    </umb-pane>
+        </div>
+    </form>
 
 </div>

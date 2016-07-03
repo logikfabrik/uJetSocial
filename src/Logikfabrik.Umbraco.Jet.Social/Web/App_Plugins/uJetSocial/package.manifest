@@ -144,6 +144,8 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/lists/reportList/reportListDirCtrl.js'
     ],
     css: [
-        '~/App_Plugins/uJetSocial/css/app/uJetSocial.css',
+		'~/App_Plugins/uJetSocial/css/vendor/pure-0.6.0/pure.css',
+		'~/App_Plugins/uJetSocial/css/vendor/pure-0.6.0/grids-responsive-min.css',
+        '~/App_Plugins/uJetSocial/css/app/uJetSocial.css'
     ]
 }

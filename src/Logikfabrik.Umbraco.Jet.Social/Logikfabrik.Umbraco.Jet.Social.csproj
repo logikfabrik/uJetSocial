@@ -390,6 +390,10 @@
     </None>
     <None Include="packages.config" />
     <None Include="uJetSocial.nuspec" />
+    <None Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\bower.json" />
+    <None Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\HISTORY.md" />
+    <None Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\LICENSE.md" />
+    <None Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\README.md" />
     <None Include="Web\App_Plugins\uJetSocial\package.manifest" />
   </ItemGroup>
   <ItemGroup>
@@ -399,6 +403,46 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetComment\create.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetComment\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetDocument\dashboard.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\base-context-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\base-context.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\base-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\base.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\buttons-core-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\buttons-core.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\buttons-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\buttons.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\forms-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\forms-nr-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\forms-nr.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\forms.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\grids-core-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\grids-core.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\grids-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\grids-responsive-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\grids-responsive-old-ie-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\grids-responsive-old-ie.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\grids-responsive.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\grids-units-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\grids-units.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\grids.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\menus-core-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\menus-core.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\menus-dropdown-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\menus-dropdown.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\menus-horizontal-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\menus-horizontal.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\menus-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\menus-scrollable-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\menus-scrollable.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\menus-skin-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\menus-skin.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\menus.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\pure-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\pure-nr-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\pure-nr.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\pure.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\tables-min.css" />
+    <Content Include="Web\App_Plugins\uJetSocial\css\vendor\pure-0.6.0\tables.css" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\components\dashboardCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\documentEdit\documentEditDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\lists\documentEdit\documentEditDirCtrl.js" />
