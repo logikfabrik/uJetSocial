@@ -72,12 +72,9 @@
 		
         // Directives
 		        
-		// Presenter directives
 		'~/App_Plugins/uJetSocial/js/app/directives/object/objectDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/object/objectDirCtrl.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/value/valueDirective.js',
-
-		// Picker directives
+		'~/App_Plugins/uJetSocial/js/app/directives/value/valueDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickerCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pickerDialogCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/commentPicker/commentPickerDir.js',
@@ -106,8 +103,6 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/umbracoMediaPicker/umbracoMediaPickerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/umbracoMemberPicker/umbracoMemberPickerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/umbracoMemberPicker/umbracoMemberPickerDirCtrl.js',
-
-		// List directives
 		'~/App_Plugins/uJetSocial/js/app/directives/listCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/editCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/commentEdit/commentEditDir.js',
@@ -141,7 +136,11 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/reportEdit/reportEditDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/reportEdit/reportEditDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/reportList/reportListDir.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/reportList/reportListDirCtrl.js'
+		'~/App_Plugins/uJetSocial/js/app/directives/reportList/reportListDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/tabs/tabsDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/tabs/tabsDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/tab/tabDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/tab/tabDirCtrl.js'
     ],
     css: [
 		'~/App_Plugins/uJetSocial/css/vendor/pure-0.6.0/pure.css',

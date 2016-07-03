@@ -4,16 +4,17 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco.directives")
-        .directive("ujetPager", ujetPagerDir);
+        .directive("ujetTab", ujetTabDir);
 
-    function ujetPagerDir() {
+    function ujetTabDir() {
         var directive = {
             restrict: "E",
-            templateUrl: "/App_Plugins/uJetSocial/js/app/directives/pager/pagerView.html",
+            templateUrl: "/App_Plugins/uJetSocial/js/app/directives/tab/tabView.html",
             scope: {
-                model: "="
+                header: "@"
             },
-            controller: "ujetPagerDirCtrl"
+            controller: "ujetTabDirCtrl",
+            transclude: true
         };
 
         return directive;

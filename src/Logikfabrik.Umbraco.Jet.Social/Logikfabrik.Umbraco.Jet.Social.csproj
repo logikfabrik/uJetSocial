@@ -510,6 +510,12 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\reportPicker\reportPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\reportPicker\reportPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\reportPicker\reportPickerView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tabs\tabsDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tabs\tabsDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tabs\tabsView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tab\tabDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tab\tabDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tab\tabView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\umbracoDocumentPicker\umbracoDocumentPickerDialogView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\umbracoDocumentPicker\umbracoDocumentPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\umbracoDocumentPicker\umbracoDocumentPickerDirCtrl.js" />
@@ -576,7 +582,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\object\objectDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\object\objectView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\value\valueView.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\value\valueDirective.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\value\valueDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\dataTransferObjectTypeFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\sprintfFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\momentFactory.js" />

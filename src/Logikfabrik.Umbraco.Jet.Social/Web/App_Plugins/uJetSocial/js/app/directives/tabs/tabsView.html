@@ -1,0 +1,13 @@
+﻿<div class="ujet-tabs">
+
+    <ul>
+        <li ng-repeat="tab in vm.tabs">
+            <a href="#" ng-click="vm.selectTab(tab)" prevent-default>{{tab.header}}</a>
+        </li>
+    </ul>
+
+    <div class="ujet-tabs__tabs">
+        <div ng-transclude></div>
+    </div>
+
+</div>

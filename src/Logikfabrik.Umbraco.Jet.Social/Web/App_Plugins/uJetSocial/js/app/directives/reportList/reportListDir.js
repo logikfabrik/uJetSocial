@@ -4,9 +4,9 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco.directives")
-        .directive("ujetReportList", ujetReportList);
+        .directive("ujetReportList", ujetReportListDir);
 
-    function ujetReportList() {
+    function ujetReportListDir() {
         var directive = {
             restrict: "E",
             templateUrl: "/App_Plugins/uJetSocial/js/app/directives/reportList/reportListView.html",

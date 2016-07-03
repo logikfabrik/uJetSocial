@@ -4,9 +4,9 @@
     // ReSharper disable once UndeclaredGlobalVariableUsing
     angular
         .module("umbraco.directives")
-        .directive("ujetMediaList", ujetMediaList);
+        .directive("ujetMediaList", ujetMediaListDir);
 
-    function ujetMediaList() {
+    function ujetMediaListDir() {
         var directive = {
             restrict: "E",
             templateUrl: "/App_Plugins/uJetSocial/js/app/directives/mediaList/mediaListView.html",
