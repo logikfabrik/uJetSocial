@@ -514,7 +514,6 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tabs\tabsDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tabs\tabsView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tab\tabDir.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tab\tabDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tab\tabView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\umbracoDocumentPicker\umbracoDocumentPickerDialogView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\umbracoDocumentPicker\umbracoDocumentPickerDir.js" />

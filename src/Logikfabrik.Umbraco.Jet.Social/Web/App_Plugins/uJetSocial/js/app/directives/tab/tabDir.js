@@ -13,10 +13,22 @@
             scope: {
                 header: "@"
             },
-            controller: "ujetTabDirCtrl",
-            transclude: true
+            transclude: true,
+            require: '^ujetTabs',
+            link: link
         };
 
         return directive;
+
+        function link(scope, element, attrs, parentCtrl) {
+            var vm = {
+                header: scope.header,
+                isActive: false
+            };
+
+            scope.vm = vm;
+
+            parentCtrl.addTab(vm);
+        }
     };
 })();

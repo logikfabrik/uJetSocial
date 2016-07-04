@@ -9,22 +9,25 @@
     function ujetTabsDirCtrl($scope) {
         var vm = {
             tabs: [],
-            addTab: addTab,
             selectTab: selectTab
         };
 
         $scope.vm = vm;
-
-        function addTab(tab) {
-            vm.tabs.push(tab);
-        };
-
+        
         function selectTab(tab) {
             for (var i = 0; i < vm.tabs.length; i++) {
                 vm.tabs[i].isActive = false;
             }
 
             tab.isActive = true;
+        };
+
+        this.addTab = function (tab) {
+            vm.tabs.push(tab);
+
+            if (vm.tabs.length === 1) {
+                vm.tabs[0].isActive = true;
+            }
         };
     };
 })();

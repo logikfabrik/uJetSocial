@@ -234,6 +234,7 @@
     align-items: center;
     border: #dbdbdb solid 1px;
     border-radius: 2px;
+    background: #fff;
 }
 
 .ujet-object__action {
@@ -419,6 +420,8 @@
 .ujet-panel {
     border: #dbdbdb solid 1px;
     border-radius: 2px;
+    margin: 24px 0 0; /* Temp, test */
+    background: #f8f8f8;
 }
 
 .ujet-panel__header,
@@ -426,13 +429,57 @@
     padding: 8px;
 }
 
-.ujet-panel__header {
-    background: #dbdbdb;
+.ujet-panel__section {
+    background: #fff;
 }
 
-.ujet-panel__section:first-of-type {
-    background: #f8f8f8;
+/* Tabs
+   ========================================================================== */
+
+.ujet-tabs__list {
+    margin: 0;
+    padding: 0 0 0 4px;
+    list-style-type: none;
 }
+
+.ujet-tabs__list-item {
+    float: left;
+    margin: 0 4px 0 0;
+}
+
+.ujet-tabs__tab {
+    display: inline-block;
+    border: #dbdbdb solid 1px;
+    border-radius: 4px 4px 0 0;
+    margin: 0 0 -1px;
+    padding: 4px 12px;
+    background: #fff;
+}
+
+    .ujet-tabs__tab,
+    .ujet-tabs__tab:link,
+    .ujet-tabs__tab:visited,
+    .ujet-tabs__tab:hover,
+    .ujet-tabs__tab:active {
+        text-decoration: none;
+    }
+
+.ujet-tabs__tab--selected {
+    border-color: #dbdbdb #dbdbdb #fff #dbdbdb;
+}
+
+.ujet-tabs__tabs {
+    clear: both;
+    border: #dbdbdb solid;
+    border-width: 1px 0 0;
+}
+
+
+
+
+
+
+
 
 
 
@@ -441,11 +488,10 @@
 }
 
 .ujet-label {
-    margin: 0 0 4px;
+    margin: 0 0 8px;
 }
 
 .ujet-label__title {
-    
 }
 
 .ujet-label__description {
@@ -454,5 +500,5 @@
 }
 
 .ujet-control {
-    margin: 0 0 4px;
+    margin: 0 0 8px;
 }
