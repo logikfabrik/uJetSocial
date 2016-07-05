@@ -340,20 +340,17 @@
 .ujet-list__row {
     border: #dbdbdb solid;
     border-width: 0 0 1px;
+    cursor: pointer;
 }
 
     .ujet-list__row:nth-child(even) {
         background: #f8f8f8;
     }
 
-.ujet-list__row,
-.ujet-list__row--selected {
-    cursor: pointer;
-}
-
 .ujet-list__row--selected {
     background: #2e8aea;
     color: #fff;
+    cursor: default;
 }
 
 .ujet-list__column {
@@ -433,8 +430,16 @@
     background: #fff;
 }
 
+.ujet-panel__sub-section {
+    margin: 0 0 16px;
+}
+
 /* Tabs
    ========================================================================== */
+
+.ujet-tabs {
+    background: #f8f8f8;
+}
 
 .ujet-tabs__list {
     margin: 0;
@@ -449,11 +454,11 @@
 
 .ujet-tabs__tab {
     display: inline-block;
-    border: #dbdbdb solid 1px;
-    border-radius: 4px 4px 0 0;
     margin: 0 0 -1px;
     padding: 4px 12px;
-    background: #fff;
+    border: solid 1px;
+    border-color: #f8f8f8 #f8f8f8 #dbdbdb;
+    border-radius: 4px 4px 0 0;
 }
 
     .ujet-tabs__tab,
@@ -465,7 +470,9 @@
     }
 
 .ujet-tabs__tab--selected {
-    border-color: #dbdbdb #dbdbdb #fff #dbdbdb;
+    border-color: #dbdbdb #dbdbdb #fff;
+    background: #fff;
+    cursor: default;
 }
 
 .ujet-tabs__tabs {
@@ -488,7 +495,7 @@
 }
 
 .ujet-label {
-    margin: 0 0 8px;
+    margin: 0 12px 8px 0;
 }
 
 .ujet-label__title {
@@ -497,8 +504,8 @@
 .ujet-label__description {
     color: #dbdbdb;
     font-size: 11px;
+    line-height: 14px;
 }
 
 .ujet-control {
-    margin: 0 0 8px;
 }

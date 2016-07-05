@@ -32,17 +32,23 @@
     <!-- Properties -->
     <key alias="entityIdProp">Entity</key>
     <key alias="authorIdProp">Author</key>
+    <key alias="authorIdPropDescription">The author of this entity.</key>
     <key alias="textProp">Text</key>
     <key alias="nameProp">Name</key>
     <key alias="descriptionProp">Description</key>
     <key alias="ownerIdProp">Owner</key>
+    <key alias="ownerIdPropDescription">The owner of this entity.</key>
     <key alias="firstNameProp">First name</key>
     <key alias="lastNameProp">Last name</key>
     <key alias="emailProp">E-mail</key>
     <key alias="createdProp">Created</key>
+    <key alias="createdPropDescription">The date and time this entity was created.</key>
     <key alias="updatedProp">Updated</key>
+    <key alias="updatedPropDescription">The date and time this entity was last updated.</key>
     <key alias="statusProp">Status</key>
+    <key alias="statusPropDescription">Whether this entity is pending, approved, or rejected.</key>
     <key alias="idProp">ID</key>
+    <key alias="idPropDescription">The entity identifier.</key>
     <key alias="documentIdProp">Document</key>
     <key alias="memberIdProp">Member</key>
     <key alias="mediaIdProp">Media</key>

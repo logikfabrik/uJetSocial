@@ -32,17 +32,23 @@
     <!-- Properties -->
     <key alias="entityIdProp">Entitet</key>
     <key alias="authorIdProp">Författare</key>
+    <key alias="authorIdPropDescription">Författaren av denna entitet.</key>
     <key alias="textProp">Text</key>
     <key alias="nameProp">Namn</key>
     <key alias="descriptionProp">Beskrivning</key>
     <key alias="ownerIdProp">Ägare</key>
+    <key alias="ownerIdPropDescription">Ägaren till denna entitet.</key>
     <key alias="firstNameProp">Förnamn</key>
     <key alias="lastNameProp">Efternamn</key>
     <key alias="emailProp">E-post</key>
     <key alias="createdProp">Skapad</key>
+    <key alias="createdPropDescription">Datum och tid då denna entitet skapades.</key>
     <key alias="updatedProp">Uppdaterad</key>
+    <key alias="updatedPropDescription">Datum och tid då denna entitet senast uppdaterades.</key>
     <key alias="statusProp">Status</key>
+    <key alias="statusPropDescription">Huruvida denna entitet är väntande, godkänd, eller avvisad.</key>
     <key alias="idProp">ID</key>
+    <key alias="idPropDescription">Entitetens ID.</key>
     <key alias="documentIdProp">Dokument</key>
     <key alias="memberIdProp">Medlem</key>
     <key alias="mediaIdProp">Media</key>
