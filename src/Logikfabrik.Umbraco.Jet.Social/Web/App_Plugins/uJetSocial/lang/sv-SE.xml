@@ -48,10 +48,14 @@
     <key alias="statusProp">Status</key>
     <key alias="statusPropDescription">Huruvida denna entitet är väntande, godkänd, eller avvisad.</key>
     <key alias="idProp">ID</key>
-    <key alias="idPropDescription">Entitetens ID.</key>
+    <key alias="idPropDescription">Entitetens identifierare.</key>
     <key alias="documentIdProp">Dokument</key>
     <key alias="memberIdProp">Medlem</key>
     <key alias="mediaIdProp">Media</key>
+
+    <!-- Tabs -->
+    <key alias="propertiesTab">Egenskaper</key>
+    <key alias="attributesTab">Attribut</key>
 
     <!-- Buttons -->
     <key alias="cancelBtn">Avbryt</key>

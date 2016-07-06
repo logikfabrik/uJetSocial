@@ -125,6 +125,8 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/individualMemberEdit/individualMemberEditDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/individualMemberList/individualMemberListDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/individualMemberList/individualMemberListDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/label/labelDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/label/labelDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/list/listDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/list/listDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/mediaEdit/mediaEditDir.js',

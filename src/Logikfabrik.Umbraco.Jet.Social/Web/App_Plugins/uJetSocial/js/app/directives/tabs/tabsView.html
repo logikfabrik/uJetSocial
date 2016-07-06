@@ -2,7 +2,9 @@
 
     <ul class="ujet-tabs__list">
         <li class="ujet-tabs__list-item" ng-repeat="tab in vm.tabs">
-            <a class="ujet-tabs__tab" ng-class="{'ujet-tabs__tab--selected': tab.isActive}" href="#" ng-click="vm.selectTab(tab)" prevent-default>{{tab.header}}</a>
+            <a class="ujet-tabs__tab" ng-class="{'ujet-tabs__tab--selected': tab.isActive}" href="#" ng-click="vm.selectTab(tab)" prevent-default>
+                <localize key="{{tab.headerKey}}"></localize>
+            </a>
         </li>
     </ul>
 

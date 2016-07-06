@@ -52,6 +52,10 @@
     <key alias="documentIdProp">Document</key>
     <key alias="memberIdProp">Member</key>
     <key alias="mediaIdProp">Media</key>
+    
+    <!-- Tabs -->
+    <key alias="propertiesTab">Properties</key>
+    <key alias="attributesTab">Attributes</key>
 
     <!-- Buttons -->
     <key alias="cancelBtn">Cancel</key>

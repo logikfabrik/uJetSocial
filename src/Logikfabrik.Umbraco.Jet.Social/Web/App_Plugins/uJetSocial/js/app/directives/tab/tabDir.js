@@ -11,7 +11,7 @@
             restrict: "E",
             templateUrl: "/App_Plugins/uJetSocial/js/app/directives/tab/tabView.html",
             scope: {
-                header: "@"
+                headerKey: "@"
             },
             transclude: true,
             require: '^ujetTabs',
@@ -22,7 +22,7 @@
 
         function link(scope, element, attrs, parentCtrl) {
             var vm = {
-                header: scope.header,
+                headerKey: scope.headerKey,
                 isActive: false
             };
 

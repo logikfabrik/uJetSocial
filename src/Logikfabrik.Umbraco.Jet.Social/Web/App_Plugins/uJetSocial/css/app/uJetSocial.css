@@ -417,11 +417,11 @@
 .ujet-panel {
     border: #dbdbdb solid 1px;
     border-radius: 2px;
-    margin: 24px 0 0; /* Temp, test */
+    margin: 24px 0 0;
+    padding: 24px 0 0;
     background: #f8f8f8;
 }
 
-.ujet-panel__header,
 .ujet-panel__section {
     padding: 8px;
 }
@@ -481,31 +481,26 @@
     border-width: 1px 0 0;
 }
 
-
-
-
-
-
-
-
-
-
-.ujet-form {
-    margin: 0;
-}
+/* Label
+   ========================================================================== */
 
 .ujet-label {
     margin: 0 12px 8px 0;
 }
 
 .ujet-label__title {
+    margin: 0 0 4px;
 }
 
 .ujet-label__description {
-    color: #dbdbdb;
+    color: #b3b3b3;
     font-size: 11px;
-    line-height: 14px;
+    line-height: 13px;
 }
 
-.ujet-control {
+
+
+
+.ujet-form {
+    margin: 0;
 }

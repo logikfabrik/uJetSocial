@@ -459,6 +459,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\individualMemberEdit\individualMemberEditDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\individualMemberEdit\individualMemberEditView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\commentPicker\commentPickerDialogView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\label\labelDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\label\labelDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\label\labelView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\mediaPicker\mediaPickerDialogView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\individualMemberPicker\individualMemberPickerDialogView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\nodePicker\nodePickerDir.js" />
