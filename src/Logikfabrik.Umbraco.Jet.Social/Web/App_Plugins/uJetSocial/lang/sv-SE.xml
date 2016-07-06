@@ -50,8 +50,11 @@
     <key alias="idProp">ID</key>
     <key alias="idPropDescription">Entitetens identifierare.</key>
     <key alias="documentIdProp">Dokument</key>
+    <key alias="documentIdPropDescription">Dokument i Umbraco denna entitet är kopplad till.</key>
     <key alias="memberIdProp">Medlem</key>
+    <key alias="memberIdPropDescription">Medlem i Umbraco denna entitet är kopplad till.</key>
     <key alias="mediaIdProp">Media</key>
+    <key alias="mediaIdPropDescription">Media i Umbraco denna entitet är kopplad till.</key>
 
     <!-- Tabs -->
     <key alias="propertiesTab">Egenskaper</key>

@@ -1,58 +1,96 @@
-﻿<div ng-if="vm.hasObject" class="ujet-dialog">
+﻿<div ng-if="vm.hasObject" class="ujet-panel">
 
-    <h1 class="ujet-dialog__header">
-        <localize key="uJetSocial_edit">Edit</localize>
-    </h1>
+    <form name="form" class="ujet-form">
 
-    <umb-pane>
+        <ujet-tabs>
 
-        <form name="form">
+            <ujet-tab header-key="uJetSocial_propertiesTab">
 
-            <div class="umb-control-group">
+                <div class="ujet-panel__section">
 
-                <label class="control-label" for="">
-                    <localize key="uJetSocial_documentIdProp">Document</localize>
-                </label>
-                <div class="controls-row">
-                    <ujet-node-picker model="vm.object.documentId"
-                                      can-pick-document="true">
-                    </ujet-node-picker>
+                    <div class="ujet-panel__sub-section pure-g">
+                        <div class="pure-u-1 pure-u-md-1-5 pure-u-lg-1-6">
+                            <ujet-label title-key="uJetSocial_idProp"
+                                        description-key="uJetSocial_idPropDescription">
+                            </ujet-label>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-4-5 pure-u-lg-5-6">
+                            <ujet-value value="{{vm.object.id}}"></ujet-value>
+                        </div>
+                    </div>
+
+                    <div class="ujet-panel__sub-section pure-g">
+                        <div class="pure-u-1 pure-u-md-1-5 pure-u-lg-1-6">
+                            <ujet-label title-key="uJetSocial_createdProp"
+                                        description-key="uJetSocial_createdPropDescription">
+                            </ujet-label>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-4-5 pure-u-lg-5-6">
+                            <ujet-value value="{{vm.object.created}}"></ujet-value>
+                        </div>
+                    </div>
+
+                    <div class="ujet-panel__sub-section pure-g">
+                        <div class="pure-u-1 pure-u-md-1-5 pure-u-lg-1-6">
+                            <ujet-label title-key="uJetSocial_updatedProp"
+                                        description-key="uJetSocial_updatedPropDescription">
+                            </ujet-label>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-4-5 pure-u-lg-5-6">
+                            <ujet-value value="{{vm.object.updated}}"></ujet-value>
+                        </div>
+                    </div>
+
+                    <div class="ujet-panel__sub-section pure-g">
+                        <div class="pure-u-1 pure-u-md-1-5 pure-u-lg-1-6">
+                            <ujet-label title-key="uJetSocial_statusProp"
+                                        description-key="uJetSocial_statusPropDescription">
+                            </ujet-label>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-4-5 pure-u-lg-5-6">
+                            <ujet-status-picker model="vm.object.status"></ujet-status-picker>
+                        </div>
+                    </div>
+
+                    <div class="ujet-panel__sub-section pure-g">
+                        <div class="pure-u-1 pure-u-md-1-5 pure-u-lg-1-6">
+                            <ujet-label title-key="uJetSocial_documentIdProp"
+                                        description-key="uJetSocial_documentIdPropDescription">
+                            </ujet-label>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-4-5 pure-u-lg-5-6">
+                            <ujet-node-picker model="vm.object.documentId"
+                                              can-pick-document="true">
+                            </ujet-node-picker>
+                        </div>
+                    </div>
+
                 </div>
 
-                <label class="control-label" for="">
-                    <localize key="uJetSocial_createdProp">Created</localize>
-                </label>
-                <div class="controls-row">
-                    <ujet-value value="{{vm.object.created}}"></ujet-value>
-                </div>
+            </ujet-tab>
 
-                <label class="control-label" for="">
-                    <localize key="uJetSocial_updatedProp">Updated</localize>
-                </label>
-                <div class="controls-row">
-                    <ujet-value value="{{vm.object.updated}}"></ujet-value>
-                </div>
+            <ujet-tab header-key="uJetSocial_attributesTab">
+            </ujet-tab>
 
-                <label class="control-label" for="">
-                    <localize key="uJetSocial_statusProp">Status</localize>
-                </label>
-                <div class="controls-row">
-                    <ujet-status-picker model="vm.object.status"></ujet-status-picker>
-                </div>
+        </ujet-tabs>
 
+        <div class="ujet-panel__section">
+
+            <div class="ujet-panel__sub-section pure-g">
+                <div class="pure-u-1 pure-u-md-1-5 pure-u-lg-1-6">
+                </div>
+                <div class="pure-u-1 pure-u-md-4-5 pure-u-lg-5-6">
+                    <a class="ujet-button" href="#" prevent-default ng-click="vm.save(form)">
+                        <localize key="uJetSocial_saveBtn"></localize>
+                    </a>
+                    <a class="ujet-button" href="#" prevent-default ng-click="vm.cancel()">
+                        <localize key="uJetSocial_cancelBtn"></localize>
+                    </a>
+                </div>
             </div>
 
-            <div class="btn-toolbar umb-btn-toolbar">
-                <button class="btn btn-primary" ng-click="vm.save(form)">
-                    <localize key="uJetSocial_saveBtn">Save</localize>
-                </button>
-                <a class="btn btn-link" ng-click="vm.cancel()">
-                    <localize key="uJetSocial_cancelBtn">Cancel</localize>
-                </a>
-            </div>
+        </div>
 
-        </form>
-
-    </umb-pane>
+    </form>
 
 </div>

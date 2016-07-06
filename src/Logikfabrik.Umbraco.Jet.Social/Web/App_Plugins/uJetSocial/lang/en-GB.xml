@@ -50,8 +50,11 @@
     <key alias="idProp">ID</key>
     <key alias="idPropDescription">The entity identifier.</key>
     <key alias="documentIdProp">Document</key>
+    <key alias="documentIdPropDescription">Document in Umbraco this entity is connected to.</key>
     <key alias="memberIdProp">Member</key>
+    <key alias="memberIdPropDescription">Member in Umbraco this entity is connected to.</key>
     <key alias="mediaIdProp">Media</key>
+    <key alias="mediaIdPropDescription">Media in Umbraco this entity is connected to.</key>
     
     <!-- Tabs -->
     <key alias="propertiesTab">Properties</key>
