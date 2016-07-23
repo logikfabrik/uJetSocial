@@ -79,7 +79,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         /// <returns>The content matching the selection criteria.</returns>
         protected abstract IPublishedContent Lookup(XPathExpression expression);
 
-        private static T GetModel(IPublishedContent content)
+        /// <summary>
+        /// Gets a model for the specified content.
+        /// </summary>
+        /// <param name="content">The content.</param>
+        /// <returns>A model for the specified content.</returns>
+        protected virtual T GetModel(IPublishedContent content)
         {
             return new T
             {

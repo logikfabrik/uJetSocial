@@ -9,5 +9,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models
     /// </summary>
     public class UmbracoMember : UmbracoContent
     {
+        /// <summary>
+        /// Gets or sets the e-mail.
+        /// </summary>
+        /// <value>
+        /// The e-mail.
+        /// </value>
+        public string Email { get; set; }
     }
 }

@@ -9,6 +9,7 @@
     function ujetAsUmbracoMemberFilter() {
         return function (object) {
             object.label = object.name;
+            object.subLabel = object.email;
 
             return object;
         };

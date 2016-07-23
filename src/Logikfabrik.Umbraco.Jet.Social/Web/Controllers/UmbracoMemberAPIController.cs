@@ -10,6 +10,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     using System.Xml.XPath;
     using global::Umbraco.Core.Models;
     using global::Umbraco.Web.Mvc;
+    using global::Umbraco.Web.PublishedCache;
     using Models;
 
     /// <summary>
@@ -68,6 +69,24 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
             int total;
 
             return _contentLookup.GetMembersByXPath(expression, 0, 1, out total).SingleOrDefault();
+        }
+
+        /// <summary>
+        /// Gets a model for the specified content.
+        /// </summary>
+        /// <param name="content">The content.</param>
+        /// <returns>
+        /// A model for the specified content.
+        /// </returns>
+        protected override UmbracoMember GetModel(IPublishedContent content)
+        {
+            var member = (MemberPublishedContent)content;
+
+            var model = base.GetModel(member);
+
+            model.Email = member.Email;
+
+            return model;
         }
     }
 }
