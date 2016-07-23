@@ -75,9 +75,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         /// Gets a model for the specified content.
         /// </summary>
         /// <param name="content">The content.</param>
-        /// <returns>
-        /// A model for the specified content.
-        /// </returns>
+        /// <returns>A model for the specified content.</returns>
         protected override UmbracoMember GetModel(IPublishedContent content)
         {
             var member = (MemberPublishedContent)content;

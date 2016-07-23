@@ -294,6 +294,7 @@
     <Compile Include="Contact\ContactProvider.cs" />
     <Compile Include="ContentLookup.cs" />
     <Compile Include="ContentLookupExpressionBuilder.cs" />
+    <Compile Include="ContentTypes.cs" />
     <Compile Include="DatabaseWrapperFactory.cs" />
     <Compile Include="Document\Document.cs" />
     <Compile Include="Document\DocumentApplicationHandler.cs" />

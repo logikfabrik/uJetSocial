@@ -9,5 +9,12 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Models
     /// </summary>
     public class UmbracoMedia : UmbracoContent
     {
+        /// <summary>
+        /// Gets or sets the URL.
+        /// </summary>
+        /// <value>
+        /// The URL.
+        /// </value>
+        public string Url { get; set; }
     }
 }

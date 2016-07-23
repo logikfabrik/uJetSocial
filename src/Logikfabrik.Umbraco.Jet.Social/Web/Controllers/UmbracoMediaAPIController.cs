@@ -69,5 +69,31 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 
             return _contentLookup.GetMediaByXPath(expression, 0, 1, out total).SingleOrDefault();
         }
+
+        /// <summary>
+        /// Gets a model for the specified content.
+        /// </summary>
+        /// <param name="content">The content.</param>
+        /// <returns>A model for the specified content.</returns>
+        protected override UmbracoMedia GetModel(IPublishedContent content)
+        {
+            var model = base.GetModel(content);
+
+            if (content.DocumentTypeId == (int)ContentTypes.Folder)
+            {
+                return model;
+            }
+
+            try
+            {
+                model.Url = content.Url;
+            }
+            catch (NotSupportedException)
+            {
+                // This is just a precaution. Url is not accessible for folders, and might not be accessible for other types too.
+            }
+
+            return model;
+        }
     }
 }

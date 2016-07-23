@@ -69,5 +69,19 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 
             return _contentLookup.GetDocumentsByXPath(expression, 0, 1, out total).SingleOrDefault();
         }
+
+        /// <summary>
+        /// Gets a model for the specified content.
+        /// </summary>
+        /// <param name="content">The content.</param>
+        /// <returns>A model for the specified content.</returns>
+        protected override UmbracoDocument GetModel(IPublishedContent content)
+        {
+            var model = base.GetModel(content);
+
+            model.Url = content.Url;
+
+            return model;
+        }
     }
 }

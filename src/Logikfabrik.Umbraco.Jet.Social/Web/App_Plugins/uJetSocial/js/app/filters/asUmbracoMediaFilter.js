@@ -9,6 +9,7 @@
     function ujetAsUmbracoMediaFilter() {
         return function (object) {
             object.label = object.name;
+            object.subLabel = object.url;
 
             return object;
         };
