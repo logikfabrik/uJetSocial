@@ -11,6 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     using global::Umbraco.Core.Models;
     using global::Umbraco.Web.Mvc;
     using Models;
+    using Utilities;
 
     /// <summary>
     /// The <see cref="UmbracoDocumentAPIController" /> class.
@@ -79,7 +80,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         {
             var model = base.GetModel(content);
 
-            model.Url = content.Url;
+            model.Url = PublishedContentUtilities.GetUrl(content);
 
             return model;
         }

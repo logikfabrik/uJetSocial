@@ -5,6 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
     using System;
+    using System.Linq;
     using System.Web.Http;
     using global::Umbraco.Web.Mvc;
     using Models.Querying;
@@ -37,7 +38,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
             return new QueryResult<Report.Report>
             {
                 Total = result.Total,
-                Objects = result.Objects
+                Objects = result.Objects.Select(GetModel)
             };
         }
     }

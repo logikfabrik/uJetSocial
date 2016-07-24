@@ -4,9 +4,14 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
+    using System;
+    using System.Linq;
     using System.Web.Http;
     using global::Umbraco.Web.Mvc;
+    using global::Umbraco.Web.PublishedCache;
     using Individual;
+    using Jet.Web.Data;
+    using Models;
     using Models.Querying;
 
     /// <summary>
@@ -17,6 +22,31 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     // ReSharper disable once InconsistentNaming
     public class IndividualMemberAPIController : DataTransferObjectAPIController<IndividualMember>
     {
+        private readonly IUmbracoHelperWrapper _umbracoHelper;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IndividualMemberAPIController" /> class.
+        /// </summary>
+        public IndividualMemberAPIController()
+            : this(new UmbracoHelperWrapper())
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IndividualMemberAPIController" /> class.
+        /// </summary>
+        /// <param name="umbracoHelper">The Umbraco helper.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="umbracoHelper" /> is <c>null</c>.</exception>
+        public IndividualMemberAPIController(IUmbracoHelperWrapper umbracoHelper)
+        {
+            if (umbracoHelper == null)
+            {
+                throw new ArgumentNullException(nameof(umbracoHelper));
+            }
+
+            _umbracoHelper = umbracoHelper;
+        }
+
         /// <summary>
         /// Queries the provider.
         /// </summary>
@@ -37,7 +67,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
             return new QueryResult<IndividualMember>
             {
                 Total = result.Total,
-                Objects = result.Objects
+                Objects = result.Objects.Select(GetModel)
             };
         }
 
@@ -53,7 +83,37 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 
             var member = provider.GetByUmbracoId(id);
 
-            return member ?? provider.Add(new IndividualMember { MemberId = id });
+            return GetModel(member ?? provider.Add(new IndividualMember { MemberId = id }));
+        }
+
+        /// <summary>
+        /// Gets a model for the specified data transfer object.
+        /// </summary>
+        /// <param name="dto">The data transfer object.</param>
+        /// <returns>A model for the specified data transfer object.</returns>
+        protected override IndividualMember GetModel(IndividualMember dto)
+        {
+            var model = base.GetModel(dto);
+
+            if (model == null)
+            {
+                return null;
+            }
+
+            var content = (MemberPublishedContent)_umbracoHelper.TypedMember(model.MemberId);
+
+            var meta = new MetaMember
+            {
+                Id = model.Id,
+                Created = model.Created,
+                Updated = model.Updated,
+                Status = model.Status,
+                MemberId = model.MemberId,
+                Name = content.Name,
+                Email = content.Email
+            };
+
+            return meta;
         }
     }
 }

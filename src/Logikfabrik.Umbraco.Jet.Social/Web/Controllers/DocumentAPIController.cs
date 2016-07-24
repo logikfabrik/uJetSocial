@@ -4,10 +4,15 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 {
+    using System;
+    using System.Linq;
     using System.Web.Http;
     using Document;
     using global::Umbraco.Web.Mvc;
+    using Jet.Web.Data;
+    using Models;
     using Models.Querying;
+    using Utilities;
 
     /// <summary>
     /// The <see cref="DocumentAPIController" /> class.
@@ -17,6 +22,31 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     // ReSharper disable once InconsistentNaming
     public class DocumentAPIController : DataTransferObjectAPIController<Document>
     {
+        private readonly IUmbracoHelperWrapper _umbracoHelper;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentAPIController" /> class.
+        /// </summary>
+        public DocumentAPIController()
+            : this(new UmbracoHelperWrapper())
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentAPIController" /> class.
+        /// </summary>
+        /// <param name="umbracoHelper">The Umbraco helper.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="umbracoHelper" /> is <c>null</c>.</exception>
+        public DocumentAPIController(IUmbracoHelperWrapper umbracoHelper)
+        {
+            if (umbracoHelper == null)
+            {
+                throw new ArgumentNullException(nameof(umbracoHelper));
+            }
+
+            _umbracoHelper = umbracoHelper;
+        }
+
         /// <summary>
         /// Queries the provider.
         /// </summary>
@@ -37,7 +67,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
             return new QueryResult<Document>
             {
                 Total = result.Total,
-                Objects = result.Objects
+                Objects = result.Objects.Select(GetModel)
             };
         }
 
@@ -53,7 +83,37 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
 
             var document = provider.GetByUmbracoId(id);
 
-            return document ?? provider.Add(new Document { DocumentId = id });
+            return GetModel(document ?? provider.Add(new Document { DocumentId = id }));
+        }
+
+        /// <summary>
+        /// Gets a model for the specified data transfer object.
+        /// </summary>
+        /// <param name="dto">The data transfer object.</param>
+        /// <returns>A model for the specified data transfer object.</returns>
+        protected override Document GetModel(Document dto)
+        {
+            var model = base.GetModel(dto);
+
+            if (model == null)
+            {
+                return null;
+            }
+
+            var content = _umbracoHelper.TypedDocument(model.DocumentId);
+
+            var meta = new MetaDocument
+            {
+                Id = model.Id,
+                Created = model.Created,
+                Updated = model.Updated,
+                Status = model.Status,
+                DocumentId = model.DocumentId,
+                Name = content.Name,
+                Url = PublishedContentUtilities.GetUrl(content)
+            };
+
+            return meta;
         }
     }
 }

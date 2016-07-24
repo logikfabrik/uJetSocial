@@ -55,7 +55,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         {
             dto.Id = id;
 
-            return Provider.Update(dto);
+            return GetModel(Provider.Update(dto));
         }
 
         /// <summary>
@@ -66,7 +66,17 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         [HttpGet]
         public T Get(int id)
         {
-            return Provider.Get(id);
+            return GetModel(Provider.Get(id));
+        }
+
+        /// <summary>
+        /// Gets a model for the specified data transfer object.
+        /// </summary>
+        /// <param name="dto">The data transfer object.</param>
+        /// <returns>A model for the specified data transfer object.</returns>
+        protected virtual T GetModel(T dto)
+        {
+            return dto;
         }
 
         /// <summary>

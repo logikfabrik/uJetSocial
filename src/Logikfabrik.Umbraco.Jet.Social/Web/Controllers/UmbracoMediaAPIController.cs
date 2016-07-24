@@ -11,6 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
     using global::Umbraco.Core.Models;
     using global::Umbraco.Web.Mvc;
     using Models;
+    using Utilities;
 
     /// <summary>
     /// The <see cref="UmbracoMediaAPIController" /> class.
@@ -79,19 +80,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         {
             var model = base.GetModel(content);
 
-            if (content.DocumentTypeId == (int)ContentTypes.Folder)
-            {
-                return model;
-            }
-
-            try
-            {
-                model.Url = content.Url;
-            }
-            catch (NotSupportedException)
-            {
-                // This is just a precaution. Url is not accessible for folders, and might not be accessible for other types too.
-            }
+            model.Url = PublishedContentUtilities.GetUrl(content);
 
             return model;
         }

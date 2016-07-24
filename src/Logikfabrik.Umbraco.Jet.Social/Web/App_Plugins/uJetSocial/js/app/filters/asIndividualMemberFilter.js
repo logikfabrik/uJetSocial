@@ -8,7 +8,8 @@
 
     function ujetAsIndividualMemberFilter() {
         return function (object) {
-            object.label = "Member from Umbraco";
+            object.label = object.name;
+            object.subLabel = object.email;
 
             return object;
         };

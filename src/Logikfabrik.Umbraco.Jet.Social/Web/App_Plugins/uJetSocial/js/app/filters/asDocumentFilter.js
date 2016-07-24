@@ -8,7 +8,8 @@
 
     function ujetAsDocumentFilter() {
         return function (object) {
-            object.label = "Document from Umbraco";
+            object.label = object.name;
+            object.subLabel = object.url;
 
             return object;
         };

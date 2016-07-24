@@ -358,6 +358,9 @@
     <Compile Include="Web\Controllers\UmbracoMemberAPIController.cs" />
     <Compile Include="Web\Filters\APIExceptionFilterAttribute.cs" />
     <Compile Include="Web\Models\APIException.cs" />
+    <Compile Include="Web\Models\MetaDocument.cs" />
+    <Compile Include="Web\Models\MetaMedia.cs" />
+    <Compile Include="Web\Models\MetaMember.cs" />
     <Compile Include="Web\Models\Querying\CommentQuery.cs" />
     <Compile Include="Web\Models\Querying\DocumentQuery.cs" />
     <Compile Include="Web\Models\Querying\GroupQuery.cs" />
@@ -383,6 +386,7 @@
     <Compile Include="Web\Trees\MediaTreeController.cs" />
     <Compile Include="Web\Trees\ReportTreeController.cs" />
     <Compile Include="Web\Trees\TreeController.cs" />
+    <Compile Include="Web\Utilities\PublishedContentUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="stylecop.json" />
