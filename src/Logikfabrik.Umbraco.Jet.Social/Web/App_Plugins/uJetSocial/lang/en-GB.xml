@@ -69,6 +69,11 @@
     <key alias="newAction">Create</key>
     <key alias="refreshAction">Reload</key>
 
+    <!-- Status -->
+    <key alias="pendingStatus">Pending</key>
+    <key alias="approvedStatus">Approved</key>
+    <key alias="rejectedStatus">Rejected</key>
+
     <key alias="edit">Edit</key>
     <key alias="pickDocument">Pick a Document</key>
     <key alias="pickComment">Pick a Comment</key>

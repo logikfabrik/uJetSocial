@@ -68,6 +68,11 @@
     <!-- Actions -->
     <key alias="newAction">Skapa</key>
     <key alias="refreshAction">Ladda om</key>
+    
+    <!-- Status -->
+    <key alias="pendingStatus">Väntande</key>
+    <key alias="approvedStatus">Godkänd</key>
+    <key alias="rejectedStatus">Avvisad</key>
 
     <key alias="edit">Redigera</key>
     <key alias="pickDocument">Välj ett dokument</key>
