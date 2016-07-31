@@ -59,6 +59,7 @@
     <!-- Tabs -->
     <key alias="propertiesTab">Properties</key>
     <key alias="attributesTab">Attributes</key>
+    <key alias="membersTab">Members</key>
 
     <!-- Buttons -->
     <key alias="cancelBtn">Cancel</key>

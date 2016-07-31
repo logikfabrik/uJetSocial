@@ -56,6 +56,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
                 { typeof(Contact.Contact), new ContactProvider(cache, database) },
                 { typeof(Document.Document), new DocumentProvider(cache, database) },
                 { typeof(Group.Group), new GroupProvider(cache, database) },
+                { typeof(GroupMembership), new GroupMembershipProvider(cache, database) },
                 { typeof(IndividualGuest), new IndividualGuestProvider(cache, database) },
                 { typeof(IndividualMember), new IndividualMemberProvider(cache, database) },
                 { typeof(Media.Media), new MediaProvider(cache, database) },

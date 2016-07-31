@@ -347,6 +347,7 @@
     <Compile Include="Web\Controllers\DataTransferObjectTypeAPIController.cs" />
     <Compile Include="Web\Controllers\DataTransferObjectAPIController{T}.cs" />
     <Compile Include="Web\Controllers\GroupAPIController.cs" />
+    <Compile Include="Web\Controllers\GroupMembershipAPIController.cs" />
     <Compile Include="Web\Controllers\IndividualGuestAPIController.cs" />
     <Compile Include="Web\Controllers\IndividualMemberAPIController.cs" />
     <Compile Include="Web\Controllers\MediaAPIController.cs" />
@@ -363,6 +364,7 @@
     <Compile Include="Web\Models\MetaMember.cs" />
     <Compile Include="Web\Models\Querying\CommentQuery.cs" />
     <Compile Include="Web\Models\Querying\DocumentQuery.cs" />
+    <Compile Include="Web\Models\Querying\GroupMembershipQuery.cs" />
     <Compile Include="Web\Models\Querying\GroupQuery.cs" />
     <Compile Include="Web\Models\Querying\IndividualGuestQuery.cs" />
     <Compile Include="Web\Models\Querying\IndividualMemberQuery.cs" />
@@ -456,6 +458,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetGroup\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualGuest\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualGuest\create.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\groupMembershipList\groupMembershipListDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\groupMembershipList\groupMembershipListDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\groupMembershipList\groupMembershipListView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\individualGuestEdit\individualGuestEditDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\individualGuestEdit\individualGuestEditDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\individualGuestEdit\individualGuestEditView.html" />
@@ -535,6 +540,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\umbracoMemberPicker\umbracoMemberPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\umbracoMemberPicker\umbracoMemberPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\umbracoMemberPicker\umbracoMemberPickerView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\groupMembershipFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\umbracoNodeTypeFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\individualMemberFactory.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\factories\data\mediaFactory.js" />

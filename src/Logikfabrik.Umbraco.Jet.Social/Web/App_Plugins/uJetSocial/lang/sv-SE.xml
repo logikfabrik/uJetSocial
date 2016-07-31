@@ -59,6 +59,7 @@
     <!-- Tabs -->
     <key alias="propertiesTab">Egenskaper</key>
     <key alias="attributesTab">Attribut</key>
+    <key alias="membersTab">Medlemmar</key>
 
     <!-- Buttons -->
     <key alias="cancelBtn">Avbryt</key>
