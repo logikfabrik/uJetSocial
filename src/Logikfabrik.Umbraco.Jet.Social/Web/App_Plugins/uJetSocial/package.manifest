@@ -118,8 +118,8 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/groupEdit/groupEditDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/groupList/groupListDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/groupList/groupListDirCtrl.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/groupMembershipList/groupMembershipListDir.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/groupMembershipList/groupMembershipListDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/groupMembership/groupMembershipDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/groupMembership/groupMembershipDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/individualGuestEdit/individualGuestEditDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/individualGuestEdit/individualGuestEditDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/individualGuestList/individualGuestListDir.js',
@@ -144,8 +144,7 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/reportList/reportListDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/tabs/tabsDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/tabs/tabsDirCtrl.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/tab/tabDir.js',
-		'~/App_Plugins/uJetSocial/js/app/directives/tab/tabDirCtrl.js'
+		'~/App_Plugins/uJetSocial/js/app/directives/tab/tabDir.js'
     ],
     css: [
 		'~/App_Plugins/uJetSocial/css/vendor/pure-0.6.0/pure.css',

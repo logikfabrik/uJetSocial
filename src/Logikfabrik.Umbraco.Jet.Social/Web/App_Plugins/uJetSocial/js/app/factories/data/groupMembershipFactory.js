@@ -31,7 +31,7 @@
         }
 
         function remove(id) {
-            return $http.post("backoffice/uJetSocial/GroupMembershipAPI/Query", id);
+            return $http.post("backoffice/uJetSocial/GroupMembershipAPI/Remove", id);
         }
     };
 })();

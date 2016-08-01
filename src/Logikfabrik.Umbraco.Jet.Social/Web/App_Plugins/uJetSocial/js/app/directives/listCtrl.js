@@ -15,8 +15,7 @@
 
         function search() {
             config.objectFactory.query(query.compile(config.searchParams)).success(function (data) {
-                vm.objects =
-                {
+                vm.objects = {
                     columns: query.orderBy.options,
                     rows: data.objects
                 };

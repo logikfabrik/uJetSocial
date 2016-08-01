@@ -360,6 +360,7 @@
     <Compile Include="Web\Filters\APIExceptionFilterAttribute.cs" />
     <Compile Include="Web\Models\APIException.cs" />
     <Compile Include="Web\Models\MetaDocument.cs" />
+    <Compile Include="Web\Models\MetaGroupMembership.cs" />
     <Compile Include="Web\Models\MetaMedia.cs" />
     <Compile Include="Web\Models\MetaMember.cs" />
     <Compile Include="Web\Models\Querying\CommentQuery.cs" />
@@ -458,9 +459,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetGroup\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualGuest\dashboard.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\ujetIndividualGuest\create.html" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\groupMembershipList\groupMembershipListDir.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\groupMembershipList\groupMembershipListDirCtrl.js" />
-    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\groupMembershipList\groupMembershipListView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\groupMembership\groupMembershipDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\groupMembership\groupMembershipDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\groupMembership\groupMembershipView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\individualGuestEdit\individualGuestEditDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\individualGuestEdit\individualGuestEditDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\individualGuestEdit\individualGuestEditView.html" />
