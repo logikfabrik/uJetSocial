@@ -187,6 +187,22 @@
 /* Group Membership
    ========================================================================== */
 
+.ujet-membership {
+}
+
+.ujet-membership__list {
+    margin: 0;
+    list-style-type: none;
+}
+
+.ujet-membership__list-item {
+    margin: 0 0 4px;
+}
+
+    .ujet-membership__list-item:last-child {
+        margin: 0 0 8px;
+    }
+
 /* Report Picker
    ========================================================================== */
 

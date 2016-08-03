@@ -1,6 +1,6 @@
 ﻿<div class="ujet-document-picker">
 
-    <input class="ujet-document-picker__query" type="text" placeholder="{{vm.placeholder}}" ng-model="vm.query" ng-change="vm.search()" />
+    <input class="ujet-document-picker__query" type="text" placeholder="{{vm.config.local.typeToSearch}}" ng-model="vm.query" ng-change="vm.search()" />
 
     <ul class="ujet-document-picker__list" ng-show="vm.hasObjects">
 

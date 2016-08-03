@@ -65,6 +65,7 @@
     <key alias="cancelBtn">Avbryt</key>
     <key alias="createBtn">Skapa</key>
     <key alias="saveBtn">Spara</key>
+    <key alias="addBtn">Lägg till</key>
 
     <!-- Actions -->
     <key alias="newAction">Skapa</key>
@@ -90,10 +91,16 @@
 
     <!-- Errors -->
     <key alias="errorCategoryGeneral">Något gick fel</key>
+    <key alias="generalError"></key>
+    
     <key alias="errorCategoryEmptyRecycleBin">Papperskorgen kunde inte tömmas</key>
     <key alias="emptyRecycleBinDocumentError">Dokumentet {0} används och kan inte tas bort.</key>
     <key alias="emptyRecycleBinDocumentErrors">Dokumenten {0} används och kan inte tas bort.</key>
     <key alias="emptyRecycleBinMediaError">Media {0} används och kan inte tas bort.</key>
     <key alias="emptyRecycleBinMediaErrors">Media {0} används och kan inte tas bort.</key>
+
+    <key alias="errorCategoryAddMembership">Medlemmen kunde inte läggas till</key>
+    <key alias="addMembershipError"></key>
+    <key alias="addMembershipDuplicateError">Medlemmen är redan en medlem.</key>
   </area>
 </language>

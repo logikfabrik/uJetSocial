@@ -65,6 +65,7 @@
     <key alias="cancelBtn">Cancel</key>
     <key alias="createBtn">Create</key>
     <key alias="saveBtn">Save</key>
+    <key alias="addBtn">Add</key>
 
     <!-- Actions -->
     <key alias="newAction">Create</key>
@@ -90,10 +91,16 @@
     
     <!-- Errors -->
     <key alias="errorCategoryGeneral">Something went wrong</key>
+    <key alias="generalError"></key>
+    
     <key alias="errorCategoryEmptyRecycleBin">The Recycle Bin could not be emptied</key>
     <key alias="emptyRecycleBinDocumentError">Documents {0} are in use and cannot be deleted.</key>
     <key alias="emptyRecycleBinDocumentErrors">Document {0} is in use and cannot be deleted.</key>
     <key alias="emptyRecycleBinMediaError">Media {0} is in use and cannot be deleted.</key>
     <key alias="emptyRecycleBinMediaErrors">Media {0} are in use and cannot be deleted.</key>
+
+    <key alias="errorCategoryAddMembership">The member could not be added</key>
+    <key alias="addMembershipError"></key>
+    <key alias="addMembershipDuplicateError">The member is already a member.</key>
   </area>
 </language>

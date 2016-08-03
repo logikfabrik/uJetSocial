@@ -26,6 +26,7 @@
 		'~/App_Plugins/uJetSocial/js/app/factories/data/umbracoNodeTypeFactory.js',
 		
 		// Services
+		'~/App_Plugins/uJetSocial/js/app/services/localService.js',
 		'~/App_Plugins/uJetSocial/js/app/services/queryService.js',
 
 		// Filters

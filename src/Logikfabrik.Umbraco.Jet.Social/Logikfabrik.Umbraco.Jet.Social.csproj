@@ -612,6 +612,7 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asIndividualGuestFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\filters\asGroupFilter.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\services\queryService.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\services\localService.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\vendor\lodash-3.10.1\lodash.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\commentEdit\commentEditView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\backoffice\dashboard.html" />

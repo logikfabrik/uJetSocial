@@ -25,10 +25,9 @@
 
         function updateObject(object) {
             config.objectFactory.update(object)
-                .success(function() {
+                .then(function() {
                     notificationsService.success(config.successMessage);
-                })
-                .error(function() {
+                }, function() {
                     notificationsService.error(config.errorMessage);
                 });
         }

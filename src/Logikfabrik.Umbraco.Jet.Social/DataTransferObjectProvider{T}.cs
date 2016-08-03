@@ -112,7 +112,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// The added data transfer object of type <typeparamref name="T" />.
         /// </returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="dto" /> is <c>null</c>.</exception>
-        public T Add(T dto)
+        public virtual T Add(T dto)
         {
             if (dto == null)
             {
