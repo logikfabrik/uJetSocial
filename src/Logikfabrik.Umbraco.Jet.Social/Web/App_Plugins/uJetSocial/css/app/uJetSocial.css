@@ -241,19 +241,10 @@
 /* Status Picker
    ========================================================================== */
 
-.ujet-status-picker__list {
-    margin: 0;
-    list-style-type: none;
+.ujet-status-picker__button {
+    display: inline-block;
+    margin: 4px 0 0;
 }
-
-.ujet-status-picker__list-item {
-    float: left;
-    margin: 0 4px 0 0;
-}
-
-    .ujet-status-picker__list-item:last-child {
-        margin: 0;
-    }
 
 /* Object
    ========================================================================== */

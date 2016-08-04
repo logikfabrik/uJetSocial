@@ -1,22 +1,21 @@
 ﻿<div class="ujet-status-picker">
 
-    <ul class="ujet-status-picker__list">
+    <div class="ujet-status-picker__button">
+        <a href="#" ng-click="model = 0" class="ujet-button" ng-class="{'ujet-button--disabled': model === 0}" prevent-default>
+            <i class="ujet-button__icon icon icon-time"></i> <localize key="uJetSocial_pendingStatus"></localize>
+        </a>
+    </div>
 
-        <li class="ujet-status-picker__list-item">
-            <a href="#" ng-click="model = 0" class="ujet-button"
-               ng-class="{'ujet-button--disabled': model === 0}" prevent-default><i class="ujet-button__icon icon icon-time"></i> <localize key="uJetSocial_pendingStatus"></localize></a>
-        </li>
+    <div class="ujet-status-picker__button">
+        <a href="#" ng-click="model = 1" class="ujet-button" ng-class="{'ujet-button--disabled': model === 1}" prevent-default>
+            <i class="ujet-button__icon icon icon-check"></i> <localize key="uJetSocial_approvedStatus"></localize>
+        </a>
+    </div>
 
-        <li class="ujet-status-picker__list-item">
-            <a href="#" ng-click="model = 1" class="ujet-button"
-               ng-class="{'ujet-button--disabled': model === 1}" prevent-default><i class="ujet-button__icon icon icon-check"></i> <localize key="uJetSocial_approvedStatus"></localize></a>
-        </li>
-
-        <li class="ujet-status-picker__list-item">
-            <a href="#" ng-click="model = 2" class="ujet-button"
-               ng-class="{'ujet-button--disabled': model === 2}" prevent-default><i class="ujet-button__icon icon icon-block"></i> <localize key="uJetSocial_rejectedStatus"></localize></a>
-        </li>
-
-    </ul>
+    <div class="ujet-status-picker__button">
+        <a href="#" ng-click="model = 2" class="ujet-button" ng-class="{'ujet-button--disabled': model === 2}" prevent-default>
+            <i class="ujet-button__icon icon icon-block"></i> <localize key="uJetSocial_rejectedStatus"></localize>
+        </a>
+    </div>
 
 </div>
