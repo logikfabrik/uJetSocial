@@ -6,13 +6,15 @@
         .module("umbraco")
         .controller("ujetMediaListDirCtrl", ujetMediaListDirCtrl);
 
-    ujetMediaListDirCtrl.$inject = ["$scope", "$controller", "queryService", "ujetMediaFactory"];
+    ujetMediaListDirCtrl.$inject = ["$scope", "$controller", "notificationsService", "localService", "queryService", "ujetMediaFactory"];
 
-    function ujetMediaListDirCtrl($scope, $controller, queryService, ujetMediaFactory) {
+    function ujetMediaListDirCtrl($scope, $controller, notificationsService, localService, queryService, ujetMediaFactory) {
         var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "MediaId"]);
 
         $controller("ujetListCtrl", {
             $scope: $scope,
+            notificationsService: notificationsService,
+            localService: localService,
             query: query,
             config: {
                 objectFactory: ujetMediaFactory

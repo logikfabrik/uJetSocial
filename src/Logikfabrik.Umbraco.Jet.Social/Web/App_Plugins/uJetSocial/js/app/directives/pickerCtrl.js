@@ -6,12 +6,15 @@
         .module("umbraco")
         .controller("ujetPickerCtrl", ujetPickerCtrl);
 
-    function ujetPickerCtrl($scope, localService, queryService, config, callback) {
+    function ujetPickerCtrl($scope, notificationsService, localService, queryService, config, callback) {
         var vm = {
             hasObjects: false,
             search: search,
             config: {
                 local: localService.localize({
+                    errorCategoryGeneral: "",
+                    generalError: "",
+
                     typeToSearch: ""
                 })
             }
@@ -28,16 +31,19 @@
 
             q[config.objectParam] = vm.query;
 
-            config.objectFactory.query(query.compile(q)).success(function (data) {
-                vm.objects = data.objects;
+            config.objectFactory.query(query.compile(q))
+                .then(function(response) {
+                    vm.objects = response.data.objects;
 
-                vm.paging = {
-                    pageIndex: query.pageIndex.value,
-                    pageCount: Math.ceil(data.total / query.pageSize.value)
-                };
+                    vm.paging = {
+                        pageIndex: query.pageIndex.value,
+                        pageCount: Math.ceil(response.data.total / query.pageSize.value)
+                    };
 
-                vm.hasObjects = vm.objects.length > 0;
-            });
+                    vm.hasObjects = vm.objects.length > 0;
+                }, function() {
+                    notificationsService.error(vm.config.local.errorCategoryGeneral, vm.config.local.generalError);
+                });
         };
 
         $scope.$on("selectObject", function (e, object) {

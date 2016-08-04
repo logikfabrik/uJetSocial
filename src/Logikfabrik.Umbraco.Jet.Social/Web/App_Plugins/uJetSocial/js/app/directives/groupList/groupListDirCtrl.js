@@ -6,9 +6,9 @@
         .module("umbraco")
         .controller("ujetGroupListDirCtrl", ujetGroupListDirCtrl);
 
-    ujetGroupListDirCtrl.$inject = ["$scope", "$controller", "$routeParams", "queryService", "ujetGroupFactory"];
+    ujetGroupListDirCtrl.$inject = ["$scope", "$controller", "$routeParams", "notificationsService", "localService", "queryService", "ujetGroupFactory"];
 
-    function ujetGroupListDirCtrl($scope, $controller, $routeParams, queryService, ujetGroupFactory) {
+    function ujetGroupListDirCtrl($scope, $controller, $routeParams, notificationsService, localService, queryService, ujetGroupFactory) {
         var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "Name", "Description", "OwnerId"]);
 
         var config = {
@@ -21,6 +21,8 @@
 
         $controller("ujetListCtrl", {
             $scope: $scope,
+            notificationsService: notificationsService,
+            localService: localService,
             query: query,
             config: config
         });

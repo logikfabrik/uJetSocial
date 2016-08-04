@@ -6,21 +6,23 @@
         .module("umbraco")
         .controller("ujetMediaPickerDirCtrl", ujetMediaPickerDirCtrl);
 
-    ujetMediaPickerDirCtrl.$inject = ["$scope", "$controller", "$filter", "localizationService", "queryService", "ujetUmbracoMediaFactory", "ujetMediaFactory"];
+    ujetMediaPickerDirCtrl.$inject = ["$scope", "$controller", "$filter", "notificationsService", "localService", "queryService", "ujetUmbracoMediaFactory", "ujetMediaFactory"];
 
-    function ujetMediaPickerDirCtrl($scope, $controller, $filter, localizationService, queryService, ujetUmbracoMediaFactory, ujetMediaFactory) {
+    function ujetMediaPickerDirCtrl($scope, $controller, $filter, notificationsService, localService, queryService, ujetUmbracoMediaFactory, ujetMediaFactory) {
         $controller("ujetPickerCtrl", {
             $scope: $scope,
-            localizationService: localizationService,
+            notificationsService: notificationsService,
+            localService: localService,
             queryService: queryService,
             config: {
                 objectFactory: ujetUmbracoMediaFactory,
                 objectParam: "Name"
             },
             callback: function (object) {
-                ujetMediaFactory.getByMediaId(object.id).success(function (data) {
-                    $scope.dialogOptions.callback($filter("ujetAsMedia")(data));
-                });
+                ujetMediaFactory.getByMediaId(object.id)
+                    .then(function(response) {
+                        $scope.dialogOptions.callback($filter("ujetAsMedia")(response.data));
+                    });
             }
         });
     };

@@ -6,27 +6,36 @@
         .module("umbraco")
         .controller("ujetListCtrl", ujetListCtrl);
 
-    function ujetListCtrl($scope, query, config) {
+    function ujetListCtrl($scope, notificationsService, localService, query, config) {
         var vm = {
-            hasObjects: false
+            hasObjects: false,
+            config: {
+                local: localService.localize({
+                    errorCategoryGeneral: "",
+                    generalError: ""
+                })
+            }
         };
 
         $scope.vm = vm;
 
         function search() {
-            config.objectFactory.query(query.compile(config.searchParams)).success(function (data) {
-                vm.objects = {
-                    columns: query.orderBy.options,
-                    rows: data.objects
-                };
+            config.objectFactory.query(query.compile(config.searchParams))
+                .then(function(response) {
+                    vm.objects = {
+                        columns: query.orderBy.options,
+                        rows: response.data.objects
+                    };
 
-                vm.paging = {
-                    pageIndex: query.pageIndex.value,
-                    pageCount: Math.ceil(data.total / query.pageSize.value)
-                };
+                    vm.paging = {
+                        pageIndex: query.pageIndex.value,
+                        pageCount: Math.ceil(response.data.total / query.pageSize.value)
+                    };
 
-                vm.hasObjects = true;
-            });
+                    vm.hasObjects = true;
+                }, function() {
+                    notificationsService.error(vm.config.local.errorCategoryGeneral, vm.config.local.generalError);
+                });
         };
 
         $scope.$on("pageIndexChanged", function (e, pageIndex) {

@@ -6,9 +6,9 @@
         .module("umbraco")
         .controller("ujetIndividualGuestListDirCtrl", ujetIndividualGuestListDirCtrl);
 
-    ujetIndividualGuestListDirCtrl.$inject = ["$scope", "$controller", "$routeParams", "queryService", "ujetIndividualGuestFactory"];
+    ujetIndividualGuestListDirCtrl.$inject = ["$scope", "$controller", "$routeParams", "notificationsService", "localService", "queryService", "ujetIndividualGuestFactory"];
 
-    function ujetIndividualGuestListDirCtrl($scope, $controller, $routeParams, queryService, ujetIndividualGuestFactory) {
+    function ujetIndividualGuestListDirCtrl($scope, $controller, $routeParams, notificationsService, localService, queryService, ujetIndividualGuestFactory) {
         var query = queryService.getQuery(["Id", "Created", "Updated", "Status", "FirstName", "LastName"]);
 
         var config = {
@@ -21,6 +21,8 @@
 
         $controller("ujetListCtrl", {
             $scope: $scope,
+            notificationsService: notificationsService,
+            localService: localService,
             query: query,
             config: config
         });

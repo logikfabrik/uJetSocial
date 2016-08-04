@@ -6,12 +6,13 @@
         .module("umbraco")
         .controller("ujetReportPickerDirCtrl", ujetReportPickerDirCtrl);
 
-    ujetReportPickerDirCtrl.$inject = ["$scope", "$controller", "localizationService", "queryService", "ujetReportFactory"];
+    ujetReportPickerDirCtrl.$inject = ["$scope", "$controller", "notificationsService", "localService", "queryService", "ujetReportFactory"];
 
-    function ujetReportPickerDirCtrl($scope, $controller, localizationService, queryService, ujetReportFactory) {
+    function ujetReportPickerDirCtrl($scope, $controller, notificationsService, localService, queryService, ujetReportFactory) {
         $controller("ujetPickerCtrl", {
             $scope: $scope,
-            localizationService: localizationService,
+            notificationsService: notificationsService,
+            localService: localService,
             queryService: queryService,
             config: {
                 objectFactory: ujetReportFactory,
