@@ -1,19 +1,31 @@
 ﻿<div class="ujet-membership">
-    
-    <ul class="ujet-membership__list" ng-show="vm.hasObjects">
 
-        <li class="ujet-membership__list-item" ng-repeat="object in vm.objects">
-            <ujet-object model="object | ujetAsIndividualMember" can-delete="true"></ujet-object>
-        </li>
+    <div class="ujet-membership__section" ng-show="vm.hasObjects">
 
-    </ul>
+        <ul class="ujet-membership__list">
 
-    <ujet-pager model="vm.paging"></ujet-pager>
+            <li class="ujet-membership__list-item" ng-repeat="object in vm.objects">
+                <ujet-object model="object | ujetAsIndividualMember" can-delete="true"></ujet-object>
+            </li>
 
-    <ujet-object-picker can-pick-member="true" model="vm.memberId"></ujet-object-picker>
+        </ul>
 
-    <a class="ujet-button" href="#" prevent-default ng-click="vm.add()">
-        <localize key="uJetSocial_addBtn"></localize>
-    </a>
+        <ujet-pager model="vm.paging"></ujet-pager>
+
+    </div>
+
+    <div class="ujet-membership__section">
+
+        <ujet-object-picker can-pick-member="true" model="vm.memberId"></ujet-object-picker>
+
+    </div>
+
+    <div class="ujet-membership__section">
+
+        <a class="ujet-button" href="#" prevent-default ng-click="vm.add()">
+            <localize key="uJetSocial_addBtn"></localize>
+        </a>
+
+    </div>
 
 </div>
