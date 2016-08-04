@@ -100,7 +100,10 @@
     <key alias="emptyRecycleBinMediaErrors">Media {0} används och kan inte tas bort.</key>
 
     <key alias="errorCategoryAddMembership">Medlemmen kunde inte läggas till</key>
-    <key alias="addMembershipError"></key>
+    <key alias="addMembershipError">Något gick fel när medlemmen skulle läggas till.</key>
     <key alias="addMembershipDuplicateError">Medlemmen är redan en medlem.</key>
+
+    <key alias="errorCategoryRemoveMembership">Medlemmen kunde inte tas bort</key>
+    <key alias="removeMembershipError">Något gick fel när medlemmen skulle tas bort.</key>
   </area>
 </language>

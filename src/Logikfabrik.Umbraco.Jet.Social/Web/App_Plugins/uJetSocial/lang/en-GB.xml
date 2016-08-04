@@ -100,7 +100,10 @@
     <key alias="emptyRecycleBinMediaErrors">Media {0} are in use and cannot be deleted.</key>
 
     <key alias="errorCategoryAddMembership">The member could not be added</key>
-    <key alias="addMembershipError"></key>
+    <key alias="addMembershipError">Something went wrong when adding the member.</key>
     <key alias="addMembershipDuplicateError">The member is already a member.</key>
+
+    <key alias="errorCategoryRemoveMembership">The member could not be removed</key>
+    <key alias="removeMembershipError">Something went wrong when removing the member.</key>
   </area>
 </language>

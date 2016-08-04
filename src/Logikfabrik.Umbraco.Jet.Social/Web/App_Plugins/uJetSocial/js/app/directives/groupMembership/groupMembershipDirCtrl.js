@@ -16,9 +16,15 @@
             add: add,
             config: {
                 local: localService.localize({
+                    errorCategoryGeneral: "",
+                    generalError: "",
+
                     errorCategoryAddMembership: "",
                     addMembershipError: "",
-                    addMembershipDuplicateError: ""
+                    addMembershipDuplicateError: "",
+
+                    errorCategoryRemoveMembership: "",
+                    removeMembershipError: ""
                 })
             }
         };
@@ -27,7 +33,7 @@
 
         var query = queryService.getQuery();
 
-        query.pageSize.value = 1; //10;
+        query.pageSize.value = 10;
 
         function add() {
             var q = {
@@ -40,6 +46,8 @@
                     if (response.data.objects.length !== 0) {
                         notificationsService.error(vm.config.local.errorCategoryAddMembership, vm.config.local.addMembershipDuplicateError);
 
+                        vm.memberId = null;
+
                         return;
                     }
 
@@ -47,9 +55,13 @@
                             GroupId: vm.groupId,
                             MemberId: vm.memberId
                         })
-                        .then(function() {
+                        .then(function () {
+                            vm.memberId = null;
+
                             search();
                         }, function () {
+                            vm.memberId = null;
+
                             notificationsService.error(vm.config.local.errorCategoryAddMembership, vm.config.local.addMembershipError);
                         });
                 });
@@ -70,14 +82,24 @@
                     };
 
                     vm.hasObjects = vm.objects.length > 0;
+                }, function() {
+                    notificationsService.error(vm.config.local.errorCategoryGeneral, vm.config.local.generalError);
                 });
         };
 
         $scope.$on("deleteObject", function (e, object) {
+            if (object.id === vm.memberId) {
+                return;
+            }
+
             ujetGroupMembershipFactory.remove(object.id)
                 .then(function() {
                     search();
+                }, function() {
+                    notificationsService.error(vm.config.local.errorCategoryRemoveMembership, vm.config.local.removeMembershipError);
                 });
+
+            vm.memberId = null;
         });
 
         $scope.$on("pageIndexChanged", function (e, pageIndex) {
