@@ -347,6 +347,7 @@
 
 .ujet-list {
     width: 100%;
+    word-break: break-all;
 }
 
 .ujet-list__icon {
