@@ -321,7 +321,7 @@
    ========================================================================== */
 
 .ujet-pager {
-    padding: 8px 8px 0;
+    padding: 4px 8px 0;
 }
 
 .ujet-pager__numbering {
@@ -332,6 +332,15 @@
         vertical-align: baseline;
         width: 50px;
     }
+
+.ujet-pager__numbering,
+.ujet-pager__button {
+    margin: 4px 0 0;
+}
+
+.ujet-pager__button {
+    display: inline-block;
+}
 
 /* List
    ========================================================================== */
