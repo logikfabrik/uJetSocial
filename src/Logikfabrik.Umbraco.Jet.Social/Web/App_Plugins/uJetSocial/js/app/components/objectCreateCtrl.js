@@ -21,14 +21,13 @@
             }
 
             config.objectFactory.add(vm.object)
-                .success(function (id) {
+                .then(function() {
                     notificationsService.success(config.createSuccessMessage);
 
                     $location.path(config.path);
 
                     close();
-                })
-                .error(function () {
+                }, function() {
                     notificationsService.error(config.createErrorMessage);
                 });
         };
