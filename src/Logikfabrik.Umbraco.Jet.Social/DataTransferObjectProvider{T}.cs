@@ -190,7 +190,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// The updated data transfer object of type <typeparamref name="T" />.
         /// </returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="dto" /> is <c>null</c>.</exception>
-        public T Update(T dto)
+        public virtual T Update(T dto)
         {
             if (dto == null)
             {

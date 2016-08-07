@@ -5,7 +5,6 @@
 namespace Logikfabrik.Umbraco.Jet.Social.Group
 {
     using System;
-    using System.Linq;
 
     /// <summary>
     /// The <see cref="GroupMembershipProvider" /> class.
@@ -39,19 +38,31 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
                 throw new ArgumentNullException(nameof(dto));
             }
 
-            var query = new Query<GroupMembership>(0, int.MaxValue);
-
-            query.Criterias.Add(membership => membership.GroupId == dto.GroupId);
-            query.Criterias.Add(membership => membership.MemberId == dto.MemberId);
-
-            var objects = Query(query).Objects;
-
-            if (objects.Any())
-            {
-                throw new InvalidOperationException();
-            }
+            DataTransferObjectValidator.ThrowIfReadOnly(dto);
+            GroupMembershipValidator.ThrowIfConflict(this, dto);
 
             return base.Add(dto);
+        }
+
+        /// <summary>
+        /// Updates the specified data transfer object of type <see cref="GroupMembership" />.
+        /// </summary>
+        /// <param name="dto">The data transfer object of type <see cref="GroupMembership" /> to update.</param>
+        /// <returns>
+        /// The updated data transfer object of type <see cref="GroupMembership" />.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="dto" /> is <c>null</c>.</exception>
+        public override GroupMembership Update(GroupMembership dto)
+        {
+            if (dto == null)
+            {
+                throw new ArgumentNullException(nameof(dto));
+            }
+
+            DataTransferObjectValidator.ThrowIfReadOnly(dto);
+            GroupMembershipValidator.ThrowIfConflict(this, dto);
+
+            return base.Update(dto);
         }
     }
 }
