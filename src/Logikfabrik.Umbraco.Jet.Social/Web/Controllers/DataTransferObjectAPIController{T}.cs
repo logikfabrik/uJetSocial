@@ -54,6 +54,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Web.Controllers
         public T Update(int id, T dto)
         {
             dto.Id = id;
+            dto.Updated = DateTime.UtcNow;
 
             return GetModel(Provider.Update(dto));
         }

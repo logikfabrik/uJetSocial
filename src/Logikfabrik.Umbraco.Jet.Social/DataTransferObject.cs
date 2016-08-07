@@ -23,8 +23,8 @@ namespace Logikfabrik.Umbraco.Jet.Social
         /// </summary>
         protected DataTransferObject()
         {
-            _created = DateTime.Now;
-            _updated = DateTime.Now;
+            _created = DateTime.UtcNow;
+            _updated = DateTime.UtcNow;
             _status = 0;
         }
 
