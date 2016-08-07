@@ -35,8 +35,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Media
             {
                 AssertIsWritableClone();
                 _mediaId = value;
-
-                Updated = DateTime.Now;
             }
         }
 

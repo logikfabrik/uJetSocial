@@ -35,8 +35,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Document
             {
                 AssertIsWritableClone();
                 _documentId = value;
-
-                Updated = DateTime.Now;
             }
         }
 

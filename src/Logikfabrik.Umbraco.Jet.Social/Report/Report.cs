@@ -38,8 +38,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
             {
                 AssertIsWritableClone();
                 _entityId = value;
-
-                Updated = DateTime.Now;
             }
         }
 
@@ -62,8 +60,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
             {
                 AssertIsWritableClone();
                 _authorId = value;
-
-                Updated = DateTime.Now;
             }
         }
 
@@ -85,8 +81,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
             {
                 AssertIsWritableClone();
                 _text = value;
-
-                Updated = DateTime.Now;
             }
         }
 

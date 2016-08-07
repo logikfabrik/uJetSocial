@@ -36,8 +36,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
             {
                 AssertIsWritableClone();
                 _groupId = value;
-
-                Updated = DateTime.Now;
             }
         }
 
@@ -60,8 +58,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
             {
                 AssertIsWritableClone();
                 _memberId = value;
-
-                Updated = DateTime.Now;
             }
         }
 

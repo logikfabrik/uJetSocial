@@ -35,8 +35,6 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
             {
                 AssertIsWritableClone();
                 _memberId = value;
-
-                Updated = DateTime.Now;
             }
         }
 
