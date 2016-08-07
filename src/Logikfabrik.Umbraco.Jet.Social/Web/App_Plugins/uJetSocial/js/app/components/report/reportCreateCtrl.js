@@ -6,18 +6,23 @@
         .module("umbraco")
         .controller("ujetReportCreateCtrl", ujetReportCreateCtrl);
 
-    ujetReportCreateCtrl.$inject = ["$scope", "$controller", "$location", "notificationsService", "ujetReportFactory"];
+    ujetReportCreateCtrl.$inject = ["$scope", "$controller", "$location", "notificationsService", "localService", "ujetReportFactory"];
 
-    function ujetReportCreateCtrl($scope, $controller, $location, notificationsService, ujetReportFactory) {
+    function ujetReportCreateCtrl($scope, $controller, $location, notificationsService, localService, ujetReportFactory) {
         $controller("ujetObjectCreateCtrl", {
             $scope: $scope,
             $location: $location,
             notificationsService: notificationsService,
+            localService: localService,
             config: {
                 objectFactory: ujetReportFactory,
                 path: "/uJetSocial/ujetReport/dashboard/-1",
-                createSuccessMessage: "Report created",
-                createErrorMessage: "Report could not be created"
+                local: {
+                    successCategory: "successCategoryAddReport",
+                    success: "addReportSuccess",
+                    errorCategory: "errorCategoryAddReport",
+                    error: "addReportError"
+                }
             }
         });
     };

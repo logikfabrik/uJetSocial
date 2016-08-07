@@ -6,18 +6,23 @@
         .module("umbraco")
         .controller("ujetGroupCreateCtrl", ujetGroupCreateCtrl);
 
-    ujetGroupCreateCtrl.$inject = ["$scope", "$controller", "$location", "notificationsService", "ujetGroupFactory"];
+    ujetGroupCreateCtrl.$inject = ["$scope", "$controller", "$location", "notificationsService", "localService", "ujetGroupFactory"];
 
-    function ujetGroupCreateCtrl($scope, $controller, $location, notificationsService, ujetGroupFactory) {
+    function ujetGroupCreateCtrl($scope, $controller, $location, notificationsService, localService, ujetGroupFactory) {
         $controller("ujetObjectCreateCtrl", {
             $scope: $scope,
             $location: $location,
             notificationsService: notificationsService,
+            localService: localService,
             config: {
                 objectFactory: ujetGroupFactory,
                 path: "/uJetSocial/ujetGroup/dashboard/-1",
-                createSuccessMessage: "Group created",
-                createErrorMessage: "Group could not be created"
+                local: {
+                    successCategory: "successCategoryAddGroup",
+                    success: "addGroupSuccess",
+                    errorCategory: "errorCategoryAddGroup",
+                    error: "addGroupError"
+                }
             }
         });
     };

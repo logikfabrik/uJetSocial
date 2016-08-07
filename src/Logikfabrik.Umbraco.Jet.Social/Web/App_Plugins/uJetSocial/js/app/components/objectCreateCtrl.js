@@ -6,11 +6,14 @@
         .module("umbraco")
         .controller("ujetObjectCreateCtrl", ujetObjectCreateCtrl);
 
-    function ujetObjectCreateCtrl($scope, $location, notificationsService, config) {
+    function ujetObjectCreateCtrl($scope, $location, notificationsService, localService, config) {
         var vm = {
             object: {},
             create: create,
-            cancel: cancel
+            cancel: cancel,
+            config: {
+                local: localService.localize(config.local)
+            }
         };
 
         $scope.vm = vm;
@@ -22,13 +25,13 @@
 
             config.objectFactory.add(vm.object)
                 .then(function() {
-                    notificationsService.success(config.createSuccessMessage);
+                    notificationsService.success(vm.config.local.successCategory, vm.config.local.success);
 
                     $location.path(config.path);
 
                     close();
                 }, function() {
-                    notificationsService.error(config.createErrorMessage);
+                    notificationsService.error(vm.config.local.errorCategory, vm.config.local.error);
                 });
         };
 

@@ -109,6 +109,11 @@
     <key alias="errorCategoryRemoveMembership">The member could not be removed</key>
     <key alias="removeMembershipError">Something went wrong when removing the member.</key>
 
+    <key alias="errorCategoryAddComment">The comment could not be added</key>
+    <key alias="addCommentError">Something went wrong when adding the comment.</key>
+    <key alias="successCategoryAddComment">Done</key>
+    <key alias="addCommentSuccess">The comment has been added.</key>
+
     <key alias="errorCategoryUpdateComment">The comment could not be updated</key>
     <key alias="updateCommentError">Something went wrong when updating the comment.</key>
     <key alias="successCategoryUpdateComment">Done</key>
@@ -119,10 +124,20 @@
     <key alias="successCategoryUpdateDocument">Done</key>
     <key alias="updateDocumentSuccess">The document has been updated.</key>
 
+    <key alias="errorCategoryAddGroup">The group could not be added</key>
+    <key alias="addGroupError">Something went wrong when adding the group.</key>
+    <key alias="successCategoryAddGroup">Done</key>
+    <key alias="addGroupSuccess">The group has been added.</key>
+
     <key alias="errorCategoryUpdateGroup">The group could not be updated</key>
     <key alias="updateGroupError">Something went wrong when updating the group.</key>
     <key alias="successCategoryUpdateGroup">Done</key>
     <key alias="updateGroupSuccess">The group has been updated.</key>
+
+    <key alias="errorCategoryAddGuest">The guest could not be added</key>
+    <key alias="addGuestError">Something went wrong when adding the guest.</key>
+    <key alias="successCategoryAddGuest">Done</key>
+    <key alias="addGuestSuccess">The guest has been added.</key>
 
     <key alias="errorCategoryUpdateGuest">The guest could not be updated</key>
     <key alias="updateGuestError">Something went wrong when updating the guest.</key>
@@ -138,6 +153,11 @@
     <key alias="updateMediaError">Something went wrong when updating the media.</key>
     <key alias="successCategoryUpdateMedia">Done</key>
     <key alias="updateMediaSuccess">The media has been updated.</key>
+
+    <key alias="errorCategoryAddReport">The report could not be added</key>
+    <key alias="addReportError">Something went wrong when adding the report.</key>
+    <key alias="successCategoryAddReport">Done</key>
+    <key alias="addReportSuccess">The report has been added.</key>
 
     <key alias="errorCategoryUpdateReport">The report could not be updated</key>
     <key alias="updateReportError">Something went wrong when updating the report.</key>

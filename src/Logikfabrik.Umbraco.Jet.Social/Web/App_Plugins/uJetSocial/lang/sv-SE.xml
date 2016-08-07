@@ -109,6 +109,11 @@
     <key alias="errorCategoryRemoveMembership">Medlemmen kunde inte tas bort</key>
     <key alias="removeMembershipError">Något gick fel när medlemmen skulle tas bort.</key>
 
+    <key alias="errorCategoryAddComment">Kommentaren kunde inte läggas till</key>
+    <key alias="addCommentError">Något gick fel när kommentaren skulle läggas till.</key>
+    <key alias="successCategoryAddComment">Klart</key>
+    <key alias="addCommentSuccess">Kommentaren har lagts till.</key>
+
     <key alias="errorCategoryUpdateComment">Kommentaren kunde inte uppdateras</key>
     <key alias="updateCommentError">Något gick fel när kommentaren skulle uppdateras.</key>
     <key alias="successCategoryUpdateComment">Klart</key>
@@ -119,10 +124,20 @@
     <key alias="successCategoryUpdateDocument">Klart</key>
     <key alias="updateDocumentSuccess">Dokumentet har uppdaterats.</key>
 
+    <key alias="errorCategoryAddGroup">Gruppen kunde inte läggas till</key>
+    <key alias="addGroupError">Något gick fel när gruppen skulle läggas till.</key>
+    <key alias="successCategoryAddGroup">Klart</key>
+    <key alias="addGroupSuccess">Gruppen har lagts till.</key>
+
     <key alias="errorCategoryUpdateGroup">Gruppen kunde inte uppdateras</key>
     <key alias="updateGroupError">Något gick fel när gruppen skulle uppdateras.</key>
     <key alias="successCategoryUpdateGroup">Klart</key>
     <key alias="updateGroupSuccess">Gruppen har uppdaterats.</key>
+
+    <key alias="errorCategoryAddGuest">Gästen kunde inte läggas till</key>
+    <key alias="addGuestError">Något gick fel när gästen skulle läggas till.</key>
+    <key alias="successCategoryAddGuest">Klart</key>
+    <key alias="addGuestSuccess">Gästen har lagts till.</key>
 
     <key alias="errorCategoryUpdateGuest">Gästen kunde inte uppdateras</key>
     <key alias="updateGuestError">Något gick fel när gästen skulle uppdateras.</key>
@@ -138,7 +153,12 @@
     <key alias="updateMediaError">Något gick fel när media skulle uppdateras.</key>
     <key alias="successCategoryUpdateMedia">Klart</key>
     <key alias="updateMediaSuccess">Media har uppdaterats.</key>
-    
+
+    <key alias="errorCategoryAddReport">Rapporten kunde inte läggas till</key>
+    <key alias="addReportError">Något gick fel när rapporten skulle läggas till.</key>
+    <key alias="successCategoryAddReport">Klart</key>
+    <key alias="addReportSuccess">Rapporten har lagts till.</key>
+
     <key alias="errorCategoryUpdateReport">Rapporten kunde inte uppdateras</key>
     <key alias="updateReportError">Något gick fel när rapporten skulle uppdateras.</key>
     <key alias="successCategoryUpdateReport">Klart</key>
