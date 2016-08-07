@@ -12,10 +12,10 @@
             search: search,
             config: {
                 local: localService.localize({
-                    errorCategoryGeneral: "",
-                    generalError: "",
+                    errorCategoryGeneral: null,
+                    generalError: null,
 
-                    typeToSearch: ""
+                    typeToSearch: null
                 })
             }
         };

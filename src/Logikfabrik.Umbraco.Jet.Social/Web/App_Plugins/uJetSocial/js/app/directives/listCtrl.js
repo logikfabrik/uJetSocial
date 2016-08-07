@@ -11,8 +11,8 @@
             hasObjects: false,
             config: {
                 local: localService.localize({
-                    errorCategoryGeneral: "",
-                    generalError: ""
+                    errorCategoryGeneral: null,
+                    generalError: null
                 })
             }
         };

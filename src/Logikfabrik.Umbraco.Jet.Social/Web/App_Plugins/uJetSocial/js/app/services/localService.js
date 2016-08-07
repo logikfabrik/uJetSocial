@@ -6,8 +6,10 @@
             dataService.localize = function(keys) {
                 var localizations = {};
 
-                _.forOwn(keys, function(value, key) {
-                    localizationService.localize("uJetSocial_" + key)
+                _.forOwn(keys, function (value, key) {
+                    var langKey = (value === null) ? key : value;
+
+                    localizationService.localize("uJetSocial_" + langKey)
                         .then(function(trans) {
                             _.set(localizations, key, trans);
                         });

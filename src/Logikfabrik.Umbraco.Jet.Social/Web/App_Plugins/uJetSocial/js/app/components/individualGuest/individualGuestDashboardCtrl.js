@@ -6,18 +6,23 @@
         .module("umbraco")
         .controller("ujetIndividualGuestDashboardCtrl", ujetIndividualGuestDashboardCtrl);
 
-    ujetIndividualGuestDashboardCtrl.$inject = ["$scope", "$controller", "$routeParams", "navigationService", "notificationsService", "ujetIndividualGuestFactory"];
+    ujetIndividualGuestDashboardCtrl.$inject = ["$scope", "$controller", "$routeParams", "navigationService", "notificationsService", "localService", "ujetIndividualGuestFactory"];
 
-    function ujetIndividualGuestDashboardCtrl($scope, $controller, $routeParams, navigationService, notificationsService, ujetIndividualGuestFactory) {
+    function ujetIndividualGuestDashboardCtrl($scope, $controller, $routeParams, navigationService, notificationsService, localService, ujetIndividualGuestFactory) {
         navigationService.syncTree({ tree: "ujetIndividualGuest", path: ["-1", $routeParams.id], forceReload: false });
 
         $controller("ujetDashboardCtrl", {
             $scope: $scope,
             notificationsService: notificationsService,
+            localService: localService,
             config: {
                 objectFactory: ujetIndividualGuestFactory,
-                successMessage: "Success",
-                errorMessage: "Error"
+                local: {
+                    successCategory: "successCategoryUpdateGuest",
+                    success: "updateGuestSuccess",
+                    errorCategory: "errorCategoryUpdateGuest",
+                    error: "updateGuestError"
+                }
             }
         });
     };

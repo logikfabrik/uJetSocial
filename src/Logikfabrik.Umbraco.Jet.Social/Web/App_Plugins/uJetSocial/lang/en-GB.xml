@@ -89,7 +89,10 @@
     <key alias="chooseType">Choose...</key>
     <key alias="typeToSearch">Type to search...</key>
     
-    <!-- Errors -->
+    <!-- Messages -->
+    <key alias="successCategoryGeneral">Done</key>
+    <key alias="generalSuccess"></key>
+
     <key alias="errorCategoryGeneral">Something went wrong</key>
     <key alias="generalError"></key>
     
@@ -105,5 +108,40 @@
 
     <key alias="errorCategoryRemoveMembership">The member could not be removed</key>
     <key alias="removeMembershipError">Something went wrong when removing the member.</key>
+
+    <key alias="errorCategoryUpdateComment">The comment could not be updated</key>
+    <key alias="updateCommentError">Something went wrong when updating the comment.</key>
+    <key alias="successCategoryUpdateComment">Done</key>
+    <key alias="updateCommentSuccess">The comment has been updated.</key>
+
+    <key alias="errorCategoryUpdateDocument">The document could not be updated</key>
+    <key alias="updateDocumentError">Something went wrong when updating the document.</key>
+    <key alias="successCategoryUpdateDocument">Done</key>
+    <key alias="updateDocumentSuccess">The document has been updated.</key>
+
+    <key alias="errorCategoryUpdateGroup">The group could not be updated</key>
+    <key alias="updateGroupError">Something went wrong when updating the group.</key>
+    <key alias="successCategoryUpdateGroup">Done</key>
+    <key alias="updateGroupSuccess">The group has been updated.</key>
+
+    <key alias="errorCategoryUpdateGuest">The guest could not be updated</key>
+    <key alias="updateGuestError">Something went wrong when updating the guest.</key>
+    <key alias="successCategoryUpdateGuest">Done</key>
+    <key alias="updateGuestSuccess">The guest has been updated.</key>
+
+    <key alias="errorCategoryUpdateMember">The member could not be updated</key>
+    <key alias="updateMemberError">Something went wrong when updating the member.</key>
+    <key alias="successCategoryUpdateMember">Done</key>
+    <key alias="updateMemberSuccess">The member has been updated.</key>
+
+    <key alias="errorCategoryUpdateMedia">The media could not be updated</key>
+    <key alias="updateMediaError">Something went wrong when updating the media.</key>
+    <key alias="successCategoryUpdateMedia">Done</key>
+    <key alias="updateMediaSuccess">The media has been updated.</key>
+
+    <key alias="errorCategoryUpdateReport">The report could not be updated</key>
+    <key alias="updateReportError">Something went wrong when updating the report.</key>
+    <key alias="successCategoryUpdateReport">Done</key>
+    <key alias="updateReportSuccess">The report has been updated.</key>
   </area>
 </language>

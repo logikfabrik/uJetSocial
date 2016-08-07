@@ -6,8 +6,12 @@
         .module("umbraco")
         .controller("ujetDashboardCtrl", ujetDashboardCtrl);
 
-    function ujetDashboardCtrl($scope, notificationsService, config) {
-        var vm = {};
+    function ujetDashboardCtrl($scope, notificationsService, localService, config) {
+        var vm = {
+            config: {
+                local: localService.localize(config.local)
+            }
+        };
 
         $scope.vm = vm;
 
@@ -26,9 +30,9 @@
         function updateObject(object) {
             config.objectFactory.update(object)
                 .then(function() {
-                    notificationsService.success(config.successMessage);
+                    notificationsService.success(vm.config.local.successCategory, vm.config.local.success);
                 }, function() {
-                    notificationsService.error(config.errorMessage);
+                    notificationsService.error(vm.config.local.errorCategory, vm.config.local.error);
                 });
         }
     };

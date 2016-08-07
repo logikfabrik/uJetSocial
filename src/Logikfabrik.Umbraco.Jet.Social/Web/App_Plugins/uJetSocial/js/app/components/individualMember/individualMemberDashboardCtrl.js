@@ -6,18 +6,23 @@
         .module("umbraco")
         .controller("ujetIndividualMemberDashboardCtrl", ujetIndividualMemberDashboardCtrl);
 
-    ujetIndividualMemberDashboardCtrl.$inject = ["$scope", "$controller", "$routeParams", "navigationService", "notificationsService", "ujetIndividualMemberFactory"];
+    ujetIndividualMemberDashboardCtrl.$inject = ["$scope", "$controller", "$routeParams", "navigationService", "notificationsService", "localService", "ujetIndividualMemberFactory"];
 
-    function ujetIndividualMemberDashboardCtrl($scope, $controller, $routeParams, navigationService, notificationsService, ujetIndividualMemberFactory) {
+    function ujetIndividualMemberDashboardCtrl($scope, $controller, $routeParams, navigationService, notificationsService, localService, ujetIndividualMemberFactory) {
         navigationService.syncTree({ tree: "ujetIndividualMember", path: ["-1", $routeParams.id], forceReload: false });
 
         $controller("ujetDashboardCtrl", {
             $scope: $scope,
             notificationsService: notificationsService,
+            localService: localService,
             config: {
                 objectFactory: ujetIndividualMemberFactory,
-                successMessage: "Success",
-                errorMessage: "Error"
+                local: {
+                    successCategory: "successCategoryUpdateMember",
+                    success: "updateMemberSuccess",
+                    errorCategory: "errorCategoryUpdateMember",
+                    error: "updateMemberError"
+                }
             }
         });
     };

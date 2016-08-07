@@ -16,15 +16,15 @@
             add: add,
             config: {
                 local: localService.localize({
-                    errorCategoryGeneral: "",
-                    generalError: "",
+                    errorCategoryGeneral: null,
+                    generalError: null,
 
-                    errorCategoryAddMembership: "",
-                    addMembershipError: "",
-                    addMembershipDuplicateError: "",
+                    errorCategoryAddMembership: null,
+                    addMembershipError: null,
+                    addMembershipDuplicateError: null,
 
-                    errorCategoryRemoveMembership: "",
-                    removeMembershipError: ""
+                    errorCategoryRemoveMembership: null,
+                    removeMembershipError: null
                 })
             }
         };

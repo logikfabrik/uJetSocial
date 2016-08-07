@@ -89,7 +89,10 @@
     <key alias="chooseType">Välj...</key>
     <key alias="typeToSearch">Skriv för att söka...</key>
 
-    <!-- Errors -->
+    <!-- Messages -->
+    <key alias="successCategoryGeneral">Klart</key>
+    <key alias="generalSuccess"></key>
+    
     <key alias="errorCategoryGeneral">Något gick fel</key>
     <key alias="generalError"></key>
     
@@ -105,5 +108,40 @@
 
     <key alias="errorCategoryRemoveMembership">Medlemmen kunde inte tas bort</key>
     <key alias="removeMembershipError">Något gick fel när medlemmen skulle tas bort.</key>
+
+    <key alias="errorCategoryUpdateComment">Kommentaren kunde inte uppdateras</key>
+    <key alias="updateCommentError">Något gick fel när kommentaren skulle uppdateras.</key>
+    <key alias="successCategoryUpdateComment">Klart</key>
+    <key alias="updateCommentSuccess">Kommentaren har uppdaterats.</key>
+
+    <key alias="errorCategoryUpdateDocument">Dokumentet kunde inte uppdateras</key>
+    <key alias="updateDocumentError">Något gick fel när dokumentet skulle uppdateras.</key>
+    <key alias="successCategoryUpdateDocument">Klart</key>
+    <key alias="updateDocumentSuccess">Dokumentet har uppdaterats.</key>
+
+    <key alias="errorCategoryUpdateGroup">Gruppen kunde inte uppdateras</key>
+    <key alias="updateGroupError">Något gick fel när gruppen skulle uppdateras.</key>
+    <key alias="successCategoryUpdateGroup">Klart</key>
+    <key alias="updateGroupSuccess">Gruppen har uppdaterats.</key>
+
+    <key alias="errorCategoryUpdateGuest">Gästen kunde inte uppdateras</key>
+    <key alias="updateGuestError">Något gick fel när gästen skulle uppdateras.</key>
+    <key alias="successCategoryUpdateGuest">Klart</key>
+    <key alias="updateGuestSuccess">Gästen har uppdaterats.</key>
+
+    <key alias="errorCategoryUpdateMember">Medlemmen kunde inte uppdateras</key>
+    <key alias="updateMemberError">Något gick fel när medlemmen skulle uppdateras.</key>
+    <key alias="successCategoryUpdateMember">Klart</key>
+    <key alias="updateMemberSuccess">Medlemmen har uppdaterats.</key>
+
+    <key alias="errorCategoryUpdateMedia">Media kunde inte uppdateras</key>
+    <key alias="updateMediaError">Något gick fel när media skulle uppdateras.</key>
+    <key alias="successCategoryUpdateMedia">Klart</key>
+    <key alias="updateMediaSuccess">Media har uppdaterats.</key>
+    
+    <key alias="errorCategoryUpdateReport">Rapporten kunde inte uppdateras</key>
+    <key alias="updateReportError">Något gick fel när rapporten skulle uppdateras.</key>
+    <key alias="successCategoryUpdateReport">Klart</key>
+    <key alias="updateReportSuccess">Rapporten har uppdaterats.</key>
   </area>
 </language>
