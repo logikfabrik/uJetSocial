@@ -6,12 +6,13 @@
         .module("umbraco")
         .controller("ujetReportCreateCtrl", ujetReportCreateCtrl);
 
-    ujetReportCreateCtrl.$inject = ["$scope", "$controller", "$location", "notificationsService", "localService", "ujetReportFactory"];
+    ujetReportCreateCtrl.$inject = ["$scope", "$controller", "$location", "$route", "notificationsService", "localService", "ujetReportFactory"];
 
-    function ujetReportCreateCtrl($scope, $controller, $location, notificationsService, localService, ujetReportFactory) {
+    function ujetReportCreateCtrl($scope, $controller, $location, $route, notificationsService, localService, ujetReportFactory) {
         $controller("ujetObjectCreateCtrl", {
             $scope: $scope,
             $location: $location,
+            $route: $route,
             notificationsService: notificationsService,
             localService: localService,
             config: {

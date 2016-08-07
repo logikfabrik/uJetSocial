@@ -6,7 +6,7 @@
         .module("umbraco")
         .controller("ujetObjectCreateCtrl", ujetObjectCreateCtrl);
 
-    function ujetObjectCreateCtrl($scope, $location, notificationsService, localService, config) {
+    function ujetObjectCreateCtrl($scope, $location, $route, notificationsService, localService, config) {
         var vm = {
             object: {},
             create: create,
@@ -27,7 +27,13 @@
                 .then(function() {
                     notificationsService.success(vm.config.local.successCategory, vm.config.local.success);
 
-                    $location.path(config.path);
+                    var path = $location.path();
+
+                    if (path === config.path) {
+                        $route.reload();
+                    } else {
+                        $location.path(config.path);
+                    }
 
                     close();
                 }, function() {

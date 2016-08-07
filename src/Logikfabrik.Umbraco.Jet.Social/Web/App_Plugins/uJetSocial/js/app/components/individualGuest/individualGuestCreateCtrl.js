@@ -6,12 +6,13 @@
         .module("umbraco")
         .controller("ujetIndividualGuestCreateCtrl", ujetIndividualGuestCreateCtrl);
 
-    ujetIndividualGuestCreateCtrl.$inject = ["$scope", "$controller", "$location", "notificationsService", "localService", "ujetIndividualGuestFactory"];
+    ujetIndividualGuestCreateCtrl.$inject = ["$scope", "$controller", "$location", "$route", "notificationsService", "localService", "ujetIndividualGuestFactory"];
 
-    function ujetIndividualGuestCreateCtrl($scope, $controller, $location, notificationsService, localService, ujetIndividualGuestFactory) {
+    function ujetIndividualGuestCreateCtrl($scope, $controller, $location, $route, notificationsService, localService, ujetIndividualGuestFactory) {
         $controller("ujetObjectCreateCtrl", {
             $scope: $scope,
             $location: $location,
+            $route: $route,
             notificationsService: notificationsService,
             localService: localService,
             config: {
