@@ -4,14 +4,13 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Media
 {
-    using System;
     using global::Umbraco.Core.Persistence;
 
     /// <summary>
     /// The <see cref="Media" /> class.
     /// </summary>
     [TableName("uJetSocialMedia")]
-    public class Media : DataTransferObject
+    public class Media : DataTransferObject, ICloneable<Media>
     {
         private int _mediaId;
 

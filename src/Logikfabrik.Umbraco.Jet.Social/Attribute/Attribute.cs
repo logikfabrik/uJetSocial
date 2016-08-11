@@ -1,81 +1,79 @@
-﻿// <copyright file="IndividualGuest.cs" company="Logikfabrik">
+﻿// <copyright file="Attribute.cs" company="Logikfabrik">
 //   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
-namespace Logikfabrik.Umbraco.Jet.Social.Individual
+namespace Logikfabrik.Umbraco.Jet.Social.Attribute
 {
     using global::Umbraco.Core.Persistence;
 
     /// <summary>
-    /// The <see cref="IndividualGuest" /> class.
+    /// The <see cref="Attribute" /> class.
     /// </summary>
-    [TableName("uJetSocialIndividualGuest")]
-    public class IndividualGuest : Individual, ICloneable<IndividualGuest>
+    [TableName("uJetSocialAttribute")]
+    public class Attribute : DataTransferObject, ICloneable<Attribute>
     {
-        private string _firstName;
-        private string _lastName;
-        private string _email;
+        private int _entityTypeId;
+        private string _name;
+        private string _typeName;
 
         /// <summary>
-        /// Gets or sets the first name.
+        /// Gets or sets the identifier of the attributed entity type.
         /// </summary>
         /// <value>
-        /// The first name.
+        /// The identifier of the attributed entity type.
         /// </value>
-        [Column("FirstName")]
-        public string FirstName
+        [ForeignKey(typeof(EntityType), Name = "FK_uJetSocialAttribute_uJetSocialEntityType_Id_As_EntityTypeId")]
+        public int EntityTypeId
         {
             get
             {
-                return _firstName;
+                return _entityTypeId;
             }
 
             set
             {
                 AssertIsWritableClone();
-                _firstName = value;
+                _entityTypeId = value;
             }
         }
 
         /// <summary>
-        /// Gets or sets the last name.
+        /// Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The last name.
+        /// The name.
         /// </value>
-        [Column("LastName")]
-        public string LastName
+        public string Name
         {
             get
             {
-                return _lastName;
+                return _name;
             }
 
             set
             {
                 AssertIsWritableClone();
-                _lastName = value;
+                _name = value;
             }
         }
 
         /// <summary>
-        /// Gets or sets the e-mail.
+        /// Gets or sets the type name
         /// </summary>
         /// <value>
-        /// The e-mail.
+        /// The type name.
         /// </value>
-        [Column("Email")]
-        public string Email
+        public string TypeName
         {
             get
             {
-                return _email;
+                return _typeName;
             }
 
             set
             {
                 AssertIsWritableClone();
-                _email = value;
+                _typeName = value;
             }
         }
 
@@ -83,9 +81,9 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         /// Gets a writable clone.
         /// </summary>
         /// <returns>A writable clone.</returns>
-        public IndividualGuest CreateWritableClone()
+        public Attribute CreateWritableClone()
         {
-            return CreateWritableClone<IndividualGuest>();
+            return CreateWritableClone<Attribute>();
         }
 
         /// <summary>
@@ -94,11 +92,11 @@ namespace Logikfabrik.Umbraco.Jet.Social.Individual
         /// <returns>A writable clone of this instance.</returns>
         protected override DataTransferObject Clone()
         {
-            var clone = new IndividualGuest
+            var clone = new Attribute
             {
-                FirstName = _firstName,
-                LastName = _lastName,
-                Email = _email
+                EntityTypeId = _entityTypeId,
+                Name = _name,
+                TypeName = _typeName
             };
 
             return clone;

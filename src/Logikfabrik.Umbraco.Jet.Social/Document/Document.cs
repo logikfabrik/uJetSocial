@@ -4,14 +4,13 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Document
 {
-    using System;
     using global::Umbraco.Core.Persistence;
 
     /// <summary>
     /// The <see cref="Document" /> class.
     /// </summary>
     [TableName("uJetSocialDocument")]
-    public class Document : DataTransferObject
+    public class Document : DataTransferObject, ICloneable<Document>
     {
         private int _documentId;
 

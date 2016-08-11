@@ -4,7 +4,6 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Contact
 {
-    using System;
     using global::Umbraco.Core.Persistence;
     using Individual;
 
@@ -12,7 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Contact
     /// The <see cref="Contact" /> class.
     /// </summary>
     [TableName("uJetSocialContact")]
-    public class Contact : DataTransferObject
+    public class Contact : DataTransferObject, ICloneable<Contact>
     {
         private int _fromMemberId;
         private int _toMemberId;

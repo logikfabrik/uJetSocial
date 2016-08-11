@@ -5,6 +5,7 @@
 namespace Logikfabrik.Umbraco.Jet.Social
 {
     using System;
+    using Attribute;
     using Comment;
     using Contact;
     using Document;
@@ -52,6 +53,7 @@ namespace Logikfabrik.Umbraco.Jet.Social
 
             return new DataTransferObjectProviderDictionary
             {
+                { typeof(Attribute.Attribute), new AttributeProvider(cache, database) },
                 { typeof(Comment.Comment), new CommentProvider(cache, database) },
                 { typeof(Contact.Contact), new ContactProvider(cache, database) },
                 { typeof(Document.Document), new DocumentProvider(cache, database) },

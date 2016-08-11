@@ -283,6 +283,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attribute\Attribute.cs" />
+    <Compile Include="Attribute\AttributeProvider.cs" />
     <Compile Include="AuthorableExtensions.cs" />
     <Compile Include="CacheKeyFactory.cs" />
     <Compile Include="CacheWrapper.cs" />
@@ -317,6 +319,7 @@
     <Compile Include="Group\GroupMembershipProvider.cs" />
     <Compile Include="IAuthorable.cs" />
     <Compile Include="ICacheWrapper.cs" />
+    <Compile Include="ICloneable{T}.cs" />
     <Compile Include="IContentLookup.cs" />
     <Compile Include="IDatabaseWrapper.cs" />
     <Compile Include="IDataTransferObjectProvider.cs" />

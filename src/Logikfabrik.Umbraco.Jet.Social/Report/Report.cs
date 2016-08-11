@@ -11,7 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Report
     /// The <see cref="Report" /> class.
     /// </summary>
     [TableName("uJetSocialReport")]
-    public class Report : DataTransferObject, IAuthorable
+    public class Report : DataTransferObject, ICloneable<Report>, IAuthorable
     {
         private int _entityId;
         private Type _entityType;

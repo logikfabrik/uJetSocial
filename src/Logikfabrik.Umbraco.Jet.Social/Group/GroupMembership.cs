@@ -4,7 +4,6 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Group
 {
-    using System;
     using global::Umbraco.Core.Persistence;
     using Individual;
 
@@ -12,7 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
     /// The <see cref="GroupMembership" /> class.
     /// </summary>
     [TableName("uJetSocialGroupMembership")]
-    public class GroupMembership : DataTransferObject
+    public class GroupMembership : DataTransferObject, ICloneable<GroupMembership>
     {
         private int _groupId;
         private int _memberId;

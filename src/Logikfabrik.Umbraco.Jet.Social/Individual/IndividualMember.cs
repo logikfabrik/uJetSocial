@@ -4,14 +4,13 @@
 
 namespace Logikfabrik.Umbraco.Jet.Social.Individual
 {
-    using System;
     using global::Umbraco.Core.Persistence;
 
     /// <summary>
     /// The <see cref="IndividualMember" /> class.
     /// </summary>
     [TableName("uJetSocialIndividualMember")]
-    public class IndividualMember : Individual
+    public class IndividualMember : Individual, ICloneable<IndividualMember>
     {
         private int _memberId;
 

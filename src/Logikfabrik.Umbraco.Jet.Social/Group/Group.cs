@@ -11,7 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Social.Group
     /// The <see cref="Group" /> class.
     /// </summary>
     [TableName("uJetSocialGroup")]
-    public class Group : DataTransferObject, IOwnable
+    public class Group : DataTransferObject, ICloneable<Group>, IOwnable
     {
         private string _name;
         private string _description;
