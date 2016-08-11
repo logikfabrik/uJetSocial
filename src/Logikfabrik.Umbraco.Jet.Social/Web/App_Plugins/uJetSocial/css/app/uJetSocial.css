@@ -1,4 +1,49 @@
-﻿/* Object Picker
+﻿/* Spinner
+   ========================================================================== */
+
+.ujet-spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #fff;
+    background-color: rgba(255,255,255,.9);
+    text-align: center;
+}
+
+.ujet-spinner__dot {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-color: #dbdbdb;
+    border-radius: 100%;
+    display: inline-block;
+    animation: ujet-spinner__dot-delay 1.4s infinite ease-in-out both;
+}
+
+    .ujet-spinner__dot:nth-child(1) {
+        animation-delay: -0.32s;
+    }
+
+    .ujet-spinner__dot:nth-child(2) {
+        animation-delay: -0.16s;
+    }
+
+@keyframes ujet-spinner__dot-delay {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1.0);
+    }
+}
+
+/* Object Picker
    ========================================================================== */
 
 .ujet-object-picker__header {

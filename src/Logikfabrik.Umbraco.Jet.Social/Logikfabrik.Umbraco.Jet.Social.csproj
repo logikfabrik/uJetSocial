@@ -528,6 +528,9 @@
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\reportPicker\reportPickerDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\reportPicker\reportPickerDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\reportPicker\reportPickerView.html" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\spinner\spinnerDir.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\spinner\spinnerDirCtrl.js" />
+    <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\spinner\spinnerView.html" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tabs\tabsDir.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tabs\tabsDirCtrl.js" />
     <Content Include="Web\App_Plugins\uJetSocial\js\app\directives\tabs\tabsView.html" />

@@ -139,6 +139,8 @@
 		'~/App_Plugins/uJetSocial/js/app/directives/mediaList/mediaListDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pager/pagerDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/pager/pagerDirCtrl.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/spinner/spinnerDir.js',
+		'~/App_Plugins/uJetSocial/js/app/directives/spinner/spinnerDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/reportEdit/reportEditDir.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/reportEdit/reportEditDirCtrl.js',
 		'~/App_Plugins/uJetSocial/js/app/directives/reportList/reportListDir.js',
