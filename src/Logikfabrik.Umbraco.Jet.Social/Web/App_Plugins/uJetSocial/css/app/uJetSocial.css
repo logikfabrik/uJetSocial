@@ -360,23 +360,16 @@
     padding: 4px 8px 0;
 }
 
-.ujet-pager__numbering {
+.ujet-pager__numbering,
+.ujet-pager__button {
     display: inline-block;
+    margin: 4px 0 0;
 }
 
     .ujet-pager__numbering input {
         vertical-align: baseline;
         width: 50px;
     }
-
-.ujet-pager__numbering,
-.ujet-pager__button {
-    margin: 4px 0 0;
-}
-
-.ujet-pager__button {
-    display: inline-block;
-}
 
 /* List
    ========================================================================== */
@@ -413,9 +406,13 @@
             background: #f8f8f8;
         }
 
-.ujet-list__row {
+.ujet-list__row,
+.ujet-list__row--selected {
     border: #dbdbdb solid;
     border-width: 0 0 1px;
+}
+
+.ujet-list__row {
     cursor: pointer;
 }
 
@@ -494,7 +491,6 @@
     border: #dbdbdb solid 1px;
     border-radius: 2px;
     margin: 24px 0 0;
-    padding: 24px 0 0;
     background: #f8f8f8;
 }
 
@@ -517,44 +513,43 @@
     background: #f8f8f8;
 }
 
-.ujet-tabs__list {
-    margin: 0;
-    padding: 0 0 0 4px;
-    list-style-type: none;
-}
-
-.ujet-tabs__list-item {
-    float: left;
-    margin: 0 4px 0 0;
-}
-
 .ujet-tabs__tab {
     display: inline-block;
-    margin: 0 0 -1px;
-    padding: 4px 12px;
-    border: solid 1px;
-    border-color: #f8f8f8 #f8f8f8 #dbdbdb;
-    border-radius: 4px 4px 0 0;
-}
-
-    .ujet-tabs__tab,
-    .ujet-tabs__tab:link,
-    .ujet-tabs__tab:visited,
-    .ujet-tabs__tab:hover,
-    .ujet-tabs__tab:active {
-        text-decoration: none;
-    }
-
-.ujet-tabs__tab--selected {
-    border-color: #dbdbdb #dbdbdb #fff;
-    background: #fff;
-    cursor: default;
 }
 
 .ujet-tabs__tabs {
-    clear: both;
     border: #dbdbdb solid;
     border-width: 1px 0 0;
+}
+
+/* Tab
+   ========================================================================== */
+
+.ujet-tab {
+    display: inline-block;
+    padding: 8px 12px;
+}
+
+    .ujet-tab,
+    .ujet-tab:link,
+    .ujet-tab:visited,
+    .ujet-tab:hover,
+    .ujet-tab:active {
+        text-decoration: none;
+    }
+
+        .ujet-tab:hover {
+            background: #e4e4e4;
+        }
+
+.ujet-tab--active,
+.ujet-tab--active:link,
+.ujet-tab--active:visited,
+.ujet-tab--active:hover,
+.ujet-tab--active:active {
+    background: #2e8aea;
+    color: #fff;
+    cursor: default;
 }
 
 /* Label
