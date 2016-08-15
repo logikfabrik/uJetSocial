@@ -19,10 +19,10 @@
                 objectFactory: ujetCommentFactory,
                 path: "/uJetSocial/ujetComment/dashboard/-1",
                 local: {
-                    successCategory: "successCategoryAddComment",
-                    success: "addCommentSuccess",
-                    errorCategory: "errorCategoryAddComment",
-                    error: "addCommentError"
+                    successCategory: "uJetSocial_successCategoryAddComment",
+                    success: "uJetSocial_addCommentSuccess",
+                    errorCategory: "uJetSocial_errorCategoryAddComment",
+                    error: "uJetSocial_addCommentError"
                 }
             }
         });

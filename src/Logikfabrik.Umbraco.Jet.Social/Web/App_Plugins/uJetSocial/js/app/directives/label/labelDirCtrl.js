@@ -6,14 +6,16 @@
         .module("umbraco")
         .controller("ujetLabelDirCtrl", ujetLabelDirCtrl);
 
-    ujetLabelDirCtrl.$inject = ["$scope"];
+    ujetLabelDirCtrl.$inject = ["$scope", "localService"];
 
-    function ujetLabelDirCtrl($scope) {
+    function ujetLabelDirCtrl($scope, localService) {
         var vm = {
-            titleKey: $scope.titleKey,
-            descriptionKey: $scope.descriptionKey,
-            showTitle: ($scope.titleKey) ? true : false,
-            showDescription: ($scope.descriptionKey) ? true : false
+            config: {
+                local: localService.localize({
+                    title: $scope.title,
+                    description: $scope.description
+                })
+            }
         };
 
         $scope.vm = vm;

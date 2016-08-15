@@ -18,10 +18,10 @@
             config: {
                 objectFactory: ujetGroupFactory,
                 local: {
-                    successCategory: "successCategoryUpdateGroup",
-                    success: "updateGroupSuccess",
-                    errorCategory: "errorCategoryUpdateGroup",
-                    error: "updateGroupError"
+                    successCategory: "uJetSocial_successCategoryUpdateGroup",
+                    success: "uJetSocial_updateGroupSuccess",
+                    errorCategory: "uJetSocial_errorCategoryUpdateGroup",
+                    error: "uJetSocial_updateGroupError"
                 }
             }
         });

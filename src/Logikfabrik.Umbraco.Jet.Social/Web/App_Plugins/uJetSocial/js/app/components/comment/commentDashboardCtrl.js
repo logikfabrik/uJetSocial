@@ -18,11 +18,10 @@
             config: {
                 objectFactory: ujetCommentFactory,
                 local: {
-                    successCategory: "successCategoryUpdateComment",
-                    success: "updateCommentSuccess",
-
-                    errorCategory: "errorCategoryUpdateComment",
-                    error: "updateCommentError"
+                    successCategory: "uJetSocial_successCategoryUpdateComment",
+                    success: "uJetSocial_updateCommentSuccess",
+                    errorCategory: "uJetSocial_errorCategoryUpdateComment",
+                    error: "uJetSocial_updateCommentError"
                 }
             }
         });

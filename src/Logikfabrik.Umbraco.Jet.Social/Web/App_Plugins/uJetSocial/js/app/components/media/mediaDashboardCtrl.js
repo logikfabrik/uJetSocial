@@ -18,10 +18,10 @@
             config: {
                 objectFactory: ujetMediaFactory,
                 local: {
-                    successCategory: "successCategoryUpdateMedia",
-                    success: "updateMediaSuccess",
-                    errorCategory: "errorCategoryUpdateMedia",
-                    error: "updateMediaError"
+                    successCategory: "uJetSocial_successCategoryUpdateMedia",
+                    success: "uJetSocial_updateMediaSuccess",
+                    errorCategory: "uJetSocial_errorCategoryUpdateMedia",
+                    error: "uJetSocial_updateMediaError"
                 }
             }
         });

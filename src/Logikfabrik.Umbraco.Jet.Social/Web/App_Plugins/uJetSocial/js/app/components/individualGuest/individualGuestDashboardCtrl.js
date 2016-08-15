@@ -18,10 +18,10 @@
             config: {
                 objectFactory: ujetIndividualGuestFactory,
                 local: {
-                    successCategory: "successCategoryUpdateGuest",
-                    success: "updateGuestSuccess",
-                    errorCategory: "errorCategoryUpdateGuest",
-                    error: "updateGuestError"
+                    successCategory: "uJetSocial_successCategoryUpdateGuest",
+                    success: "uJetSocial_updateGuestSuccess",
+                    errorCategory: "uJetSocial_errorCategoryUpdateGuest",
+                    error: "uJetSocial_updateGuestError"
                 }
             }
         });

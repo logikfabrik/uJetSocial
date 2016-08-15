@@ -19,10 +19,10 @@
                 objectFactory: ujetIndividualGuestFactory,
                 path: "/uJetSocial/ujetIndividualGuest/dashboard/-1",
                 local: {
-                    successCategory: "successCategoryAddGuest",
-                    success: "addGuestSuccess",
-                    errorCategory: "errorCategoryAddGuest",
-                    error: "addGuestError"
+                    successCategory: "uJetSocial_successCategoryAddGuest",
+                    success: "uJetSocial_addGuestSuccess",
+                    errorCategory: "uJetSocial_errorCategoryAddGuest",
+                    error: "uJetSocial_addGuestError"
                 }
             }
         });

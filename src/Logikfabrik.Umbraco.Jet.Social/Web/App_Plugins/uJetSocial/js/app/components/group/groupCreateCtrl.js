@@ -19,10 +19,10 @@
                 objectFactory: ujetGroupFactory,
                 path: "/uJetSocial/ujetGroup/dashboard/-1",
                 local: {
-                    successCategory: "successCategoryAddGroup",
-                    success: "addGroupSuccess",
-                    errorCategory: "errorCategoryAddGroup",
-                    error: "addGroupError"
+                    successCategory: "uJetSocial_successCategoryAddGroup",
+                    success: "uJetSocial_addGroupSuccess",
+                    errorCategory: "uJetSocial_errorCategoryAddGroup",
+                    error: "uJetSocial_addGroupError"
                 }
             }
         });

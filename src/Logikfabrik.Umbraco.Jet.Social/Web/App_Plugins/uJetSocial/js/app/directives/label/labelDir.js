@@ -11,8 +11,8 @@
             restrict: "E",
             templateUrl: "/App_Plugins/uJetSocial/js/app/directives/label/labelView.html",
             scope: {
-                titleKey: "@",
-                descriptionKey: "@"
+                title: "@",
+                description: "@"
             },
             controller: "ujetLabelDirCtrl"
         };

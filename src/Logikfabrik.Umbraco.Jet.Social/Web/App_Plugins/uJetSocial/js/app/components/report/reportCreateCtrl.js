@@ -19,10 +19,10 @@
                 objectFactory: ujetReportFactory,
                 path: "/uJetSocial/ujetReport/dashboard/-1",
                 local: {
-                    successCategory: "successCategoryAddReport",
-                    success: "addReportSuccess",
-                    errorCategory: "errorCategoryAddReport",
-                    error: "addReportError"
+                    successCategory: "uJetSocial_successCategoryAddReport",
+                    success: "uJetSocial_addReportSuccess",
+                    errorCategory: "uJetSocial_errorCategoryAddReport",
+                    error: "uJetSocial_addReportError"
                 }
             }
         });

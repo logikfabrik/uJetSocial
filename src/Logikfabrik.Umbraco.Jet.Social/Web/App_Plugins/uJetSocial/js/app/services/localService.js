@@ -7,9 +7,13 @@
                 var localizations = {};
 
                 _.forOwn(keys, function (value, key) {
-                    var langKey = (value === null) ? key : value;
+                    var langKey = (value === null) ? "uJetSocial_" + key : value;
 
-                    localizationService.localize("uJetSocial_" + langKey)
+                    if (_.isUndefined(langKey)) {
+                        return;
+                    }
+
+                    localizationService.localize(langKey)
                         .then(function(trans) {
                             _.set(localizations, key, trans);
                         });
